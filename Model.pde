@@ -1,13 +1,29 @@
 LXModel buildModel(JSONObject stripData) { //<>//
   // A three-dimensional grid model
-  return new GridModel3D(stripData);
+  return new JSONStripModel(stripData);
 }
 
-public static class GridModel3D extends LXModel {
+public static class ArtnetConfig{
   
-  public final static int SIZE = 20;
+  int universe;
+  int address;
+  String ip;
+  LXModel model;
   
-  public GridModel3D(JSONObject stripData) {
+  public ArtnetConfig(int universe, int address, String ip, LXModel model ){
+    this.universe = universe;
+    this.address = address;
+    this.ip = ip;
+    this.model = model;
+  }
+  
+}
+
+public static class JSONStripModel extends LXModel {
+  
+  public static ArrayList<ArtnetConfig> artnetConfigList = new ArrayList<ArtnetConfig>();
+  
+  public JSONStripModel(JSONObject stripData) {
     super(new Fixture(stripData));
   }
   
@@ -72,8 +88,17 @@ public static class GridModel3D extends LXModel {
       
       addPoints(stripModel);
       
+      JSONObject artnetConfigData = stripData.getJSONObject("artnet");
       
-      
+      if(artnetConfigData != null){
+        ArtnetConfig artnetConfig = new ArtnetConfig(
+          artnetConfigData.getInt("universe", 0), 
+          artnetConfigData.getInt("address", 1), 
+          artnetConfigData.getString("ip", "127.0.0.1"), 
+          stripModel
+        );
+        artnetConfigList.add(artnetConfig);
+      }
     }
   }
 }

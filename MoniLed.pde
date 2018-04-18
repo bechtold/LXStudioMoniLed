@@ -35,7 +35,20 @@ void setup() {
 }
 
 void initialize(heronarts.lx.studio.LXStudio lx, heronarts.lx.studio.LXStudio.UI ui) {
-  // Add custom components or output drivers here
+ 
+  try {
+    LXDatagramOutput output = new LXDatagramOutput(lx);
+
+    for(ArtnetConfig config : JSONStripModel.artnetConfigList){ //<>//
+      ArtNetDatagram datagram = new ArtNetDatagram(config.model, config.universe);
+      datagram.setAddress(config.ip);
+      output.addDatagram(datagram);    
+    }
+    lx.addOutput(output);
+  } catch (Exception x) {
+    x.printStackTrace();
+  }
+  
 }
 
 void onUIReady(heronarts.lx.studio.LXStudio lx, heronarts.lx.studio.LXStudio.UI ui) {
