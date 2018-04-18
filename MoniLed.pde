@@ -25,6 +25,7 @@
 heronarts.lx.studio.LXStudio lx;
 
 void setup() {
+  
   // Processing setup, constructs the window and the LX instance
   size(800, 720, P3D);
   
@@ -37,20 +38,28 @@ void setup() {
 void initialize(heronarts.lx.studio.LXStudio lx, heronarts.lx.studio.LXStudio.UI ui) {
  
   try {
-    LXDatagramOutput output = new LXDatagramOutput(lx);
+    LXDatagramOutput output = new LXDatagramOutput(lx); //<>//
 
-    for(ArtnetConfig config : JSONStripModel.artnetConfigList){ //<>//
-      ArtNetDatagram datagram = new ArtNetDatagram(config.model, config.universe);
-      datagram.setAddress(config.ip);
-      output.addDatagram(datagram);    
+    for(String ip : ArtnetConfig.storage.keySet()){
+      println(ip);
+      for(int universe : ArtnetConfig.storage.get(ip).keySet()){
+        println(universe);
+        ArtNetDatagram datagram = new ArtNetDatagram(ArtnetConfig.storage.get(ip).get(universe).indices, universe);
+        datagram.setAddress(ip);
+        output.addDatagram(datagram);    
+
+      }
+    //  ArtNetDatagram datagram = new ArtNetDatagram(config.model, config.universe);
+    //  datagram.setAddress(config.ip);
     }
+    
     lx.addOutput(output);
   } catch (Exception x) {
     x.printStackTrace();
   }
   
 }
-
+ //<>//
 void onUIReady(heronarts.lx.studio.LXStudio lx, heronarts.lx.studio.LXStudio.UI ui) {
   // Add custom UI components here
 }

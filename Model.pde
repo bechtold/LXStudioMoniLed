@@ -1,27 +1,44 @@
-LXModel buildModel(JSONObject stripData) { //<>//
+LXModel buildModel(JSONObject stripData) {
   // A three-dimensional grid model
   return new JSONStripModel(stripData);
 }
 
+public static class UniverseConfig {
+    public int[] indices = new int[170];
+
+    public UniverseConfig(){}
+    
+    public UniverseConfig(LXModel model, int address){
+      this.addModel(model, address);
+    }
+    
+    public void addModel(LXModel model, int address){
+      for(int i = 0; i < model.points.length; i++){
+        LXPoint point = model.points[i];
+        indices[i+address] = point.index;
+      }
+    } 
+  }
+
 public static class ArtnetConfig{
-  
-  int universe;
-  int address;
-  String ip;
-  LXModel model;
-  
-  public ArtnetConfig(int universe, int address, String ip, LXModel model ){
-    this.universe = universe;
-    this.address = address;
-    this.ip = ip;
-    this.model = model;
+ 
+  public static HashMap<String, HashMap<Integer, UniverseConfig>> storage = new HashMap<String, HashMap<Integer, UniverseConfig>>();
+
+  public void addModel(LXModel model, String ip, int universe, int address){
+    HashMap<Integer, UniverseConfig> ipConfig = storage.get(ip);
+    if(ipConfig == null) ipConfig = new HashMap<Integer, UniverseConfig>();
+    UniverseConfig universeConfig = ipConfig.get(universe);
+    if(universeConfig == null) universeConfig = new UniverseConfig();
+    universeConfig.addModel(model, address);
+    ipConfig.put(universe, universeConfig);
+    storage.put(ip, ipConfig);
   }
   
 }
 
 public static class JSONStripModel extends LXModel {
   
-  public static ArrayList<ArtnetConfig> artnetConfigList = new ArrayList<ArtnetConfig>();
+  public static ArtnetConfig artnetConfig = new ArtnetConfig();
   
   public JSONStripModel(JSONObject stripData) {
     super(new Fixture(stripData));
@@ -91,13 +108,13 @@ public static class JSONStripModel extends LXModel {
       JSONObject artnetConfigData = stripData.getJSONObject("artnet");
       
       if(artnetConfigData != null){
-        ArtnetConfig artnetConfig = new ArtnetConfig(
-          artnetConfigData.getInt("universe", 0), 
-          artnetConfigData.getInt("address", 1), 
+        
+        artnetConfig.addModel(
+          stripModel, 
           artnetConfigData.getString("ip", "127.0.0.1"), 
-          stripModel
-        );
-        artnetConfigList.add(artnetConfig);
+          artnetConfigData.getInt("universe", 0), 
+          artnetConfigData.getInt("address", 1));
+
       }
     }
   }
