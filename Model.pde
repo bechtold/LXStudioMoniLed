@@ -22,9 +22,7 @@ public static class GridModel3D extends LXModel {
     }
     
     private void addElement(JSONObject elementData, int offSetX, int offSetY, int offSetZ){
-      String name = elementData.getString("name", "anonymous");
-      String nname = name;
-      
+
       int posX = elementData.getInt("x", 0) + offSetX;
       int posY = elementData.getInt("y", 0) + offSetY;
       int posZ = elementData.getInt("z", 0) + offSetZ;
@@ -73,6 +71,8 @@ public static class GridModel3D extends LXModel {
       StripModel stripModel = new StripModel(stripMetrics);
       
       addPoints(stripModel);
+      
+      
       
     }
   }
