@@ -1,274 +1,425 @@
 {
 	"elements": [
 		{
-			"name": "M",
+			"name": "Ring Bottom",
 			"x":0,
 			"y":0,
 			"strips": [
 				{
-					"leds"    : 60,
+          "name"    : "1",
+					"leds"    : 90,
 					"artnet"	: {"universe": 0, "address": 0},
-					"start"	  : { "x": 0,	   "y": 0    },
-					"end"     : { "x": 0,    "y": 2000 }
+					"start"	  : { "x": 11313,	  "y": 4576 },
+					"end"     : { "x": 9889,    "y": 2111 }
 				},
 				{
-					"leds"    : 15,
-					"artnet"	: {"universe": 0, "address": 60},
-					"start"   : { "x": 0,    "y": 2000 },
-					"end"     : { "x": 500,  "y": 2000 }
+          "name"    : "2",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 9889,	  "y": 2111    },
+					"end"     : { "x": 7424,    "y": 687 }
 				},
 				{
-					"leds"	: 20,
-					"artnet"	: {"universe": 0, "address": 75},
-					"start"	: { "x": 500,	 "y": 2000 },
-					"end"		: { "x": 1000, "y": 1500 }
+          "name"    : "3",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 7424,	  "y": 687    },
+					"end"     : { "x": 4576,     "y": 687 }
 				},
 				{
-					"leds"	: 20,
-					"artnet"	: {"universe": 0, "address": 95},
-					"start"	: { "x": 1000, "y": 1500 },
-					"end"		: { "x": 1500, "y": 2000 }
+          "name"    : "4",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 4576,	   "y": 687    },
+					"end"     : { "x": 2111,    "y": 2111 }
 				},
 				{
-					"leds"	: 15,
-					"artnet"	: {"universe": 0, "address": 115},
-					"start"	: { "x": 1500, "y": 2000 },
-					"end"		: { "x": 2000, "y": 2000 }
+          "name"    : "5",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 2111,	   "y": 2111    },
+					"end"     : { "x": 687,    "y": 4576 }
 				},
 				{
-					"leds"	: 60,
-					"artnet"	: {"universe": 1, "address": 0},
-					"start"	: { "x": 2000, "y": 2000 },
-					"end"		: { "x": 2000, "y": 0    }
+          "name"    : "6",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 687,	   "y": 4576    },
+					"end"     : { "x": 687,    "y": 7424 }
 				},
 				{
-					"leds"	: 15,
-					"artnet"	: {"universe": 1, "address": 60},
-					"start"	: { "x": 2000, "y": 0    },
-					"end"		: { "x": 1500, "y": 0    }
+          "name"    : "7",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 687,	   "y": 7424    },
+					"end"     : { "x": 2111,    "y": 9889 }
 				},
 				{
-					"leds"	: 40,
-					"artnet"	: {"universe": 1, "address": 75},
-					"start"	: { "x": 1500, "y": 0    },
-					"end"		: { "x": 1500, "y": 1350 }
+          "name"    : "8",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 2111,	   "y": 9889    },
+					"end"     : { "x": 4576,    "y": 11313 }
 				},
 				{
-					"leds"	: 20,
-					"artnet"	: {"universe": 1, "address": 115},
-					"start"	: { "x": 1500, "y": 1350 },
-					"end"		: { "x": 1000, "y": 850  }
+          "name"    : "9",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 4576,	   "y": 11313    },
+					"end"     : { "x": 7424,    "y": 11313 }
 				},
 				{
-					"leds"	: 20,
-					"artnet"	: {"universe": 1, "address": 135},
-					"start"	: { "x": 1000, "y": 850  },
-					"end"		: { "x": 500,  "y": 1350 }
+          "name"    : "10",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 7424,	   "y": 11313    },
+					"end"     : { "x": 9889,    "y": 9889 }
 				},
 				{
-					"leds"	: 40,
-					"artnet"	: {"universe": 2, "address": 0},
-					"start"	: { "x": 500,  "y": 1350 },
-					"end"		: { "x": 500,  "y": 0    }
+          "name"    : "11",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 9889,	   "y": 9889    },
+					"end"     : { "x": 11313,    "y": 7424 }
 				},
 				{
-					"leds"	: 15,
-					"artnet"	: {"universe": 2, "address": 40},
-					"start"	: { "x": 500,  "y": 0    },
-					"end"		: { "x": 0,    "y": 0    }
-				}
-			]
-		},{
-			"name": "O",
-			"x":2500,
-			"y":0,
-			"strips": [
-				{
-					"leds"  : 30,
-					"start"	: { "x": 0,	 "y": 500    },
-					"end"		: { "x": 0,    "y": 1500 }
+          "name"    : "12",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 11313,	   "y": 7424    },
+					"end"     : { "x": 11313,    "y": 4576 }
 				},
-				{
-					"leds"  : 30,
-					"start"	: { "x": 0,    "y": 1500 },
-					"end"		: { "x": 1000,  "y": 2000 }
-				},
-				{
-					"leds"	: 30,
-					"start"	: { "x": 1000, "y": 2000 },
-					"end"		: { "x": 2000, "y": 1500 }
-				},
-				{
-					"leds"	: 30,
-					"start"	: { "x": 2000, "y": 1500 },
-					"end"		: { "x": 2000, "y": 500 }
-				},
-				{
-					"leds"	: 30,
-					"start"	: { "x": 2000, "y": 500 },
-					"end"		: { "x": 1000, "y": 0 }
-				},
-				{
-					"leds"	: 30,
-					"start"	: { "x": 1000, "y": 0 },
-					"end"		: { "x": 0, "y": 500    }
-				},
-				{
-					"leds"  : 15,
-					"start"	: { "x": 500,	 "y": 750    },
-					"end"		: { "x": 500,    "y": 1250 }
-				},
-				{
-					"leds"  : 15,
-					"start"	: { "x": 500,    "y": 1250 },
-					"end"		: { "x": 1000,  "y": 1500 }
-				},
-				{
-					"leds"	: 15,
-					"start"	: { "x": 1000, "y": 1500 },
-					"end"		: { "x": 1500, "y": 1250 }
-				},
-				{
-					"leds"	: 15,
-					"start"	: { "x": 1500, "y": 1250 },
-					"end"		: { "x": 1500, "y": 750 }
-				},
-				{
-					"leds"	: 15,
-					"start"	: { "x": 1500, "y": 750 },
-					"end"		: { "x": 1000, "y": 500 }
-				},
-				{
-					"leds"	: 15,
-					"start"	: { "x": 1000, "y": 500 },
-					"end"		: { "x": 500, "y": 750    }
-				}
 			]
 		},
 		{
-			"name": "N",
-			"x":5000,
+			"name": "Ring Top",
+			"x":0,
 			"y":0,
 			"strips": [
 				{
-					"leds"  : 60,
-					"start"	: { "x": 0,	 "y": 0    },
-					"end"		: { "x": 0,    "y": 2000 }
+          "name"    : "3",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 11196,	  "y": 3000, "z": 3000 },
+					"end"     : { "x": 9000,    "y": 804, "z": 3000 }
 				},
 				{
-					"leds"  : 15,
-					"start"	: { "x": 0,    "y": 2000 },
-					"end"		: { "x": 500,  "y": 2000 }
+          "name"    : "14",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 9000,	  "y": 804, "z": 3000    },
+					"end"     : { "x": 6000,    "y": 0, "z": 3000 }
 				},
 				{
-					"leds"	: 45,
-					"start"	: { "x": 500, "y": 2000 },
-					"end"		: { "x": 1500, "y": 750 }
+          "name"    : "15",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 6000,	  "y": 0, "z": 3000    },
+					"end"     : { "x": 3000,     "y": 804, "z": 3000 }
 				},
 				{
-					"leds"	: 35,
-					"start"	: { "x": 1500, "y": 750 },
-					"end"		: { "x": 1500, "y": 2000 }
+          "name"    : "16",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 3000,	   "y": 804, "z": 3000    },
+					"end"     : { "x": 804,    "y": 3000, "z": 3000 }
 				},
 				{
-					"leds"	: 15,
-					"start"	: { "x": 1500, "y": 2000 },
-					"end"		: { "x": 2000, "y": 2000 }
+          "name"    : "17",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 804,	   "y": 3000, "z": 3000    },
+					"end"     : { "x": 0,    "y": 6000, "z": 3000 }
 				},
 				{
-					"leds"	: 60,
-					"start"	: { "x": 2000, "y": 2000 },
-					"end"		: { "x": 2000, "y": 0    }
+          "name"    : "18",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 0,	   "y": 6000, "z": 3000    },
+					"end"     : { "x": 804,    "y": 9000, "z": 3000 }
 				},
 				{
-					"leds"  : 15,
-					"start"	: { "x": 2000,	 "y": 0  },
-					"end"		: { "x": 1500,    "y": 0 }
+          "name"    : "19",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 804,	   "y": 9000, "z": 3000    },
+					"end"     : { "x": 3000,    "y": 11196, "z": 3000 }
 				},
 				{
-					"leds"  : 45,
-					"start"	: { "x": 1500,    "y": 0 },
-					"end"		: { "x": 500,  "y": 1250 }
+          "name"    : "20",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 3000,	   "y": 11196, "z": 3000    },
+					"end"     : { "x": 6000,    "y": 12000, "z": 3000 }
 				},
 				{
-					"leds"	: 35,
-					"start"	: { "x": 500, "y": 1250 },
-					"end"		: { "x": 500, "y": 0 }
+          "name"    : "21",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 6000,	   "y": 12000, "z": 3000    },
+					"end"     : { "x": 9000,    "y": 11196, "z": 3000 }
 				},
 				{
-					"leds"	: 15,
-					"start"	: { "x": 500, "y": 0 },
-					"end"		: { "x": 0, "y": 0 }
-				}
+          "name"    : "22",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 9000,	   "y": 11196, "z": 3000    },
+					"end"     : { "x": 11196,    "y": 9000, "z": 3000 }
+				},
+				{
+          "name"    : "23",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 11196,	   "y": 9000, "z": 3000    },
+					"end"     : { "x": 12000,    "y": 6000, "z": 3000 }
+				},
+				{
+          "name"    : "24",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 12000,	   "y": 6000, "z": 3000    },
+					"end"     : { "x": 11196,    "y": 3000, "z": 3000 }
+				},
 			]
 		},
-		{
-			"name": "I",
-			"x":7500,
+    {
+			"name": "Triangles",
+			"x":0,
 			"y":0,
 			"strips": [
 				{
-					"leds"  : 60,
-					"start"	: { "x": 0,	 "y": 0    },
-					"end"		: { "x": 0,    "y": 2000 }
+          "name"    : "1start-13end",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 11196,	   "y": 3000, "z": 3000    },
+					"end"     : { "x": 9889,    "y": 2111, "z": 0 }
 				},
 				{
-					"leds"  : 15,
-					"start"	: { "x": 0,    "y": 2000 },
-					"end"		: { "x": 500,  "y": 2000 }
+          "name"    : "1end-13end",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 9000,	   "y": 804, "z": 3000    },
+					"end"     : { "x": 9889,    "y": 2111, "z": 0 }
 				},
-				{
-					"leds"	: 60,
-					"start"	: { "x": 500, "y": 2000 },
-					"end"		: { "x": 500, "y": 0 }
-				},
-				{
-					"leds"	: 15,
-					"start"	: { "x": 500, "y": 0 },
-					"end"		: { "x": 0, "y": 0 }
-				}
-			]
-		}
-	]
-}
 
-{
-	"name": "N",
-	"x":5000,
-	"y":0,
-	"strips": [
+      				{
+          "name"    : "2start-14end",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 9000,	   "y": 804, "z": 3000    },
+					"end"     : { "x": 7424,    "y": 687, "z": 0 }
+				},
+				{
+          "name"    : "2end-14end",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 6000,	   "y": 0, "z": 3000    },
+					"end"     : { "x": 7424,    "y": 687, "z": 0 }
+				},
+
+      				{
+          "name"    : "3start-15end",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 6000,	   "y": 0, "z": 3000    },
+					"end"     : { "x": 4576,    "y": 687, "z": 0 }
+				},
+				{
+          "name"    : "3end-15end",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 3000,	   "y": 804, "z": 3000    },
+					"end"     : { "x": 4576,    "y": 687, "z": 0 }
+				},
+
+      				{
+          "name"    : "4start-16end",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 3000,	   "y": 804, "z": 3000    },
+					"end"     : { "x": 2111,    "y": 2111, "z": 0 }
+				},
+				{
+          "name"    : "4end-16end",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 804,	   "y": 3000, "z": 3000    },
+					"end"     : { "x": 2111,    "y": 2111, "z": 0 }
+				},
+
+      				{
+          "name"    : "5start-17end",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 804,	   "y": 3000, "z": 3000    },
+					"end"     : { "x": 687,    "y": 4576, "z": 0 }
+				},
+				{
+          "name"    : "5end-17end",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 0,	   "y": 6000, "z": 3000    },
+					"end"     : { "x": 687,    "y": 4576, "z": 0 }
+				},
+
+      				{
+          "name"    : "6start-18end",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 0,	   "y": 6000, "z": 3000    },
+					"end"     : { "x": 687,    "y": 7424, "z": 0 }
+				},
+				{
+          "name"    : "6end-18end",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 804,	   "y": 9000, "z": 3000    },
+					"end"     : { "x": 687,    "y": 7424, "z": 0 }
+				},
+
+      				{
+          "name"    : "7start-19end",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 804,	   "y": 9000, "z": 3000    },
+					"end"     : { "x": 2111,    "y": 9889, "z": 0 }
+				},
+				{
+          "name"    : "7end-19end",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 3000,	   "y": 11196, "z": 3000    },
+					"end"     : { "x": 2111,    "y": 9889, "z": 0 }
+				},
+
+      				{
+          "name"    : "8start-20end",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 3000,	   "y": 11196, "z": 3000    },
+					"end"     : { "x": 4576,    "y": 11313, "z": 0 }
+				},
+				{
+          "name"    : "8end-20end",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 6000,	   "y": 12000, "z": 3000    },
+					"end"     : { "x": 4576,    "y": 11313, "z": 0 }
+				},
+
+
+        {
+          "name"    : "9start-21end",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 6000,	   "y": 12000, "z": 3000    },
+					"end"     : { "x": 7424,    "y": 11313, "z": 0 }
+				},
+				{
+          "name"    : "9end-21end",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 9000,	   "y": 11196, "z": 3000    },
+					"end"     : { "x": 7424,    "y": 11313, "z": 0 }
+				},
+
+      				{
+          "name"    : "10start-22end",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 9000,	   "y": 11196, "z": 3000    },
+					"end"     : { "x": 9889,    "y": 9889, "z": 0 }
+				},
+				{
+          "name"    : "10end-22end",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 11196,	   "y": 9000, "z": 3000    },
+					"end"     : { "x": 9889,    "y": 9889, "z": 0 }
+				},
+
+
+        {
+          "name"    : "11start-23end",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 11196,	   "y": 9000, "z": 3000    },
+					"end"     : { "x": 11313,    "y": 7424, "z": 0 }
+				},
+				{
+          "name"    : "11end-23end",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 12000,	   "y": 6000, "z": 3000    },
+					"end"     : { "x": 11313,    "y": 7424, "z": 0 }
+				},
+
+      
+        {
+          "name"    : "12start-24end",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 12000,	   "y": 6000, "z": 3000    },
+					"end"     : { "x": 11313,    "y": 4576, "z": 0 }
+				},
+				{
+          "name"    : "12end-24end",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 11196,	   "y": 3000, "z": 3000    },
+					"end"     : { "x": 11313,    "y": 4576, "z": 0 }
+				},
+      ]
+    },
 		{
-			"leds"  : 60,
-			"start"	: { "x": 0,	 "y": 0    },
-			"end"		: { "x": 0,    "y": 2000 }
-		},
-		{
-			"leds"  : 15,
-			"start"	: { "x": 0,    "y": 2000 },
-			"end"		: { "x": 500,  "y": 2000 }
-		},
-		{
-			"leds"	: 30,
-			"start"	: { "x": 500, "y": 2000 },
-			"end"		: { "x": 1500, "y": 350 }
-		},
-		{
-			"leds"	: 30,
-			"start"	: { "x": 1500, "y": 350 },
-			"end"		: { "x": 1500, "y": 2000 }
-		},
-		{
-			"leds"	: 30,
-			"start"	: { "x": 1500, "y": 2000 },
-			"end"		: { "x": 2000, "y": 2000 }
-		},
-		{
-			"leds"	: 30,
-			"start"	: { "x": 2000, "y": 2000 },
-			"end"		: { "x": 2000, "y": 0    }
-		},
-		{
-			"leds"  : 15,
-			"start"	: { "x": 2000,	 "y": 0    },
-			"end"		: { "x": 1500,    "y": 0 }
-		},
+			"name": "Tower top to bottom",
+			"x":0,
+			"y":0,
+			"strips": [
+				{
+          "name"    : "25start-31start",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 7150,	   "y": 6000, "z": 3000    },
+					"end"     : { "x": 7510,    "y": 6000, "z": 0 }
+				},
+				{
+          "name"    : "26start-32start",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 6575,	   "y": 5004, "z": 3000    },
+					"end"     : { "x": 6755,    "y": 4692, "z": 0 }
+				},
+				{
+          "name"    : "27start-33start",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 5425,	   "y": 5004, "z": 3000    },
+					"end"     : { "x": 5245,    "y": 4692, "z": 0 }
+				},
+				{
+          "name"    : "28start-34start",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 4850,	   "y": 6000, "z": 3000    },
+					"end"     : { "x": 4490,    "y": 6000, "z": 0 }
+				},
+				{
+          "name"    : "29start-35start",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 5425,	   "y": 6996, "z": 3000    },
+					"end"     : { "x": 5245,    "y": 7308, "z": 0 }
+				},
+				{
+          "name"    : "30start-36start",
+					"leds"    : 90,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 6575,	   "y": 6996, "z": 3000    },
+					"end"     : { "x": 6755,    "y": 7308, "z": 0 }
+				},
+      ]
+    }
+
+  ]
+}
