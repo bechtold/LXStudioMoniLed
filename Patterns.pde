@@ -165,6 +165,58 @@ public class OzRandom extends OLFPAPattern {
   }
 }
 
+/**
+ * Animate strips
+ * TODO: strips are not yet accessible
+ **/
+public class OzStrips extends OLFPAPattern {
+  public String getAuthor(){
+    return "Oskar Bechtold";
+  }
+  
+  long lastMillis = 0;
+  int lastIndex = 0;
+
+  public final CompoundParameter speed =
+    new CompoundParameter("Speed", .5, .01, 1)
+    .setDescription("Speed of motion");
+
+  public final BooleanParameter clear =
+    new BooleanParameter("Clear", false)
+    .setDescription("Should LEDs be cleared at all");
+
+  public OzStrips(LX lx) {
+    super(lx);
+    addParameter("speed", this.speed);
+    addParameter("clear", this.clear);
+  }
+  
+  public void run(double deltaMs) {
+    long currentMillis = java.lang.System.currentTimeMillis();
+    if(currentMillis - lastMillis > 1000*this.speed.getValue()) {
+      if(this.clear.isOn()) {
+        // clear all
+        setColors(#000000);
+      }
+      
+      int currentIndex = lastIndex + 1;
+      println(model.fixtures.get(0));
+      if(currentIndex >= model.fixtures.size()) {
+        currentIndex = 0;
+      }
+
+      //for(LXFixture fix : model.fixtures) {
+        println();
+        setColor(model.fixtures.get(currentIndex), #ff0000);
+      //}
+      
+      
+      lastMillis = currentMillis;
+      lastIndex = currentIndex;
+    }
+  }
+}
+
 //public class PatternTumbler extends LXPattern {
 //  public String getAuthor() {
 //    return "Mark C. Slee";
