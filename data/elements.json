@@ -15,7 +15,7 @@
 				{
           "name"    : "2",
 					"leds"    : 90,
-					"artnet"	: {"universe": 0, "address": 0},
+					"artnet"	: {ip:"127.0.0.2", "universe": 0, "address": 0},
 					"start"	  : { "x": 9889,	  "y": 2111    },
 					"end"     : { "x": 7424,    "y": 687 }
 				},

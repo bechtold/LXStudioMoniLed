@@ -1,4 +1,4 @@
-LXModel buildModel(JSONObject stripData) {
+LXModel buildModel(JSONObject stripData) { //<>//
   // A three-dimensional grid model
   return new JSONStripModel(stripData);
 }
@@ -32,6 +32,8 @@ public static class ArtnetConfig{
     universeConfig.addModel(model, address);
     ipConfig.put(universe, universeConfig);
     storage.put(ip, ipConfig);
+    //System.out.println(storage);
+//    System.out.println(storage.get("127.0.0.1"));
   }
   
 }

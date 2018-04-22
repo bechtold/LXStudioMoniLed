@@ -39,11 +39,11 @@ void initialize(heronarts.lx.studio.LXStudio lx, heronarts.lx.studio.LXStudio.UI
  
   try {
     LXDatagramOutput output = new LXDatagramOutput(lx); //<>//
-
+ //<>//
     for(String ip : ArtnetConfig.storage.keySet()){
-      println(ip);
+      //println(ip);
       for(int universe : ArtnetConfig.storage.get(ip).keySet()){
-        println(universe);
+        //println(universe);
         ArtNetDatagram datagram = new ArtNetDatagram(ArtnetConfig.storage.get(ip).get(universe).indices, universe);
         datagram.setAddress(ip);
         output.addDatagram(datagram);    
