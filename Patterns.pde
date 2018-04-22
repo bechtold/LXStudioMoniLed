@@ -206,7 +206,7 @@ public class OzStrips extends OLFPAPattern {
       }
 
       //for(LXFixture fix : model.fixtures) {
-        println();
+        //println();
         setColor(model.fixtures.get(currentIndex), #ff0000);
       //}
       

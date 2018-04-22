@@ -29,7 +29,7 @@ void setup() {
   // Processing setup, constructs the window and the LX instance
   size(800, 720, P3D);
   
-  JSONObject stripData = this.loadJSONObject("elements.json");
+  JSONObject stripData = this.loadJSONObject("two_strip_matrix.json");
   
   lx = new heronarts.lx.studio.LXStudio(this, buildModel(stripData), MULTITHREADED);
   lx.ui.setResizable(RESIZABLE);
