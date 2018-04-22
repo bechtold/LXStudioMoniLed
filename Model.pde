@@ -78,7 +78,7 @@ public static class JSONModel extends LXModel {
       for (int i = 0; i < elementsData.size(); i++) {
         JSONObject elementData = elementsData.getJSONObject(i);
         JSONElement element = new JSONElement(elementData, offSetX, offSetY, offSetZ);
-        addPoints((JSONElement.Fixture)element.fixtures.get(0));
+        addPoints(element);
         elements.add(element);
       }
     }
@@ -131,7 +131,7 @@ public static class JSONElement extends LXModel {
         JSONObject stripData = stipsData.getJSONObject(i);
         //println(stripData);
         JSONStrip strip = new JSONStrip(stripData, offSetX, offSetY, offSetZ);
-        addPoints((JSONStrip.Fixture)strip.fixtures.get(0)); // TODO find out how to add directly
+        addPoints(strip);
         strips.add(strip);
       }
     }
@@ -189,7 +189,6 @@ public static class JSONStrip extends LXModel {
       stripMetrics.setSpacing(spacingX, spacingY, spacingZ);
       
       stripModel = new StripModel(stripMetrics);
-      //println("addPoints strip");
       addPoints(stripModel);
       
       // TODO Check ArtNetConfig
