@@ -1,6 +1,6 @@
 {
   "version": "0.1",
-  "timestamp": 1524425921287,
+  "timestamp": 1524429106688,
   "engine": {
     "id": 1,
     "class": "heronarts.lx.LXEngine",
@@ -15,7 +15,7 @@
       "crossfader": 0.5344827566295862,
       "crossfaderBlendMode": 0,
       "speed": 1.0,
-      "focusedChannel": 0,
+      "focusedChannel": 4,
       "cueA": false,
       "cueB": false,
       "multithreaded": true,
@@ -46,10 +46,10 @@
         "parameters": {
           "label": "Background",
           "arm": false,
-          "selected": true,
+          "selected": false,
           "enabled": true,
-          "cue": true,
-          "fader": 1.0,
+          "cue": false,
+          "fader": 0.35714284982532263,
           "crossfadeGroup": 0,
           "blendMode": 0,
           "midiMonitor": false,
@@ -63,7 +63,7 @@
         },
         "effects": [],
         "clips": [],
-        "patternIndex": 5,
+        "patternIndex": 0,
         "patterns": [
           {
             "id": 137,
@@ -154,7 +154,8 @@
             "parameters": {
               "label": "OzStrips",
               "speed": 0.5,
-              "clear": false
+              "clear": true,
+              "element": 0.0
             },
             "modulation": {
               "modulators": [],
@@ -240,7 +241,7 @@
           "selected": false,
           "enabled": true,
           "cue": false,
-          "fader": 0.0,
+          "fader": 1.0,
           "crossfadeGroup": 0,
           "blendMode": 1,
           "midiMonitor": false,
@@ -297,6 +298,66 @@
           }
         ],
         "group": 139
+      },
+      {
+        "id": 395,
+        "class": "heronarts.lx.LXChannel",
+        "modulationColor": -5963521,
+        "parameters": {
+          "label": "Channel-5",
+          "arm": false,
+          "selected": true,
+          "enabled": true,
+          "cue": false,
+          "fader": 1.0,
+          "crossfadeGroup": 0,
+          "blendMode": 0,
+          "midiMonitor": false,
+          "midiChannel": 16,
+          "autoCycleEnabled": false,
+          "autoCycleMode": 0,
+          "autoCycleTimeSecs": 60.0,
+          "transitionEnabled": false,
+          "transitionTimeSecs": 5.0,
+          "transitionBlendMode": 0
+        },
+        "effects": [],
+        "clips": [],
+        "patternIndex": 1,
+        "patterns": [
+          {
+            "id": 392,
+            "class": "heronarts.lx.pattern.IteratorPattern",
+            "modulationColor": -47872,
+            "parameters": {
+              "label": "Iterator",
+              "speed": 10.0
+            },
+            "modulation": {
+              "modulators": [],
+              "modulations": [],
+              "triggers": []
+            },
+            "autoCycleEnabled": false
+          },
+          {
+            "id": 396,
+            "class": "MoniLed$OzStrips",
+            "modulationColor": -16731393,
+            "parameters": {
+              "label": "OzStrips",
+              "speed": 0.2723000050380826,
+              "clear": true,
+              "element": 2.579999942332506
+            },
+            "modulation": {
+              "modulators": [],
+              "modulations": [],
+              "triggers": []
+            },
+            "autoCycleEnabled": true
+          }
+        ]
       }
     ],
     "master": {
@@ -352,19 +413,19 @@
           "slope": 1.200000073760748,
           "Band-1": 0.0,
           "Band-2": 0.0,
-          "Band-3": 0.0060945361939573894,
-          "Band-4": 0.03876371856399452,
-          "Band-5": 0.005612798687316123,
+          "Band-3": 0.0,
+          "Band-4": 0.0,
+          "Band-5": 0.0,
           "Band-6": 0.0,
           "Band-7": 0.0,
-          "Band-8": 0.07265865502763491,
-          "Band-9": 0.2117127962148886,
-          "Band-10": 0.13170068683689695,
-          "Band-11": 0.14125596829308262,
-          "Band-12": 0.17397760891618308,
-          "Band-13": 0.07466325938025109,
-          "Band-14": 0.2122448680034853,
-          "Band-15": 0.2061946254815039,
+          "Band-8": 0.0,
+          "Band-9": 0.0,
+          "Band-10": 0.0,
+          "Band-11": 0.0,
+          "Band-12": 0.0,
+          "Band-13": 0.0,
+          "Band-14": 0.0,
+          "Band-15": 0.0,
           "Band-16": 0.0
         }
       },
@@ -427,7 +488,7 @@
             "phase": 0.0,
             "exp": 0.0
           },
-          "basis": 0.36747252747126563
+          "basis": 0.4482417582404512
         },
         {
           "id": 195,
@@ -450,7 +511,7 @@
             "phase": 0.0,
             "exp": 0.0
           },
-          "basis": 0.5052073387011337
+          "basis": 0.1018500363470803
         },
         {
           "id": 252,
@@ -558,12 +619,12 @@
         "centerPoint": false,
         "camera": {
           "active": true,
-          "radius": 11534.363732675267,
-          "theta": 12.537000000000008,
-          "phi": 0.03528332614898655,
-          "x": 6015.014169812202,
-          "y": 5737.5,
-          "z": 986.6964596360922
+          "radius": 11163.581459629677,
+          "theta": 15.69900000000009,
+          "phi": -1.0837166738510131,
+          "x": 6034.0555738806725,
+          "y": 5496.5,
+          "z": 989.2736851936206
         },
         "cue": [
           {
@@ -577,9 +638,9 @@
           },
           {
             "active": true,
-            "radius": 11491.363732675267,
-            "theta": 15.67800000000005,
-            "phi": -0.8707166738510141,
+            "radius": 11163.581459629677,
+            "theta": 15.69900000000009,
+            "phi": -1.0837166738510131,
             "x": 6034.0555738806725,
             "y": 5496.5,
             "z": 989.2736851936206
@@ -621,7 +682,7 @@
             "z": 0.0
           }
         ],
-        "focus": 0,
+        "focus": 1,
         "pointCloud": {
           "pointSize": 3.0
         }

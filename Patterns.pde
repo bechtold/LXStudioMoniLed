@@ -177,6 +177,12 @@ public class OzStrips extends OLFPAPattern {
   long lastMillis = 0;
   int lastIndex = 0;
 
+  JSONModel.Fixture model_fixture = (JSONModel.Fixture)model.fixtures.get(0);
+
+  public final CompoundParameter element_selector =
+    new CompoundParameter("Element", 0, 0, model_fixture.elements.size() - 1)
+    .setDescription("Select the affected Element");
+  
   public final CompoundParameter speed =
     new CompoundParameter("Speed", .5, .01, 1)
     .setDescription("Speed of motion");
@@ -189,7 +195,8 @@ public class OzStrips extends OLFPAPattern {
     super(lx);
     addParameter("speed", this.speed);
     addParameter("clear", this.clear);
-  }
+    addParameter("element", this.element_selector);
+}
   
   public void run(double deltaMs) {
     long currentMillis = java.lang.System.currentTimeMillis();
@@ -200,15 +207,14 @@ public class OzStrips extends OLFPAPattern {
       }
       
       int currentIndex = lastIndex;
-      JSONModel.Fixture mofix = (JSONModel.Fixture)model.fixtures.get(0);
       //println(mofix.elements.size());
-      JSONElement.Fixture elfix = (JSONElement.Fixture)mofix.elements.get(1).fixtures.get(0);
+      JSONElement.Fixture element_fixture = (JSONElement.Fixture)model_fixture.elements.get((int)this.element_selector.getValue()).fixtures.get(0);
       //println(elfix.strips.size());
-      if(currentIndex >= elfix.strips.size()) {
+      if(currentIndex >= element_fixture.strips.size()) {
         currentIndex = 0;
       }
 
-      setColor(elfix.strips.get(currentIndex), #ff0000);
+      setColor(element_fixture.strips.get(currentIndex), #ff0000);
       
       
       lastMillis = currentMillis;
@@ -216,27 +222,3 @@ public class OzStrips extends OLFPAPattern {
     }
   }
 }
-
-//public class PatternTumbler extends LXPattern {
-//  public String getAuthor() {
-//    return "Mark C. Slee";
-//  }
-  
-//  private LXModulator azimuthRotation = startModulator(new SawLFO(0, 1, 15000).randomBasis());
-//  private LXModulator thetaRotation = startModulator(new SawLFO(0, 1, 13000).randomBasis());
-  
-//  public PatternTumbler(LX lx) {
-//    super(lx);
-//  }
-    
-//  public void run(double deltaMs) {
-//    float azimuthRotation = this.azimuthRotation.getValuef();
-//    float thetaRotation = this.thetaRotation.getValuef();
-//    for (Leaf leaf : model.leaves) {
-//      float tri1 = LXUtils.trif(azimuthRotation + leaf.point.azimuth / PI);
-//      float tri2 = LXUtils.trif(thetaRotation + (PI + leaf.point.theta) / PI);
-//      float tri = max(tri1, tri2);
-//      setColor(leaf, LXColor.gray(100 * tri * tri));
-//    }
-//  }
-//}
