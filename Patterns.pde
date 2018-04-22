@@ -1,10 +1,10 @@
 public abstract class OLFPAPattern extends LXPattern {
   
-  protected final JSONStripModel model;
+  protected final JSONElement model;
   
   public OLFPAPattern(LX lx) {
     super(lx);
-    this.model = (JSONStripModel) lx.model;
+    this.model = (JSONElement) lx.model;
   }
   
   public abstract String getAuthor();

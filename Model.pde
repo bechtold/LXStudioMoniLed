@@ -2,7 +2,7 @@ import java.util.List; //<>//
 
 LXModel buildModel(JSONObject stripData) {
   // A three-dimensional grid model
-  return new JSONStripModel(stripData);
+  return new JSONModel(stripData);
 }
 
 public static class UniverseConfig {
@@ -40,51 +40,142 @@ public static class ArtnetConfig{
   
 }
 
-public static class JSONStripModel extends LXModel {
+
+/**
+ * JSONModel
+ */
+public static class JSONModel extends LXModel {
+  public String name;
   
-  public static ArtnetConfig artnetConfig = new ArtnetConfig();
-  
-  public JSONStripModel(JSONObject stripData) {
-    super(new Fixture(stripData));
+  public JSONModel(JSONObject modelData) {
+    super(new Fixture(modelData));
+    this.name = modelData.getString("name", "");
   }
   
   public static class Fixture extends LXAbstractFixture {
-    private final List<StripModel> strips = new ArrayList<StripModel>();
+    private final List<JSONElement> elements = new ArrayList<JSONElement>();
 
-    Fixture(JSONObject stripData) {
-      addElement(stripData);   
+    Fixture(JSONObject modelData) {
+      addElements(modelData, 0, 0, 0); 
     }
     
-    private void addElement(JSONObject subElement){
-      addElement(subElement, 0, 0, 0); 
+    /**
+     * Extract elements from JSONArray then add them 
+     */
+    private void addElements(JSONObject modelData, int offSetX, int offSetY, int offSetZ){
+      int posX = modelData.getInt("x", 0) + offSetX;
+      int posY = modelData.getInt("y", 0) + offSetY;
+      int posZ = modelData.getInt("z", 0) + offSetZ;
+      
+      JSONArray elementsData = modelData.getJSONArray("elements");
+      if(elementsData != null) addElements(elementsData, posX, posY, posZ);
+    }
+    
+    /**
+     * Add elements from JSONArray including offset 
+     */
+    private void addElements(JSONArray elementsData, int offSetX, int offSetY, int offSetZ){
+      for (int i = 0; i < elementsData.size(); i++) {
+        JSONObject elementData = elementsData.getJSONObject(i);
+        JSONElement element = new JSONElement(elementData, offSetX, offSetY, offSetZ);
+        elements.add(element);
+      }
+
+      addPoints(elements);
+    }
+    
+    /**
+     * Add Points, somehow they need to be extracted from encapsuled fixtures
+     * TODO find out how to bypass this
+     */
+    private void addPoints(List<JSONElement> elements) {
+      for(JSONElement element : elements) {
+        JSONElement.Fixture elfix = (JSONElement.Fixture)element.fixtures.get(0);
+        for(JSONStrip strip : elfix.strips) {
+          JSONStrip.Fixture stfix = (JSONStrip.Fixture)strip.fixtures.get(0);
+          addPoints(stfix.stripModel);
+        }
+      }
+    }
+    
+  }
+}
+
+/**
+ * JSONElement  
+ */
+public static class JSONElement extends LXModel {
+  public String name;
+  
+  public JSONElement(JSONObject elementData) {
+    super(new Fixture(elementData));
+    this.name = elementData.getString("name", "");
+  }
+  public JSONElement(JSONObject elementData, int offSetX, int offSetY, int offSetZ) {
+    super(new Fixture(elementData, offSetX, offSetY, offSetZ));
+    this.name = elementData.getString("name", "");
+  }
+  
+  public static class Fixture extends LXAbstractFixture {
+    private final List<JSONStrip> strips = new ArrayList<JSONStrip>();
+
+    Fixture(JSONObject elementData) {
+      addElement(elementData, 0, 0, 0); 
+    }
+    Fixture(JSONObject elementData, int offSetX, int offSetY, int offSetZ) {
+      addElement(elementData, offSetX, offSetY, offSetZ); 
     }
     
     private void addElement(JSONObject elementData, int offSetX, int offSetY, int offSetZ){
-
       int posX = elementData.getInt("x", 0) + offSetX;
       int posY = elementData.getInt("y", 0) + offSetY;
       int posZ = elementData.getInt("z", 0) + offSetZ;
       
-      JSONArray subElements = elementData.getJSONArray("elements");
-      if(subElements != null) addElements(subElements, posX, posY, posZ);
       JSONArray stripsData = elementData.getJSONArray("strips");
       if(stripsData != null) addStrips(stripsData, posX, posY, posZ);
-      
-    }
-    
-    private void addElements(JSONArray elementsData, int offSetX, int offSetY, int offSetZ){
-      for (int i = 0; i < elementsData.size(); i++) {
-        JSONObject subElement = elementsData.getJSONObject(i);
-        addElement(subElement, offSetX, offSetY, offSetZ);
-      }
     }
     
     private void addStrips(JSONArray stipsData, int offSetX, int offSetY, int offSetZ){
       for (int i = 0; i < stipsData.size(); i++) {
         JSONObject stripData = stipsData.getJSONObject(i);
-        addStrip(stripData, offSetX, offSetY, offSetZ);
+        //println(stripData);
+        JSONStrip strip = new JSONStrip(stripData, offSetX, offSetY, offSetZ);
+        //addPoints(((JSONStrip.Fixture)strip.fixtures.get(0)).stripModel); // TODO find out how to add directly
+        strips.add(strip);
       }
     }
+  }
+}
+
+
+
+/**
+ * JSONStrip
+ */
+public static class JSONStrip extends LXModel {
+  public static ArtnetConfig artnetConfig = new ArtnetConfig();
+  public String name;
+
+  public JSONStrip(JSONObject stripData) {
+    super(new Fixture(stripData));
+    this.name = stripData.getString("name", "");
+  }
+
+  public JSONStrip(JSONObject stripData, int offSetX, int offSetY, int offSetZ) {
+    super(new Fixture(stripData, offSetX, offSetY, offSetZ));
+    this.name = stripData.getString("name", "");
+  }
+
+  public static class Fixture extends LXAbstractFixture {
+    private StripModel stripModel = null;
+
+    Fixture(JSONObject stripData) {
+      addStrip(stripData, 0, 0, 0); 
+    }    
+
+    Fixture(JSONObject stripData, int offSetX, int offSetY, int offSetZ) {
+      addStrip(stripData, offSetX, offSetY, offSetZ); 
+    }    
     
     private void addStrip(JSONObject stripData, int offSetX, int offSetY, int offSetZ){
       
@@ -106,22 +197,20 @@ public static class JSONStripModel extends LXModel {
       stripMetrics.setOrigin(posX, posY, posZ);
       stripMetrics.setSpacing(spacingX, spacingY, spacingZ);
       
-      StripModel stripModel = new StripModel(stripMetrics);
+      stripModel = new StripModel(stripMetrics);
+      //println(stripModel);
+      //addPoints(stripModel); // TODO: find out how to add. Currently outer fixtures need to get models from here
+      //println(getPoints().size());
       
-      strips.add(stripModel);
-      addPoints(stripModel);
+      //JSONObject artnetConfigData = stripData.getJSONObject("artnet");
       
-      JSONObject artnetConfigData = stripData.getJSONObject("artnet");
-      
-      if(artnetConfigData != null){
-        
-        artnetConfig.addModel(
-          stripModel, 
-          artnetConfigData.getString("ip", "127.0.0.1"), 
-          artnetConfigData.getInt("universe", 0), 
-          artnetConfigData.getInt("address", 1));
-
-      }
+      //if(artnetConfigData != null){
+      //  artnetConfig.addModel(
+      //    stripModel, 
+      //    artnetConfigData.getString("ip", "127.0.0.1"), 
+      //    artnetConfigData.getInt("universe", 0), 
+      //    artnetConfigData.getInt("address", 1));
+      //}
     }
   }
 }

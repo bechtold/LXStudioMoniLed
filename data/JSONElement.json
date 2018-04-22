@@ -1,0 +1,42 @@
+{
+  "name": "left",
+  "x":0,
+  "y":0,
+  "strips": [
+    {
+      "name": "1",
+      "leds"    : 150,
+      "artnet"	: {"universe": 0, "address": 0},
+      "start"	  : { "x": 0,	   "y": 0    },
+      "end"     : { "x": 0,    "y": 5000 }
+    },
+    {
+      "name": "2",
+      "leds"    : 150,
+      "artnet"	: {"universe": 0, "address": 0},
+      "start"	  : { "x": 300,	   "y": 0    },
+      "end"     : { "x": 300,    "y": 5000 }
+    },
+    {
+      "name": "3",
+      "leds"    : 150,
+      "artnet"	: {"universe": 0, "address": 0},
+      "start"	  : { "x": 600,	   "y": 0    },
+      "end"     : { "x": 600,    "y": 5000 }
+    },
+    {
+      "name": "4",
+      "leds"    : 150,
+      "artnet"	: {"universe": 0, "address": 0},
+      "start"	  : { "x": 900,	   "y": 0    },
+      "end"     : { "x": 900,    "y": 5000 }
+    },
+    {
+      "name": "5",
+      "leds"    : 150,
+      "artnet"	: {"universe": 0, "address": 0},
+      "start"	  : { "x": 1200,	   "y": 0    },
+      "end"     : { "x": 1200,    "y": 5000 }
+    },
+  ]
+}

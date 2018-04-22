@@ -1,6 +1,6 @@
 {
   "version": "0.1",
-  "timestamp": 1524415969780,
+  "timestamp": 1524419976675,
   "engine": {
     "id": 1,
     "class": "heronarts.lx.LXEngine",
@@ -63,7 +63,7 @@
         },
         "effects": [],
         "clips": [],
-        "patternIndex": 5,
+        "patternIndex": 0,
         "patterns": [
           {
             "id": 137,
@@ -96,72 +96,6 @@
               "triggers": []
             },
             "autoCycleEnabled": false
-          },
-          {
-            "id": 316,
-            "class": "MoniLed$Ozterator",
-            "modulationColor": -65495,
-            "parameters": {
-              "label": "Ozterator",
-              "clear": true,
-              "speed": 0.0010000000474974513
-            },
-            "modulation": {
-              "modulators": [],
-              "modulations": [],
-              "triggers": []
-            },
-            "autoCycleEnabled": true
-          },
-          {
-            "id": 350,
-            "class": "MoniLed$OzSlider",
-            "modulationColor": -6488320,
-            "parameters": {
-              "label": "OzSlider",
-              "Index": 967
-            },
-            "modulation": {
-              "modulators": [],
-              "modulations": [],
-              "triggers": []
-            },
-            "autoCycleEnabled": true
-          },
-          {
-            "id": 386,
-            "class": "MoniLed$OzRandom",
-            "modulationColor": -4718337,
-            "parameters": {
-              "label": "OzRandom",
-              "speed": 0.7722999829098582,
-              "clear": true,
-              "flash": false,
-              "amount": 38.7499992698431,
-              "hue": 140.4000049084425
-            },
-            "modulation": {
-              "modulators": [],
-              "modulations": [],
-              "triggers": []
-            },
-            "autoCycleEnabled": true
-          },
-          {
-            "id": 424,
-            "class": "MoniLed$OzStrips",
-            "modulationColor": -16711810,
-            "parameters": {
-              "label": "OzStrips",
-              "speed": 0.361400003066659,
-              "clear": true
-            },
-            "modulation": {
-              "modulators": [],
-              "modulations": [],
-              "triggers": []
-            },
-            "autoCycleEnabled": true
           }
         ]
       },
@@ -294,23 +228,6 @@
               "triggers": []
             },
             "autoCycleEnabled": true
-          },
-          {
-            "id": 250,
-            "class": "MoniLed$PatternSolid",
-            "modulationColor": -65306,
-            "parameters": {
-              "label": "PatternSolid",
-              "h": 248.40000249445438,
-              "s": 100.0,
-              "b": 100.0
-            },
-            "modulation": {
-              "modulators": [],
-              "modulations": [],
-              "triggers": []
-            },
-            "autoCycleEnabled": true
           }
         ],
         "group": 139
@@ -374,14 +291,14 @@
           "Band-5": 0.0,
           "Band-6": 0.0,
           "Band-7": 0.0,
-          "Band-8": 0.13673542814125283,
-          "Band-9": 0.3058883720073037,
-          "Band-10": 0.27134087018012876,
-          "Band-11": 0.33209204425949634,
-          "Band-12": 0.36130090601739806,
-          "Band-13": 0.13622403807770012,
-          "Band-14": 0.33310176938290015,
-          "Band-15": 0.1574131819113157,
+          "Band-8": 0.14533018462587155,
+          "Band-9": 0.12904417622409847,
+          "Band-10": 0.03644222468138436,
+          "Band-11": 0.12364527037518658,
+          "Band-12": 0.20218129148526465,
+          "Band-13": 0.11013699137345834,
+          "Band-14": 0.3102304417312881,
+          "Band-15": 0.05865461792548243,
           "Band-16": 0.0
         }
       },
@@ -444,7 +361,7 @@
             "phase": 0.0,
             "exp": 0.0
           },
-          "basis": 0.3614285714273827
+          "basis": 0.34703296703177583
         },
         {
           "id": 195,
@@ -467,7 +384,7 @@
             "phase": 0.0,
             "exp": 0.0
           },
-          "basis": 0.6234832157693406
+          "basis": 0.9548912589773125
         },
         {
           "id": 252,
@@ -488,7 +405,7 @@
             "minFreq": 120.0,
             "maxFreq": 6600.2373046875,
             "gate": false,
-            "average": 0.13345317316505012,
+            "average": 0.0,
             "tap": false
           }
         }

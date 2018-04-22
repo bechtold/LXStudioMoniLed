@@ -1,0 +1,36 @@
+{
+  "name": "Model",
+  "x":0,
+  "y":0,
+	"elements": [
+    {
+      "name": "left element",
+      "x":0,
+      "y":0,
+      "strips": [
+        {
+          "name": "first strip in left element",
+          "leds"    : 150,
+          "artnet"	: {"universe": 0, "address": 0},
+          "start"	  : { "x": 0,	   "y": 0    },
+          "end"     : { "x": 0,    "y": 5000 }
+        },
+      ]
+    },
+    {
+      "name": "right element",
+      "x":0,
+      "y":0,
+      "strips": [
+        {
+          "name": "first strip in right element",
+          "leds"    : 150,
+          "artnet"	: {"universe": 0, "address": 0},
+          "start"	  : { "x": 500,	   "y": 0    },
+          "end"     : { "x": 500,    "y": 5000 }
+        },
+      ]
+    },
+
+  ]
+}
