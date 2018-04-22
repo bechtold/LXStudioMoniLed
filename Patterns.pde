@@ -199,9 +199,11 @@ public class OzStrips extends OLFPAPattern {
         setColors(#000000);
       }
       
-      int currentIndex = lastIndex + 1;
+      int currentIndex = lastIndex;
       JSONModel.Fixture mofix = (JSONModel.Fixture)model.fixtures.get(0);
+      //println(mofix.elements.size());
       JSONElement.Fixture elfix = (JSONElement.Fixture)mofix.elements.get(1).fixtures.get(0);
+      //println(elfix.strips.size());
       if(currentIndex >= elfix.strips.size()) {
         currentIndex = 0;
       }
@@ -210,7 +212,7 @@ public class OzStrips extends OLFPAPattern {
       
       
       lastMillis = currentMillis;
-      lastIndex = currentIndex;
+      lastIndex = currentIndex + 1;
     }
   }
 }
