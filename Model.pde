@@ -202,6 +202,7 @@ public static class JSONStrip extends LXModel {
       //addPoints(stripModel); // TODO: find out how to add. Currently outer fixtures need to get models from here
       //println(getPoints().size());
       
+      // TODO Check ArtNetConfig
       //JSONObject artnetConfigData = stripData.getJSONObject("artnet");
       
       //if(artnetConfigData != null){

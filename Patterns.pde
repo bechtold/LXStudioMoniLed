@@ -1,10 +1,10 @@
 public abstract class OLFPAPattern extends LXPattern {
   
-  protected final JSONElement model;
+  protected final JSONModel model;
   
   public OLFPAPattern(LX lx) {
     super(lx);
-    this.model = (JSONElement) lx.model;
+    this.model = (JSONModel) lx.model;
   }
   
   public abstract String getAuthor();
@@ -200,12 +200,13 @@ public class OzStrips extends OLFPAPattern {
       }
       
       int currentIndex = lastIndex + 1;
-      JSONStripModel.Fixture fix = (JSONStripModel.Fixture)model.fixtures.get(0); 
-      if(currentIndex >= fix.strips.size()) {
+      JSONModel.Fixture mofix = (JSONModel.Fixture)model.fixtures.get(0);
+      JSONElement.Fixture elfix = (JSONElement.Fixture)mofix.elements.get(1).fixtures.get(0);
+      if(currentIndex >= elfix.strips.size()) {
         currentIndex = 0;
       }
 
-      setColor(fix.strips.get(currentIndex), #ff0000);
+      setColor(elfix.strips.get(currentIndex), #ff0000);
       
       
       lastMillis = currentMillis;

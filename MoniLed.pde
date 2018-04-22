@@ -32,8 +32,8 @@ void setup() {
   //JSONObject stripData = this.loadJSONObject("elements.json");
   //JSONObject stripData = this.loadJSONObject("JSONStrip.json");
   //JSONObject stripData = this.loadJSONObject("JSONElement.json");
-  JSONObject stripData = this.loadJSONObject("JSONModel.json");
-  //JSONObject stripData = this.loadJSONObject("two_strip_matrix.json");
+  //JSONObject stripData = this.loadJSONObject("JSONModel.json");
+  JSONObject stripData = this.loadJSONObject("two_strip_matrix.json");
   //JSONObject stripData = this.loadJSONObject("hammock_reactor.json");
 
   lx = new heronarts.lx.studio.LXStudio(this, buildModel(stripData), MULTITHREADED);

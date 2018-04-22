@@ -1,6 +1,6 @@
 {
   "version": "0.1",
-  "timestamp": 1524419976675,
+  "timestamp": 1524424018059,
   "engine": {
     "id": 1,
     "class": "heronarts.lx.LXEngine",
@@ -48,7 +48,7 @@
           "arm": false,
           "selected": true,
           "enabled": true,
-          "cue": false,
+          "cue": true,
           "fader": 1.0,
           "crossfadeGroup": 0,
           "blendMode": 0,
@@ -63,7 +63,7 @@
         },
         "effects": [],
         "clips": [],
-        "patternIndex": 0,
+        "patternIndex": 5,
         "patterns": [
           {
             "id": 137,
@@ -96,6 +96,72 @@
               "triggers": []
             },
             "autoCycleEnabled": false
+          },
+          {
+            "id": 314,
+            "class": "MoniLed$OzRandom",
+            "modulationColor": -16765185,
+            "parameters": {
+              "label": "OzRandom",
+              "speed": 0.08919999802410603,
+              "clear": true,
+              "flash": false,
+              "amount": 26.989999441429973,
+              "hue": 0.0
+            },
+            "modulation": {
+              "modulators": [],
+              "modulations": [],
+              "triggers": []
+            },
+            "autoCycleEnabled": true
+          },
+          {
+            "id": 316,
+            "class": "MoniLed$OzSlider",
+            "modulationColor": -65433,
+            "parameters": {
+              "label": "OzSlider",
+              "Index": 0
+            },
+            "modulation": {
+              "modulators": [],
+              "modulations": [],
+              "triggers": []
+            },
+            "autoCycleEnabled": true
+          },
+          {
+            "id": 318,
+            "class": "MoniLed$Ozterator",
+            "modulationColor": -9568512,
+            "parameters": {
+              "label": "Ozterator",
+              "clear": true,
+              "speed": 0.0010000000474974513
+            },
+            "modulation": {
+              "modulators": [],
+              "modulations": [],
+              "triggers": []
+            },
+            "autoCycleEnabled": true
+          },
+          {
+            "id": 354,
+            "class": "MoniLed$OzStrips",
+            "modulationColor": -16711922,
+            "parameters": {
+              "label": "OzStrips",
+              "speed": 0.5,
+              "clear": false
+            },
+            "modulation": {
+              "modulators": [],
+              "modulations": [],
+              "triggers": []
+            },
+            "autoCycleEnabled": true
           }
         ]
       },
@@ -291,14 +357,14 @@
           "Band-5": 0.0,
           "Band-6": 0.0,
           "Band-7": 0.0,
-          "Band-8": 0.14533018462587155,
-          "Band-9": 0.12904417622409847,
-          "Band-10": 0.03644222468138436,
-          "Band-11": 0.12364527037518658,
-          "Band-12": 0.20218129148526465,
-          "Band-13": 0.11013699137345834,
-          "Band-14": 0.3102304417312881,
-          "Band-15": 0.05865461792548243,
+          "Band-8": 0.10448758099765476,
+          "Band-9": 0.23712058603371522,
+          "Band-10": 0.05639387517518679,
+          "Band-11": 0.11733168392651105,
+          "Band-12": 0.09644214301811382,
+          "Band-13": 0.05926569431818096,
+          "Band-14": 0.1393224876013175,
+          "Band-15": 0.0,
           "Band-16": 0.0
         }
       },
@@ -361,7 +427,7 @@
             "phase": 0.0,
             "exp": 0.0
           },
-          "basis": 0.34703296703177583
+          "basis": 0.9265934065921484
         },
         {
           "id": 195,
@@ -384,7 +450,7 @@
             "phase": 0.0,
             "exp": 0.0
           },
-          "basis": 0.9548912589773125
+          "basis": 0.09686501931849113
         },
         {
           "id": 252,
@@ -493,8 +559,8 @@
         "camera": {
           "active": true,
           "radius": 11534.363732675267,
-          "theta": 12.531000000000008,
-          "phi": 0.10728332614898672,
+          "theta": 12.537000000000008,
+          "phi": 0.03528332614898655,
           "x": 6015.014169812202,
           "y": 5737.5,
           "z": 986.6964596360922
@@ -503,33 +569,33 @@
           {
             "active": true,
             "radius": 11534.363732675267,
-            "theta": 12.531000000000008,
-            "phi": 0.10728332614898672,
+            "theta": 12.537000000000008,
+            "phi": 0.035283326148986584,
             "x": 6015.014169812202,
             "y": 5737.5,
             "z": 986.6964596360922
           },
           {
             "active": true,
-            "radius": 11534.363732675267,
-            "theta": 15.705000000000036,
-            "phi": -1.0567166738510176,
-            "x": 6015.014169812202,
-            "y": 5737.5,
-            "z": 986.6964596360922
+            "radius": 11491.363732675267,
+            "theta": 15.67800000000005,
+            "phi": -0.8707166738510141,
+            "x": 6034.0555738806725,
+            "y": 5496.5,
+            "z": 989.2736851936206
           },
           {
             "active": true,
             "radius": 12783.247336699655,
-            "theta": 15.657000000000034,
-            "phi": -0.1267166738510177,
+            "theta": 15.687000000000035,
+            "phi": 0.011283326148982375,
             "x": 6015.014169812202,
             "y": 5737.5,
             "z": 986.6964596360922
           },
           {
             "active": true,
-            "radius": 23541.80955643597,
+            "radius": 21985.949688243745,
             "theta": 15.669000000000034,
             "phi": -1.1527166738510162,
             "x": 6015.014169812202,
