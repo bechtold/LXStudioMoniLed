@@ -70,10 +70,7 @@ public class Ozterator extends OLFPAPattern {
         currentIndex = 0;
       }
       
-      //println(index);
-      //int r = 25 * (int) (deltaMs % 10);
       int r = 255;
-      //colors[lastIndex] = LXColor.rgb(0, 0, 0);
       colors[currentIndex] = LXColor.rgb(r, 0, 0);
 
       lastMillis = currentMillis;
@@ -115,9 +112,9 @@ public class OzRandom extends OLFPAPattern {
 
   long lastMillis = 0;
 
-  //public final CompoundParameter speed =
-  //  new CompoundParameter("Speed", .5, .01, 1)
-  //  .setDescription("Speed of motion");
+  public final CompoundParameter speed =
+    new CompoundParameter("Speed", .5, .01, 1)
+    .setDescription("Speed of motion");
 
   public final BooleanParameter clear =
     new BooleanParameter("Clear", false)
@@ -131,12 +128,16 @@ public class OzRandom extends OLFPAPattern {
     new CompoundParameter("Amount", 2, 1, 50)
     .setDescription("Amount of random pixels spawned");
     
+  public final CompoundParameter h = new CompoundParameter("Hue", 0, 360);
+
+    
   public OzRandom(LX lx) {
     super(lx);
-    //addParameter("speed", this.speed);
+    addParameter("speed", this.speed);
     addParameter("clear", this.clear);
     addParameter("flash", this.flash);
-    addParameter("amoun", this.amount);
+    addParameter("amount", this.amount);
+    addParameter("hue", this.h);
   }
   
   public void run (double deltaMs) {
@@ -147,7 +148,7 @@ public class OzRandom extends OLFPAPattern {
 
     long currentMillis = java.lang.System.currentTimeMillis();
     
-    if(currentMillis - lastMillis > 1000) {
+    if(currentMillis - lastMillis > 1000*this.speed.getValue()) {
       if(this.clear.isOn()) {
         // clear all
         setColors(#000000);
@@ -156,7 +157,7 @@ public class OzRandom extends OLFPAPattern {
       for (int i = 0; i < this.amount.getValue(); i++) {
         // random number,   could use "import java.util.concurrent.ThreadLocalRandom;"
         int index = java.util.concurrent.ThreadLocalRandom.current().nextInt(0, model.points.length);
-        setColor(index, #ffffff);
+        setColor(index, LXColor.hsb(this.h.getValue(), 100, 100));
       }
       
       lastMillis = currentMillis;
