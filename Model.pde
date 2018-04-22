@@ -191,16 +191,16 @@ public static class JSONStrip extends LXModel {
       stripModel = new StripModel(stripMetrics);
       addPoints(stripModel);
       
-      // TODO Check ArtNetConfig
-      //JSONObject artnetConfigData = stripData.getJSONObject("artnet");
+       //TODO Check ArtNetConfig
+      JSONObject artnetConfigData = stripData.getJSONObject("artnet");
+      if(artnetConfigData != null){
+        artnetConfig.addModel(
+          stripModel, 
+          artnetConfigData.getString("ip", "127.0.0.1"), 
+          artnetConfigData.getInt("universe", 0), 
+          artnetConfigData.getInt("address", 1));
+      }
       
-      //if(artnetConfigData != null){
-      //  artnetConfig.addModel(
-      //    stripModel, 
-      //    artnetConfigData.getString("ip", "127.0.0.1"), 
-      //    artnetConfigData.getInt("universe", 0), 
-      //    artnetConfigData.getInt("address", 1));
-      //}
     }
   }
 }
