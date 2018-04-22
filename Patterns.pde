@@ -200,15 +200,12 @@ public class OzStrips extends OLFPAPattern {
       }
       
       int currentIndex = lastIndex + 1;
-      println(model.fixtures.get(0));
-      if(currentIndex >= model.fixtures.size()) {
+      JSONStripModel.Fixture fix = (JSONStripModel.Fixture)model.fixtures.get(0); 
+      if(currentIndex >= fix.strips.size()) {
         currentIndex = 0;
       }
 
-      //for(LXFixture fix : model.fixtures) {
-        //println();
-        setColor(model.fixtures.get(currentIndex), #ff0000);
-      //}
+      setColor(fix.strips.get(currentIndex), #ff0000);
       
       
       lastMillis = currentMillis;

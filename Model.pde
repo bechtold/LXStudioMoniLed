@@ -1,4 +1,6 @@
-LXModel buildModel(JSONObject stripData) { //<>//
+import java.util.List; //<>//
+
+LXModel buildModel(JSONObject stripData) {
   // A three-dimensional grid model
   return new JSONStripModel(stripData);
 }
@@ -47,7 +49,8 @@ public static class JSONStripModel extends LXModel {
   }
   
   public static class Fixture extends LXAbstractFixture {
-    
+    private final List<StripModel> strips = new ArrayList<StripModel>();
+
     Fixture(JSONObject stripData) {
       addElement(stripData);   
     }
@@ -105,6 +108,7 @@ public static class JSONStripModel extends LXModel {
       
       StripModel stripModel = new StripModel(stripMetrics);
       
+      strips.add(stripModel);
       addPoints(stripModel);
       
       JSONObject artnetConfigData = stripData.getJSONObject("artnet");
