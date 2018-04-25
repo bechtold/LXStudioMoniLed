@@ -1,0 +1,27 @@
+{
+	"elements": [
+		{
+			"name": "Test",
+			"x":0,
+			"y":0,
+			"strips": [
+				{
+					"leds"    : 5,
+					"artnet"	: {"universe": 0, "offset": 0},
+					"start"	  : { "x": 0,	   "y": 0    },
+					"end"     : { "x": 2000,    "y": 2000 }
+				},{
+					"leds"    : 5,
+					"artnet"	: {"universe": 0, "offset": 5, "reverse": true},
+					"start"	  : { "x": 0,	   "y": 0    },
+					"end"     : { "x": -2000,    "y": 2000 }
+				},{
+					"leds"    : 5,
+					"artnet"	: {"universe": 0, "offset": 11},
+					"start"	  : { "x": 0,	   "y": 0    },
+					"end"     : { "x": 0,    "y": -2000 }
+				}
+			]
+		}
+	]
+}

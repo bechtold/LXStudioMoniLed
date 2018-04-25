@@ -5,42 +5,64 @@ LXModel buildModel(JSONObject stripData) {
   return new JSONModel(stripData);
 }
 
+/**
+ * Class to hold a single universe configuration data
+ */
 public static class UniverseConfig {
 
+  /**
+   * indices array to be given to the ArtNetDatagram constructor
+   */
   public int[] indices = new int[170];
 
+  /**
+   * @Constructor
+   * initializes indices array with -1 to not output anything by default;
+   */
   public UniverseConfig() {
     for (int i=0; i<170; i++) {
       indices[i] = -1;
     }
   }
 
-  public UniverseConfig(LXModel model, int address) {
-    this.addModel(model, address);
-  }
-
-  public void addModel(LXModel model, int address) {
-    for (int i = 0; i < model.points.length; i++) {
-      LXPoint point = model.points[i];
-      indices[i+address] = point.index;
-    }
+  /**
+   * Adds model to the universe configuration
+   */
+  public void addModel(LXModel model, int offset, boolean reverse) {
+      for (int i = 0; i < model.points.length; i++) {
+        LXPoint point;
+        if(reverse == true){
+          point = model.points[model.points.length - 1 - i];
+        } else {
+          point = model.points[i];
+        } 
+        indices[i+offset] = point.index;
+      }
   }
 }
 
+/**
+ * Class to hold ArtNet configuration data
+ */
 public static class ArtnetConfig {
 
+  /**
+   * Storage that holds the actual data
+   */
   public static HashMap<String, HashMap<Integer, UniverseConfig>> storage = new HashMap<String, HashMap<Integer, UniverseConfig>>();
 
-  public void addModel(LXModel model, String ip, int universe, int address) {
+  /**
+   * add LX-Model to the Artnet configuration
+   * 
+   */
+  public void addModel(LXModel model, String ip, int universe, boolean reverse, int offset) {
     HashMap<Integer, UniverseConfig> ipConfig = storage.get(ip);
     if (ipConfig == null) ipConfig = new HashMap<Integer, UniverseConfig>();
     UniverseConfig universeConfig = ipConfig.get(universe);
     if (universeConfig == null) universeConfig = new UniverseConfig();
-    universeConfig.addModel(model, address);
+    universeConfig.addModel(model, offset, reverse);
     ipConfig.put(universe, universeConfig);
     storage.put(ip, ipConfig);
-    //System.out.println(storage);
-    //    System.out.println(storage.get("127.0.0.1"));
   }
 }
 
@@ -201,8 +223,9 @@ public static class JSONStrip extends LXModel {
         artnetConfig.addModel(
           stripModel, 
           artnetConfigData.getString("ip", "127.0.0.1"), 
-          artnetConfigData.getInt("universe", 0), 
-          artnetConfigData.getInt("address", 1));
+          artnetConfigData.getInt("universe", 0),
+          artnetConfigData.getBoolean("reverse", false),
+          artnetConfigData.getInt("offset", 0));
       }
     }
   }
