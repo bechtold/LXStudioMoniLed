@@ -29,12 +29,13 @@ void setup() {
   // Processing setup, constructs the window and the LX instance
   size(800, 720, P3D);
   
+  JSONObject stripData = this.loadJSONObject("M.json");
   //JSONObject stripData = this.loadJSONObject("elements.json");
   //JSONObject stripData = this.loadJSONObject("JSONStrip.json");
   //JSONObject stripData = this.loadJSONObject("JSONElement.json");
   //JSONObject stripData = this.loadJSONObject("JSONModel.json");
   //JSONObject stripData = this.loadJSONObject("two_strip_matrix.json");
-  JSONObject stripData = this.loadJSONObject("hammock_reactor.json");
+  //JSONObject stripData = this.loadJSONObject("hammock_reactor.json");
 
   lx = new heronarts.lx.studio.LXStudio(this, buildModel(stripData), MULTITHREADED);
   lx.ui.setResizable(RESIZABLE);
@@ -42,26 +43,26 @@ void setup() {
  //<>//
 void initialize(heronarts.lx.studio.LXStudio lx, heronarts.lx.studio.LXStudio.UI ui) {
  
-  //try {
-  //  LXDatagramOutput output = new LXDatagramOutput(lx); //<>//
+  try {
+    LXDatagramOutput output = new LXDatagramOutput(lx); //<>//
 
-  //  for(String ip : ArtnetConfig.storage.keySet()){
-  //    //println(ip);
-  //    for(int universe : ArtnetConfig.storage.get(ip).keySet()){
-  //      //println(universe);
-  //      ArtNetDatagram datagram = new ArtNetDatagram(ArtnetConfig.storage.get(ip).get(universe).indices, universe);
-  //      datagram.setAddress(ip);
-  //      output.addDatagram(datagram);    
-
-  //    }
-  //  //  ArtNetDatagram datagram = new ArtNetDatagram(config.model, config.universe);
-  //  //  datagram.setAddress(config.ip);
-  //  }
+    for(String ip : ArtnetConfig.storage.keySet()){
+      //println(ip);
+      for(int universe : ArtnetConfig.storage.get(ip).keySet()){
+        //println(universe);
+        ArtNetDatagram datagram = new ArtNetDatagram(ArtnetConfig.storage.get(ip).get(universe).indices, universe);
+        datagram.setAddress(ip);
+        output.addDatagram(datagram);    
+        System.out.println(ArtnetConfig.storage.get(ip).get(universe).indices.toString());
+      }
+    //  ArtNetDatagram datagram = new ArtNetDatagram(config.model, config.universe);
+    //  datagram.setAddress(config.ip);
+    }
     
-  //  lx.addOutput(output);
-  //} catch (Exception x) {
-  //  x.printStackTrace();
-  //}
+    lx.addOutput(output);
+  } catch (Exception x) {
+    x.printStackTrace();
+  }
   
 }
  //<>//
