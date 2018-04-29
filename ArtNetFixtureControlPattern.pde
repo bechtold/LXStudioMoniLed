@@ -21,9 +21,7 @@ public class ArtNetControlPattern extends LXPattern {
         this.stripList.add(element_fixture.strips.get(j));
       }
     }
-    
-    System.out.println();
-    
+       
     this.artnet = new ArtNetClient();
     this.artnet.start();
    }
@@ -36,10 +34,11 @@ public class ArtNetControlPattern extends LXPattern {
      byte[] data = artnet.readDmxData(0, 0);
      for(int i = 0; i < this.stripList.size(); i++){
        int address = i*3;
-       int valueR = (data[address] & 0xFF);
-       int valueG = (data[address + 1] & 0xFF);
-       int valueB = (data[address + 1] & 0xFF);
-       setColor(this.stripList.get(i), color(valueR, valueG, valueB));
+       int r = (data[address] & 0xFF);
+       int g = (data[address + 1] & 0xFF);
+       int b = (data[address + 2] & 0xFF);
+       //int mode = (data[address + 3] & 0xFF);
+       setColor(this.stripList.get(i), LXColor.rgb(r, g, b));
      }
    }
   

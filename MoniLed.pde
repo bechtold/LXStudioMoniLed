@@ -1,4 +1,4 @@
-/** 
+/**  //<>//
  * By using LX Studio, you agree to the terms of the LX Studio Software
  * License and Distribution Agreement, available at: http://lx.studio/license
  *
@@ -29,8 +29,10 @@ void setup() {
   // Processing setup, constructs the window and the LX instance
   size(800, 720, P3D);
   
-  //JSONObject stripData = this.loadJSONObject("M.json");
-  JSONObject stripData = this.loadJSONObject("elements.json");
+  
+  JSONObject stripData = this.loadJSONObject("bassmassage2.json");
+  //JSONObject stripData = this.loadJSONObject("test.json");
+  //JSONObject stripData = this.loadJSONObject("test.json");
   //JSONObject stripData = this.loadJSONObject("JSONStrip.json");
   //JSONObject stripData = this.loadJSONObject("JSONElement.json");
   //JSONObject stripData = this.loadJSONObject("JSONModel.json");
@@ -39,18 +41,21 @@ void setup() {
 
   lx = new heronarts.lx.studio.LXStudio(this, buildModel(stripData), MULTITHREADED);
   lx.ui.setResizable(RESIZABLE);
+  
+  
 }
- //<>//
+
 void initialize(heronarts.lx.studio.LXStudio lx, heronarts.lx.studio.LXStudio.UI ui) {
   
   try {
-    LXDatagramOutput output = new LXDatagramOutput(lx); //<>//
+    LXDatagramOutput output = new LXDatagramOutput(lx);
     for(String ip : ArtnetConfig.storage.keySet()){
       for(int universe : ArtnetConfig.storage.get(ip).keySet()){
         ArtNetDatagram datagram = new ArtNetDatagram(ArtnetConfig.storage.get(ip).get(universe).indices, universe);
         datagram.setAddress(ip);
+        datagram.setByteOrder(LXDatagram.ByteOrder.GRB);
         output.addDatagram(datagram);    
-        System.out.println("############### " + universe + " #################");
+        //System.out.println("############### " + universe + " #################");
         //printArray(ArtnetConfig.storage.get(ip).get(universe).indices);
       }
     }
@@ -60,7 +65,7 @@ void initialize(heronarts.lx.studio.LXStudio lx, heronarts.lx.studio.LXStudio.UI
   }
   
 }
- //<>//
+
 void onUIReady(heronarts.lx.studio.LXStudio lx, heronarts.lx.studio.LXStudio.UI ui) {
   // Add custom UI components here
 }
