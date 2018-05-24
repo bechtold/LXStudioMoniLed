@@ -1,4 +1,8 @@
-/**  //<>//
+import ch.bildspur.artnet.*; //<>//
+import ch.bildspur.artnet.packets.*;
+import ch.bildspur.artnet.events.*;
+
+/** 
  * By using LX Studio, you agree to the terms of the LX Studio Software
  * License and Distribution Agreement, available at: http://lx.studio/license
  *
@@ -30,7 +34,7 @@ void setup() {
   size(800, 720, P3D);
   
   
-  JSONObject stripData = this.loadJSONObject("bassmassage2.json");
+  JSONObject stripData = this.loadJSONObject("mjut_atopie.json");
   //JSONObject stripData = this.loadJSONObject("test.json");
   //JSONObject stripData = this.loadJSONObject("test.json");
   //JSONObject stripData = this.loadJSONObject("JSONStrip.json");

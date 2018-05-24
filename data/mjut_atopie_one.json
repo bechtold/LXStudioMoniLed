@@ -1,0 +1,17 @@
+{
+	"elements": [
+		{
+			"name": "M",
+			"x":0,
+			"y":0,
+			"strips": [
+				{
+					"leds"    : 150,
+					"artnet"	: {"universe": 0, "offset": 0},
+					"start"	  : { "x": 0,	   "y": 0    },
+					"end"     : { "x": 0,    "y": 5000 }
+				}
+			]
+		}
+	]
+}

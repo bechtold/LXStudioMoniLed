@@ -1,0 +1,788 @@
+{
+	"elements": [{
+		"name": "Test",
+		"y": 0,
+		"x": 0,
+		"strips": [{
+			"leds": 5,
+			"reverse": true,
+			"artnet": {
+				"universe": 0,
+				"offset": 145
+			},
+			"start": {
+				"x": -6000
+			},
+			"end": {
+				"x": -5800
+			}
+		}, {
+			"leds": 5,
+			"reverse": true,
+			"artnet": {
+				"universe": 0,
+				"offset": 140
+			},
+			"start": {
+				"x": -5800
+			},
+			"end": {
+				"x": -5600
+			}
+		}, {
+			"leds": 5,
+			"reverse": true,
+			"artnet": {
+				"universe": 0,
+				"offset": 135
+			},
+			"start": {
+				"x": -5600
+			},
+			"end": {
+				"x": -5400
+			}
+		}, {
+			"leds": 5,
+			"reverse": true,
+			"artnet": {
+				"universe": 0,
+				"offset": 130
+			},
+			"start": {
+				"x": -5400
+			},
+			"end": {
+				"x": -5200
+			}
+		}, {
+			"leds": 5,
+			"reverse": true,
+			"artnet": {
+				"universe": 0,
+				"offset": 125
+			},
+			"start": {
+				"x": -5200
+			},
+			"end": {
+				"x": -5000
+			}
+		}, {
+			"leds": 5,
+			"reverse": true,
+			"artnet": {
+				"universe": 0,
+				"offset": 120
+			},
+			"start": {
+				"x": -5000
+			},
+			"end": {
+				"x": -4800
+			}
+		}, {
+			"leds": 5,
+			"reverse": true,
+			"artnet": {
+				"universe": 0,
+				"offset": 115
+			},
+			"start": {
+				"x": -4800
+			},
+			"end": {
+				"x": -4600
+			}
+		}, {
+			"leds": 5,
+			"reverse": true,
+			"artnet": {
+				"universe": 0,
+				"offset": 110
+			},
+			"start": {
+				"x": -4600
+			},
+			"end": {
+				"x": -4400
+			}
+		}, {
+			"leds": 5,
+			"reverse": true,
+			"artnet": {
+				"universe": 0,
+				"offset": 105
+			},
+			"start": {
+				"x": -4400
+			},
+			"end": {
+				"x": -4200
+			}
+		}, {
+			"leds": 5,
+			"reverse": true,
+			"artnet": {
+				"universe": 0,
+				"offset": 100
+			},
+			"start": {
+				"x": -4200
+			},
+			"end": {
+				"x": -4000
+			}
+		}, {
+			"leds": 5,
+			"reverse": true,
+			"artnet": {
+				"universe": 0,
+				"offset": 95
+			},
+			"start": {
+				"x": -4000
+			},
+			"end": {
+				"x": -3800
+			}
+		}, {
+			"leds": 5,
+			"reverse": true,
+			"artnet": {
+				"universe": 0,
+				"offset": 90
+			},
+			"start": {
+				"x": -3800
+			},
+			"end": {
+				"x": -3600
+			}
+		}, {
+			"leds": 5,
+			"reverse": true,
+			"artnet": {
+				"universe": 0,
+				"offset": 85
+			},
+			"start": {
+				"x": -3600
+			},
+			"end": {
+				"x": -3400
+			}
+		}, {
+			"leds": 5,
+			"reverse": true,
+			"artnet": {
+				"universe": 0,
+				"offset": 80
+			},
+			"start": {
+				"x": -3400
+			},
+			"end": {
+				"x": -3200
+			}
+		}, {
+			"leds": 5,
+			"reverse": true,
+			"artnet": {
+				"universe": 0,
+				"offset": 75
+			},
+			"start": {
+				"x": -3200
+			},
+			"end": {
+				"x": -3000
+			}
+		}, {
+			"leds": 5,
+			"reverse": true,
+			"artnet": {
+				"universe": 0,
+				"offset": 70
+			},
+			"start": {
+				"x": -3000
+			},
+			"end": {
+				"x": -2800
+			}
+		}, {
+			"leds": 5,
+			"reverse": true,
+			"artnet": {
+				"universe": 0,
+				"offset": 65
+			},
+			"start": {
+				"x": -2800
+			},
+			"end": {
+				"x": -2600
+			}
+		}, {
+			"leds": 5,
+			"reverse": true,
+			"artnet": {
+				"universe": 0,
+				"offset": 60
+			},
+			"start": {
+				"x": -2600
+			},
+			"end": {
+				"x": -2400
+			}
+		}, {
+			"leds": 5,
+			"reverse": true,
+			"artnet": {
+				"universe": 0,
+				"offset": 55
+			},
+			"start": {
+				"x": -2400
+			},
+			"end": {
+				"x": -2200
+			}
+		}, {
+			"leds": 5,
+			"reverse": true,
+			"artnet": {
+				"universe": 0,
+				"offset": 50
+			},
+			"start": {
+				"x": -2200
+			},
+			"end": {
+				"x": -2000
+			}
+		}, {
+			"leds": 5,
+			"reverse": true,
+			"artnet": {
+				"universe": 0,
+				"offset": 45
+			},
+			"start": {
+				"x": -2000
+			},
+			"end": {
+				"x": -1800
+			}
+		}, {
+			"leds": 5,
+			"reverse": true,
+			"artnet": {
+				"universe": 0,
+				"offset": 40
+			},
+			"start": {
+				"x": -1800
+			},
+			"end": {
+				"x": -1600
+			}
+		}, {
+			"leds": 5,
+			"reverse": true,
+			"artnet": {
+				"universe": 0,
+				"offset": 35
+			},
+			"start": {
+				"x": -1600
+			},
+			"end": {
+				"x": -1400
+			}
+		}, {
+			"leds": 5,
+			"reverse": true,
+			"artnet": {
+				"universe": 0,
+				"offset": 30
+			},
+			"start": {
+				"x": -1400
+			},
+			"end": {
+				"x": -1200
+			}
+		}, {
+			"leds": 5,
+			"reverse": true,
+			"artnet": {
+				"universe": 0,
+				"offset": 25
+			},
+			"start": {
+				"x": -1200
+			},
+			"end": {
+				"x": -1000
+			}
+		}, {
+			"leds": 5,
+			"reverse": true,
+			"artnet": {
+				"universe": 0,
+				"offset": 20
+			},
+			"start": {
+				"x": -1000
+			},
+			"end": {
+				"x": -800
+			}
+		}, {
+			"leds": 5,
+			"reverse": true,
+			"artnet": {
+				"universe": 0,
+				"offset": 15
+			},
+			"start": {
+				"x": -800
+			},
+			"end": {
+				"x": -600
+			}
+		}, {
+			"leds": 5,
+			"reverse": true,
+			"artnet": {
+				"universe": 0,
+				"offset": 10
+			},
+			"start": {
+				"x": -600
+			},
+			"end": {
+				"x": -400
+			}
+		}, {
+			"leds": 5,
+			"reverse": true,
+			"artnet": {
+				"universe": 0,
+				"offset": 5
+			},
+			"start": {
+				"x": -400
+			},
+			"end": {
+				"x": -200
+			}
+		}, {
+			"leds": 5,
+			"reverse": true,
+			"artnet": {
+				"universe": 0,
+				"offset": 0
+			},
+			"start": {
+				"x": -200
+			},
+			"end": {
+				"x": 0
+			}
+		}, {
+			"leds": 5,
+			"reverse": false,
+			"artnet": {
+				"universe": 1,
+				"offset": 0
+			},
+			"start": {
+				"x": 0
+			},
+			"end": {
+				"x": 200
+			}
+		}, {
+			"leds": 5,
+			"reverse": false,
+			"artnet": {
+				"universe": 1,
+				"offset": 5
+			},
+			"start": {
+				"x": 200
+			},
+			"end": {
+				"x": 400
+			}
+		}, {
+			"leds": 5,
+			"reverse": false,
+			"artnet": {
+				"universe": 1,
+				"offset": 10
+			},
+			"start": {
+				"x": 400
+			},
+			"end": {
+				"x": 600
+			}
+		}, {
+			"leds": 5,
+			"reverse": false,
+			"artnet": {
+				"universe": 1,
+				"offset": 15
+			},
+			"start": {
+				"x": 600
+			},
+			"end": {
+				"x": 800
+			}
+		}, {
+			"leds": 5,
+			"reverse": false,
+			"artnet": {
+				"universe": 1,
+				"offset": 20
+			},
+			"start": {
+				"x": 800
+			},
+			"end": {
+				"x": 1000
+			}
+		}, {
+			"leds": 5,
+			"reverse": false,
+			"artnet": {
+				"universe": 1,
+				"offset": 25
+			},
+			"start": {
+				"x": 1000
+			},
+			"end": {
+				"x": 1200
+			}
+		}, {
+			"leds": 5,
+			"reverse": false,
+			"artnet": {
+				"universe": 1,
+				"offset": 30
+			},
+			"start": {
+				"x": 1200
+			},
+			"end": {
+				"x": 1400
+			}
+		}, {
+			"leds": 5,
+			"reverse": false,
+			"artnet": {
+				"universe": 1,
+				"offset": 35
+			},
+			"start": {
+				"x": 1400
+			},
+			"end": {
+				"x": 1600
+			}
+		}, {
+			"leds": 5,
+			"reverse": false,
+			"artnet": {
+				"universe": 1,
+				"offset": 40
+			},
+			"start": {
+				"x": 1600
+			},
+			"end": {
+				"x": 1800
+			}
+		}, {
+			"leds": 5,
+			"reverse": false,
+			"artnet": {
+				"universe": 1,
+				"offset": 45
+			},
+			"start": {
+				"x": 1800
+			},
+			"end": {
+				"x": 2000
+			}
+		}, {
+			"leds": 5,
+			"reverse": false,
+			"artnet": {
+				"universe": 1,
+				"offset": 50
+			},
+			"start": {
+				"x": 2000
+			},
+			"end": {
+				"x": 2200
+			}
+		}, {
+			"leds": 5,
+			"reverse": false,
+			"artnet": {
+				"universe": 1,
+				"offset": 55
+			},
+			"start": {
+				"x": 2200
+			},
+			"end": {
+				"x": 2400
+			}
+		}, {
+			"leds": 5,
+			"reverse": false,
+			"artnet": {
+				"universe": 1,
+				"offset": 60
+			},
+			"start": {
+				"x": 2400
+			},
+			"end": {
+				"x": 2600
+			}
+		}, {
+			"leds": 5,
+			"reverse": false,
+			"artnet": {
+				"universe": 1,
+				"offset": 65
+			},
+			"start": {
+				"x": 2600
+			},
+			"end": {
+				"x": 2800
+			}
+		}, {
+			"leds": 5,
+			"reverse": false,
+			"artnet": {
+				"universe": 1,
+				"offset": 70
+			},
+			"start": {
+				"x": 2800
+			},
+			"end": {
+				"x": 3000
+			}
+		}, {
+			"leds": 5,
+			"reverse": false,
+			"artnet": {
+				"universe": 1,
+				"offset": 75
+			},
+			"start": {
+				"x": 3000
+			},
+			"end": {
+				"x": 3200
+			}
+		}, {
+			"leds": 5,
+			"reverse": false,
+			"artnet": {
+				"universe": 1,
+				"offset": 80
+			},
+			"start": {
+				"x": 3200
+			},
+			"end": {
+				"x": 3400
+			}
+		}, {
+			"leds": 5,
+			"reverse": false,
+			"artnet": {
+				"universe": 1,
+				"offset": 85
+			},
+			"start": {
+				"x": 3400
+			},
+			"end": {
+				"x": 3600
+			}
+		}, {
+			"leds": 5,
+			"reverse": false,
+			"artnet": {
+				"universe": 1,
+				"offset": 90
+			},
+			"start": {
+				"x": 3600
+			},
+			"end": {
+				"x": 3800
+			}
+		}, {
+			"leds": 5,
+			"reverse": false,
+			"artnet": {
+				"universe": 1,
+				"offset": 95
+			},
+			"start": {
+				"x": 3800
+			},
+			"end": {
+				"x": 4000
+			}
+		}, {
+			"leds": 5,
+			"reverse": false,
+			"artnet": {
+				"universe": 1,
+				"offset": 100
+			},
+			"start": {
+				"x": 4000
+			},
+			"end": {
+				"x": 4200
+			}
+		}, {
+			"leds": 5,
+			"reverse": false,
+			"artnet": {
+				"universe": 1,
+				"offset": 105
+			},
+			"start": {
+				"x": 4200
+			},
+			"end": {
+				"x": 4400
+			}
+		}, {
+			"leds": 5,
+			"reverse": false,
+			"artnet": {
+				"universe": 1,
+				"offset": 110
+			},
+			"start": {
+				"x": 4400
+			},
+			"end": {
+				"x": 4600
+			}
+		}, {
+			"leds": 5,
+			"reverse": false,
+			"artnet": {
+				"universe": 1,
+				"offset": 115
+			},
+			"start": {
+				"x": 4600
+			},
+			"end": {
+				"x": 4800
+			}
+		}, {
+			"leds": 5,
+			"reverse": false,
+			"artnet": {
+				"universe": 1,
+				"offset": 120
+			},
+			"start": {
+				"x": 4800
+			},
+			"end": {
+				"x": 5000
+			}
+		}, {
+			"leds": 5,
+			"reverse": false,
+			"artnet": {
+				"universe": 1,
+				"offset": 125
+			},
+			"start": {
+				"x": 5000
+			},
+			"end": {
+				"x": 5200
+			}
+		}, {
+			"leds": 5,
+			"reverse": false,
+			"artnet": {
+				"universe": 1,
+				"offset": 130
+			},
+			"start": {
+				"x": 5200
+			},
+			"end": {
+				"x": 5400
+			}
+		}, {
+			"leds": 5,
+			"reverse": false,
+			"artnet": {
+				"universe": 1,
+				"offset": 135
+			},
+			"start": {
+				"x": 5400
+			},
+			"end": {
+				"x": 5600
+			}
+		}, {
+			"leds": 5,
+			"reverse": false,
+			"artnet": {
+				"universe": 1,
+				"offset": 140
+			},
+			"start": {
+				"x": 5600
+			},
+			"end": {
+				"x": 5800
+			}
+		}, {
+			"leds": 5,
+			"reverse": false,
+			"artnet": {
+				"universe": 1,
+				"offset": 145
+			},
+			"start": {
+				"x": 5800
+			},
+			"end": {
+				"x": 6000
+			}
+		}]
+	}]
+}
