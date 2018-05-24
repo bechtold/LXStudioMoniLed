@@ -35,7 +35,7 @@ public static class UniverseConfig {
           point = model.points[model.points.length - 1 - i];
         } else {
           point = model.points[i];
-        } 
+        }
         indices[i+offset] = point.index;
       }
   }
@@ -53,7 +53,7 @@ public static class ArtnetConfig {
 
   /**
    * add LX-Model to the Artnet configuration
-   * 
+   *
    */
   public void addModel(LXModel model, String ip, int universe, boolean reverse, int offset) {
     HashMap<Integer, UniverseConfig> ipConfig = storage.get(ip);
@@ -86,7 +86,7 @@ public static class JSONModel extends LXModel {
     }
 
     /**
-     * Extract elements from JSONArray then add them 
+     * Extract elements from JSONArray then add them
      */
     private void addElements(JSONObject modelData, int offSetX, int offSetY, int offSetZ) {
       int posX = modelData.getInt("x", 0) + offSetX;
@@ -98,7 +98,7 @@ public static class JSONModel extends LXModel {
     }
 
     /**
-     * Add elements from JSONArray including offset 
+     * Add elements from JSONArray including offset
      */
     private void addElements(JSONArray elementsData, int offSetX, int offSetY, int offSetZ) {
       for (int i = 0; i < elementsData.size(); i++) {
@@ -112,7 +112,7 @@ public static class JSONModel extends LXModel {
 }
 
 /**
- * JSONElement  
+ * JSONElement
  */
 public static class JSONElement extends LXModel {
   public String name;
@@ -137,7 +137,7 @@ public static class JSONElement extends LXModel {
     }
 
     /**
-     * Extract strips from JSONArray then add them 
+     * Extract strips from JSONArray then add them
      */
     private void addStrips(JSONObject elementData, int offSetX, int offSetY, int offSetZ) {
       int posX = elementData.getInt("x", 0) + offSetX;
@@ -149,7 +149,7 @@ public static class JSONElement extends LXModel {
     }
 
     /**
-     * Add strips from JSONArray including offset 
+     * Add strips from JSONArray including offset
      */
     private void addStrips(JSONArray stipsData, int offSetX, int offSetY, int offSetZ) {
       for (int i = 0; i < stipsData.size(); i++) {
@@ -206,7 +206,7 @@ public static class JSONStrip extends LXModel {
 
       int posX = offSetX + stripData.getInt("x", 0) + startPoint.getInt("x", 0);
       int posY = offSetY + stripData.getInt("y", 0) + startPoint.getInt("y", 0);
-      int posZ = offSetZ + stripData.getInt("z", 0) + startPoint.getInt("z", 0);      
+      int posZ = offSetZ + stripData.getInt("z", 0) + startPoint.getInt("z", 0);
 
       StripModel.Metrics stripMetrics = new StripModel.Metrics(numLeds);
 
@@ -216,13 +216,12 @@ public static class JSONStrip extends LXModel {
       stripModel = new StripModel(stripMetrics);
       addPoints(stripModel);
 
-//       TODO Check ArtNetConfig
+       //TODO Check ArtNetConfig
       JSONObject artnetConfigData = stripData.getJSONObject("artnet");
-
       if(artnetConfigData != null){
         artnetConfig.addModel(
-          stripModel, 
-          artnetConfigData.getString("ip", "127.0.0.1"), 
+          stripModel,
+          artnetConfigData.getString("ip", "127.0.0.1"),
           artnetConfigData.getInt("universe", 0),
           artnetConfigData.getBoolean("reverse", false),
           artnetConfigData.getInt("offset", 0));

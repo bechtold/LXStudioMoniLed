@@ -1,6 +1,6 @@
 {
   "version": "0.1",
-  "timestamp": 1524429106688,
+  "timestamp": 1524436854460,
   "engine": {
     "id": 1,
     "class": "heronarts.lx.LXEngine",
@@ -15,7 +15,7 @@
       "crossfader": 0.5344827566295862,
       "crossfaderBlendMode": 0,
       "speed": 1.0,
-      "focusedChannel": 4,
+      "focusedChannel": 2,
       "cueA": false,
       "cueB": false,
       "multithreaded": true,
@@ -47,7 +47,7 @@
           "label": "Background",
           "arm": false,
           "selected": false,
-          "enabled": true,
+          "enabled": false,
           "cue": false,
           "fader": 0.35714284982532263,
           "crossfadeGroup": 0,
@@ -346,9 +346,86 @@
             "modulationColor": -16731393,
             "parameters": {
               "label": "OzStrips",
-              "speed": 0.2723000050380826,
+              "speed": 0.10400000876188278,
               "clear": true,
-              "element": 2.579999942332506
+              "element": 1.4400000348687172
+            },
+            "modulation": {
+              "modulators": [],
+              "modulations": [],
+              "triggers": []
+            },
+            "autoCycleEnabled": true
+          },
+          {
+            "id": 443,
+            "class": "MoniLed$TestAxis",
+            "modulationColor": -65406,
+            "parameters": {
+              "label": "TestAxis",
+              "xPos": 0.0,
+              "yPos": 0.0,
+              "zPos": 0.0
+            },
+            "modulation": {
+              "modulators": [],
+              "modulations": [],
+              "triggers": []
+            },
+            "autoCycleEnabled": true
+          }
+        ]
+      },
+      {
+        "id": 496,
+        "class": "heronarts.lx.LXChannel",
+        "modulationColor": -65492,
+        "parameters": {
+          "label": "Channel-6",
+          "arm": false,
+          "selected": false,
+          "enabled": true,
+          "cue": false,
+          "fader": 1.0,
+          "crossfadeGroup": 0,
+          "blendMode": 0,
+          "midiMonitor": false,
+          "midiChannel": 16,
+          "autoCycleEnabled": false,
+          "autoCycleMode": 0,
+          "autoCycleTimeSecs": 60.0,
+          "transitionEnabled": false,
+          "transitionTimeSecs": 5.0,
+          "transitionBlendMode": 0
+        },
+        "effects": [],
+        "clips": [],
+        "patternIndex": 1,
+        "patterns": [
+          {
+            "id": 493,
+            "class": "heronarts.lx.pattern.IteratorPattern",
+            "modulationColor": -12648193,
+            "parameters": {
+              "label": "Iterator",
+              "speed": 10.0
+            },
+            "modulation": {
+              "modulators": [],
+              "modulations": [],
+              "triggers": []
+            },
+            "autoCycleEnabled": false
+          },
+          {
+            "id": 497,
+            "class": "MoniLed$TestAxis",
+            "modulationColor": -65523,
+            "parameters": {
+              "label": "TestAxis",
+              "xPos": 0.0,
+              "yPos": 0.0,
+              "zPos": 0.0
             },
             "modulation": {
               "modulators": [],
@@ -480,7 +557,7 @@
             "tempoMultiplier": 5,
             "tempoLock": true,
             "clockMode": 0,
-            "periodFast": 9100.0,
+            "periodFast": 4919.557742115524,
             "periodSlow": 10000.0,
             "wave": 0,
             "skew": 0.0,
@@ -488,7 +565,7 @@
             "phase": 0.0,
             "exp": 0.0
           },
-          "basis": 0.4482417582404512
+          "basis": 0.9588842003911012
         },
         {
           "id": 195,
@@ -496,7 +573,7 @@
           "modulationColor": -54272,
           "parameters": {
             "label": "LFO 1",
-            "running": true,
+            "running": false,
             "trigger": false,
             "loop": true,
             "tempoSync": false,
@@ -511,7 +588,7 @@
             "phase": 0.0,
             "exp": 0.0
           },
-          "basis": 0.1018500363470803
+          "basis": 0.7875688576001256
         },
         {
           "id": 252,
@@ -573,6 +650,24 @@
             "Polarity": 0,
             "Range": 1.0
           }
+        },
+        {
+          "source": {
+            "id": 133
+          },
+          "target": {
+            "componentId": 497,
+            "parameterPath": "zPos"
+          },
+          "id": 502,
+          "class": "heronarts.lx.parameter.LXCompoundModulation",
+          "modulationColor": -5177089,
+          "parameters": {
+            "label": "",
+            "enabled": true,
+            "Polarity": 0,
+            "Range": 1.0
+          }
         }
       ],
       "triggers": []
@@ -620,8 +715,8 @@
         "camera": {
           "active": true,
           "radius": 11163.581459629677,
-          "theta": 15.69900000000009,
-          "phi": -1.0837166738510131,
+          "theta": 15.69000000000009,
+          "phi": -1.13771667385101,
           "x": 6034.0555738806725,
           "y": 5496.5,
           "z": 989.2736851936206
@@ -639,8 +734,8 @@
           {
             "active": true,
             "radius": 11163.581459629677,
-            "theta": 15.69900000000009,
-            "phi": -1.0837166738510131,
+            "theta": 15.69000000000009,
+            "phi": -1.13771667385101,
             "x": 6034.0555738806725,
             "y": 5496.5,
             "z": 989.2736851936206

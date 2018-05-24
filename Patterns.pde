@@ -214,11 +214,44 @@ public class OzStrips extends OLFPAPattern {
         currentIndex = 0;
       }
 
-      setColor(element_fixture.strips.get(currentIndex), #ff0000);
+      setColor(element_fixture.strips.get(currentIndex), #0000ff);
       
       
       lastMillis = currentMillis;
       lastIndex = currentIndex + 1;
+    }
+  }
+}
+
+public class TestAxis extends LXPattern {
+ 
+  public final CompoundParameter xPos = new CompoundParameter("X", 0);
+  public final CompoundParameter yPos = new CompoundParameter("Y", 0);
+  public final CompoundParameter zPos = new CompoundParameter("Z", 0);
+
+  public TestAxis(LX lx) {
+    super(lx);
+    addParameter("xPos", xPos);
+    addParameter("yPos", yPos);
+    addParameter("zPos", zPos);
+  }
+
+  public void run(double deltaMs) {
+    float x = this.xPos.getValuef();
+    float y = this.yPos.getValuef();
+    float z = this.zPos.getValuef();
+    for (LXPoint p : model.points) {
+      //print("x:"+x+", y:"+y+", z:"+z);
+      //float d = abs(p.xn - x);
+      //print(" -> d:"+d);
+      //d = min(d, abs(p.yn - y));
+      //print(" -> d:"+d);
+      //d = min(d, abs(p.zn - z));
+      //print(" -> d:"+d);
+      float d = abs(p.zn - z);
+      //colors[p.index] = palette.getColor(p, max(0, 100 - 1000*d));
+      colors[p.index] = palette.getColor(max(0, 100-1000*d));
+      //println();
     }
   }
 }
