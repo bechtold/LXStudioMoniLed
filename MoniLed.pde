@@ -34,7 +34,8 @@ void setup() {
   size(800, 720, P3D);
   
   
-  JSONObject stripData = this.loadJSONObject("mjut_atopie.json");
+  //JSONObject stripData = this.loadJSONObject("mjut_atopie.json");
+  JSONObject stripData = this.loadJSONObject("two_strips_reverse_test.json");
   //JSONObject stripData = this.loadJSONObject("test.json");
   //JSONObject stripData = this.loadJSONObject("test.json");
   //JSONObject stripData = this.loadJSONObject("JSONStrip.json");

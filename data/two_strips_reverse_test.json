@@ -1,0 +1,49 @@
+{
+  "name": "Two Strips connected in the center",
+  "x":0,
+  "y":0,
+	"elements": [
+    {
+			"name": "two strips",
+			"x":0,
+			"y":0,
+			"strips": [
+				{
+          "name": "1",
+					"leds"    : 90,
+          "artnet"	: { "ip" : "192.168.1.2", "universe": 0, "offset": 0, "reverse": false},
+					"start"	  : { "x": 0,	   "y": 0    },
+					"end"     : { "x": 0,    "y": 5000 }
+				},
+				{
+          "name": "2",
+					"leds"    : 79,
+          "artnet"	: { "ip" : "192.168.1.2", "universe": 0, "offset": 91, "reverse": true},
+					"start"	  : { "x": 300,	   "y": 0    },
+					"end"     : { "x": 300,    "y": 5000 }
+				}
+			]
+    },
+    {
+			"name": "two more strips",
+			"x":1000,
+			"y":0,
+			"strips": [
+				{
+          "name": "1",
+					"leds"    : 90,
+          "artnet"	: { "ip" : "192.168.1.2", "universe": 2, "offset": 0, "reverse": false},
+					"start"	  : { "x": 0,	   "y": 0    },
+					"end"     : { "x": 0,    "y": 5000 }
+				},
+				{
+          "name": "2",
+					"leds"    : 79,
+          "artnet"	: { "ip" : "192.168.1.2", "universe": 2, "offset": 91, "reverse": true},
+					"start"	  : { "x": 300,	   "y": 0    },
+					"end"     : { "x": 300,    "y": 5000 }
+				}
+			]
+    }
+  ]
+}
