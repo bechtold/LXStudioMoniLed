@@ -59,7 +59,7 @@ public class Ozterator extends OLFPAPattern {
   public void run (double deltaMs) {
     long currentMillis = java.lang.System.currentTimeMillis();
     
-    if(currentMillis - lastMillis > 1000*this.speed.getValue()) {
+    if(currentMillis - lastMillis > (1000-1000*this.speed.getValue())) {
       
       if(this.clear.isOn()){
         setColors(#000000);
