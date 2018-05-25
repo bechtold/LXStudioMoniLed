@@ -47,8 +47,14 @@ public static class UniverseConfig {
       for (int i = 0; i < LEDS_PER_UNIVERSE; i++) {
         LXPoint point;
         if(reverse == true){
+          // In the list of all leds start with respect of the already existing universes.
+          int index = i + offset + LEDS_PER_UNIVERSE * universeOffset;
+          // Break after the last led in th last needed universe.
+          if (universeOffset+1 >= universesNeeded && index >= LEDS_PER_UNIVERSE * universeOffset + rest) break;
+          // Break when last pixel is reached.
+          if (index >= model.points.length) break;
           //TODO calc index with universeOffset
-          point = model.points[model.points.length - 1 - i];
+          point = model.points[model.points.length - 1 - index];
         } else {
           // In the list of all leds start with respect of the already existing universes.
           int index = i + offset + LEDS_PER_UNIVERSE * universeOffset;
