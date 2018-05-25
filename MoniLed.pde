@@ -35,7 +35,8 @@ void setup() {
   
   
   //JSONObject stripData = this.loadJSONObject("mjut_atopie.json");
-  JSONObject stripData = this.loadJSONObject("two_strips_reverse_test.json");
+  //JSONObject stripData = this.loadJSONObject("two_strips_reverse_test.json");
+  JSONObject stripData = this.loadJSONObject("strips_overflow.json");
   //JSONObject stripData = this.loadJSONObject("test.json");
   //JSONObject stripData = this.loadJSONObject("test.json");
   //JSONObject stripData = this.loadJSONObject("JSONStrip.json");
@@ -60,7 +61,7 @@ void initialize(heronarts.lx.studio.LXStudio lx, heronarts.lx.studio.LXStudio.UI
         datagram.setAddress(ip);
         datagram.setByteOrder(LXDatagram.ByteOrder.GRB);
         output.addDatagram(datagram);    
-        //System.out.println("############### " + universe + " #################");
+        System.out.println("############### " + universe + " #################");
         //printArray(ArtnetConfig.storage.get(ip).get(universe).indices);
       }
     }

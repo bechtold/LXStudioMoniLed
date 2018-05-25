@@ -32,14 +32,32 @@ public static class UniverseConfig {
 
   /**
    * Adds model to the universe configuration
+   * @param universeOffset The how manieth universe this is. Needed to calculate where to start selecting pixels in the model
+   * @param rest How many pixels are n the last universe. Needed to break the loop at the end.
    */
-  public void addModel(LXModel model, int offset, boolean reverse) {
-      for (int i = 0; i < model.points.length; i++) {
+  public void addModel(LXModel model, int offset, boolean reverse, int universeOffset, int rest) {
+    print("addModel");
+    print(" offset: ");
+    print(offset);
+    print(", universeOffset ");
+    print(universeOffset);
+    print(", modelLength ");
+    println(model.points.length);
+    
+      for (int i = 0; i < LEDS_PER_UNIVERSE; i++) {
         LXPoint point;
         if(reverse == true){
+          //TODO calc index with universeOffset
           point = model.points[model.points.length - 1 - i];
         } else {
-          point = model.points[i];
+          // In the list of all leds start with respect of the already existing universes.
+          int index = i + LEDS_PER_UNIVERSE * universeOffset;
+          //break after the last led in th last needed universe
+          if (index >= LEDS_PER_UNIVERSE * universeOffset + rest) break;
+          //print("index: ");
+          //println(index);
+          // TODO: consider offset
+          point = model.points[index];
         }
         indices[i+offset] = point.index;
       }
@@ -63,11 +81,29 @@ public static class ArtnetConfig {
   public void addModel(LXModel model, String ip, int universe, boolean reverse, int offset) {
     HashMap<Integer, UniverseConfig> ipConfig = storage.get(ip);
     if (ipConfig == null) ipConfig = new HashMap<Integer, UniverseConfig>();
-    UniverseConfig universeConfig = ipConfig.get(universe);
-    if (universeConfig == null) universeConfig = new UniverseConfig();
-    universeConfig.addModel(model, offset, reverse);
-    ipConfig.put(universe, universeConfig);
-    storage.put(ip, ipConfig);
+    
+    // calculate how many universes are needed TODO: check if universe exists and use for calculation
+    int length = model.points.length + offset;
+    // before dividing you need to convert at least one int to float to get a float :-D
+    double universesNeeded = ceil((float)length / UniverseConfig.LEDS_PER_UNIVERSE);
+    int rest = length % UniverseConfig.LEDS_PER_UNIVERSE;
+    //print("Lenght: ");
+    //print(length);
+    //print(", L/U: ");
+    //print(UniverseConfig.LEDS_PER_UNIVERSE);
+    //print(", universesNeeded: ");
+    //println(universesNeeded);
+    
+    // Add universes
+    for(int i = 0; i < universesNeeded; i++) {
+      UniverseConfig universeConfig = ipConfig.get(universe + i);
+      if (universeConfig == null) universeConfig = new UniverseConfig();
+
+      universeConfig.addModel(model, offset, reverse, universe+i, rest);
+      ipConfig.put(universe, universeConfig);
+      storage.put(ip, ipConfig);
+    }
+    
   }
 }
 
