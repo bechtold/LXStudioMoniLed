@@ -1,5 +1,5 @@
 {
-  "name": "Strips longer than one universe",
+  "name": "Strips + offset longer than one universe",
   "x":0,
   "y":0,
 	"elements": [
@@ -10,8 +10,8 @@
 			"strips": [
 				{
           "name": "1",
-					"leds"    : 180,
-          "artnet"	: { "ip" : "192.168.1.2", "universe": 0, "offset": 0, "reverse": false},
+					"leds"    : 160,
+          "artnet"	: { "ip" : "192.168.1.2", "universe": 0, "offset": 20, "reverse": false},
 					"start"	  : { "x": 0,	   "y": 0    },
 					"end"     : { "x": 0,    "y": 5000 }
 				}
