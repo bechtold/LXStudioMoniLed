@@ -148,7 +148,7 @@ public class OzRandom extends OLFPAPattern {
 
     long currentMillis = java.lang.System.currentTimeMillis();
     
-    if(currentMillis - lastMillis > 1000*this.speed.getValue()) {
+    if(currentMillis - lastMillis > (1000-1000*this.speed.getValue())) {
       if(this.clear.isOn()) {
         // clear all
         setColors(#000000);
