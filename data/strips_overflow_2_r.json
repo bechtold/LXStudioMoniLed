@@ -1,5 +1,5 @@
 {
-  "name": "Two strips longer than one universe",
+  "name": "Strips + offset longer than one universe",
   "x":0,
   "y":0,
 	"elements": [
@@ -11,16 +11,9 @@
 				{
           "name": "1",
 					"leds"    : 160,
-          "artnet"	: { "ip" : "192.168.1.2", "universe": 0, "offset": 0, "reverse": false},
+          "artnet"	: { "ip" : "192.168.1.2", "universe": 0, "offset": 20, "reverse": true},
 					"start"	  : { "x": 0,	   "y": 0    },
 					"end"     : { "x": 0,    "y": 5000 }
-				},
-				{
-          "name": "1",
-					"leds"    : 20,
-          "artnet"	: { "ip" : "192.168.1.2", "universe": 0, "offset": 160, "reverse": false},
-					"start"	  : { "x": 300,	   "y": 0    },
-					"end"     : { "x": 300,    "y": 500 }
 				}
 			]
     }

@@ -38,13 +38,14 @@ void setup() {
   //JSONObject stripData = this.loadJSONObject("two_strips_reverse_test.json");
   //JSONObject stripData = this.loadJSONObject("strips_overflow_0.json");
   //JSONObject stripData = this.loadJSONObject("strips_overflow_0_r.json");
-  JSONObject stripData = this.loadJSONObject("strips_overflow_1.json");
+  //JSONObject stripData = this.loadJSONObject("strips_overflow_1.json");
   //JSONObject stripData = this.loadJSONObject("strips_overflow_1_r.json");
   //JSONObject stripData = this.loadJSONObject("strips_overflow_2.json"); //<>//
+  JSONObject stripData = this.loadJSONObject("strips_overflow_3.json");
   //JSONObject stripData = this.loadJSONObject("test.json");
   //JSONObject stripData = this.loadJSONObject("test.json");
-  //JSONObject stripData = this.loadJSONObject("JSONStrip.json");
-  //JSONObject stripData = this.loadJSONObject("JSONElement.json"); //<>//
+  //JSONObject stripData = this.loadJSONObject("JSONStrip.json"); //<>//
+  //JSONObject stripData = this.loadJSONObject("JSONElement.json");
   //JSONObject stripData = this.loadJSONObject("JSONModel.json");
   //JSONObject stripData = this.loadJSONObject("two_strip_matrix.json");
   //JSONObject stripData = this.loadJSONObject("hammock_reactor.json");
@@ -59,8 +60,8 @@ void initialize(heronarts.lx.studio.LXStudio lx, heronarts.lx.studio.LXStudio.UI
   
   try {
     LXDatagramOutput output = new LXDatagramOutput(lx);
-    for(String ip : ArtnetConfig.storage.keySet()){
-      for(int universe : ArtnetConfig.storage.get(ip).keySet()){ //<>//
+    for(String ip : ArtnetConfig.storage.keySet()){ //<>//
+      for(int universe : ArtnetConfig.storage.get(ip).keySet()){
         ArtNetDatagram datagram = new ArtNetDatagram(ArtnetConfig.storage.get(ip).get(universe).indices, universe);
         datagram.setAddress(ip);
         datagram.setByteOrder(LXDatagram.ByteOrder.GRB);

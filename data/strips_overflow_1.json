@@ -11,7 +11,7 @@
 				{
           "name": "1",
 					"leds"    : 90,
-          "artnet"	: { "ip" : "192.168.1.2", "universe": 0, "offset": 90, "reverse": false},
+          "artnet"	: { "ip" : "192.168.1.2", "universe": 0, "offset": 20, "reverse": false},
 					"start"	  : { "x": 0,	   "y": 0    },
 					"end"     : { "x": 0,    "y": 5000 }
 				}
