@@ -89,7 +89,8 @@ public class OzSlider extends OLFPAPattern {
     return "Oskar Bechtold";
   }
   
-  public final DiscreteParameter index = new DiscreteParameter("Index", 0, model.points.length); 
+  //public final DiscreteParameter index = new DiscreteParameter("Index", 0, model.points.length); 
+  public final CompoundParameter index = new CompoundParameter("Index", 90, model.points.length-1); 
   
   public OzSlider(LX lx) {
     super(lx);
@@ -98,7 +99,8 @@ public class OzSlider extends OLFPAPattern {
   
   public void run (double deltaMs) {
     setColors(#000000);
-    setColor(this.index.getValuei(), #ffffff);
+    //setColor(this.index.getValuei(), #ffffff);
+    setColor((int)this.index.getValue(), #ffffff);
   }
 }
 
