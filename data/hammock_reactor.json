@@ -379,28 +379,28 @@
 				{
           "name"    : "25start-31start",
 					"leds"    : 90,
-					"artnet"	: {"universe": 0, "address": 0},
+          "artnet"	: {ip:"192.168.1.2", "universe": 0, "offset": 0},
 					"start"	  : { "x": 7150,	   "y": 6000, "z": 3000    },
 					"end"     : { "x": 7510,    "y": 6000, "z": 0 }
 				},
 				{
           "name"    : "26start-32start",
 					"leds"    : 90,
-					"artnet"	: {"universe": 0, "address": 0},
+          "artnet"	: {ip:"192.168.1.2", "universe": 0, "offset": 90, "reverse": true},
 					"start"	  : { "x": 6575,	   "y": 5004, "z": 3000    },
 					"end"     : { "x": 6755,    "y": 4692, "z": 0 }
 				},
 				{
           "name"    : "27start-33start",
 					"leds"    : 90,
-					"artnet"	: {"universe": 0, "address": 0},
+          "artnet"	: {ip:"192.168.1.2", "universe": 2, "offset": 0},
 					"start"	  : { "x": 5425,	   "y": 5004, "z": 3000    },
 					"end"     : { "x": 5245,    "y": 4692, "z": 0 }
 				},
 				{
           "name"    : "28start-34start",
 					"leds"    : 90,
-					"artnet"	: {"universe": 0, "address": 0},
+          "artnet"	: {ip:"192.168.1.2", "universe": 2, "offset": 90, "reverse": true},
 					"start"	  : { "x": 4850,	   "y": 6000, "z": 3000    },
 					"end"     : { "x": 4490,    "y": 6000, "z": 0 }
 				},
