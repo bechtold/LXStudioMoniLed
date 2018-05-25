@@ -1,5 +1,5 @@
 {
-  "name": "Two strips longer than one universe",
+  "name": "Three strips longer than one universe",
   "x":0,
   "y":0,
 	"elements": [
@@ -14,13 +14,20 @@
           "artnet"	: { "ip" : "192.168.1.2", "universe": 0, "offset": 0, "reverse": false},
 					"start"	  : { "x": 0,	   "y": 0    },
 					"end"     : { "x": 0,    "y": 5000 }
-				},
+        },
 				{
           "name": "2",
 					"leds"    : 90,
-          "artnet"	: { "ip" : "192.168.1.2", "universe": 0, "offset": 90, "reverse": true},
+          "artnet"	: { "ip" : "192.168.1.2", "universe": 0, "offset": 90, "reverse": false},
 					"start"	  : { "x": 300,	   "y": 0    },
 					"end"     : { "x": 300,    "y": 5000 }
+        },
+				{
+          "name": "3",
+					"leds"    : 90,
+          "artnet"	: { "ip" : "192.168.1.2", "universe": 0, "offset": 180, "reverse": false},
+					"start"	  : { "x": 600,	   "y": 0    },
+					"end"     : { "x": 600,    "y": 5000 }
 				}
 			]
     }
