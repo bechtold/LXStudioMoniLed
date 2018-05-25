@@ -40,11 +40,16 @@ void setup() {
   //JSONObject stripData = this.loadJSONObject("two_strips_reverse_test.json");
   
   //JSONObject stripData = this.loadJSONObject("strips_overflow_0.json");
-  //JSONObject stripData = this.loadJSONObject("strips_overflow_1.json"); //<>//
+  //JSONObject stripData = this.loadJSONObject("strips_overflow_0_r.json"); //<>//
+  //JSONObject stripData = this.loadJSONObject("strips_overflow_1.json");
+  //JSONObject stripData = this.loadJSONObject("strips_overflow_1_r.json");
   //JSONObject stripData = this.loadJSONObject("strips_overflow_2.json");
+  //JSONObject stripData = this.loadJSONObject("strips_overflow_2_r.json"); //<>//
   //JSONObject stripData = this.loadJSONObject("strips_overflow_3.json");
+  //JSONObject stripData = this.loadJSONObject("strips_overflow_3_r.json");
   //JSONObject stripData = this.loadJSONObject("strips_overflow_4.json");
-   //<>//
+  JSONObject stripData = this.loadJSONObject("strips_overflow_4_r.json");
+  
   //JSONObject stripData = this.loadJSONObject("test.json");
   //JSONObject stripData = this.loadJSONObject("test.json");
   //JSONObject stripData = this.loadJSONObject("JSONStrip.json");
@@ -55,12 +60,12 @@ void setup() {
 
   lx = new heronarts.lx.studio.LXStudio(this, buildModel(stripData), MULTITHREADED);
   lx.ui.setResizable(RESIZABLE);
-  
+   //<>//
   
 }
 
 void initialize(heronarts.lx.studio.LXStudio lx, heronarts.lx.studio.LXStudio.UI ui) {
-   //<>//
+  
   try {
     LXDatagramOutput output = new LXDatagramOutput(lx);
     for(String ip : ArtnetConfig.storage.keySet()){

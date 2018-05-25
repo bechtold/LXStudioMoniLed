@@ -98,34 +98,56 @@ public static class UniverseConfig {
     //println(loopFor);
     
     int i = 0;
-    print("start: ");
-    print(i);
+    //print("start: ");
+    //print(i);
     
     for(; i < model.points.length; i++) {
-      
+      // universIndex
+      int uI;
+      // modelIndex
+      int mI;
       LXPoint point;
+      
       // TODO reverse
       if(reverse) {
-        point = model.points[i];
+        //mI = i + (universeCounter * LEDS_PER_UNIVERSE) % model.points.length;
+        mI = model.points.length - 1 - (i + (universeCounter * LEDS_PER_UNIVERSE) % model.points.length);
+        if(mI < 0) break;
+        print("mI: ");
+        print(mI);
+        point = model.points[mI];
+        
+        //uI = LEDS_PER_UNIVERSE - 1 - i - universeOffset;
+        //if(uI < 0) {
+        uI = i + universeOffset;
+        if(uI >= LEDS_PER_UNIVERSE) {
+          println("");
+          break;
+        } else {
+          print(", uI: ");
+          println(uI);
+        }
+
       } else {
         
-        int mI = i + (universeCounter * LEDS_PER_UNIVERSE) % model.points.length;
+        mI = i + (universeCounter * LEDS_PER_UNIVERSE) % model.points.length;
         //if(i >= model.points.length) break;
         //if(i + offset >= model.points.length) break;
         if(mI >= model.points.length) break;
         print("mI: ");
         print(mI);
         point = model.points[mI];
+        
+        uI = i + universeOffset;
+        if(uI >= LEDS_PER_UNIVERSE) {
+          println("");
+          break;
+        } else {
+          print(", uI: ");
+          println(uI);
+        }
       }
       
-      int uI = i + universeOffset;
-      if(uI >= LEDS_PER_UNIVERSE) {
-        println("");
-        break;
-      } else {
-        print(", uI: ");
-        println(uI);
-      }
 
       indices[uI] = point.index;
     }
