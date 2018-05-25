@@ -43,7 +43,7 @@ public class Ozterator extends OLFPAPattern {
   int lastIndex = 0;
   
   public final CompoundParameter speed =
-    new CompoundParameter("Speed", .5, .001, 1)
+    new CompoundParameter("Speed", .5, .1, 1)
     .setDescription("Speed of motion");
 
   public final BooleanParameter clear =
