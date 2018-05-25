@@ -245,8 +245,17 @@ public class OzAxis extends LXPattern {
     float y = this.yPos.getValuef();
     float z = this.zPos.getValuef();
     for (LXPoint p : model.points) {
-      float d = abs(p.zn - z);
+      //print("x:"+x+", y:"+y+", z:"+z);
+      float d = abs(p.xn - x);
+      //print(" -> d:"+d);
+      d = min(d, abs(p.yn - y));
+      //print(" -> d:"+d);
+      d = min(d, abs(p.zn - z));
+      //print(" -> d:"+d);
+      //d = abs(p.zn - z);
+      //colors[p.index] = palette.getColor(p, max(0, 100 - 1000*d));
       colors[p.index] = palette.getColor(max(0, 100-1000*d));
+      //println("");
     }
   }
 }

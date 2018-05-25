@@ -40,15 +40,15 @@ void setup() {
   //JSONObject stripData = this.loadJSONObject("two_strips_reverse_test.json");
   
   //JSONObject stripData = this.loadJSONObject("strips_overflow_0.json");
-  //JSONObject stripData = this.loadJSONObject("strips_overflow_0_r.json"); //<>//
+  //JSONObject stripData = this.loadJSONObject("strips_overflow_0_r.json"); //<>// //<>//
   //JSONObject stripData = this.loadJSONObject("strips_overflow_1.json");
   //JSONObject stripData = this.loadJSONObject("strips_overflow_1_r.json");
   //JSONObject stripData = this.loadJSONObject("strips_overflow_2.json");
-  //JSONObject stripData = this.loadJSONObject("strips_overflow_2_r.json"); //<>//
+  //JSONObject stripData = this.loadJSONObject("strips_overflow_2_r.json"); //<>// //<>//
   //JSONObject stripData = this.loadJSONObject("strips_overflow_3.json");
   //JSONObject stripData = this.loadJSONObject("strips_overflow_3_r.json");
   //JSONObject stripData = this.loadJSONObject("strips_overflow_4.json");
-  JSONObject stripData = this.loadJSONObject("strips_overflow_4_r.json");
+  //JSONObject stripData = this.loadJSONObject("strips_overflow_4_r.json");
   
   //JSONObject stripData = this.loadJSONObject("test.json");
   //JSONObject stripData = this.loadJSONObject("test.json");
@@ -56,11 +56,11 @@ void setup() {
   //JSONObject stripData = this.loadJSONObject("JSONElement.json");
   //JSONObject stripData = this.loadJSONObject("JSONModel.json");
   //JSONObject stripData = this.loadJSONObject("two_strip_matrix.json");
-  //JSONObject stripData = this.loadJSONObject("hammock_reactor.json");
+  JSONObject stripData = this.loadJSONObject("hammock_reactor.json");
 
   lx = new heronarts.lx.studio.LXStudio(this, buildModel(stripData), MULTITHREADED);
   lx.ui.setResizable(RESIZABLE);
-   //<>//
+   //<>// //<>//
   
 }
 
