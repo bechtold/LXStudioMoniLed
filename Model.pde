@@ -9,18 +9,23 @@ LXModel buildModel(JSONObject stripData) {
  * Class to hold a single universe configuration data
  */
 public static class UniverseConfig {
+  
+  /**
+   * Maximum number of LEDs per universe.
+   */
+   public static final int LEDS_PER_UNIVERSE = 170;
 
   /**
    * indices array to be given to the ArtNetDatagram constructor
    */
-  public int[] indices = new int[170];
+  public int[] indices = new int[LEDS_PER_UNIVERSE];
 
   /**
    * @Constructor
    * initializes indices array with -1 to not output anything by default;
    */
   public UniverseConfig() {
-    for (int i=0; i<170; i++) {
+    for (int i=0; i<LEDS_PER_UNIVERSE; i++) {
       indices[i] = -1;
     }
   }
