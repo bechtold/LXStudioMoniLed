@@ -1,3 +1,5 @@
+import codeanticode.syphon.*;
+
 import ch.bildspur.artnet.*; //<>//
 import ch.bildspur.artnet.packets.*;
 import ch.bildspur.artnet.events.*;
