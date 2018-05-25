@@ -175,7 +175,7 @@ public static class ArtnetConfig {
     for(int universeCounter = 0; universeCounter < universesNeeded; universeCounter++) {
 
       int universeIndex = universe + universeCounter;
-      int universeOffset = 0;
+      int universeOffset = universeCounter == 0 ? offset : 0;
       UniverseConfig universeConfig = ipConfig.get(universeIndex);
       if (universeConfig == null) {
         universeConfig = new UniverseConfig();
