@@ -74,7 +74,7 @@ void initialize(heronarts.lx.studio.LXStudio lx, heronarts.lx.studio.LXStudio.UI
         datagram.setAddress(ip);
         datagram.setByteOrder(LXDatagram.ByteOrder.GRB);
         output.addDatagram(datagram);    
-        System.out.println("############### " + universe + " #################");
+        //System.out.println("############### " + universe + " #################");
         //printArray(ArtnetConfig.storage.get(ip).get(universe).indices);
       }
     }

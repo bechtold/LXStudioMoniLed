@@ -29,127 +29,26 @@ public static class UniverseConfig {
       indices[i] = -1;
     }
   }
-
-  /**
-   * Adds model to the universe configuration
-   * @param universeOffset The how manieth universe this is. Needed to calculate where to start selecting pixels in the model
-   * @param rest How many pixels are n the last universe. Needed to break the loop at the end.
-   */
-  public void addModel(LXModel model, int offset, boolean reverse, int universeOffset, int universesNeeded, int rest) {
-    //print("addModel");
-    //print(" offset: ");
-    //print(offset);
-    //print(", universeOffset ");
-    //print(universeOffset);
-    //print(", modelLength ");
-    //println(model.points.length);
-    
-      for (int i = 0; i < LEDS_PER_UNIVERSE; i++) {
-        LXPoint point;
-        if(reverse == true){
-          // In the list of all leds start with respect of the already existing universes.
-          int index = i + offset + LEDS_PER_UNIVERSE * universeOffset;
-          // Break after the last led in th last needed universe.
-          if (universeOffset+1 >= universesNeeded && index >= LEDS_PER_UNIVERSE * universeOffset + rest) break;
-          // Break when last pixel is reached.
-          if (index >= model.points.length) break;
-          //TODO calc index with universeOffset
-          point = model.points[model.points.length - 1 - index];
-        } else {
-          // In the list of all leds start with respect of the already existing universes.
-          int modelIndex = i + LEDS_PER_UNIVERSE * universeOffset - (universeOffset > 0 ? offset : 0);
-          if(modelIndex < 0) modelIndex = 0;
-          int modelLength = model.points.length;
-          //print("modelIndex: ");
-          //print(modelIndex);
-          //print(", i + offset: ");
-          //print(i + offset);
-          //print(", modelLength: ");
-          //print(modelLength);
-          // Break after the last led in the last universe.
-          //println("test");
-          if (universeOffset+1 >= universesNeeded && modelIndex >= LEDS_PER_UNIVERSE * universeOffset + rest + offset) break;
-          // Break when last pixel is reached.
-          //println("test2");
-          if (modelIndex >= modelLength) break;
-          point = model.points[modelIndex];
-        }
-        int artnetIndex = i + offset - (universeOffset > 0 ? offset : 0);
-        //print(", point.index: ");
-        //print(point.index);
-        //print(", artnetIndex: ");
-        //println(artnetIndex);
-        //println("test3");
-        if(artnetIndex >= LEDS_PER_UNIVERSE) break;
-        indices[artnetIndex] = point.index;
-      }  
-  }
   
-  public void addModel(LXModel model, int universeIndex, int universeOffset, int rest, boolean reverse, int offset, int universeCounter){
-    //int[] values = {LEDS_PER_UNIVERSE, model.points.length, rest};
-    //int loopFor = min(values); // TODO Check if this can be simplified with min(L/U, length).
-    //print("LEDS_PER_UNIVERSE: ");
-    //print(LEDS_PER_UNIVERSE);
-    //print(", modelIndex: ");
-    //print(modelIndex);
-    //print(", model.length: ");
-    //print(model.points.length);
-    //print(", loopFor: ");
-    //println(loopFor);
-    
-    int i = 0;
-    //print("start: ");
-    //print(i);
-    
-    for(; i < model.points.length; i++) {
-      // universIndex
-      int uI;
-      // modelIndex
-      int mI;
+  public void addModel(LXModel model, int universeOffset, boolean reverse, int universeCounter){
+    for(int i = 0; i < model.points.length; i++) {
       LXPoint point;
       
-      // TODO reverse
       if(reverse) {
-        //mI = i + (universeCounter * LEDS_PER_UNIVERSE) % model.points.length;
-        mI = model.points.length - 1 - (i + (universeCounter * LEDS_PER_UNIVERSE) % model.points.length);
-        if(mI < 0) break;
-        print("mI: ");
-        print(mI);
-        point = model.points[mI];
-        
-        //uI = LEDS_PER_UNIVERSE - 1 - i - universeOffset;
-        //if(uI < 0) {
-        uI = i + universeOffset;
-        if(uI >= LEDS_PER_UNIVERSE) {
-          println("");
-          break;
-        } else {
-          print(", uI: ");
-          println(uI);
-        }
-
+        int modelIndex = model.points.length - 1 - (i + (universeCounter * LEDS_PER_UNIVERSE) % model.points.length);
+        if(modelIndex < 0) break;
+        point = model.points[modelIndex];
       } else {
-        
-        mI = i + (universeCounter * LEDS_PER_UNIVERSE) % model.points.length;
-        //if(i >= model.points.length) break;
-        //if(i + offset >= model.points.length) break;
-        if(mI >= model.points.length) break;
-        print("mI: ");
-        print(mI);
-        point = model.points[mI];
-        
-        uI = i + universeOffset;
-        if(uI >= LEDS_PER_UNIVERSE) {
-          println("");
-          break;
-        } else {
-          print(", uI: ");
-          println(uI);
-        }
-      }
-      
+        int modelIndex = i + (universeCounter * LEDS_PER_UNIVERSE) % model.points.length;
+        if(modelIndex >= model.points.length) break;
 
-      indices[uI] = point.index;
+        point = model.points[modelIndex];        
+      }
+
+      int universIndex = i + universeOffset;
+      if(universIndex >= LEDS_PER_UNIVERSE) break;
+   
+      indices[universIndex] = point.index;
     }
   }
 
@@ -178,20 +77,6 @@ public static class ArtnetConfig {
     int length = points + offset;
     // before dividing you need to convert at least one int to float to get a float :-D
     int universesNeeded = ceil((float)length / UniverseConfig.LEDS_PER_UNIVERSE);
-    int rest = length % UniverseConfig.LEDS_PER_UNIVERSE;
-    print("points: ");
-    print(points);
-    print(", offset: ");
-    print(offset);
-    print(", universe: ");
-    print(universe);
-    print(", lenght: ");
-    print(length);
-    print(", L/U: ");
-    print(UniverseConfig.LEDS_PER_UNIVERSE);
-    print(", universesNeeded: ");
-    println(universesNeeded);
-    
 
     // Add universes
     for(int universeCounter = 0; universeCounter < universesNeeded; universeCounter++) {
@@ -204,33 +89,12 @@ public static class ArtnetConfig {
       } else {
         universeOffset = offset;
       }
-  
-      //int modelIndex = universeIndex * UniverseConfig.LEDS_PER_UNIVERSE + universeOffset;
-
-      System.err.print("####### add universe -> ");
-      System.err.print("universeIndex: ");
-      System.err.print(universeIndex);
-      System.err.print(", universeOffset: ");
-      System.err.print(universeOffset);
-      //System.err.print(", modelIndex: ");
-      //System.err.print(modelIndex);
-      System.err.print(", rest: ");
-      System.err.print(rest);
-      System.err.print(", reverse: ");
-      System.err.print(reverse);
-      System.err.println("");
-
-      //universeConfig.addModel(model, offset, reverse, universe+i, universesNeeded, rest);
-      universeConfig.addModel(model, universeIndex, universeOffset, rest, reverse, offset, universeCounter);
+      
+      universeConfig.addModel(model, universeOffset, reverse, universeCounter);
       ipConfig.put(universeIndex, universeConfig);
       storage.put(ip, ipConfig);
-
-      //modelIndex = universeIndex * UniverseConfig.LEDS_PER_UNIVERSE + length;
       
     }
-    
-    println("");
-    println("");
     
   }
 }
