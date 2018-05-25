@@ -184,7 +184,7 @@ public class OzStrips extends OLFPAPattern {
     .setDescription("Select the affected Element");
   
   public final CompoundParameter speed =
-    new CompoundParameter("Speed", .5, .01, 1)
+    new CompoundParameter("Speed", 500, 1, 1000)
     .setDescription("Speed of motion");
 
   public final BooleanParameter clear =
@@ -200,7 +200,7 @@ public class OzStrips extends OLFPAPattern {
   
   public void run(double deltaMs) {
     long currentMillis = java.lang.System.currentTimeMillis();
-    if(currentMillis - lastMillis > 1000*this.speed.getValue()) {
+    if(currentMillis - lastMillis > (1000 - this.speed.getValue()) ) {
       if(this.clear.isOn()) {
         // clear all
         setColors(#000000);
