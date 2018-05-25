@@ -36,11 +36,11 @@ void setup() {
   
   //JSONObject stripData = this.loadJSONObject("mjut_atopie.json");
   //JSONObject stripData = this.loadJSONObject("two_strips_reverse_test.json");
-  //JSONObject stripData = this.loadJSONObject("strips_overflow.json");
-  //JSONObject stripData = this.loadJSONObject("strips_overflow_r.json");
-  //JSONObject stripData = this.loadJSONObject("strips_overflow_1.json");
-  JSONObject stripData = this.loadJSONObject("strips_overflow_1_r.json");
-  //JSONObject stripData = this.loadJSONObject("strips_overflow_2.json");
+  //JSONObject stripData = this.loadJSONObject("strips_overflow_0.json");
+  //JSONObject stripData = this.loadJSONObject("strips_overflow_0_r.json");
+  JSONObject stripData = this.loadJSONObject("strips_overflow_1.json");
+  //JSONObject stripData = this.loadJSONObject("strips_overflow_1_r.json");
+  //JSONObject stripData = this.loadJSONObject("strips_overflow_2.json"); //<>//
   //JSONObject stripData = this.loadJSONObject("test.json");
   //JSONObject stripData = this.loadJSONObject("test.json");
   //JSONObject stripData = this.loadJSONObject("JSONStrip.json");

@@ -10,17 +10,17 @@
 			"strips": [
 				{
           "name": "1",
-					"leds"    : 160,
+					"leds"    : 90,
           "artnet"	: { "ip" : "192.168.1.2", "universe": 0, "offset": 0, "reverse": false},
 					"start"	  : { "x": 0,	   "y": 0    },
 					"end"     : { "x": 0,    "y": 5000 }
 				},
 				{
-          "name": "1",
-					"leds"    : 20,
-          "artnet"	: { "ip" : "192.168.1.2", "universe": 0, "offset": 160, "reverse": false},
+          "name": "2",
+					"leds"    : 90,
+          "artnet"	: { "ip" : "192.168.1.2", "universe": 0, "offset": 90, "reverse": false},
 					"start"	  : { "x": 300,	   "y": 0    },
-					"end"     : { "x": 300,    "y": 500 }
+					"end"     : { "x": 300,    "y": 5000 }
 				}
 			]
     }
