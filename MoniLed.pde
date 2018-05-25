@@ -2,6 +2,8 @@ import ch.bildspur.artnet.*; //<>//
 import ch.bildspur.artnet.packets.*;
 import ch.bildspur.artnet.events.*;
 
+
+
 /** 
  * By using LX Studio, you agree to the terms of the LX Studio Software
  * License and Distribution Agreement, available at: http://lx.studio/license
@@ -38,13 +40,13 @@ void setup() {
   //JSONObject stripData = this.loadJSONObject("two_strips_reverse_test.json");
   //JSONObject stripData = this.loadJSONObject("strips_overflow_0.json");
   //JSONObject stripData = this.loadJSONObject("strips_overflow_0_r.json");
-  //JSONObject stripData = this.loadJSONObject("strips_overflow_1.json");
+  //JSONObject stripData = this.loadJSONObject("strips_overflow_1.json"); //<>//
   //JSONObject stripData = this.loadJSONObject("strips_overflow_1_r.json");
-  //JSONObject stripData = this.loadJSONObject("strips_overflow_2.json"); //<>//
+  //JSONObject stripData = this.loadJSONObject("strips_overflow_2.json");
   //JSONObject stripData = this.loadJSONObject("strips_overflow_3.json");
-  //JSONObject stripData = this.loadJSONObject("strips_overflow_3_r.json");
+  //JSONObject stripData = this.loadJSONObject("strips_overflow_3_r.json"); //<>//
   JSONObject stripData = this.loadJSONObject("strips_overflow_4.json");
-  //JSONObject stripData = this.loadJSONObject("test.json"); //<>//
+  //JSONObject stripData = this.loadJSONObject("test.json");
   //JSONObject stripData = this.loadJSONObject("test.json");
   //JSONObject stripData = this.loadJSONObject("JSONStrip.json");
   //JSONObject stripData = this.loadJSONObject("JSONElement.json");
@@ -58,9 +60,9 @@ void setup() {
   
 }
 
-void initialize(heronarts.lx.studio.LXStudio lx, heronarts.lx.studio.LXStudio.UI ui) {
+void initialize(heronarts.lx.studio.LXStudio lx, heronarts.lx.studio.LXStudio.UI ui) { //<>//
   
-  try { //<>//
+  try {
     LXDatagramOutput output = new LXDatagramOutput(lx);
     for(String ip : ArtnetConfig.storage.keySet()){
       for(int universe : ArtnetConfig.storage.get(ip).keySet()){

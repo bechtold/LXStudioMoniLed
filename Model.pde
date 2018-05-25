@@ -85,15 +85,49 @@ public static class UniverseConfig {
       }  
   }
   
-  public void addModel(LXModel model, int universeIndex, int universeOffset, int modelIndex, boolean reverse){
-    for(int i = 0; i < LEDS_PER_UNIVERSE; i++) {
+  public void addModel(LXModel model, int universeIndex, int universeOffset, int rest, boolean reverse, int offset, int universeCounter){
+    //int[] values = {LEDS_PER_UNIVERSE, model.points.length, rest};
+    //int loopFor = min(values); // TODO Check if this can be simplified with min(L/U, length).
+    //print("LEDS_PER_UNIVERSE: ");
+    //print(LEDS_PER_UNIVERSE);
+    //print(", modelIndex: ");
+    //print(modelIndex);
+    //print(", model.length: ");
+    //print(model.points.length);
+    //print(", loopFor: ");
+    //println(loopFor);
+    
+    int i = 0;
+    print("start: ");
+    print(i);
+    
+    for(; i < model.points.length; i++) {
+      
       LXPoint point;
       // TODO reverse
       if(reverse) {
+        point = model.points[i];
       } else {
+        
+        int mI = i + (universeCounter * LEDS_PER_UNIVERSE) % model.points.length;
+        //if(i >= model.points.length) break;
+        //if(i + offset >= model.points.length) break;
+        if(mI >= model.points.length) break;
+        print("mI: ");
+        print(mI);
+        point = model.points[mI];
       }
       
-      //indices[universeOffset + i] = point.index;
+      int uI = i + universeOffset;
+      if(uI >= LEDS_PER_UNIVERSE) {
+        println("");
+        break;
+      } else {
+        print(", uI: ");
+        println(uI);
+      }
+
+      indices[uI] = point.index;
     }
   }
 
@@ -122,6 +156,7 @@ public static class ArtnetConfig {
     int length = points + offset;
     // before dividing you need to convert at least one int to float to get a float :-D
     int universesNeeded = ceil((float)length / UniverseConfig.LEDS_PER_UNIVERSE);
+    int rest = length % UniverseConfig.LEDS_PER_UNIVERSE;
     print("points: ");
     print(points);
     print(", offset: ");
@@ -137,9 +172,9 @@ public static class ArtnetConfig {
     
 
     // Add universes
-    for(int i = 0; i < universesNeeded; i++) {
+    for(int universeCounter = 0; universeCounter < universesNeeded; universeCounter++) {
 
-      int universeIndex = universe + i;
+      int universeIndex = universe + universeCounter;
       int universeOffset = 0;
       UniverseConfig universeConfig = ipConfig.get(universeIndex);
       if (universeConfig == null) {
@@ -148,27 +183,32 @@ public static class ArtnetConfig {
         universeOffset = offset;
       }
   
-      int modelIndex = universeIndex * UniverseConfig.LEDS_PER_UNIVERSE + universeOffset;
+      //int modelIndex = universeIndex * UniverseConfig.LEDS_PER_UNIVERSE + universeOffset;
 
       System.err.print("####### add universe -> ");
       System.err.print("universeIndex: ");
       System.err.print(universeIndex);
       System.err.print(", universeOffset: ");
       System.err.print(universeOffset);
-      System.err.print(", modelIndex: ");
-      System.err.print(modelIndex);
+      //System.err.print(", modelIndex: ");
+      //System.err.print(modelIndex);
+      System.err.print(", rest: ");
+      System.err.print(rest);
       System.err.print(", reverse: ");
       System.err.print(reverse);
       System.err.println("");
 
       //universeConfig.addModel(model, offset, reverse, universe+i, universesNeeded, rest);
-      universeConfig.addModel(model, universeIndex, universeOffset, modelIndex, reverse);
+      universeConfig.addModel(model, universeIndex, universeOffset, rest, reverse, offset, universeCounter);
       ipConfig.put(universeIndex, universeConfig);
       storage.put(ip, ipConfig);
 
-      modelIndex = universeIndex * UniverseConfig.LEDS_PER_UNIVERSE + length;
+      //modelIndex = universeIndex * UniverseConfig.LEDS_PER_UNIVERSE + length;
       
     }
+    
+    println("");
+    println("");
     
   }
 }

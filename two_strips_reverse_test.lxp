@@ -1,6 +1,6 @@
 {
   "version": "0.1",
-  "timestamp": 1527265474258,
+  "timestamp": 1527274864332,
   "engine": {
     "id": 1,
     "class": "heronarts.lx.LXEngine",
@@ -363,7 +363,7 @@
             "modulationColor": -65517,
             "parameters": {
               "label": "OzSlider",
-              "Index": 90.0
+              "Index": 0.0
             },
             "modulation": {
               "modulators": [],
@@ -538,7 +538,7 @@
             "phase": 0.0,
             "exp": 0.0
           },
-          "basis": 0.07483516483333419
+          "basis": 0.5124175824153102
         },
         {
           "id": 195,
@@ -552,7 +552,7 @@
             "tempoSync": false,
             "tempoMultiplier": 5,
             "tempoLock": true,
-            "clockMode": 0,
+            "clockMode": 1,
             "periodFast": 3847.0314221181284,
             "periodSlow": 10000.0,
             "wave": 3,
@@ -561,7 +561,7 @@
             "phase": 0.0,
             "exp": 0.0
           },
-          "basis": 0.6922153368247407
+          "basis": 0.0215
         },
         {
           "id": 252,
@@ -617,6 +617,24 @@
           "id": 253,
           "class": "heronarts.lx.parameter.LXCompoundModulation",
           "modulationColor": -16711916,
+          "parameters": {
+            "label": "",
+            "enabled": true,
+            "Polarity": 0,
+            "Range": 1.0
+          }
+        },
+        {
+          "source": {
+            "id": 195
+          },
+          "target": {
+            "componentId": 443,
+            "parameterPath": "Index"
+          },
+          "id": 596,
+          "class": "heronarts.lx.parameter.LXCompoundModulation",
+          "modulationColor": -15204608,
           "parameters": {
             "label": "",
             "enabled": true,
