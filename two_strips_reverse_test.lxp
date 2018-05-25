@@ -1,6 +1,6 @@
 {
   "version": "0.1",
-  "timestamp": 1527200891874,
+  "timestamp": 1527235718394,
   "engine": {
     "id": 1,
     "class": "heronarts.lx.LXEngine",
@@ -323,7 +323,7 @@
         },
         "effects": [],
         "clips": [],
-        "patternIndex": 1,
+        "patternIndex": 0,
         "patterns": [
           {
             "id": 392,
@@ -331,7 +331,7 @@
             "modulationColor": -47872,
             "parameters": {
               "label": "Iterator",
-              "speed": 1.9899999778717756
+              "speed": 29.709999358281493
             },
             "modulation": {
               "modulators": [],
@@ -348,7 +348,7 @@
               "label": "OzStrips",
               "speed": 0.6880999958381057,
               "clear": true,
-              "element": 1.0
+              "element": 0.0
             },
             "modulation": {
               "modulators": [],
@@ -363,7 +363,7 @@
             "modulationColor": -65517,
             "parameters": {
               "label": "OzSlider",
-              "Index": 172
+              "Index": 2
             },
             "modulation": {
               "modulators": [],
@@ -426,15 +426,15 @@
           "attack": 13.999999910593031,
           "release": 100.00000000000003,
           "slope": 1.200000073760748,
-          "Band-1": 0.0,
-          "Band-2": 0.0,
-          "Band-3": 0.0,
-          "Band-4": 0.0,
-          "Band-5": 0.0,
-          "Band-6": 0.0,
-          "Band-7": 0.0,
-          "Band-8": 0.0,
-          "Band-9": 0.0,
+          "Band-1": 0.09722101797787486,
+          "Band-2": 0.198724521133831,
+          "Band-3": 0.19080420510876317,
+          "Band-4": 0.22928416450598155,
+          "Band-5": 0.18574354736612209,
+          "Band-6": 0.1446297932004773,
+          "Band-7": 0.30200050924591537,
+          "Band-8": 0.2895164498493158,
+          "Band-9": 0.05973692743208281,
           "Band-10": 0.0,
           "Band-11": 0.0,
           "Band-12": 0.0,
@@ -503,7 +503,7 @@
             "phase": 0.0,
             "exp": 0.0
           },
-          "basis": 0.053736263734696366
+          "basis": 0.9936263736248028
         },
         {
           "id": 195,
@@ -526,7 +526,7 @@
             "phase": 0.0,
             "exp": 0.0
           },
-          "basis": 0.17259718440083274
+          "basis": 0.7613301743384315
         },
         {
           "id": 252,
