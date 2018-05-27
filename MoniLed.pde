@@ -3,8 +3,11 @@ import codeanticode.syphon.*;
 import ch.bildspur.artnet.*; //<>//
 import ch.bildspur.artnet.packets.*;
 import ch.bildspur.artnet.events.*;
+import processing.opengl.PGraphics2D;
 
-
+PGraphics pg;
+SyphonClient syphonClient;
+int[] syphonImage;
 
 /** 
  * By using LX Studio, you agree to the terms of the LX Studio Software
@@ -38,15 +41,15 @@ void setup() {
   size(800, 720, P3D);
   
   
-  //JSONObject stripData = this.loadJSONObject("mjut_atopie.json");
+  //JSONObject stripData = this.loadJSONObject("mjut_atopie.json"); //<>//
   //JSONObject stripData = this.loadJSONObject("two_strips_reverse_test.json");
   
   //JSONObject stripData = this.loadJSONObject("strips_overflow_0.json");
-  //JSONObject stripData = this.loadJSONObject("strips_overflow_0_r.json"); //<>// //<>//
+  //JSONObject stripData = this.loadJSONObject("strips_overflow_0_r.json"); //<>//
   //JSONObject stripData = this.loadJSONObject("strips_overflow_1.json");
   //JSONObject stripData = this.loadJSONObject("strips_overflow_1_r.json");
   //JSONObject stripData = this.loadJSONObject("strips_overflow_2.json");
-  //JSONObject stripData = this.loadJSONObject("strips_overflow_2_r.json"); //<>// //<>//
+  //JSONObject stripData = this.loadJSONObject("strips_overflow_2_r.json");
   //JSONObject stripData = this.loadJSONObject("strips_overflow_3.json");
   //JSONObject stripData = this.loadJSONObject("strips_overflow_3_r.json");
   //JSONObject stripData = this.loadJSONObject("strips_overflow_4.json");
@@ -58,12 +61,13 @@ void setup() {
   //JSONObject stripData = this.loadJSONObject("JSONElement.json");
   //JSONObject stripData = this.loadJSONObject("JSONModel.json");
   //JSONObject stripData = this.loadJSONObject("two_strip_matrix.json");
-  JSONObject stripData = this.loadJSONObject("hammock_reactor.json");
+  JSONObject stripData = this.loadJSONObject("hammock_reactor.json"); //<>//
+  //JSONObject stripData = this.loadJSONObject("sixteen_matrix.json");
 
   lx = new heronarts.lx.studio.LXStudio(this, buildModel(stripData), MULTITHREADED);
   lx.ui.setResizable(RESIZABLE);
-   //<>// //<>//
   
+  syphonClient = new SyphonClient(this, "Magic");
 }
 
 void initialize(heronarts.lx.studio.LXStudio lx, heronarts.lx.studio.LXStudio.UI ui) {
@@ -93,6 +97,15 @@ void onUIReady(heronarts.lx.studio.LXStudio lx, heronarts.lx.studio.LXStudio.UI 
 
 void draw() {
   // All is handled by LX Studio
+  
+  // This loads the pixels from the syphonClient
+  if (syphonClient.newFrame()) {
+    pg = syphonClient.getGraphics(pg);
+    if(pg != null) {
+      pg.loadPixels();
+    }
+  }
+
 }
 
 // Configuration flags

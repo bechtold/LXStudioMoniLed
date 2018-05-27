@@ -1,4 +1,4 @@
-import java.util.List; //<>// //<>//
+import java.util.List; //<>//
 
 LXModel buildModel(JSONObject stripData) {
   // A three-dimensional grid model
@@ -9,11 +9,11 @@ LXModel buildModel(JSONObject stripData) {
  * Class to hold a single universe configuration data
  */
 public static class UniverseConfig {
-  
+
   /**
    * Maximum number of LEDs per universe.
    */
-   public static final int LEDS_PER_UNIVERSE = 170;
+  public static final int LEDS_PER_UNIVERSE = 170;
 
   /**
    * indices array to be given to the ArtNetDatagram constructor
@@ -29,29 +29,28 @@ public static class UniverseConfig {
       indices[i] = -1;
     }
   }
-  
-  public void addModel(LXModel model, int universeOffset, boolean reverse, int universeCounter){
-    for(int i = 0; i < model.points.length; i++) {
+
+  public void addModel(LXModel model, int universeOffset, boolean reverse, int universeCounter) {
+    for (int i = 0; i < model.points.length; i++) {
       LXPoint point;
-      
-      if(reverse) {
+
+      if (reverse) {
         int modelIndex = model.points.length - 1 - (i + (universeCounter * LEDS_PER_UNIVERSE) % model.points.length);
-        if(modelIndex < 0) break;
+        if (modelIndex < 0) break;
         point = model.points[modelIndex];
       } else {
         int modelIndex = i + (universeCounter * LEDS_PER_UNIVERSE) % model.points.length;
-        if(modelIndex >= model.points.length) break;
+        if (modelIndex >= model.points.length) break;
 
-        point = model.points[modelIndex];        
+        point = model.points[modelIndex];
       }
 
       int universIndex = i + universeOffset;
-      if(universIndex >= LEDS_PER_UNIVERSE) break;
-   
+      if (universIndex >= LEDS_PER_UNIVERSE) break;
+
       indices[universIndex] = point.index;
     }
   }
-
 }
 
 /**
@@ -71,7 +70,7 @@ public static class ArtnetConfig {
   public void addModel(LXModel model, String ip, int universe, boolean reverse, int offset) {
     HashMap<Integer, UniverseConfig> ipConfig = storage.get(ip);
     if (ipConfig == null) ipConfig = new HashMap<Integer, UniverseConfig>();
-    
+
     int points = model.points.length;
     // calculate how many universes are needed TODO: check if universe exists and use for calculation
     int length = points + offset;
@@ -79,7 +78,7 @@ public static class ArtnetConfig {
     int universesNeeded = ceil((float)length / UniverseConfig.LEDS_PER_UNIVERSE);
 
     // Add universes
-    for(int universeCounter = 0; universeCounter < universesNeeded; universeCounter++) {
+    for (int universeCounter = 0; universeCounter < universesNeeded; universeCounter++) {
 
       int universeIndex = universe + universeCounter;
       int universeOffset = universeCounter == 0 ? offset : 0;
@@ -89,13 +88,11 @@ public static class ArtnetConfig {
       } else {
         universeOffset = offset;
       }
-      
+
       universeConfig.addModel(model, universeOffset, reverse, universeCounter);
       ipConfig.put(universeIndex, universeConfig);
       storage.put(ip, ipConfig);
-      
     }
-    
   }
 }
 
@@ -249,14 +246,14 @@ public static class JSONStrip extends LXModel {
       stripModel = new StripModel(stripMetrics);
       addPoints(stripModel);
 
-       //TODO Check ArtNetConfig
+      //TODO Check ArtNetConfig
       JSONObject artnetConfigData = stripData.getJSONObject("artnet");
-      if(artnetConfigData != null){
+      if (artnetConfigData != null) {
         artnetConfig.addModel(
-          stripModel,
-          artnetConfigData.getString("ip", "127.0.0.1"),
-          artnetConfigData.getInt("universe", 0),
-          artnetConfigData.getBoolean("reverse", false),
+          stripModel, 
+          artnetConfigData.getString("ip", "127.0.0.1"), 
+          artnetConfigData.getInt("universe", 0), 
+          artnetConfigData.getBoolean("reverse", false), 
           artnetConfigData.getInt("offset", 0));
       }
     }
