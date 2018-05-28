@@ -259,3 +259,26 @@ public class OzAxis extends LXPattern {
     }
   }
 }
+
+public class OzHeadless extends LXPattern {
+
+   private final LXModulator hue = startModulator(new SawLFO(0, 360, 9000));
+   private final LXModulator brightness = startModulator(new SinLFO(10, 100, 4000));
+   private final LXModulator yPos = startModulator(new SinLFO(0, 1, 5000));
+   private final LXModulator width = startModulator(new SinLFO(.4, 1, 3000));
+
+   public OzHeadless(LX lx) {
+     super(lx);
+   }
+
+   @Override
+   public void run(double deltaMs) {
+     float hue = this.hue.getValuef();
+     float brightness = this.brightness.getValuef();
+     float yPos = this.yPos.getValuef();
+     float falloff = 100 / (this.width.getValuef());
+     for (LXPoint p : model.points) {
+       colors[p.index] = LX.hsb(hue, 100, Math.max(0, brightness - falloff * Math.abs(p.yn - yPos)));
+     }
+   }
+ }
