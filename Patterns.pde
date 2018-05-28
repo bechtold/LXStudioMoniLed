@@ -10,6 +10,7 @@ public abstract class OLFPAPattern extends LXPattern {
   public abstract String getAuthor();
 }
 
+@LXCategory("Oz")
 public class PatternSolid extends OLFPAPattern {
   public String getAuthor(){
     return "Oskar Bechtold";
@@ -34,6 +35,7 @@ public class PatternSolid extends OLFPAPattern {
 /**
  * Trying to implement the iterator class
  **/
+@LXCategory("Oz")
 public class Ozterator extends OLFPAPattern {    
   public String getAuthor(){
     return "Oskar Bechtold";
@@ -84,6 +86,7 @@ public class Ozterator extends OLFPAPattern {
 /**
  * Set point with slider
  **/
+@LXCategory("Oz")
 public class OzSlider extends OLFPAPattern {
   public String getAuthor(){
     return "Oskar Bechtold";
@@ -107,6 +110,7 @@ public class OzSlider extends OLFPAPattern {
 /**
  * Set random point(s) at a time.
  **/
+@LXCategory("Oz")
 public class OzRandom extends OLFPAPattern {
   public String getAuthor(){
     return "Oskar Bechtold";
@@ -170,6 +174,7 @@ public class OzRandom extends OLFPAPattern {
 /**
  * Animate strips
  **/
+@LXCategory("Oz")
 public class OzStrips extends OLFPAPattern {
   public String getAuthor(){
     return "Oskar Bechtold";
@@ -227,6 +232,7 @@ public class OzStrips extends OLFPAPattern {
 /**
  * Animate pixels on an axis
  **/
+@LXCategory("Oz")
 public class OzAxis extends LXPattern {
  
   public final CompoundParameter xPos = new CompoundParameter("X", 0);
@@ -260,6 +266,7 @@ public class OzAxis extends LXPattern {
   }
 }
 
+@LXCategory("Oz")
 public class OzHeadless extends LXPattern {
 
    private final LXModulator hue = startModulator(new SawLFO(0, 360, 9000));
