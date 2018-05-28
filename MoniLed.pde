@@ -72,6 +72,11 @@ void setup() {
 
 void initialize(heronarts.lx.studio.LXStudio lx, heronarts.lx.studio.LXStudio.UI ui) {
   
+  lx.registerEffect(StrobeEffect.class);
+  lx.registerEffect(BlurEffect.class);
+  lx.registerEffect(DesaturationEffect.class);
+  lx.registerEffect(FlashEffect.class);
+
   try {
     LXDatagramOutput output = new LXDatagramOutput(lx);
     for(String ip : ArtnetConfig.storage.keySet()){
