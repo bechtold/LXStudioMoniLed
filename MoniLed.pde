@@ -101,7 +101,7 @@ void onUIReady(heronarts.lx.studio.LXStudio lx, heronarts.lx.studio.LXStudio.UI 
   // Add custom UI components here
   //ui.addLayer(new UI2dContext(ui, 50, 50, 100, 300));
   
-  uiSyphonControls = (UISyphonControls) new UISyphonControls(ui).setExpanded(false).addToContainer(ui.leftPane.global);
+  uiSyphonControls = (UISyphonControls) new UISyphonControls(ui).setExpanded(true).addToContainer(ui.leftPane.global);
 
 }
 

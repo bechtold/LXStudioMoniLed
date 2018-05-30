@@ -51,7 +51,10 @@ public class UISyphonControls extends UICollapsibleSection {
 
     public void onActivate() {
       active = !active;
-      redraw();
+      // TODO: starting new syphon client is not possible. So maybe initialize all clients in the beginning and just switch them like in the SelectServer example.
+      //syphonClient.stop();
+      //syphonClient = new SyphonClient(this, this.appName, this.serverName);
+      //redraw();
     }
 
     public void onCheck(boolean checked) {
