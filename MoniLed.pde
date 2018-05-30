@@ -5,9 +5,8 @@ import ch.bildspur.artnet.packets.*;
 import ch.bildspur.artnet.events.*;
 import processing.opengl.PGraphics2D;
 
-PGraphics pg;
+PImage syphonImage;
 SyphonClient syphonClient;
-int[] syphonImage;
 
 /** 
  * By using LX Studio, you agree to the terms of the LX Studio Software
@@ -111,9 +110,9 @@ void draw() {
   
   // This loads the pixels from the syphonClient
   if (syphonClient.newFrame()) {
-    pg = syphonClient.getGraphics(pg);
-    if(pg != null) {
-      pg.loadPixels();
+    syphonImage = syphonClient.getImage(syphonImage, true);
+    if(syphonImage != null) {
+      syphonImage.loadPixels();
     }
   }
 
