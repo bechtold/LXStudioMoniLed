@@ -67,7 +67,7 @@ void setup() {
   lx = new heronarts.lx.studio.LXStudio(this, buildModel(stripData), MULTITHREADED);
   lx.ui.setResizable(RESIZABLE);
   
-  syphonClient = new SyphonClient(this, "Magic");
+  syphonClient = new SyphonClient(this);
 }
 
 void initialize(heronarts.lx.studio.LXStudio lx, heronarts.lx.studio.LXStudio.UI ui) {
@@ -96,8 +96,14 @@ void initialize(heronarts.lx.studio.LXStudio lx, heronarts.lx.studio.LXStudio.UI
   
 }
 
+UISyphonControls uiSyphonControls;
+
 void onUIReady(heronarts.lx.studio.LXStudio lx, heronarts.lx.studio.LXStudio.UI ui) {
   // Add custom UI components here
+  //ui.addLayer(new UI2dContext(ui, 50, 50, 100, 300));
+  
+  uiSyphonControls = (UISyphonControls) new UISyphonControls(ui).setExpanded(false).addToContainer(ui.leftPane.global);
+
 }
 
 void draw() {
