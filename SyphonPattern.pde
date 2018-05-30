@@ -1,6 +1,7 @@
 /**
  * Maybe a syphon input pattern.
  */
+@LXCategory("Oz")
 public class SyphonPattern extends LXPattern {
   public SyphonPattern(LX lx) {
     super(lx);
