@@ -1,6 +1,6 @@
 {
   "version": "0.1",
-  "timestamp": 1527714612760,
+  "timestamp": 1527719531167,
   "engine": {
     "id": 1,
     "class": "heronarts.lx.LXEngine",
@@ -309,7 +309,7 @@
           "selected": true,
           "enabled": true,
           "cue": false,
-          "fader": 1.0,
+          "fader": 0.4142857054248452,
           "crossfadeGroup": 0,
           "blendMode": 0,
           "midiMonitor": false,
@@ -323,7 +323,7 @@
         },
         "effects": [],
         "clips": [],
-        "patternIndex": 4,
+        "patternIndex": 6,
         "patterns": [
           {
             "id": 392,
@@ -569,7 +569,7 @@
             "phase": 0.0,
             "exp": 0.2199999950826168
           },
-          "basis": 0.24399136891680373
+          "basis": 0.9373795700636111
         },
         {
           "id": 195,
@@ -592,7 +592,7 @@
             "phase": 0.0,
             "exp": 0.0
           },
-          "basis": 0.4194703995994261
+          "basis": 0.629831311335084
         },
         {
           "id": 252,
