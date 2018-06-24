@@ -1,3 +1,7 @@
 .DS_Store
+<<<<<<< HEAD
 node_modules
+=======
+model_creators/node_modules/
+>>>>>>> e42ef0755f03c1242be11229f2c661c0ea1ea5d1
 
