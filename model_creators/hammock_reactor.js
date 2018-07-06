@@ -54,6 +54,36 @@ let vertices_bottom = calcPolygon({
   cy: 0
 });
 
+let tower_top = calcPolygon({
+  n: 6,
+  r: 3500,
+  a: 0,
+  cx: 0,
+  cy: 0
+});
+let tower_bottom = calcPolygon({
+  n: 6,
+  r: 4000,
+  a: 0,
+  cx: 0,
+  cy: 0
+});
+
+let tower_top_1 = calcPolygon({
+  n: 6,
+  r: 3500,
+  a: 0.1,
+  cx: 0,
+  cy: 0
+});
+let tower_bottom_1 = calcPolygon({
+  n: 6,
+  r: 4000,
+  a: 0.1,
+  cx: 0,
+  cy: 0
+});
+
 var ring_top = [];
 for(i=0; i<12;i++){
   var strip = 				{
@@ -66,17 +96,17 @@ for(i=0; i<12;i++){
   ring_top.push(strip);
 }
 
-var ring_bottom = [];
-for(i=0; i<12;i++){
-  var strip = 				{
-            "name"    : "ring_bottom_"+i,
-  					"leds"    : 90,
-  					"artnet"	: { "ip":"127.0.0.2", "universe": 0, "address": 0},
-  					"start"	  : { "x": vertices_bottom[i][0],	  "y": 0, "z":vertices_bottom[i][1]},
-  					"end"     : { "x": vertices_bottom[(i+1)%vertices_bottom.length][0], "y": 0,    "z": vertices_bottom[(i+1)%vertices_bottom.length][1] }
-  				}
-  ring_bottom.push(strip);
-}
+// var ring_bottom = [];
+// for(i=0; i<12;i++){
+//   var strip = 				{
+//             "name"    : "ring_bottom_"+i,
+//   					"leds"    : 90,
+//   					"artnet"	: { "ip":"127.0.0.2", "universe": 0, "address": 0},
+//   					"start"	  : { "x": vertices_bottom[i][0],	  "y": 0, "z":vertices_bottom[i][1]},
+//   					"end"     : { "x": vertices_bottom[(i+1)%vertices_bottom.length][0], "y": 0,    "z": vertices_bottom[(i+1)%vertices_bottom.length][1] }
+//   				}
+//   ring_bottom.push(strip);
+// }
 
 var triangles = [];
 for(i=0; i<12;i++){
@@ -98,14 +128,34 @@ for(i=0; i<12;i++){
   triangles.push(strip);
 }
 
+var tower = [];
+for(i=0; i<6;i++){
+  var strip = 				{
+            "name"    : "line_"+i,
+  					"leds"    : 90,
+  					"artnet"	: { "ip":"127.0.0.2", "universe": 0, "address": 0},
+  					"start"	  : { "x": tower_top[i][0],	  "y": 3000, "z":tower_top[i][1]},
+  					"end"     : { "x": tower_bottom[i][0], "y": 0,    "z": tower_bottom[i][1] }
+  				};
+  tower.push(strip);
+  var strip = 				{
+            "name"    : "line_"+i+"_2",
+  					"leds"    : 90,
+  					"artnet"	: { "ip":"127.0.0.2", "universe": 0, "address": 0},
+  					"start"	  : { "x": tower_top_1[i][0],	  "y": 3000, "z":tower_top_1[i][1]},
+  					"end"     : { "x": tower_bottom_1[i][0], "y": 0,    "z": tower_bottom_1[i][1] }
+  				}
+  tower.push(strip);
+}
+
 var reactor = {
 	"elements": [
-		{
-			"name": "Ring Bottom",
-			"x":0,
-			"y":0,
-			"strips": ring_bottom
-		},
+		// {
+		// 	"name": "Ring Bottom",
+		// 	"x":0,
+		// 	"y":0,
+		// 	"strips": ring_bottom
+		// },
 		{
 			"name": "Ring Top",
 			"x":0,
@@ -122,8 +172,7 @@ var reactor = {
 			"name": "Tower top to bottom",
 			"x":0,
 			"y":0,
-			"strips": [
-      ]
+			"strips": tower
     }
 
   ]
@@ -133,5 +182,5 @@ var json = JSON.stringify(reactor);
 
 var fs = require('fs');
 fs.writeFile('./hammock_reactor.json', json, 'utf8', function(){
-  
+
 });
