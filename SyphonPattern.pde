@@ -1,10 +1,22 @@
+public static class Planes {
+  public enum plane {
+    X_Y,
+    Y_Z,
+    X_Z
+  };
+}  
+
 /**
  * Maybe a syphon input pattern.
  */
 @LXCategory("Oz")
 public class SyphonPattern extends LXPattern {
+  
+  public final EnumParameter<Planes.plane> plane = new EnumParameter<Planes.plane>("Plane", Planes.plane.X_Z);
+
   public SyphonPattern(LX lx) {
     super(lx);
+    addParameter("plane", this.plane);
   }
   
   public void run(double deltaMs) {
