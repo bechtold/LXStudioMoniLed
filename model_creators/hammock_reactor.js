@@ -1,5 +1,7 @@
 var CSV = require('csv-string');
 
+var ip = "192.168.1.2";
+
 /*export interface polygonConfig {
   n: number; // number of vertices = number of sides
   r: number; // radius (circumscribed circle)
@@ -89,7 +91,7 @@ for(i=0; i<12;i++){
   var strip = 				{
             "name"    : "ring_top_"+i,
   					"leds"    : 90,
-  					"artnet"	: { "ip":"127.0.0.2", "universe": 0, "address": 0},
+  					"artnet"	: { "ip":ip, "universe": 0, "address": 0},
   					"start"	  : { "x": vertices_top[i][0],	  "y": 3000, "z":vertices_top[i][1]},
   					"end"     : { "x": vertices_top[(i+1)%vertices_top.length][0], "y":3000,    "z": vertices_top[(i+1)%vertices_top.length][1] }
   				}
@@ -101,7 +103,7 @@ for(i=0; i<12;i++){
 //   var strip = 				{
 //             "name"    : "ring_bottom_"+i,
 //   					"leds"    : 90,
-//   					"artnet"	: { "ip":"127.0.0.2", "universe": 0, "address": 0},
+//   					"artnet"	: { "ip":ip, "universe": 0, "address": 0},
 //   					"start"	  : { "x": vertices_bottom[i][0],	  "y": 0, "z":vertices_bottom[i][1]},
 //   					"end"     : { "x": vertices_bottom[(i+1)%vertices_bottom.length][0], "y": 0,    "z": vertices_bottom[(i+1)%vertices_bottom.length][1] }
 //   				}
@@ -113,7 +115,7 @@ for(i=0; i<12;i++){
   var strip = 				{
             "name"    : "triangle_"+i,
   					"leds"    : 90,
-  					"artnet"	: { "ip":"127.0.0.2", "universe": 0, "address": 0},
+  					"artnet"	: { "ip":ip, "universe": 0, "address": 0},
   					"start"	  : { "x": vertices_top[i][0],	  "y": 3000, "z":vertices_top[i][1]},
   					"end"     : { "x": vertices_bottom[(i+1)%vertices_top.length][0], "y": 0,    "z": vertices_bottom[(i+1)%vertices_top.length][1] }
   				};
@@ -121,7 +123,7 @@ for(i=0; i<12;i++){
   var strip = 				{
             "name"    : "triangle_"+i+"_2",
   					"leds"    : 90,
-  					"artnet"	: { "ip":"127.0.0.2", "universe": 0, "address": 0},
+  					"artnet"	: { "ip":ip, "universe": 0, "address": 0},
   					"start"	  : { "x": vertices_top[(i+1)%vertices_top.length][0],	  "y": 3000, "z":vertices_top[(i+1)%vertices_top.length][1]},
   					"end"     : { "x": vertices_bottom[(i+1)%vertices_top.length][0], "y": 0,    "z": vertices_bottom[(i+1)%vertices_top.length][1] }
   				}
@@ -133,7 +135,7 @@ for(i=0; i<6;i++){
   var strip = 				{
             "name"    : "line_"+i,
   					"leds"    : 90,
-  					"artnet"	: { "ip":"127.0.0.2", "universe": 0, "address": 0},
+  					"artnet"	: { "ip":ip, "universe": 0, "address": 0},
   					"start"	  : { "x": tower_top[i][0],	  "y": 3000, "z":tower_top[i][1]},
   					"end"     : { "x": tower_bottom[i][0], "y": 0,    "z": tower_bottom[i][1] }
   				};
@@ -141,7 +143,7 @@ for(i=0; i<6;i++){
   var strip = 				{
             "name"    : "line_"+i+"_2",
   					"leds"    : 90,
-  					"artnet"	: { "ip":"127.0.0.2", "universe": 0, "address": 0},
+  					"artnet"	: { "ip":ip, "universe": 0, "address": 0},
   					"start"	  : { "x": tower_top_1[i][0],	  "y": 3000, "z":tower_top_1[i][1]},
   					"end"     : { "x": tower_bottom_1[i][0], "y": 0,    "z": tower_bottom_1[i][1] }
   				}
