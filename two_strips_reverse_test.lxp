@@ -1,6 +1,6 @@
 {
   "version": "0.1",
-  "timestamp": 1530901625859,
+  "timestamp": 1530904307306,
   "engine": {
     "id": 1,
     "class": "heronarts.lx.LXEngine",
@@ -309,7 +309,7 @@
           "selected": true,
           "enabled": true,
           "cue": false,
-          "fader": 0.4142857054248452,
+          "fader": 1.0,
           "crossfadeGroup": 0,
           "blendMode": 0,
           "midiMonitor": false,
@@ -429,7 +429,8 @@
             "class": "MoniLed$SyphonPattern",
             "modulationColor": -65490,
             "parameters": {
-              "label": "Syphon"
+              "label": "Syphon",
+              "plane": 2
             },
             "modulation": {
               "modulators": [],
@@ -542,7 +543,7 @@
         "mode": 0,
         "fps": 0.0,
         "gamma": 0,
-        "brightness": 1.0
+        "brightness": 0.3714285735040903
       }
     },
     "components": {},
@@ -569,7 +570,7 @@
             "phase": 0.0,
             "exp": 0.2199999950826168
           },
-          "basis": 0.41763889220671946
+          "basis": 0.12586044994628606
         },
         {
           "id": 195,
@@ -592,7 +593,7 @@
             "phase": 0.0,
             "exp": 0.0
           },
-          "basis": 0.32711952525838706
+          "basis": 0.9935285574329701
         },
         {
           "id": 252,
@@ -772,18 +773,18 @@
         "centerPoint": false,
         "camera": {
           "active": true,
-          "radius": 23720.06522078119,
-          "theta": -0.0,
-          "phi": 0.3960000000000002,
-          "x": 0.0,
-          "y": 0.0,
+          "radius": 23300.06522078119,
+          "theta": 0.0,
+          "phi": 1.4137166738510132,
+          "x": -4.999977648258209,
+          "y": 1260.5,
           "z": 0.0
         },
         "cue": [
           {
             "active": true,
             "radius": 23720.06522078119,
-            "theta": -0.0,
+            "theta": 0.0,
             "phi": 0.3960000000000002,
             "x": 0.0,
             "y": 0.0,
@@ -819,11 +820,11 @@
           {
             "active": true,
             "radius": 23300.06522078119,
-            "theta": -0.0,
+            "theta": 0.0,
             "phi": 1.4137166738510132,
             "x": -4.999977648258209,
             "y": 1260.5,
-            "z": -0.0
+            "z": 0.0
           },
           {
             "active": true,
@@ -835,7 +836,7 @@
             "z": 0.0
           }
         ],
-        "focus": 0,
+        "focus": 4,
         "pointCloud": {
           "pointSize": 3.0
         }
