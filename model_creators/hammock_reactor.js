@@ -113,22 +113,43 @@ for(i=0; i<12;i++){
 
 var triangles = [];
 for(i=0; i<12;i++){
-  var strip = 				{
-            "name"    : "triangle_"+i,
-  					"leds"    : 90,
-  					"artnet"	: { "ip":ip, "universe": i*2, "offset": 90},
-  					"start"	  : { "x": vertices_top[i][0],	  "y": 3000, "z":vertices_top[i][1]},
-  					"end"     : { "x": vertices_bottom[(i+1)%vertices_top.length][0], "y": 0,    "z": vertices_bottom[(i+1)%vertices_top.length][1] }
-  				};
-  triangles.push(strip);
-  var strip = 				{
-            "name"    : "triangle_"+i+"_2",
-  					"leds"    : 90,
-  					"artnet"	: { "ip":ip, "universe": i*2 + 1, "offset": 10, "reverse": true},
-  					"start"	  : { "x": vertices_top[(i+1)%vertices_top.length][0],	  "y": 3000, "z":vertices_top[(i+1)%vertices_top.length][1]},
-  					"end"     : { "x": vertices_bottom[(i+1)%vertices_top.length][0], "y": 0,    "z": vertices_bottom[(i+1)%vertices_top.length][1] }
-  				}
-  triangles.push(strip);
+  var rev = !(i%2);
+
+  if(rev) {
+    var strip = 				{
+              "name"    : "triangle_"+i,
+    					"leds"    : 90,
+    					"artnet"	: { "ip":ip, "universe": i*2, "offset": 90, "reverse": false},
+    					"start"	  : { "x": vertices_top[i][0],	  "y": 3000, "z":vertices_top[i][1]},
+    					"end"     : { "x": vertices_bottom[(i+1)%vertices_top.length][0], "y": 0,    "z": vertices_bottom[(i+1)%vertices_top.length][1] }
+    				};
+    triangles.push(strip);
+    var strip = 				{
+              "name"    : "triangle_"+i+"_2",
+    					"leds"    : 90,
+    					"artnet"	: { "ip":ip, "universe": i*2 + 1, "offset": 10, "reverse": false},
+    					"start"     : { "x": vertices_bottom[(i+1)%vertices_top.length][0], "y": 0,    "z": vertices_bottom[(i+1)%vertices_top.length][1] },
+              "end"	  : { "x": vertices_top[(i+1)%vertices_top.length][0],	  "y": 3000, "z":vertices_top[(i+1)%vertices_top.length][1]}
+    				}
+    triangles.push(strip);
+  }else {
+    var strip = 				{
+              "name"    : "triangle_"+i,
+    					"leds"    : 90,
+    					"artnet"	: { "ip":ip, "universe": i*2 + 1, "offset": 10, "reverse": true},
+              "start"	  : { "x": vertices_top[i][0],	  "y": 3000, "z":vertices_top[i][1]},
+              "end"     : { "x": vertices_bottom[(i+1)%vertices_top.length][0], "y": 0,    "z": vertices_bottom[(i+1)%vertices_top.length][1] }
+    				};
+    triangles.push(strip);
+    var strip = 				{
+              "name"    : "triangle_"+i+"_2",
+    					"leds"    : 90,
+    					"artnet"	: { "ip":ip, "universe": i*2, "offset": 90, "reverse": true},
+    					"start"     : { "x": vertices_bottom[(i+1)%vertices_top.length][0], "y": 0,    "z": vertices_bottom[(i+1)%vertices_top.length][1] },
+              "end"	  : { "x": vertices_top[(i+1)%vertices_top.length][0],	  "y": 3000, "z":vertices_top[(i+1)%vertices_top.length][1]}
+    				}
+    triangles.push(strip);
+  }
 }
 
 var tower = [];
