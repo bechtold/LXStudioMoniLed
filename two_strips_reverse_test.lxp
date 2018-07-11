@@ -1,6 +1,6 @@
 {
   "version": "0.1",
-  "timestamp": 1530904307306,
+  "timestamp": 1531090144736,
   "engine": {
     "id": 1,
     "class": "heronarts.lx.LXEngine",
@@ -323,7 +323,7 @@
         },
         "effects": [],
         "clips": [],
-        "patternIndex": 6,
+        "patternIndex": 8,
         "patterns": [
           {
             "id": 392,
@@ -431,6 +431,38 @@
             "parameters": {
               "label": "Syphon",
               "plane": 2
+            },
+            "modulation": {
+              "modulators": [],
+              "modulations": [],
+              "triggers": []
+            },
+            "autoCycleEnabled": true
+          },
+          {
+            "id": 830,
+            "class": "MoniLed$OzAxis",
+            "modulationColor": -16128,
+            "parameters": {
+              "label": "OzAxis",
+              "xPos": 0.0,
+              "yPos": 0.0,
+              "zPos": 0.8600000031292439
+            },
+            "modulation": {
+              "modulators": [],
+              "modulations": [],
+              "triggers": []
+            },
+            "autoCycleEnabled": true
+          },
+          {
+            "id": 893,
+            "class": "MoniLed$OzSlider",
+            "modulationColor": -65476,
+            "parameters": {
+              "label": "OzSlider",
+              "Index": 0.0
             },
             "modulation": {
               "modulators": [],
@@ -570,7 +602,7 @@
             "phase": 0.0,
             "exp": 0.2199999950826168
           },
-          "basis": 0.12586044994628606
+          "basis": 0.9922100008829546
         },
         {
           "id": 195,
@@ -593,7 +625,7 @@
             "phase": 0.0,
             "exp": 0.0
           },
-          "basis": 0.9935285574329701
+          "basis": 0.02234932773713745
         },
         {
           "id": 252,
