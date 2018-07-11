@@ -84,8 +84,8 @@ void initialize(heronarts.lx.studio.LXStudio lx, heronarts.lx.studio.LXStudio.UI
       for(int universe : ArtnetConfig.storage.get(ip).keySet()){
         ArtNetDatagram datagram = new ArtNetDatagram(ArtnetConfig.storage.get(ip).get(universe).indices, universe);
         datagram.setAddress(ip);
-        datagram.setByteOrder(LXDatagram.ByteOrder.GRB);
-        output.addDatagram(datagram);    
+        datagram.setByteOrder(LXDatagram.ByteOrder.RGB);
+        output.addDatagram(datagram);
         //System.out.println("############### " + universe + " #################");
         //printArray(ArtnetConfig.storage.get(ip).get(universe).indices);
       }
