@@ -88,10 +88,11 @@ let tower_bottom_1 = calcPolygon({
 
 var ring_top = [];
 for(i=0; i<12;i++){
+  var rev = !(i%2)
   var strip = 				{
             "name"    : "ring_top_"+i,
   					"leds"    : 90,
-  					"artnet"	: { "ip":ip, "universe": 0, "address": 0},
+  					"artnet"	: { "ip":ip, "universe": i*2, "address": 0, reverse: rev},
   					"start"	  : { "x": vertices_top[i][0],	  "y": 3000, "z":vertices_top[i][1]},
   					"end"     : { "x": vertices_top[(i+1)%vertices_top.length][0], "y":3000,    "z": vertices_top[(i+1)%vertices_top.length][1] }
   				}
@@ -103,7 +104,7 @@ for(i=0; i<12;i++){
 //   var strip = 				{
 //             "name"    : "ring_bottom_"+i,
 //   					"leds"    : 90,
-//   					"artnet"	: { "ip":ip, "universe": 0, "address": 0},
+//   					"artnet"	: { "ip":ip, "universe": 0, "offset": 0},
 //   					"start"	  : { "x": vertices_bottom[i][0],	  "y": 0, "z":vertices_bottom[i][1]},
 //   					"end"     : { "x": vertices_bottom[(i+1)%vertices_bottom.length][0], "y": 0,    "z": vertices_bottom[(i+1)%vertices_bottom.length][1] }
 //   				}
@@ -115,7 +116,7 @@ for(i=0; i<12;i++){
   var strip = 				{
             "name"    : "triangle_"+i,
   					"leds"    : 90,
-  					"artnet"	: { "ip":ip, "universe": 0, "address": 0},
+  					"artnet"	: { "ip":ip, "universe": i*2, "offset": 90},
   					"start"	  : { "x": vertices_top[i][0],	  "y": 3000, "z":vertices_top[i][1]},
   					"end"     : { "x": vertices_bottom[(i+1)%vertices_top.length][0], "y": 0,    "z": vertices_bottom[(i+1)%vertices_top.length][1] }
   				};
@@ -123,7 +124,7 @@ for(i=0; i<12;i++){
   var strip = 				{
             "name"    : "triangle_"+i+"_2",
   					"leds"    : 90,
-  					"artnet"	: { "ip":ip, "universe": 0, "address": 0},
+  					"artnet"	: { "ip":ip, "universe": i*2 + 1, "offset": 10, "reverse": true},
   					"start"	  : { "x": vertices_top[(i+1)%vertices_top.length][0],	  "y": 3000, "z":vertices_top[(i+1)%vertices_top.length][1]},
   					"end"     : { "x": vertices_bottom[(i+1)%vertices_top.length][0], "y": 0,    "z": vertices_bottom[(i+1)%vertices_top.length][1] }
   				}
@@ -131,24 +132,24 @@ for(i=0; i<12;i++){
 }
 
 var tower = [];
-for(i=0; i<6;i++){
-  var strip = 				{
-            "name"    : "line_"+i,
-  					"leds"    : 90,
-  					"artnet"	: { "ip":ip, "universe": 0, "address": 0},
-  					"start"	  : { "x": tower_top[i][0],	  "y": 3000, "z":tower_top[i][1]},
-  					"end"     : { "x": tower_bottom[i][0], "y": 0,    "z": tower_bottom[i][1] }
-  				};
-  tower.push(strip);
-  var strip = 				{
-            "name"    : "line_"+i+"_2",
-  					"leds"    : 90,
-  					"artnet"	: { "ip":ip, "universe": 0, "address": 0},
-  					"start"	  : { "x": tower_top_1[i][0],	  "y": 3000, "z":tower_top_1[i][1]},
-  					"end"     : { "x": tower_bottom_1[i][0], "y": 0,    "z": tower_bottom_1[i][1] }
-  				}
-  tower.push(strip);
-}
+// for(i=0; i<6;i++){
+//   var strip = 				{
+//             "name"    : "line_"+i,
+//   					"leds"    : 90,
+//   					"artnet"	: { "ip":ip, "universe": 0, "address": 0},
+//   					"start"	  : { "x": tower_top[i][0],	  "y": 3000, "z":tower_top[i][1]},
+//   					"end"     : { "x": tower_bottom[i][0], "y": 0,    "z": tower_bottom[i][1] }
+//   				};
+//   tower.push(strip);
+//   var strip = 				{
+//             "name"    : "line_"+i+"_2",
+//   					"leds"    : 90,
+//   					"artnet"	: { "ip":ip, "universe": 0, "address": 0},
+//   					"start"	  : { "x": tower_top_1[i][0],	  "y": 3000, "z":tower_top_1[i][1]},
+//   					"end"     : { "x": tower_bottom_1[i][0], "y": 0,    "z": tower_bottom_1[i][1] }
+//   				}
+//   tower.push(strip);
+// }
 
 var reactor = {
 	"elements": [
