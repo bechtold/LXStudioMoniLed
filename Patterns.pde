@@ -233,30 +233,104 @@ public class OzStrips extends OLFPAPattern {
  * Animate pixels on an axis
  **/
 @LXCategory("Oz")
-public class OzAxis extends LXPattern {
+public class OzAxis extends LXPattern implements CustomDeviceUI {
  
+  private final BooleanParameter enableX =
+  new BooleanParameter("Enable X axis")
+    .setDescription("Whether enable the X axis.");
+  private final BooleanParameter enableY =
+  new BooleanParameter("Enable Y axis")
+    .setDescription("Whether enable the Y axis.");
+  private final BooleanParameter enableZ =
+  new BooleanParameter("Enable Z axis")
+    .setDescription("Whether enable the Z axis.");
+
   public final CompoundParameter xPos = new CompoundParameter("X", 0);
   public final CompoundParameter yPos = new CompoundParameter("Y", 0);
   public final CompoundParameter zPos = new CompoundParameter("Z", 0);
 
   public OzAxis(LX lx) {
     super(lx);
+    addParameter("enableX", this.enableX);
     addParameter("xPos", xPos);
+    addParameter("enableY", this.enableY);
     addParameter("yPos", yPos);
+    addParameter("enableZ", this.enableZ);
     addParameter("zPos", zPos);
   }
 
+  @Override
+  public void buildDeviceUI(UI ui, UI2dContainer device) {
+    device.setContentWidth(70);
+    
+    final UIButton enableXButton = (UIButton)
+      new UIButton(0, 0, 30, 30)
+      .setParameter(this.enableX)
+      .setLabel("X")
+      //.setEnabled(this.midi.isOn())
+      .addToContainer(device);     
+    final UIKnob xPosKnob = (UIKnob) new UIKnob(30, 0)
+      .setParameter(this.xPos)
+      .setEnabled(this.enableX.isOn())
+      .addToContainer(device);
+    this.enableX.addListener(new LXParameterListener() {
+      public void onParameterChanged(LXParameter p) {
+        xPosKnob.setEnabled(enableX.isOn());
+      }
+    });
+    
+    final UIButton enableYButton = (UIButton)
+      new UIButton(0, 50, 30, 30)
+      .setParameter(this.enableY)
+      .setLabel("Y")
+      //.setEnabled(this.midi.isOn())
+      .addToContainer(device);     
+    final UIKnob yPosKnob = (UIKnob) new UIKnob(30, 50)
+      .setParameter(this.yPos)
+      .setEnabled(this.enableY.isOn())
+      .addToContainer(device);
+    this.enableY.addListener(new LXParameterListener() {
+      public void onParameterChanged(LXParameter p) {
+        yPosKnob.setEnabled(enableY.isOn());
+      }
+    });
+
+    final UIButton enableZButton = (UIButton)
+      new UIButton(0, 100, 30, 30)
+      .setParameter(this.enableZ)
+      .setLabel("Z")
+      //.setEnabled(this.midi.isOn())
+      .addToContainer(device);     
+    final UIKnob zPosKnob = (UIKnob) new UIKnob(30, 100)
+      .setParameter(this.zPos)
+      .setEnabled(this.enableZ.isOn())
+      .addToContainer(device);
+    this.enableZ.addListener(new LXParameterListener() {
+      public void onParameterChanged(LXParameter p) {
+        zPosKnob.setEnabled(enableZ.isOn());
+      }
+    });
+
+  }
+  
   public void run(double deltaMs) {
     float x = this.xPos.getValuef();
     float y = this.yPos.getValuef();
     float z = this.zPos.getValuef();
     for (LXPoint p : model.points) {
       //print("x:"+x+", y:"+y+", z:"+z);
-      float d = abs(p.xn - x);
+      float d = 1;
+      if(enableX.isOn()) {
+        d = abs(p.xn - x);
+      }
       //print(" -> d:"+d);
-      d = min(d, abs(p.yn - y));
+      if(enableY.isOn()){
+        d = min(d, abs(p.yn - y));
+      }
       //print(" -> d:"+d);
-      d = min(d, abs(p.zn - z));
+      if(enableZ.isOn()){
+        d = min(d, abs(p.zn - z));
+      }
       //print(" -> d:"+d);
       //d = abs(p.zn - z);
       //colors[p.index] = palette.getColor(p, max(0, 100 - 1000*d));

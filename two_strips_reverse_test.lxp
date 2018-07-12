@@ -1,6 +1,6 @@
 {
   "version": "0.1",
-  "timestamp": 1531354735635,
+  "timestamp": 1531395952775,
   "engine": {
     "id": 1,
     "class": "heronarts.lx.LXEngine",
@@ -323,7 +323,7 @@
         },
         "effects": [],
         "clips": [],
-        "patternIndex": 8,
+        "patternIndex": 7,
         "patterns": [
           {
             "id": 392,
@@ -413,8 +413,11 @@
             "modulationColor": -19712,
             "parameters": {
               "label": "OzAxis",
+              "enableX": false,
               "xPos": 0.4999999888241291,
+              "enableY": false,
               "yPos": 0.48000001162290573,
+              "enableZ": false,
               "zPos": 0.0
             },
             "modulation": {
@@ -445,9 +448,12 @@
             "modulationColor": -16128,
             "parameters": {
               "label": "OzAxis",
+              "enableX": false,
               "xPos": 0.0,
-              "yPos": 0.0,
-              "zPos": 0.8600000031292439
+              "enableY": true,
+              "yPos": 0.08999999798834324,
+              "enableZ": false,
+              "zPos": 0.0
             },
             "modulation": {
               "modulators": [],
@@ -462,7 +468,7 @@
             "modulationColor": -65476,
             "parameters": {
               "label": "OzSlider",
-              "Index": 0.0
+              "Index": 359.0
             },
             "modulation": {
               "modulators": [],
@@ -602,7 +608,7 @@
             "phase": 0.0,
             "exp": 0.2199999950826168
           },
-          "basis": 0.10519460569542109
+          "basis": 0.4036538747541798
         },
         {
           "id": 195,
@@ -625,7 +631,7 @@
             "phase": 0.0,
             "exp": 0.0
           },
-          "basis": 0.5225048791927223
+          "basis": 0.6319181014204861
         },
         {
           "id": 252,
@@ -805,11 +811,11 @@
         "centerPoint": false,
         "camera": {
           "active": true,
-          "radius": 6896.980859650729,
+          "radius": 23720.06522078119,
           "theta": 0.0,
-          "phi": 0.018716673851014054,
+          "phi": 0.3960000000000002,
           "x": 0.0,
-          "y": 1531.5,
+          "y": 0.0,
           "z": 0.0
         },
         "cue": [
@@ -868,7 +874,7 @@
             "z": 0.0
           }
         ],
-        "focus": 3,
+        "focus": 0,
         "pointCloud": {
           "pointSize": 3.0
         }
