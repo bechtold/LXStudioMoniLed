@@ -86,7 +86,7 @@ public static class ArtnetConfig {
       if (universeConfig == null) {
         universeConfig = new UniverseConfig();
       } else {
-        universeOffset = offset;
+        universeOffset = reverse && universeCounter != 0 ? 0 : offset;
       }
 
       universeConfig.addModel(model, universeOffset, reverse, universeCounter);

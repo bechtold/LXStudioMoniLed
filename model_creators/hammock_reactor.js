@@ -87,7 +87,7 @@ let tower_bottom_1 = calcPolygon({
 });
 
 var ring_top = [];
-for(i=0; i<12;i++){
+for(i=0; i<12;i++){ // i=0, i<12
   var rev = !(i%2)
   var strip =         {
             "name"    : "ring_top_"+i,
@@ -112,7 +112,7 @@ for(i=0; i<12;i++){
 // }
 
 var triangles = [];
-for(i=0; i<12;i++){
+for(i=0; i<12;i++){ // i=1; i<12
   var rev = !(i%2);
 
   if(rev) {
@@ -133,6 +133,7 @@ for(i=0; i<12;i++){
     				}
     triangles.push(strip);
   }else {
+
     var strip = 				{
               "name"    : "triangle_"+i,
     					"leds"    : 90,
@@ -141,6 +142,7 @@ for(i=0; i<12;i++){
               "end"     : { "x": vertices_bottom[(i+1)%vertices_top.length][0], "y": 0,    "z": vertices_bottom[(i+1)%vertices_top.length][1] }
     				};
     triangles.push(strip);
+
     // Bug with reverse overflow!
     var strip = 				{
               "name"    : "triangle_"+i+"_2",
@@ -150,6 +152,7 @@ for(i=0; i<12;i++){
               "end"	    : { "x": vertices_top[(i+1)%vertices_top.length][0],	  "y": 3000, "z":vertices_top[(i+1)%vertices_top.length][1]}
     				}
     triangles.push(strip);
+
   }
 }
 
