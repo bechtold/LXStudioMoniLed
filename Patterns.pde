@@ -424,7 +424,7 @@ public class OzHeadless extends LXPattern {
    }
  }
  
-public static abstract class RotationPattern extends OLFPAPattern {
+public static abstract class RotationPattern extends ElementPattern {
   
   protected final CompoundParameter rate = (CompoundParameter)
   new CompoundParameter("Rate", .25, .01, 2)
@@ -432,11 +432,6 @@ public static abstract class RotationPattern extends OLFPAPattern {
     .setUnits(LXParameter.Units.HERTZ)
     .setDescription("Rate of the rotation");
     
-  JSONModel.Fixture model_fixture = (JSONModel.Fixture)model.fixtures.get(0);
-
-  public final CompoundParameter element_selector =
-    new CompoundParameter("Element", 0, 0, model_fixture.elements.size() - 1)
-    .setDescription("Select the affected Element");
   
 
     
@@ -449,7 +444,6 @@ public static abstract class RotationPattern extends OLFPAPattern {
   protected RotationPattern(LX lx) {
     super(lx);
     startModulator(this.phase);
-    addParameter("element", this.element_selector);
     addParameter("rate", this.rate);
   }
 }
