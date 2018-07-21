@@ -10,6 +10,64 @@ public static abstract class OLFPAPattern extends LXPattern {
   public abstract String getAuthor();
 }
 
+public static abstract class ElementPattern extends OLFPAPattern {
+  JSONModel.Fixture model_fixture = (JSONModel.Fixture)model.fixtures.get(0);
+
+  public final CompoundParameter element_selector =
+    new CompoundParameter("Element", 0, 0, model_fixture.elements.size() - 1)
+    .setDescription("Select the affected Element");
+    
+  public final BooleanParameter select_by_element = 
+    new BooleanParameter("By Element", false)
+    .setDescription("Should only LEDs in specific Element be selected?");
+    
+    public ElementPattern(LX lx) {
+      super(lx);
+      addParameter("select_by_element", this.select_by_element);
+      addParameter("element", this.element_selector);
+    }
+
+    public JSONElement getElement() {
+      println((int)this.element_selector.getValue());
+      JSONElement element = (JSONElement)model_fixture.elements.get((int)this.element_selector.getValue());
+      return element;
+    }
+
+    public JSONElement.Fixture getElementFixture() {
+      JSONElement.Fixture element_fixture = (JSONElement.Fixture)getElement().fixtures.get(0);
+      return element_fixture;
+    }
+    
+    public List<JSONStrip> getElementStrips(){
+      return getElementFixture().strips;
+    }
+    
+    public List<LXPoint> getElementPoints() {
+      println("test");
+      List<LXPoint> points = new ArrayList<LXPoint>();
+      for (JSONStrip strip: getElementStrips()) {
+        for (LXPoint p : strip.points) {
+          points.add(p);
+        }
+      }
+      return points;
+    }
+    
+    boolean select_by_changed = this.select_by_element.isOn();
+    double selector_changed = this.element_selector.getValue();
+    
+    /**
+     * Returns true if "By Element" or "Element" parameters have changed (and resets them);
+     */
+    public boolean elementSelectorChanged() {
+      boolean ret = (this.select_by_element.isOn() != this.select_by_changed) || selector_changed != this.element_selector.getValue();
+      if(ret) {
+        this.select_by_changed = this.select_by_element.isOn();
+        this.selector_changed = this.element_selector.getValue();
+      }
+      return ret;
+    }
+
 }
 
 //@LXCategory("Oz")
