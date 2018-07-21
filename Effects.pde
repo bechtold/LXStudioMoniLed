@@ -155,6 +155,110 @@ public class LSD extends LXEffect {
   }
 }
 
+@LXCategory("Olfpa")
+public class FilterElement extends LXEffect {
+  JSONModel.Fixture model_fixture = (JSONModel.Fixture)model.fixtures.get(0);
+
+  public final CompoundParameter element_selector =
+    new CompoundParameter("Element", 0, 0, model_fixture.elements.size() - 1)
+    .setDescription("Select the affected Element");
+    
+  public final BooleanParameter invert = 
+    new BooleanParameter("invert", false)
+    .setDescription("Invert element selection");
+    
+    public FilterElement(LX lx) {
+      super(lx);
+      addParameter("invert", this.invert);
+      addParameter("element", this.element_selector);
+    }
+
+  
+  // move to model
+  public List<JSONElement> getElements() {
+    return model_fixture.elements;
+  }
+  public JSONElement getElement() {
+    JSONElement element = (JSONElement)model_fixture.elements.get((int)this.element_selector.getValue());
+    return element;
+  }
+
+  public List<JSONElement> getElementsNotSelected() {
+    List<JSONElement> elements = new ArrayList<JSONElement>();
+    
+    for(JSONElement element : getElements()) {
+      if(element != (JSONElement)model_fixture.elements.get((int)this.element_selector.getValue())) {
+        elements.add(element);
+      }
+    }
+    return elements;
+  }
+
+  //  public JSONElement.Fixture getElementFixture() {
+  //    JSONElement.Fixture element_fixture = (JSONElement.Fixture)getElement().fixtures.get(0);
+  //    return element_fixture;
+  //  }
+    
+  //  public List<JSONStrip> getElementStrips(){
+  //    return getElementFixture().strips;
+  //  }
+    
+  //  public List<LXPoint> getElementPoints() {
+  //    println("test");
+  //    List<LXPoint> points = new ArrayList<LXPoint>();
+  //    for (JSONStrip strip: getElementStrips()) {
+  //      for (LXPoint p : strip.points) {
+  //        points.add(p);
+  //      }
+  //    }
+  //    return points;
+  //  }
+    
+    
+  //  public boolean selectByElement() {
+  //    return this.select_by_element.isOn();
+  //  }
+    
+  //  public double elementValue(){
+  //    return this.element_selector.getValue();
+  //  }
+    
+  //  public int elementIndexMin() {
+  //    return getElementPoints().get(0).index;
+  //  }
+    
+  //  public int elementIndexMax() {
+  //    return getElementPoints().get(getElementPoints().size()-1).index;
+  //  }
+    
+  //  boolean select_by_changed = this.select_by_element.isOn();
+  //  double selector_changed = this.element_selector.getValue();
+    
+  //  /**
+  //   * Returns true if "By Element" or "Element" parameters have changed (and resets them);
+  //   */
+  //  public boolean elementSelectorChanged() {
+  //    boolean ret = (selectByElement() != this.select_by_changed) || selector_changed != elementValue();
+  //    if(ret) {
+  //      this.select_by_changed = selectByElement();
+  //      this.selector_changed = elementValue();
+  //    }
+  //    return ret;
+  //  }
+
+  @Override
+  public void run(double deltaMs, double amount) {
+    if(this.invert.isOn()) {
+      for (JSONElement element : getElementsNotSelected()) {
+        setColor(element, #000000);
+      }
+    } else {
+      setColor(getElement(), #000000);
+    }
+
+  }
+}
+
 //public class ArcsOff extends LXEffect {
 //  public ArcsOff(LX lx) {
 //    super(lx);
