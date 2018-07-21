@@ -10,27 +10,29 @@ public static abstract class OLFPAPattern extends LXPattern {
   public abstract String getAuthor();
 }
 
-@LXCategory("Oz")
-public class PatternSolid extends OLFPAPattern {
-  public String getAuthor(){
-    return "Oskar Bechtold";
-  }
-  
-  public final CompoundParameter h = new CompoundParameter("Hue", 0, 360);
-  public final CompoundParameter s = new CompoundParameter("Sat", 0, 100);
-  public final CompoundParameter b = new CompoundParameter("Brt", 100, 100);
-  
-  public PatternSolid(LX lx) {
-    super(lx);
-    addParameter("h", this.h);
-    addParameter("s", this.s);
-    addParameter("b", this.b);
-  }
-  
-  public void run(double deltaMs) {
-    setColors(LXColor.hsb(this.h.getValue(), this.s.getValue(), this.b.getValue()));
-  }
 }
+
+//@LXCategory("Oz")
+//public class PatternSolid extends OLFPAPattern {
+//  public String getAuthor(){
+//    return "Oskar Bechtold";
+//  }
+//
+//  public final CompoundParameter h = new CompoundParameter("Hue", 0, 360);
+//  public final CompoundParameter s = new CompoundParameter("Sat", 0, 100);
+//  public final CompoundParameter b = new CompoundParameter("Brt", 100, 100);
+//
+//  public PatternSolid(LX lx) {
+//    super(lx);
+//    addParameter("h", this.h);
+//    addParameter("s", this.s);
+//    addParameter("b", this.b);
+//  }
+//
+//  public void run(double deltaMs) {
+//    setColors(LXColor.hsb(this.h.getValue(), this.s.getValue(), this.b.getValue()));
+//  }
+//}
 
 /**
  * Trying to implement the iterator class
