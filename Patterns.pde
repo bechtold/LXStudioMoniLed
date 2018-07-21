@@ -703,3 +703,82 @@ public static class Rings extends OLFPAPattern {
     }
   }
 }
+
+public class Bugs extends OLFPAPattern {
+  public String getAuthor(){
+    return "Oskar Bechtold";
+  }
+
+  public final CompoundParameter speed = (CompoundParameter)
+    new CompoundParameter("Speed", 10, 20, 1)
+    .setDescription("Speed of the bugs");
+  
+  public final CompoundParameter size =
+    new CompoundParameter("Size", .1, .02, .4)
+    .setDescription("Size of the bugs");
+  
+  public Bugs(LX lx) {
+    super(lx);
+    // todo implement element_selector
+    JSONModel.Fixture model_fixture = (JSONModel.Fixture)model.fixtures.get(0);
+    JSONElement.Fixture element_fixture = (JSONElement.Fixture)model_fixture.elements.get(2).fixtures.get(0);
+
+    for (JSONStrip strip : element_fixture.strips) {
+      for (int i = 0; i < 10; ++i) {
+        addLayer(new Layer(lx, strip));
+      }
+    }
+    addParameter("speed", this.speed);
+    addParameter("size", this.size);
+  }
+  
+  class RandomSpeed extends FunctionalParameter {
+    
+    private final float rand;
+    
+    RandomSpeed(float low, float hi) {
+      this.rand = random(low, hi);
+    }
+    
+    public double getValue() {
+      return this.rand * speed.getValue();
+    }
+  }
+  
+  class Layer extends LXLayer {
+    
+    private final JSONStrip strip;
+    private final LXModulator pos = startModulator(new SinLFO(
+      startModulator(new SinLFO(0, .5, new RandomSpeed(500, 1000)).randomBasis()),
+      startModulator(new SinLFO(.5, 1, new RandomSpeed(500, 1000)).randomBasis()),
+      new RandomSpeed(3000, 8000)
+    ).randomBasis());
+    
+    private final LXModulator size = startModulator(new SinLFO(
+      startModulator(new SinLFO(.1, .3, new RandomSpeed(500, 1000)).randomBasis()),
+      startModulator(new SinLFO(.5, 1, new RandomSpeed(500, 1000)).randomBasis()),
+      startModulator(new SinLFO(4000, 14000, random(3000, 18000)).randomBasis())
+    ).randomBasis());
+    
+    Layer(LX lx, JSONStrip strip) {
+      super(lx);
+      this.strip = strip;
+    }
+    
+    public void run(double deltaMs) {
+      float size = Bugs.this.size.getValuef() * this.size.getValuef();
+      float falloff = 100 / max(size, (1.5*INCHES / model.yRange));
+      float pos = this.pos.getValuef();
+      for (LXPoint p : this.strip.points) {
+        float b = 100 - falloff * abs(p.yn - pos);
+        if (b > 0) {
+          addColor(p.index, LXColor.gray(b));
+        }
+      }
+    }
+  }
+  
+  public void run(double deltaMs) {
+    setColors(#000000);
+  }
+}
