@@ -1,6 +1,9 @@
 @LXCategory("MIDI")
-public static class Flash extends LXPattern implements CustomDeviceUI {
-  
+public static class Flash extends OLFPAPattern implements CustomDeviceUI {
+  public String getAuthor(){
+    return "Oskar Bechtold";
+  }
+
   private final BooleanParameter manual =
     new BooleanParameter("Trigger")
     .setMode(BooleanParameter.Mode.MOMENTARY)
