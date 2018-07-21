@@ -1,4 +1,4 @@
-@LXCategory("Texture")
+@LXCategory(LXCategory.TEXTURE)
 public class Noise extends OLFPAPattern {
   public String getAuthor(){
     return "Oskar Bechtold";
@@ -104,6 +104,72 @@ public class Noise extends OLFPAPattern {
     for (LXPoint p :  model.points) {
       float b = ff + rf * noise(sf*p.x + xo - xAccum.accum, sf*p.y + yo - yAccum.accum, sf*p.z + zo - zAccum.accum);
       colors[p.index] = LXColor.gray(constrain(b*100, 0, 100));
+    }
+  }
+}
+
+@LXCategory(LXCategory.TEXTURE)
+public class Sparkle extends OLFPAPattern {
+  public String getAuthor(){
+    return "Oskar Bechtold";
+  }
+
+  public final SinLFO[] sparkles = new SinLFO[60]; 
+  private final int[] map = new int[model.size];
+  
+  public Sparkle(LX lx) {
+    super(lx);
+    for (int i = 0; i < this.sparkles.length; ++i) {
+      this.sparkles[i] = (SinLFO) startModulator(new SinLFO(0, random(50, 120), random(2000, 7000)));
+    }
+    for (int i = 0; i < model.size; ++i) {
+      this.map[i] = (int) constrain(random(0, sparkles.length), 0, sparkles.length-1);
+    }
+  }
+  
+  public void run(double deltaMs) {
+    for (LXPoint p : model.points) {
+      colors[p.index] = LXColor.gray(constrain(this.sparkles[this.map[p.index]].getValuef(), 0, 100));
+    }
+  }
+}
+
+@LXCategory(LXCategory.TEXTURE)
+public class Starlight extends OLFPAPattern {
+  public String getAuthor(){
+    return "Oskar Bechtold";
+  }
+  
+  public final CompoundParameter speed = new CompoundParameter("Speed", 1, 2, .5);
+  public final CompoundParameter base = new CompoundParameter("Base", -10, -20, 100);
+  
+  public final LXModulator[] brt = new LXModulator[50];
+  private final int[] map1 = new int[model.size];
+  private final int[] map2 = new int[model.size];
+  
+  public Starlight(LX lx) {
+    super(lx);
+    for (int i = 0; i < this.brt.length; ++i) {
+      this.brt[i] = startModulator(new SinLFO(this.base, random(50, 120), new FunctionalParameter() {
+        private final float rand = random(1000, 5000);
+        public double getValue() {
+          return rand * speed.getValuef();
+        }
+      }).randomBasis());
+    }
+    for (int i = 0; i < model.size; ++i) {
+      this.map1[i] = (int) constrain(random(0, this.brt.length), 0, this.brt.length-1);
+      this.map2[i] = (int) constrain(random(0, this.brt.length), 0, this.brt.length-1);
+    }
+    addParameter("speed", this.speed);
+    addParameter("base", this.base);
+  }
+  
+  public void run(double deltaMs) {
+    for (LXPoint p : model.points) {
+      int i = p.index;
+      float brt = this.brt[this.map1[i]].getValuef() + this.brt[this.map2[i]].getValuef(); 
+      colors[i] = LXColor.gray(constrain(.5*brt, 0, 100));
     }
   }
 }
