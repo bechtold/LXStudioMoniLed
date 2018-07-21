@@ -498,3 +498,81 @@ public static class Warble extends RotationPattern {
     }
   }
 }
+
+@LXCategory("Form")
+public class Bouncing extends OLFPAPattern {
+  public String getAuthor(){
+    return "Oskar Bechtold";
+  }
+  
+  JSONModel.Fixture model_fixture = (JSONModel.Fixture)model.fixtures.get(0);
+
+  public final CompoundParameter element_selector =
+    new CompoundParameter("Element", 0, 0, model_fixture.elements.size() - 1)
+    .setDescription("Select the affected Element");
+
+  public CompoundParameter gravity = (CompoundParameter)
+    new CompoundParameter("Gravity", -200, -10, -400)
+    .setExponent(2)
+    .setDescription("Gravity factor");
+  
+  public CompoundParameter size =
+    new CompoundParameter("Length", 2*FEET, 1*FEET, 8*FEET)
+    .setDescription("Length of the bouncers");
+  
+  public CompoundParameter amp =
+    new CompoundParameter("Height", model.yRange, 1*FEET, model.yRange)
+    .setDescription("Height of the bounce");
+  
+  public Bouncing(LX lx) {
+    super(lx);
+    addParameter("element", this.element_selector);
+    addParameter("gravity", this.gravity);
+    addParameter("size", this.size);
+    addParameter("amp", this.amp);
+
+    JSONElement.Fixture element_fixture = (JSONElement.Fixture)model_fixture.elements.get((int)this.element_selector.getValue()).fixtures.get(0);
+
+    for (JSONStrip strip : element_fixture.strips) {
+      addLayer(new Bouncer(lx, strip, element_selector));
+    }
+  }
+  
+  class Bouncer extends LXLayer {
+    
+    private final JSONStrip strip;
+    private final Accelerator position;
+    CompoundParameter element_selector;
+    
+    Bouncer(LX lx, JSONStrip strip, CompoundParameter element_selector) {
+      super(lx);
+      this.strip = strip;
+      this.position = new Accelerator(strip.yMax, 0, gravity);
+      this.element_selector = element_selector;
+      startModulator(position);
+    }
+    
+    public void run(double deltaMs) {
+      if (position.getValue() < 0) {
+        position.setValue(-position.getValue());
+        position.setVelocity(sqrt(abs(2 * (amp.getValuef() - random(0, 2*FEET)) * gravity.getValuef()))); 
+      }
+      float h = palette.getHuef();
+      float falloff = 100. / size.getValuef();
+
+      JSONElement.Fixture element_fixture = (JSONElement.Fixture)model_fixture.elements.get((int)this.element_selector.getValue()).fixtures.get(0);
+      for (JSONStrip strip : element_fixture.strips) {
+        for (LXPoint p : strip.points) {
+          float b = 100 - falloff * abs(p.y - position.getValuef());
+          if (b > 0) {
+            addColor(p.index, LXColor.gray(b));
+          }
+        }
+      }
+    }
+  }
+    
+  public void run(double deltaMs) {
+    setColors(LXColor.BLACK);
+  }
+}
