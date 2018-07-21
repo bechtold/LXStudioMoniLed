@@ -53,6 +53,23 @@ public static abstract class ElementPattern extends OLFPAPattern {
       return points;
     }
     
+    
+    public boolean selectByElement() {
+      return this.select_by_element.isOn();
+    }
+    
+    public double elementValue(){
+      return this.element_selector.getValue();
+    }
+    
+    public int elementIndexMin() {
+      return getElementPoints().get(0).index;
+    }
+    
+    public int elementIndexMax() {
+      return getElementPoints().get(getElementPoints().size()-1).index;
+    }
+    
     boolean select_by_changed = this.select_by_element.isOn();
     double selector_changed = this.element_selector.getValue();
     
@@ -60,10 +77,10 @@ public static abstract class ElementPattern extends OLFPAPattern {
      * Returns true if "By Element" or "Element" parameters have changed (and resets them);
      */
     public boolean elementSelectorChanged() {
-      boolean ret = (this.select_by_element.isOn() != this.select_by_changed) || selector_changed != this.element_selector.getValue();
+      boolean ret = (selectByElement() != this.select_by_changed) || selector_changed != elementValue();
       if(ret) {
-        this.select_by_changed = this.select_by_element.isOn();
-        this.selector_changed = this.element_selector.getValue();
+        this.select_by_changed = selectByElement();
+        this.selector_changed = elementValue();
       }
       return ret;
     }
@@ -162,8 +179,8 @@ public class IteratorAdvanced extends ElementPattern {
     new BooleanParameter("Clear", false)
     .setDescription("Should LEDs be cleared at all");
 
-  int min = this.select_by_element.isOn() ? getElementPoints().get(0).index : 0;
-  int max = this.select_by_element.isOn() ? getElementPoints().get(getElementPoints().size()-1).index : lx.total;
+  int min = selectByElement() ? elementIndexMin() : 0;
+  int max = selectByElement() ? elementIndexMax() : lx.total;
       
   private LXModulator index = startModulator(new SawLFO(min, max, new FunctionalParameter() {
     @Override
@@ -184,8 +201,8 @@ public class IteratorAdvanced extends ElementPattern {
     }
     
     if(this.select_by_element.isOn() && this.elementSelectorChanged()) {
-      min = getElementPoints().get(0).index;
-      max = getElementPoints().get(getElementPoints().size()-1).index;
+      min = elementIndexMin();
+      max = elementIndexMax();
 
       index = startModulator(new SawLFO(min, max, new FunctionalParameter() {
         @Override
@@ -242,7 +259,7 @@ public class OzSlider extends OLFPAPattern {
  * Set random point(s) at a time.
  **/
 @LXCategory("Oz")
-public class OzRandom extends OLFPAPattern {
+public class OzRandom extends ElementPattern {
   public String getAuthor(){
     return "Oskar Bechtold";
   }
@@ -293,7 +310,10 @@ public class OzRandom extends OLFPAPattern {
 
       for (int i = 0; i < this.amount.getValue(); i++) {
         // random number,   could use "import java.util.concurrent.ThreadLocalRandom;"
-        int index = java.util.concurrent.ThreadLocalRandom.current().nextInt(0, model.points.length);
+        int min = selectByElement() ? elementIndexMin() : 0;
+        int max = selectByElement() ? elementIndexMax() : model.points.length;
+
+        int index = java.util.concurrent.ThreadLocalRandom.current().nextInt(min, max);
         setColor(index, LXColor.hsb(this.h.getValue(), 100, 100));
       }
       
