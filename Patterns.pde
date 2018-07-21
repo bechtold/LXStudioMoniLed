@@ -576,3 +576,74 @@ public class Bouncing extends OLFPAPattern {
     setColors(LXColor.BLACK);
   }
 }
+
+@LXCategory("Form")
+public class Tron extends OLFPAPattern {
+  public String getAuthor(){
+    return "Oskar Bechtold";
+  }
+  
+  private final static int MIN_DENSITY = 5;
+  private final static int MAX_DENSITY = 80;
+  
+  private CompoundParameter period = (CompoundParameter)
+    new CompoundParameter("Speed", 150000, 400000, 50000)
+    .setExponent(.5)
+    .setDescription("Speed of movement");
+    
+  private CompoundParameter size = (CompoundParameter)
+    new CompoundParameter("Size", 2*FEET, 6*INCHES, 5*FEET)
+    .setExponent(2)
+    .setDescription("Size of strips");
+    
+  private CompoundParameter density = (CompoundParameter)
+    new CompoundParameter("Density", 25, MIN_DENSITY, MAX_DENSITY)
+    .setDescription("Density of tron strips");
+    
+  public Tron(LX lx) {  
+    super(lx);
+    addParameter("period", this.period);
+    addParameter("size", this.size);
+    addParameter("density", this.density);    
+    for (int i = 0; i < MAX_DENSITY; ++i) {
+      addLayer(new Mover(lx, i));
+    }
+  }
+  
+  class Mover extends LXLayer {
+    
+    final int index;
+    
+    final TriangleLFO pos = new TriangleLFO(0, lx.total, period);
+    
+    private final MutableParameter targetBrightness = new MutableParameter(100); 
+    
+    private final DampedParameter brightness = new DampedParameter(this.targetBrightness, 50); 
+    
+    Mover(LX lx, int index) {
+      super(lx);
+      this.index = index;
+      startModulator(this.brightness);
+      startModulator(this.pos.randomBasis());
+    }
+    
+    public void run(double deltaMs) {
+      this.targetBrightness.setValue((density.getValuef() > this.index) ? 100 : 0);
+      float maxb = this.brightness.getValuef();
+      if (maxb > 0) {
+        float pos = this.pos.getValuef();
+        float falloff = maxb / size.getValuef();
+        for (LXPoint p : model.points) {
+          float b = maxb - falloff * LXUtils.wrapdistf(p.index, pos, model.points.length);
+          if (b > 0) {
+            addColor(p.index, LXColor.gray(b));
+          }
+        }
+      }
+    }
+  }
+  
+  public void run(double deltaMs) {
+    setColors(#000000);
+  }
+}
