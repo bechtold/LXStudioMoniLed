@@ -647,3 +647,59 @@ public class Tron extends OLFPAPattern {
     setColors(#000000);
   }
 }
+
+@LXCategory("Form")
+public static class Rings extends OLFPAPattern {
+    public String getAuthor(){
+    return "Oskar Bechtold";
+  }
+
+  public final CompoundParameter amplitude =
+    new CompoundParameter("Amplitude", 1);
+    
+  public final CompoundParameter speed = (CompoundParameter)
+    new CompoundParameter("Speed", 10000, 20000, 1000)
+    .setExponent(.25);
+  
+  public Rings(LX lx) {
+    super(lx);
+    for (int i = 0; i < 2; ++i) {
+      addLayer(new Ring(lx));
+    }
+    addParameter("amplitude", this.amplitude);
+    addParameter("speed", this.speed);
+  }
+  
+  public void run(double deltaMs) {
+    setColors(#000000);
+  }
+  
+  class Ring extends LXLayer {
+    
+    private LXProjection proj = new LXProjection(model);
+    private final SawLFO yRot = new SawLFO(0, TWO_PI, 9000 + 2000 * Math.random());
+    private final SinLFO zRot = new SinLFO(-1, 1, speed);
+    private final SinLFO zAmp = new SinLFO(PI / 10, PI/4, 13000 + 3000 * Math.random());
+    private final SinLFO yOffset = new SinLFO(-2*FEET, 2*FEET, 12000 + 5000*Math.random());
+    
+    public Ring(LX lx) {
+      super(lx);
+      startModulator(yRot.randomBasis());
+      startModulator(zRot.randomBasis());
+      startModulator(zAmp.randomBasis());
+      startModulator(yOffset.randomBasis());
+    }
+    
+    public void run(double deltaMs) {
+      proj.reset().center().rotateY(yRot.getValuef()).rotateZ(amplitude.getValuef() * zAmp.getValuef() * zRot.getValuef());
+      float yOffset = this.yOffset.getValuef();
+      float falloff = 100 / (2*FEET);
+      for (LXVector v : proj) {
+        float b = 100 - falloff * abs(v.y - yOffset);  
+        if (b > 0) {
+          addColor(v.index, LXColor.gray(b));
+        }
+      }
+    }
+  }
+}
