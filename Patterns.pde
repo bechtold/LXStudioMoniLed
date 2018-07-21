@@ -431,3 +431,63 @@ public static class Helix extends RotationPattern {
     }
   }
 }
+
+@LXCategory("Form")
+public static class Warble extends RotationPattern {
+    public String getAuthor(){
+    return "Oskar Bechtold";
+  }
+ 
+  private final CompoundParameter size = (CompoundParameter)
+    new CompoundParameter("Size", 2*FEET, 6*INCHES, 12*FEET)
+    .setDescription("Size of the warble");
+    
+  private final CompoundParameter depth = (CompoundParameter)
+    new CompoundParameter("Depth", .4, 0, 1)
+    .setExponent(2)
+    .setDescription("Depth of the modulation");
+  
+  private final CompoundParameter interp = 
+    new CompoundParameter("Interp", 1, 1, 3)
+    .setDescription("Interpolation on the warble");
+    
+  private final DampedParameter interpDamped = new DampedParameter(interp, .5, .5);
+  private final DampedParameter depthDamped = new DampedParameter(depth, .4, .4);
+    
+  public Warble(LX lx) {
+    super(lx);
+    startModulator(this.interpDamped);
+    startModulator(this.depthDamped);
+    addParameter("size", this.size);
+    addParameter("interp", this.interp);
+    addParameter("depth", this.depth);
+    setColors(0);
+  }
+  
+  public void run(double deltaMs) {
+    float phaseV = this.phase.getValuef();
+    float interpV = this.interpDamped.getValuef();
+    int mult = floor(interpV);
+    float lerp = interpV % mult;
+    float falloff = 200 / size.getValuef();
+    float depth = this.depthDamped.getValuef();
+    
+    JSONModel.Fixture model_fixture = (JSONModel.Fixture)model.fixtures.get(0);
+    JSONElement.Fixture element_fixture = (JSONElement.Fixture)model_fixture.elements.get(2).fixtures.get(0);
+   
+    int i= 0;
+    for (JSONStrip strip : element_fixture.strips) {
+      //float y1 = model.yRange * depth * sin(phaseV + mult * rail.theta);
+      //float y2 = model.yRange * depth * sin(phaseV + (mult+1) * rail.theta);
+      // replaced theta with i for now
+
+      float y1 = model.yRange * depth * sin(phaseV + mult * i);
+      float y2 = model.yRange * depth * sin(phaseV + (mult+1) * i);
+      float yo = lerp(y1, y2, lerp);
+      for (LXPoint p : strip.points) {
+        colors[p.index] = LXColor.gray(max(0, 100 - falloff*abs(p.y - model.cy - yo)));
+      }
+      i++;
+    }
+  }
+}
