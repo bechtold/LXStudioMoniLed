@@ -173,3 +173,57 @@ public class Starlight extends OLFPAPattern {
     }
   }
 }
+
+@LXCategory(LXCategory.TEXTURE)
+public class Jitters extends OLFPAPattern {
+  public String getAuthor(){
+    return "Oskar Bechtold";
+  }
+  
+  public final CompoundParameter period = (CompoundParameter)
+    new CompoundParameter("Period", 200, 2000, 50)
+    .setExponent(.5)
+    .setDescription("Speed of the motion");
+    
+  public final CompoundParameter size =
+    new CompoundParameter("Size", 8, 3, 20)
+    .setDescription("Size of the movers");
+    
+  public final CompoundParameter contrast =
+    new CompoundParameter("Contrast", 100, 50, 300)
+    .setDescription("Amount of contrast");    
+  
+  final LXModulator pos = startModulator(new SawLFO(0, 1, period));
+  
+  final LXModulator sizeDamped = startModulator(new DampedParameter(size, 30));
+  
+  public Jitters(LX lx) {
+    super(lx);
+    addParameter("period", this.period);
+    addParameter("size", this.size);
+    addParameter("contrast", this.contrast);
+  }
+  
+  public void run(double deltaMs) {
+    float size = this.sizeDamped.getValuef();
+    float pos = this.pos.getValuef();
+    float sizeInv = 1 / size;
+    float contrast = this.contrast.getValuef();
+    boolean inv = false;
+
+    // todo implement element_selector
+    JSONModel.Fixture model_fixture = (JSONModel.Fixture)model.fixtures.get(0);
+    JSONElement.Fixture element_fixture = (JSONElement.Fixture)model_fixture.elements.get(0).fixtures.get(0);
+
+    for (JSONStrip strip : element_fixture.strips) {
+      inv = !inv;
+      float pv = inv ? pos : (1-pos);
+      int i = 0;
+      for (LXPoint p : strip.points) {
+        float pd = (i % size) * sizeInv;
+        colors[p.index] = LXColor.gray(max(0, 100 - contrast * LXUtils.wrapdistf(pd, pv, 1)));
+        ++i;
+      }
+    }
+  }
+}
