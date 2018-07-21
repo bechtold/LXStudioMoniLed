@@ -1,4 +1,4 @@
-public abstract class OLFPAPattern extends LXPattern {
+public static abstract class OLFPAPattern extends LXPattern {
   
   protected final JSONModel model;
   
@@ -363,3 +363,71 @@ public class OzHeadless extends LXPattern {
      }
    }
  }
+ 
+public static abstract class RotationPattern extends OLFPAPattern {
+  
+  protected final CompoundParameter rate = (CompoundParameter)
+  new CompoundParameter("Rate", .25, .01, 2)
+    .setExponent(2)
+    .setUnits(LXParameter.Units.HERTZ)
+    .setDescription("Rate of the rotation");
+    
+  protected final SawLFO phase = new SawLFO(0, TWO_PI, new FunctionalParameter() {
+    public double getValue() {
+      return 1000 / rate.getValue();
+    }
+  });
+  
+  protected RotationPattern(LX lx) {
+    super(lx);
+    startModulator(this.phase);
+    addParameter("rate", this.rate);
+  }
+}
+
+@LXCategory("Form")
+public static class Helix extends RotationPattern {
+  public String getAuthor(){
+    return "Oskar Bechtold";
+  }
+    
+  private final CompoundParameter size = (CompoundParameter)
+    new CompoundParameter("Size", 2*FEET, 6*INCHES, 8*FEET)
+    .setDescription("Size of the corkskrew");
+    
+  private final CompoundParameter coil = (CompoundParameter)
+    new CompoundParameter("Coil", 1, .25, 2.5)
+    .setExponent(.5)
+    .setDescription("Coil amount");
+    
+  private final DampedParameter dampedCoil = new DampedParameter(coil, .2);
+  
+  public Helix(LX lx) {
+    super(lx);
+    addParameter("size", this.size);
+    addParameter("coil", this.coil);
+    startModulator(dampedCoil);
+    setColors(0);
+  }
+  
+  public void run(double deltaMs) {
+    float phaseV = this.phase.getValuef();
+    float sizeV = this.size.getValuef();
+    float falloff = 100 / sizeV;
+    float coil = this.dampedCoil.getValuef();
+    
+    JSONModel.Fixture model_fixture = (JSONModel.Fixture)model.fixtures.get(0);
+    JSONElement.Fixture element_fixture = (JSONElement.Fixture)model_fixture.elements.get(1).fixtures.get(0);
+
+    for (JSONStrip strip : element_fixture.strips) {
+      float yp = -sizeV + ((phaseV + (TWO_PI + PI + coil * 0)) % TWO_PI) / TWO_PI * (model.yRange + 2*sizeV);
+      float yp2 = -sizeV + ((phaseV + TWO_PI + coil * 0) % TWO_PI) / TWO_PI * (model.yRange + 2*sizeV);
+      for (LXPoint p : strip.points) {
+        float d1 = 100 - falloff*abs(p.y - yp);
+        float d2 = 100 - falloff*abs(p.y - yp2);
+        float b = max(d1, d2);
+        colors[p.index] = b > 0 ? LXColor.gray(b) : #000000;
+      }
+    }
+  }
+}
