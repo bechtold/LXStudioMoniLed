@@ -372,6 +372,14 @@ public static abstract class RotationPattern extends OLFPAPattern {
     .setUnits(LXParameter.Units.HERTZ)
     .setDescription("Rate of the rotation");
     
+  JSONModel.Fixture model_fixture = (JSONModel.Fixture)model.fixtures.get(0);
+
+  public final CompoundParameter element_selector =
+    new CompoundParameter("Element", 0, 0, model_fixture.elements.size() - 1)
+    .setDescription("Select the affected Element");
+  
+
+    
   protected final SawLFO phase = new SawLFO(0, TWO_PI, new FunctionalParameter() {
     public double getValue() {
       return 1000 / rate.getValue();
@@ -381,6 +389,7 @@ public static abstract class RotationPattern extends OLFPAPattern {
   protected RotationPattern(LX lx) {
     super(lx);
     startModulator(this.phase);
+    addParameter("element", this.element_selector);
     addParameter("rate", this.rate);
   }
 }
@@ -416,8 +425,7 @@ public static class Helix extends RotationPattern {
     float falloff = 100 / sizeV;
     float coil = this.dampedCoil.getValuef();
     
-    JSONModel.Fixture model_fixture = (JSONModel.Fixture)model.fixtures.get(0);
-    JSONElement.Fixture element_fixture = (JSONElement.Fixture)model_fixture.elements.get(1).fixtures.get(0);
+    JSONElement.Fixture element_fixture = (JSONElement.Fixture)model_fixture.elements.get((int)this.element_selector.getValue()).fixtures.get(0);
 
     for (JSONStrip strip : element_fixture.strips) {
       float yp = -sizeV + ((phaseV + (TWO_PI + PI + coil * 0)) % TWO_PI) / TWO_PI * (model.yRange + 2*sizeV);
@@ -469,11 +477,10 @@ public static class Warble extends RotationPattern {
     float interpV = this.interpDamped.getValuef();
     int mult = floor(interpV);
     float lerp = interpV % mult;
-    float falloff = 200 / size.getValuef();
+    float falloff = 10 / size.getValuef();
     float depth = this.depthDamped.getValuef();
     
-    JSONModel.Fixture model_fixture = (JSONModel.Fixture)model.fixtures.get(0);
-    JSONElement.Fixture element_fixture = (JSONElement.Fixture)model_fixture.elements.get(2).fixtures.get(0);
+    JSONElement.Fixture element_fixture = (JSONElement.Fixture)model_fixture.elements.get((int)this.element_selector.getValue()).fixtures.get(0);
    
     int i= 0;
     for (JSONStrip strip : element_fixture.strips) {
