@@ -96,7 +96,7 @@ public static abstract class ElementPattern extends OLFPAPattern {
  * Trying to implement the iterator class
  **/
 @LXCategory("Oz")
-public class Ozterator extends OLFPAPattern {    
+public class IteratorSimple extends OLFPAPattern {    
   public String getAuthor(){
     return "Oskar Bechtold";
   }
@@ -112,7 +112,7 @@ public class Ozterator extends OLFPAPattern {
     new BooleanParameter("Clear", false)
     .setDescription("Should LEDs be cleared at all");
 
-  public Ozterator(LX lx) {
+  public IteratorSimple(LX lx) {
     super(lx);
     addParameter("clear", this.clear);
     addParameter("speed", this.speed);
@@ -141,6 +141,77 @@ public class Ozterator extends OLFPAPattern {
       
   }
 }
+
+/**
+ * Trying to implement the iterator class
+ **/
+@LXCategory("Oz")
+public class IteratorAdvanced extends ElementPattern { 
+  public String getAuthor(){
+    return "Oskar Bechtold";
+  }
+  
+  long lastMillis = 0;
+  int lastIndex = 0;
+  
+  public final CompoundParameter speed =
+    new CompoundParameter("Speed", 10, 1, 1000)
+    .setDescription("Speed of motion");
+
+  public final BooleanParameter clear =
+    new BooleanParameter("Clear", false)
+    .setDescription("Should LEDs be cleared at all");
+
+  int min = this.select_by_element.isOn() ? getElementPoints().get(0).index : 0;
+  int max = this.select_by_element.isOn() ? getElementPoints().get(getElementPoints().size()-1).index : lx.total;
+      
+  private LXModulator index = startModulator(new SawLFO(min, max, new FunctionalParameter() {
+    @Override
+    public double getValue() {
+      return (1000 / speed.getValue()) * max;
+    }
+  }));
+
+  public IteratorAdvanced(LX lx) {
+    super(lx);
+    addParameter("clear", this.clear);
+    addParameter("speed", this.speed);
+  }
+  
+  public void run (double deltaMs) {
+    if(this.clear.isOn()){
+      setColors(#000000);
+    }
+    
+    if(this.select_by_element.isOn() && this.elementSelectorChanged()) {
+      min = getElementPoints().get(0).index;
+      max = getElementPoints().get(getElementPoints().size()-1).index;
+
+      index = startModulator(new SawLFO(min, max, new FunctionalParameter() {
+        @Override
+        public double getValue() {
+          return (1000 / speed.getValue()) * (max-min);
+        }
+      }));
+      
+    } else if( this.elementSelectorChanged()) {
+      min = 0;
+      max = lx.total;
+
+      index = startModulator(new SawLFO(min, max, new FunctionalParameter() {
+        @Override
+        public double getValue() {
+          return (1000 / speed.getValue()) * (max-min);
+        }
+      })); 
+
+    }
+
+    this.colors[(int)this.index.getValue()] = 0xFFFFFFFF;
+      
+  }
+}
+
 
 
 /**
