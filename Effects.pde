@@ -155,6 +155,43 @@ public class LSD extends LXEffect {
   }
 }
 
+@LXCategory("Color")
+public class SolidColor extends LXEffect {
+  public String getAuthor(){
+    return "Oskar Bechtold";
+  }
+
+  public final CompoundParameter h = new CompoundParameter("Hue", 0, 360);
+  public final CompoundParameter s = new CompoundParameter("Sat", 0, 100);
+  public final CompoundParameter b = new CompoundParameter("Brt", 100, 100);
+
+  public SolidColor(LX lx) {
+    super(lx);
+    addParameter("h", this.h);
+    addParameter("s", this.s);
+    addParameter("b", this.b);
+  }
+
+  final float[] hsb = new float[3];
+
+  @Override
+  public void run(double deltaMs, double amount) {
+    for (LXPoint p :  model.points) {
+      
+      LXColor.RGBtoHSB(colors[p.index], hsb);
+      int c2 = LX.hsb((float)this.h.getValue(), (float)this.s.getValue(), (float)(hsb[2]*this.b.getValue()));
+
+      if (amount < 1) {
+        colors[p.index] = LXColor.lerp(colors[p.index], c2, amount);
+      } else {
+        colors[p.index] = c2;
+      }
+    //colors[p.index] = LXColor.hsb(this.h.getValue(), this.s.getValue(), this.b.getValue());
+    //setColors(LXColor.hsb(this.h.getValue(), this.s.getValue(), this.b.getValue()));
+    }
+  }
+}
+
 @LXCategory("Olfpa")
 public class FilterElement extends LXEffect {
   JSONModel.Fixture model_fixture = (JSONModel.Fixture)model.fixtures.get(0);
