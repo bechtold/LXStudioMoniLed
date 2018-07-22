@@ -668,6 +668,9 @@ public static class Warble extends RotationPattern {
     addParameter("size", this.size);
     addParameter("interp", this.interp);
     addParameter("depth", this.depth);
+    removeParameter("select_by_element");
+    removeParameter("element");
+    
     setColors(0);
   }
   
@@ -679,10 +682,14 @@ public static class Warble extends RotationPattern {
     float falloff = 10 / size.getValuef();
     float depth = this.depthDamped.getValuef();
     
-    JSONElement.Fixture element_fixture = (JSONElement.Fixture)model_fixture.elements.get((int)this.element_selector.getValue()).fixtures.get(0);
-   
+    JSONElement.Fixture element_fixture1 = (JSONElement.Fixture)model_fixture.elements.get(1).fixtures.get(0);
+    JSONElement.Fixture element_fixture2 = (JSONElement.Fixture)model_fixture.elements.get(2).fixtures.get(0);
+    List<JSONStrip> strips = new ArrayList<JSONStrip>();
+    strips.addAll(element_fixture1.strips);
+    strips.addAll(element_fixture2.strips);
+
     int i= 0;
-    for (JSONStrip strip : element_fixture.strips) {
+    for (JSONStrip strip : strips) {   
       //float y1 = model.yRange * depth * sin(phaseV + mult * rail.theta);
       //float y2 = model.yRange * depth * sin(phaseV + (mult+1) * rail.theta);
       // replaced theta with i for now
