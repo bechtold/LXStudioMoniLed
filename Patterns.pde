@@ -920,9 +920,13 @@ public class Bugs extends OLFPAPattern {
     super(lx);
     // todo implement element_selector
     JSONModel.Fixture model_fixture = (JSONModel.Fixture)model.fixtures.get(0);
-    JSONElement.Fixture element_fixture = (JSONElement.Fixture)model_fixture.elements.get(2).fixtures.get(0);
+    JSONElement.Fixture element_fixture1 = (JSONElement.Fixture)model_fixture.elements.get(1).fixtures.get(0);
+    JSONElement.Fixture element_fixture2 = (JSONElement.Fixture)model_fixture.elements.get(2).fixtures.get(0);
+    List<JSONStrip> strips = new ArrayList<JSONStrip>();
+    strips.addAll(element_fixture1.strips);
+    strips.addAll(element_fixture2.strips);
 
-    for (JSONStrip strip : element_fixture.strips) {
+    for (JSONStrip strip : strips) {
       for (int i = 0; i < 10; ++i) {
         addLayer(new Layer(lx, strip));
       }
