@@ -615,7 +615,7 @@ public static class Helix2 extends RotationPattern {
   }
   
   public void run(double deltaMs) {
-    float phaseV = this.phase.getValuef();
+    float phaseV = 5*this.phase.getValuef();
     float sizeV = 5*this.size.getValuef();
     float falloff = 100 / sizeV;
     float coil = this.dampedCoil.getValuef();
