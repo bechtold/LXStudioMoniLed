@@ -1,6 +1,6 @@
 {
   "version": "0.1",
-  "timestamp": 1532256425809,
+  "timestamp": 1532261222363,
   "engine": {
     "id": 1,
     "class": "heronarts.lx.LXEngine",
@@ -15,7 +15,7 @@
       "crossfader": 0.5344827566295862,
       "crossfaderBlendMode": 0,
       "speed": 1.0,
-      "focusedChannel": 19,
+      "focusedChannel": 11,
       "cueA": false,
       "cueB": false,
       "multithreaded": true,
@@ -664,7 +664,7 @@
         "parameters": {
           "label": "Color",
           "arm": false,
-          "selected": false,
+          "selected": true,
           "enabled": true,
           "cue": false,
           "fader": 1.0,
@@ -725,10 +725,10 @@
         "parameters": {
           "label": "Helix",
           "arm": false,
-          "selected": true,
+          "selected": false,
           "enabled": true,
           "cue": false,
-          "fader": 0.0,
+          "fader": 1.0,
           "crossfadeGroup": 0,
           "blendMode": 0,
           "midiMonitor": false,
@@ -764,7 +764,7 @@
             "modulationColor": -16711690,
             "parameters": {
               "label": "SolidColor",
-              "enabled": false,
+              "enabled": true,
               "h": 226.77165354330708,
               "s": 100.0,
               "b": 100.0
@@ -785,8 +785,6 @@
             "modulationColor": -16711792,
             "parameters": {
               "label": "Warble",
-              "select_by_element": false,
-              "element": 1.0,
               "rate": 0.7199180377742169,
               "size": 47.39999907463789,
               "interp": 1.0,
@@ -1286,12 +1284,12 @@
         "class": "heronarts.lx.LXChannel",
         "modulationColor": -12779265,
         "parameters": {
-          "label": "Channel-20",
+          "label": "Warble",
           "arm": false,
           "selected": false,
-          "enabled": false,
+          "enabled": true,
           "cue": false,
-          "fader": 1.0,
+          "fader": 0.0,
           "crossfadeGroup": 0,
           "blendMode": 0,
           "midiMonitor": false,
@@ -1328,12 +1326,10 @@
             "modulationColor": -6357248,
             "parameters": {
               "label": "Warble",
-              "select_by_element": false,
-              "element": 2.0,
-              "rate": 1.2749524600073132,
-              "size": 24.0,
-              "interp": 1.0,
-              "depth": 0.4000000059604645
+              "rate": 2.0,
+              "size": 35.338582677165356,
+              "interp": 3.0,
+              "depth": 0.2232004464008928
             },
             "modulation": {
               "modulators": [],
@@ -1415,14 +1411,14 @@
           "attack": 0.0,
           "release": 72.89999674111608,
           "slope": 3.000000201165676,
-          "Band-1": 0.0,
-          "Band-2": 0.0,
-          "Band-3": 0.0,
-          "Band-4": 0.0,
-          "Band-5": 0.0,
-          "Band-6": 0.0,
-          "Band-7": 0.0,
-          "Band-8": 0.0,
+          "Band-1": 0.1841923310677248,
+          "Band-2": 0.1983890294449311,
+          "Band-3": 0.1529869774784839,
+          "Band-4": 0.15805123663965703,
+          "Band-5": 0.13467376809748322,
+          "Band-6": 0.06387894465134536,
+          "Band-7": 0.03264406583407087,
+          "Band-8": 0.019224777621750566,
           "Band-9": 0.0,
           "Band-10": 0.0,
           "Band-11": 0.0,
@@ -1764,6 +1760,41 @@
           "componentId": 21073,
           "parameterPath": "h",
           "cc": 98
+        },
+        {
+          "channel": 0,
+          "type": "CONTROL_CHANGE",
+          "componentId": 21079,
+          "parameterPath": "fader",
+          "cc": 97
+        },
+        {
+          "channel": 0,
+          "type": "CONTROL_CHANGE",
+          "componentId": 21080,
+          "parameterPath": "rate",
+          "cc": 96
+        },
+        {
+          "channel": 0,
+          "type": "CONTROL_CHANGE",
+          "componentId": 21080,
+          "parameterPath": "size",
+          "cc": 95
+        },
+        {
+          "channel": 0,
+          "type": "CONTROL_CHANGE",
+          "componentId": 21080,
+          "parameterPath": "interp",
+          "cc": 93
+        },
+        {
+          "channel": 0,
+          "type": "CONTROL_CHANGE",
+          "componentId": 21080,
+          "parameterPath": "depth",
+          "cc": 94
         }
       ]
     }
