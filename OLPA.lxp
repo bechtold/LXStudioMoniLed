@@ -1,6 +1,6 @@
 {
   "version": "0.1",
-  "timestamp": 1532261222363,
+  "timestamp": 1532272383019,
   "engine": {
     "id": 1,
     "class": "heronarts.lx.LXEngine",
@@ -15,7 +15,7 @@
       "crossfader": 0.5344827566295862,
       "crossfaderBlendMode": 0,
       "speed": 1.0,
-      "focusedChannel": 11,
+      "focusedChannel": 0,
       "cueA": false,
       "cueB": false,
       "multithreaded": true,
@@ -46,10 +46,10 @@
         "parameters": {
           "label": "Ring Meter",
           "arm": false,
-          "selected": false,
+          "selected": true,
           "enabled": true,
           "cue": false,
-          "fader": 0.0,
+          "fader": 1.0,
           "crossfadeGroup": 0,
           "blendMode": 0
         },
@@ -97,7 +97,7 @@
         "parameters": {
           "label": "EQ",
           "arm": false,
-          "selected": false,
+          "selected": true,
           "enabled": true,
           "cue": false,
           "fader": 1.0,
@@ -138,10 +138,10 @@
             "parameters": {
               "label": "GraphicEqualizer",
               "axis": 0,
-              "gain": 1.5590551181102361,
+              "gain": 0.8031496062992127,
               "center": 0.0,
               "fade": 0.26009998837262405,
-              "sharp": 0.9
+              "sharp": 0.38276903241356947
             },
             "modulation": {
               "modulators": [],
@@ -160,7 +160,7 @@
         "parameters": {
           "label": "Color",
           "arm": false,
-          "selected": false,
+          "selected": true,
           "enabled": true,
           "cue": false,
           "fader": 1.0,
@@ -229,7 +229,7 @@
           "selected": false,
           "enabled": true,
           "cue": false,
-          "fader": 0.0,
+          "fader": 1.0,
           "crossfadeGroup": 0,
           "blendMode": 0
         },
@@ -318,10 +318,10 @@
             "parameters": {
               "label": "GraphicEqualizer",
               "axis": 0,
-              "gain": 1.5590551181102361,
+              "gain": 0.8031496062992127,
               "center": 1.0,
               "fade": 0.0,
-              "sharp": 1.0
+              "sharp": 0.6724000065982342
             },
             "modulation": {
               "modulators": [],
@@ -664,7 +664,7 @@
         "parameters": {
           "label": "Color",
           "arm": false,
-          "selected": true,
+          "selected": false,
           "enabled": true,
           "cue": false,
           "fader": 1.0,
@@ -728,7 +728,7 @@
           "selected": false,
           "enabled": true,
           "cue": false,
-          "fader": 1.0,
+          "fader": 0.0,
           "crossfadeGroup": 0,
           "blendMode": 0,
           "midiMonitor": false,
@@ -855,7 +855,7 @@
             "modulationColor": -65529,
             "parameters": {
               "label": "Helix2",
-              "rate": 2.0,
+              "rate": 0.4842736683770903,
               "size": 96.0,
               "coil": 1.204594178507004
             },
@@ -897,7 +897,7 @@
             "modulationColor": -65370,
             "parameters": {
               "label": "Sizzle",
-              "enabled": true,
+              "enabled": false,
               "amount": 1.0,
               "speed": 1.0
             },
@@ -1112,8 +1112,8 @@
             "modulationColor": -2752768,
             "parameters": {
               "label": "Rings",
-              "amplitude": 0.9900000002235174,
-              "speed": 1000.0
+              "amplitude": 1.0,
+              "speed": 20000.0
             },
             "modulation": {
               "modulators": [],
@@ -1153,9 +1153,9 @@
             "modulationColor": -57600,
             "parameters": {
               "label": "LSD",
-              "enabled": false,
+              "enabled": true,
               "Scale": 33.449999475851655,
-              "Speed": 4.0,
+              "Speed": 6.0,
               "Range": 1.2079999972581863
             },
             "modulation": {
@@ -1231,8 +1231,8 @@
             "modulationColor": -23296,
             "parameters": {
               "label": "SolidColor",
-              "enabled": true,
-              "h": 360.0,
+              "enabled": false,
+              "h": 226.77165354330708,
               "s": 100.0,
               "b": 100.0
             },
@@ -1268,7 +1268,7 @@
             "parameters": {
               "label": "Bugs",
               "speed": 1.0,
-              "size": 0.21149606577406718
+              "size": 0.07385826817765011
             },
             "modulation": {
               "modulators": [],
@@ -1329,7 +1329,70 @@
               "rate": 2.0,
               "size": 35.338582677165356,
               "interp": 3.0,
-              "depth": 0.2232004464008928
+              "depth": 1.0
+            },
+            "modulation": {
+              "modulators": [],
+              "modulations": [],
+              "triggers": []
+            },
+            "autoCycleEnabled": true
+          }
+        ]
+      },
+      {
+        "id": 24668,
+        "class": "heronarts.lx.LXChannel",
+        "modulationColor": -65437,
+        "parameters": {
+          "label": "Axis",
+          "arm": false,
+          "selected": false,
+          "enabled": true,
+          "cue": false,
+          "fader": 0.0,
+          "crossfadeGroup": 0,
+          "blendMode": 0,
+          "midiMonitor": false,
+          "midiChannel": 16,
+          "autoCycleEnabled": false,
+          "autoCycleMode": 0,
+          "autoCycleTimeSecs": 60.0,
+          "transitionEnabled": false,
+          "transitionTimeSecs": 5.0,
+          "transitionBlendMode": 0
+        },
+        "effects": [],
+        "clips": [],
+        "patternIndex": 1,
+        "patterns": [
+          {
+            "id": 24665,
+            "class": "heronarts.lx.pattern.IteratorPattern",
+            "modulationColor": -16745473,
+            "parameters": {
+              "label": "Iterator",
+              "speed": 10.0
+            },
+            "modulation": {
+              "modulators": [],
+              "modulations": [],
+              "triggers": []
+            },
+            "autoCycleEnabled": false
+          },
+          {
+            "id": 24669,
+            "class": "MoniLed$OzAxis",
+            "modulationColor": -3866369,
+            "parameters": {
+              "label": "OzAxis",
+              "enableX": false,
+              "xPos": 0.0,
+              "enableY": true,
+              "yPos": 0.0,
+              "enableZ": false,
+              "zPos": 0.0
             },
             "modulation": {
               "modulators": [],
@@ -1409,16 +1472,16 @@
           "gain": 11.52000081539154,
           "range": 48.0,
           "attack": 0.0,
-          "release": 72.89999674111608,
-          "slope": 3.000000201165676,
-          "Band-1": 0.1841923310677248,
-          "Band-2": 0.1983890294449311,
-          "Band-3": 0.1529869774784839,
-          "Band-4": 0.15805123663965703,
-          "Band-5": 0.13467376809748322,
-          "Band-6": 0.06387894465134536,
-          "Band-7": 0.03264406583407087,
-          "Band-8": 0.019224777621750566,
+          "release": 19.59999912381173,
+          "slope": 3.7500001844018698,
+          "Band-1": 0.0,
+          "Band-2": 0.0,
+          "Band-3": 0.0,
+          "Band-4": 0.0,
+          "Band-5": 0.0,
+          "Band-6": 0.0,
+          "Band-7": 0.0,
+          "Band-8": 0.0,
           "Band-9": 0.0,
           "Band-10": 0.0,
           "Band-11": 0.0,
@@ -1795,6 +1858,27 @@
           "componentId": 21080,
           "parameterPath": "depth",
           "cc": 94
+        },
+        {
+          "channel": 0,
+          "type": "CONTROL_CHANGE",
+          "componentId": 24668,
+          "parameterPath": "fader",
+          "cc": 92
+        },
+        {
+          "channel": 0,
+          "type": "CONTROL_CHANGE",
+          "componentId": 24669,
+          "parameterPath": "enableY",
+          "cc": 91
+        },
+        {
+          "channel": 0,
+          "type": "CONTROL_CHANGE",
+          "componentId": 24669,
+          "parameterPath": "yPos",
+          "cc": 90
         }
       ]
     }
@@ -1817,9 +1901,9 @@
         "centerPoint": false,
         "camera": {
           "active": true,
-          "radius": 20883.323579265547,
-          "theta": 0.0,
-          "phi": 0.3960000000000002,
+          "radius": 20221.693318029553,
+          "theta": -0.003,
+          "phi": 0.3990000000000002,
           "x": 0.0,
           "y": 0.0,
           "z": 0.0
@@ -1827,9 +1911,9 @@
         "cue": [
           {
             "active": true,
-            "radius": 20883.323579265547,
-            "theta": 0.0,
-            "phi": 0.3960000000000002,
+            "radius": 20221.693318029553,
+            "theta": -0.003,
+            "phi": 0.3990000000000002,
             "x": 0.0,
             "y": 0.0,
             "z": 0.0
