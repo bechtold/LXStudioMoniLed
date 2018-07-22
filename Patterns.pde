@@ -586,6 +586,60 @@ public static class Helix extends RotationPattern {
 }
 
 @LXCategory("Form")
+public static class Helix2 extends RotationPattern {
+  public String getAuthor(){
+    return "Oskar Bechtold";
+  }
+    
+  private final CompoundParameter size = (CompoundParameter)
+    new CompoundParameter("Size", 2*FEET, 6*INCHES, 8*FEET)
+    .setDescription("Size of the corkskrew");
+    
+  private final CompoundParameter coil = (CompoundParameter)
+    new CompoundParameter("Coil", 1, .25, 2.5)
+    .setExponent(.5)
+    .setDescription("Coil amount");
+    
+  private final DampedParameter dampedCoil = new DampedParameter(coil, .2);
+  
+  public Helix2(LX lx) {
+    super(lx);
+    addParameter("size", this.size);
+    addParameter("coil", this.coil);
+    
+    removeParameter("select_by_element");
+    removeParameter("element");
+    
+    startModulator(dampedCoil);
+    setColors(0);
+  }
+  
+  public void run(double deltaMs) {
+    float phaseV = this.phase.getValuef();
+    float sizeV = 5*this.size.getValuef();
+    float falloff = 100 / sizeV;
+    float coil = this.dampedCoil.getValuef();
+    
+    JSONElement.Fixture element_fixture1 = (JSONElement.Fixture)model_fixture.elements.get(1).fixtures.get(0);
+    JSONElement.Fixture element_fixture2 = (JSONElement.Fixture)model_fixture.elements.get(2).fixtures.get(0);
+    List<JSONStrip> strips = new ArrayList<JSONStrip>();
+    strips.addAll(element_fixture1.strips);
+    strips.addAll(element_fixture2.strips);
+
+    for (JSONStrip strip : strips) {
+      float yp = -sizeV + ((phaseV + (TWO_PI + PI + coil * 0)) % TWO_PI) / TWO_PI * (model.yRange + 2*sizeV);
+      float yp2 = -sizeV + ((phaseV + TWO_PI + coil * 0) % TWO_PI) / TWO_PI * (model.yRange + 2*sizeV);
+      for (LXPoint p : strip.points) {
+        float d1 = 100 - falloff*abs(p.y - yp);
+        float d2 = 100 - falloff*abs(p.y - yp2);
+        float b = max(d1, d2);
+        colors[p.index] = b > 0 ? LXColor.gray(b) : #000000;
+      }
+    }
+  }
+}
+
+@LXCategory("Form")
 public static class Warble extends RotationPattern {
     public String getAuthor(){
     return "Oskar Bechtold";
