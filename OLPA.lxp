@@ -1,6 +1,6 @@
 {
   "version": "0.1",
-  "timestamp": 1532272383019,
+  "timestamp": 1532354551145,
   "engine": {
     "id": 1,
     "class": "heronarts.lx.LXEngine",
@@ -15,7 +15,7 @@
       "crossfader": 0.5344827566295862,
       "crossfaderBlendMode": 0,
       "speed": 1.0,
-      "focusedChannel": 0,
+      "focusedChannel": 19,
       "cueA": false,
       "cueB": false,
       "multithreaded": true,
@@ -46,7 +46,7 @@
         "parameters": {
           "label": "Ring Meter",
           "arm": false,
-          "selected": true,
+          "selected": false,
           "enabled": true,
           "cue": false,
           "fader": 1.0,
@@ -97,7 +97,7 @@
         "parameters": {
           "label": "EQ",
           "arm": false,
-          "selected": true,
+          "selected": false,
           "enabled": true,
           "cue": false,
           "fader": 1.0,
@@ -138,7 +138,7 @@
             "parameters": {
               "label": "GraphicEqualizer",
               "axis": 0,
-              "gain": 0.8031496062992127,
+              "gain": 0.9212598425196851,
               "center": 0.0,
               "fade": 0.26009998837262405,
               "sharp": 0.38276903241356947
@@ -160,7 +160,7 @@
         "parameters": {
           "label": "Color",
           "arm": false,
-          "selected": true,
+          "selected": false,
           "enabled": true,
           "cue": false,
           "fader": 1.0,
@@ -229,7 +229,7 @@
           "selected": false,
           "enabled": true,
           "cue": false,
-          "fader": 1.0,
+          "fader": 0.0,
           "crossfadeGroup": 0,
           "blendMode": 0
         },
@@ -318,7 +318,7 @@
             "parameters": {
               "label": "GraphicEqualizer",
               "axis": 0,
-              "gain": 0.8031496062992127,
+              "gain": 0.9212598425196851,
               "center": 1.0,
               "fade": 0.0,
               "sharp": 0.6724000065982342
@@ -1286,7 +1286,7 @@
         "parameters": {
           "label": "Warble",
           "arm": false,
-          "selected": false,
+          "selected": true,
           "enabled": true,
           "cue": false,
           "fader": 0.0,
@@ -1330,6 +1330,21 @@
               "size": 35.338582677165356,
               "interp": 3.0,
               "depth": 1.0
+            },
+            "modulation": {
+              "modulators": [],
+              "modulations": [],
+              "triggers": []
+            },
+            "autoCycleEnabled": true
+          },
+          {
+            "id": 28266,
+            "class": "MoniLed$OzSlider",
+            "modulationColor": -16711798,
+            "parameters": {
+              "label": "OzSlider",
+              "Index": 1.0
             },
             "modulation": {
               "modulators": [],
@@ -1387,9 +1402,9 @@
             "modulationColor": -3866369,
             "parameters": {
               "label": "OzAxis",
-              "enableX": false,
-              "xPos": 0.0,
-              "enableY": true,
+              "enableX": true,
+              "xPos": 0.6999999843537807,
+              "enableY": false,
               "yPos": 0.0,
               "enableZ": false,
               "zPos": 0.0
@@ -1472,8 +1487,8 @@
           "gain": 11.52000081539154,
           "range": 48.0,
           "attack": 0.0,
-          "release": 19.59999912381173,
-          "slope": 3.7500001844018698,
+          "release": 36.099998386204255,
+          "slope": 3.9000001810491085,
           "Band-1": 0.0,
           "Band-2": 0.0,
           "Band-3": 0.0,
@@ -1487,8 +1502,8 @@
           "Band-11": 0.0,
           "Band-12": 0.0,
           "Band-13": 0.0,
-          "Band-14": 0.0,
-          "Band-15": 0.0,
+          "Band-14": 0.07678364027306905,
+          "Band-15": 0.11627165826330155,
           "Band-16": 0.0
         }
       },
@@ -1498,7 +1513,7 @@
         "modulationColor": -16742145,
         "parameters": {
           "label": "Audio Input",
-          "device": 2
+          "device": 1
         }
       },
       "output": {
@@ -1524,7 +1539,7 @@
         "mode": 0,
         "fps": 0.0,
         "gamma": 0,
-        "brightness": 1.0
+        "brightness": 0.5142857115715742
       }
     },
     "components": {},
