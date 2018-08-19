@@ -41,6 +41,32 @@ for (var i = 0; i < 5; i++) {
   side_panels_right.push(panel);
 }
 
+var back_panel = [];
+for (i=0; i<5; i++) {
+  var rev = !(i%2);
+  var strip = {
+    "name"    : "back_panel_strip_"+i,
+    "leds"    : 90,
+    // "artnet"	: { "ip":ip, "universe": i, "address": 0, reverse: rev},
+    "start"	  : { "x": i*300, "y": 4000, "z": 0},
+    "end"     : { "x": i*300, "y": 1000, "z": 0}
+  }
+  back_panel.push(strip);
+}
+
+var back_panels = [];
+for (var i = 0; i < 6; i++) {
+  var panel = {
+    "name": "Back Panel " + i,
+    "x": -4500 + i * 1500,
+    "y": 0,
+    "z": 7500,
+    "group": "back panels",
+    "strips": back_panel
+  };
+
+  back_panels.push(panel);
+}
 // var ring_top = [];
 // for(i=0; i<12;i++){ // i=0, i<12
 //   var rev = !(i%2)
@@ -177,6 +203,7 @@ var tardis = {
 }
 tardis.elements = tardis.elements.concat(side_panels_right);
 tardis.elements = tardis.elements.concat(side_panels_left);
+tardis.elements = tardis.elements.concat(back_panels);
 
 var json = JSON.stringify(tardis, null, ' ');
 

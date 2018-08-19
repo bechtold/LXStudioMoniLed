@@ -789,6 +789,480 @@
      }
     }
    ]
+  },
+  {
+   "name": "Back Panel 0",
+   "x": -4500,
+   "y": 0,
+   "z": 7500,
+   "group": "back panels",
+   "strips": [
+    {
+     "name": "back_panel_strip_0",
+     "leds": 90,
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 0,
+      "y": 1000,
+      "z": 0
+     }
+    },
+    {
+     "name": "back_panel_strip_1",
+     "leds": 90,
+     "start": {
+      "x": 300,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 300,
+      "y": 1000,
+      "z": 0
+     }
+    },
+    {
+     "name": "back_panel_strip_2",
+     "leds": 90,
+     "start": {
+      "x": 600,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 600,
+      "y": 1000,
+      "z": 0
+     }
+    },
+    {
+     "name": "back_panel_strip_3",
+     "leds": 90,
+     "start": {
+      "x": 900,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 900,
+      "y": 1000,
+      "z": 0
+     }
+    },
+    {
+     "name": "back_panel_strip_4",
+     "leds": 90,
+     "start": {
+      "x": 1200,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 1200,
+      "y": 1000,
+      "z": 0
+     }
+    }
+   ]
+  },
+  {
+   "name": "Back Panel 1",
+   "x": -3000,
+   "y": 0,
+   "z": 7500,
+   "group": "back panels",
+   "strips": [
+    {
+     "name": "back_panel_strip_0",
+     "leds": 90,
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 0,
+      "y": 1000,
+      "z": 0
+     }
+    },
+    {
+     "name": "back_panel_strip_1",
+     "leds": 90,
+     "start": {
+      "x": 300,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 300,
+      "y": 1000,
+      "z": 0
+     }
+    },
+    {
+     "name": "back_panel_strip_2",
+     "leds": 90,
+     "start": {
+      "x": 600,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 600,
+      "y": 1000,
+      "z": 0
+     }
+    },
+    {
+     "name": "back_panel_strip_3",
+     "leds": 90,
+     "start": {
+      "x": 900,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 900,
+      "y": 1000,
+      "z": 0
+     }
+    },
+    {
+     "name": "back_panel_strip_4",
+     "leds": 90,
+     "start": {
+      "x": 1200,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 1200,
+      "y": 1000,
+      "z": 0
+     }
+    }
+   ]
+  },
+  {
+   "name": "Back Panel 2",
+   "x": -1500,
+   "y": 0,
+   "z": 7500,
+   "group": "back panels",
+   "strips": [
+    {
+     "name": "back_panel_strip_0",
+     "leds": 90,
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 0,
+      "y": 1000,
+      "z": 0
+     }
+    },
+    {
+     "name": "back_panel_strip_1",
+     "leds": 90,
+     "start": {
+      "x": 300,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 300,
+      "y": 1000,
+      "z": 0
+     }
+    },
+    {
+     "name": "back_panel_strip_2",
+     "leds": 90,
+     "start": {
+      "x": 600,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 600,
+      "y": 1000,
+      "z": 0
+     }
+    },
+    {
+     "name": "back_panel_strip_3",
+     "leds": 90,
+     "start": {
+      "x": 900,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 900,
+      "y": 1000,
+      "z": 0
+     }
+    },
+    {
+     "name": "back_panel_strip_4",
+     "leds": 90,
+     "start": {
+      "x": 1200,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 1200,
+      "y": 1000,
+      "z": 0
+     }
+    }
+   ]
+  },
+  {
+   "name": "Back Panel 3",
+   "x": 0,
+   "y": 0,
+   "z": 7500,
+   "group": "back panels",
+   "strips": [
+    {
+     "name": "back_panel_strip_0",
+     "leds": 90,
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 0,
+      "y": 1000,
+      "z": 0
+     }
+    },
+    {
+     "name": "back_panel_strip_1",
+     "leds": 90,
+     "start": {
+      "x": 300,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 300,
+      "y": 1000,
+      "z": 0
+     }
+    },
+    {
+     "name": "back_panel_strip_2",
+     "leds": 90,
+     "start": {
+      "x": 600,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 600,
+      "y": 1000,
+      "z": 0
+     }
+    },
+    {
+     "name": "back_panel_strip_3",
+     "leds": 90,
+     "start": {
+      "x": 900,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 900,
+      "y": 1000,
+      "z": 0
+     }
+    },
+    {
+     "name": "back_panel_strip_4",
+     "leds": 90,
+     "start": {
+      "x": 1200,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 1200,
+      "y": 1000,
+      "z": 0
+     }
+    }
+   ]
+  },
+  {
+   "name": "Back Panel 4",
+   "x": 1500,
+   "y": 0,
+   "z": 7500,
+   "group": "back panels",
+   "strips": [
+    {
+     "name": "back_panel_strip_0",
+     "leds": 90,
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 0,
+      "y": 1000,
+      "z": 0
+     }
+    },
+    {
+     "name": "back_panel_strip_1",
+     "leds": 90,
+     "start": {
+      "x": 300,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 300,
+      "y": 1000,
+      "z": 0
+     }
+    },
+    {
+     "name": "back_panel_strip_2",
+     "leds": 90,
+     "start": {
+      "x": 600,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 600,
+      "y": 1000,
+      "z": 0
+     }
+    },
+    {
+     "name": "back_panel_strip_3",
+     "leds": 90,
+     "start": {
+      "x": 900,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 900,
+      "y": 1000,
+      "z": 0
+     }
+    },
+    {
+     "name": "back_panel_strip_4",
+     "leds": 90,
+     "start": {
+      "x": 1200,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 1200,
+      "y": 1000,
+      "z": 0
+     }
+    }
+   ]
+  },
+  {
+   "name": "Back Panel 5",
+   "x": 3000,
+   "y": 0,
+   "z": 7500,
+   "group": "back panels",
+   "strips": [
+    {
+     "name": "back_panel_strip_0",
+     "leds": 90,
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 0,
+      "y": 1000,
+      "z": 0
+     }
+    },
+    {
+     "name": "back_panel_strip_1",
+     "leds": 90,
+     "start": {
+      "x": 300,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 300,
+      "y": 1000,
+      "z": 0
+     }
+    },
+    {
+     "name": "back_panel_strip_2",
+     "leds": 90,
+     "start": {
+      "x": 600,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 600,
+      "y": 1000,
+      "z": 0
+     }
+    },
+    {
+     "name": "back_panel_strip_3",
+     "leds": 90,
+     "start": {
+      "x": 900,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 900,
+      "y": 1000,
+      "z": 0
+     }
+    },
+    {
+     "name": "back_panel_strip_4",
+     "leds": 90,
+     "start": {
+      "x": 1200,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 1200,
+      "y": 1000,
+      "z": 0
+     }
+    }
+   ]
   }
  ]
 }
