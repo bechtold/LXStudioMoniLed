@@ -3,15 +3,42 @@ var ip = "192.168.1.2";
 var side_panel = [];
 for (i=0; i<5; i++) {
   var rev = !(i%2);
-  var strip =         {
-            "name"    : "side_panel_strip_"+i,
-  					"leds"    : 60,
-  					// "artnet"	: { "ip":ip, "universe": i, "address": 0, reverse: rev},
-  					"start"	  : { "x": 4500, "y": 4000, "z": i*300},
-  					"end"     : { "x": 4500, "y":    0, "z": i*300 }
-  				}
+  var strip = {
+    "name"    : "side_panel_strip_"+i,
+    "leds"    : 60,
+    // "artnet"	: { "ip":ip, "universe": i, "address": 0, reverse: rev},
+    "start"	  : { "x": 0, "y": 4000, "z": i*300},
+    "end"     : { "x": 0, "y": 2000, "z": i*300}
+  }
   side_panel.push(strip);
+}
 
+var side_panels_right = [];
+for (var i = 0; i < 5; i++) {
+  var panel = {
+    "name": "Side Panel Right " + i,
+    "x": 4500,
+    "y": 0,
+    "z": i * 1500,
+    "group": "right panels",
+    "strips": side_panel
+  };
+
+  side_panels_right.push(panel);
+}
+
+var side_panels_left = [];
+for (var i = 0; i < 5; i++) {
+  var panel = {
+    "name": "Side Panel Left" + i,
+    "x": -4500,
+    "y": 0,
+    "z": i * 1500,
+    "group": "left panels",
+    "strips": side_panel
+  };
+
+  side_panels_right.push(panel);
 }
 
 // var ring_top = [];
@@ -125,15 +152,31 @@ var tardis = {
 		// 	"y":0,
 		// 	"strips": triangles
     // },
-		{
-			"name": "Side Panel",
-			"x":0,
-			"y":0,
-			"strips": side_panel
-    }
+
+
+
+    // {
+		// 	"name": "Side Panel",
+		// 	"x": 4500,
+		// 	"y": 0,
+    //   "z": 0,
+    //   "group": "right panels",
+		// 	"strips": side_panel
+    // },
+    // {
+		// 	"name": "Side Panel 2",
+		// 	"x": 4500,
+		// 	"y": 0,
+    //   "z": 1500,
+    //   "group": "right panels",
+		// 	"strips": side_panel
+    // }
+
 
   ]
 }
+tardis.elements = tardis.elements.concat(side_panels_right);
+tardis.elements = tardis.elements.concat(side_panels_left);
 
 var json = JSON.stringify(tardis, null, ' ');
 

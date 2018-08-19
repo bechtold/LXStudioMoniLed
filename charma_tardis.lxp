@@ -1,6 +1,6 @@
 {
   "version": "0.1",
-  "timestamp": 1534676879260,
+  "timestamp": 1534678300997,
   "engine": {
     "id": 1,
     "class": "heronarts.lx.LXEngine",
@@ -63,7 +63,7 @@
         },
         "effects": [],
         "clips": [],
-        "patternIndex": 0,
+        "patternIndex": 1,
         "patterns": [
           {
             "id": 31862,
@@ -71,7 +71,7 @@
             "modulationColor": -16775937,
             "parameters": {
               "label": "Iterator",
-              "speed": 10.0
+              "speed": 86.22999829612672
             },
             "modulation": {
               "modulators": [],
@@ -79,6 +79,27 @@
               "triggers": []
             },
             "autoCycleEnabled": false
+          },
+          {
+            "id": 31876,
+            "class": "MoniLed$OzRandom",
+            "modulationColor": -65462,
+            "parameters": {
+              "label": "OzRandom",
+              "select_by_element": false,
+              "element": 9.0,
+              "speed": 0.9604000008761883,
+              "clear": true,
+              "flash": false,
+              "amount": 50.0,
+              "hue": 0.0
+            },
+            "modulation": {
+              "modulators": [],
+              "modulations": [],
+              "triggers": []
+            },
+            "autoCycleEnabled": true
           }
         ]
       }
@@ -163,12 +184,12 @@
           "Band-8": 0.0,
           "Band-9": 0.0,
           "Band-10": 0.0,
-          "Band-11": 0.0,
-          "Band-12": 0.0,
-          "Band-13": 0.0,
-          "Band-14": 0.0,
-          "Band-15": 0.0,
-          "Band-16": 0.0
+          "Band-11": 0.16308372788967096,
+          "Band-12": 0.09288671290249917,
+          "Band-13": 0.33930991864369464,
+          "Band-14": 0.5289132199992281,
+          "Band-15": 0.5825552131669798,
+          "Band-16": 0.48565795345003704
         }
       },
       "input": {

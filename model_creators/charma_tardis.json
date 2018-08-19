@@ -1,21 +1,23 @@
 {
  "elements": [
   {
-   "name": "Side Panel",
-   "x": 0,
+   "name": "Side Panel Right 0",
+   "x": 4500,
    "y": 0,
+   "z": 0,
+   "group": "right panels",
    "strips": [
     {
      "name": "side_panel_strip_0",
      "leds": 60,
      "start": {
-      "x": 4500,
+      "x": 0,
       "y": 4000,
       "z": 0
      },
      "end": {
-      "x": 4500,
-      "y": 0,
+      "x": 0,
+      "y": 2000,
       "z": 0
      }
     },
@@ -23,13 +25,13 @@
      "name": "side_panel_strip_1",
      "leds": 60,
      "start": {
-      "x": 4500,
+      "x": 0,
       "y": 4000,
       "z": 300
      },
      "end": {
-      "x": 4500,
-      "y": 0,
+      "x": 0,
+      "y": 2000,
       "z": 300
      }
     },
@@ -37,13 +39,13 @@
      "name": "side_panel_strip_2",
      "leds": 60,
      "start": {
-      "x": 4500,
+      "x": 0,
       "y": 4000,
       "z": 600
      },
      "end": {
-      "x": 4500,
-      "y": 0,
+      "x": 0,
+      "y": 2000,
       "z": 600
      }
     },
@@ -51,13 +53,13 @@
      "name": "side_panel_strip_3",
      "leds": 60,
      "start": {
-      "x": 4500,
+      "x": 0,
       "y": 4000,
       "z": 900
      },
      "end": {
-      "x": 4500,
-      "y": 0,
+      "x": 0,
+      "y": 2000,
       "z": 900
      }
     },
@@ -65,13 +67,724 @@
      "name": "side_panel_strip_4",
      "leds": 60,
      "start": {
-      "x": 4500,
+      "x": 0,
       "y": 4000,
       "z": 1200
      },
      "end": {
-      "x": 4500,
-      "y": 0,
+      "x": 0,
+      "y": 2000,
+      "z": 1200
+     }
+    }
+   ]
+  },
+  {
+   "name": "Side Panel Right 1",
+   "x": 4500,
+   "y": 0,
+   "z": 1500,
+   "group": "right panels",
+   "strips": [
+    {
+     "name": "side_panel_strip_0",
+     "leds": 60,
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 0
+     }
+    },
+    {
+     "name": "side_panel_strip_1",
+     "leds": 60,
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 300
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 300
+     }
+    },
+    {
+     "name": "side_panel_strip_2",
+     "leds": 60,
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 600
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 600
+     }
+    },
+    {
+     "name": "side_panel_strip_3",
+     "leds": 60,
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 900
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 900
+     }
+    },
+    {
+     "name": "side_panel_strip_4",
+     "leds": 60,
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 1200
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 1200
+     }
+    }
+   ]
+  },
+  {
+   "name": "Side Panel Right 2",
+   "x": 4500,
+   "y": 0,
+   "z": 3000,
+   "group": "right panels",
+   "strips": [
+    {
+     "name": "side_panel_strip_0",
+     "leds": 60,
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 0
+     }
+    },
+    {
+     "name": "side_panel_strip_1",
+     "leds": 60,
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 300
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 300
+     }
+    },
+    {
+     "name": "side_panel_strip_2",
+     "leds": 60,
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 600
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 600
+     }
+    },
+    {
+     "name": "side_panel_strip_3",
+     "leds": 60,
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 900
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 900
+     }
+    },
+    {
+     "name": "side_panel_strip_4",
+     "leds": 60,
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 1200
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 1200
+     }
+    }
+   ]
+  },
+  {
+   "name": "Side Panel Right 3",
+   "x": 4500,
+   "y": 0,
+   "z": 4500,
+   "group": "right panels",
+   "strips": [
+    {
+     "name": "side_panel_strip_0",
+     "leds": 60,
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 0
+     }
+    },
+    {
+     "name": "side_panel_strip_1",
+     "leds": 60,
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 300
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 300
+     }
+    },
+    {
+     "name": "side_panel_strip_2",
+     "leds": 60,
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 600
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 600
+     }
+    },
+    {
+     "name": "side_panel_strip_3",
+     "leds": 60,
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 900
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 900
+     }
+    },
+    {
+     "name": "side_panel_strip_4",
+     "leds": 60,
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 1200
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 1200
+     }
+    }
+   ]
+  },
+  {
+   "name": "Side Panel Right 4",
+   "x": 4500,
+   "y": 0,
+   "z": 6000,
+   "group": "right panels",
+   "strips": [
+    {
+     "name": "side_panel_strip_0",
+     "leds": 60,
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 0
+     }
+    },
+    {
+     "name": "side_panel_strip_1",
+     "leds": 60,
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 300
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 300
+     }
+    },
+    {
+     "name": "side_panel_strip_2",
+     "leds": 60,
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 600
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 600
+     }
+    },
+    {
+     "name": "side_panel_strip_3",
+     "leds": 60,
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 900
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 900
+     }
+    },
+    {
+     "name": "side_panel_strip_4",
+     "leds": 60,
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 1200
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 1200
+     }
+    }
+   ]
+  },
+  {
+   "name": "Side Panel Left0",
+   "x": -4500,
+   "y": 0,
+   "z": 0,
+   "group": "left panels",
+   "strips": [
+    {
+     "name": "side_panel_strip_0",
+     "leds": 60,
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 0
+     }
+    },
+    {
+     "name": "side_panel_strip_1",
+     "leds": 60,
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 300
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 300
+     }
+    },
+    {
+     "name": "side_panel_strip_2",
+     "leds": 60,
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 600
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 600
+     }
+    },
+    {
+     "name": "side_panel_strip_3",
+     "leds": 60,
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 900
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 900
+     }
+    },
+    {
+     "name": "side_panel_strip_4",
+     "leds": 60,
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 1200
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 1200
+     }
+    }
+   ]
+  },
+  {
+   "name": "Side Panel Left1",
+   "x": -4500,
+   "y": 0,
+   "z": 1500,
+   "group": "left panels",
+   "strips": [
+    {
+     "name": "side_panel_strip_0",
+     "leds": 60,
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 0
+     }
+    },
+    {
+     "name": "side_panel_strip_1",
+     "leds": 60,
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 300
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 300
+     }
+    },
+    {
+     "name": "side_panel_strip_2",
+     "leds": 60,
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 600
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 600
+     }
+    },
+    {
+     "name": "side_panel_strip_3",
+     "leds": 60,
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 900
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 900
+     }
+    },
+    {
+     "name": "side_panel_strip_4",
+     "leds": 60,
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 1200
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 1200
+     }
+    }
+   ]
+  },
+  {
+   "name": "Side Panel Left2",
+   "x": -4500,
+   "y": 0,
+   "z": 3000,
+   "group": "left panels",
+   "strips": [
+    {
+     "name": "side_panel_strip_0",
+     "leds": 60,
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 0
+     }
+    },
+    {
+     "name": "side_panel_strip_1",
+     "leds": 60,
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 300
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 300
+     }
+    },
+    {
+     "name": "side_panel_strip_2",
+     "leds": 60,
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 600
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 600
+     }
+    },
+    {
+     "name": "side_panel_strip_3",
+     "leds": 60,
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 900
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 900
+     }
+    },
+    {
+     "name": "side_panel_strip_4",
+     "leds": 60,
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 1200
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 1200
+     }
+    }
+   ]
+  },
+  {
+   "name": "Side Panel Left3",
+   "x": -4500,
+   "y": 0,
+   "z": 4500,
+   "group": "left panels",
+   "strips": [
+    {
+     "name": "side_panel_strip_0",
+     "leds": 60,
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 0
+     }
+    },
+    {
+     "name": "side_panel_strip_1",
+     "leds": 60,
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 300
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 300
+     }
+    },
+    {
+     "name": "side_panel_strip_2",
+     "leds": 60,
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 600
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 600
+     }
+    },
+    {
+     "name": "side_panel_strip_3",
+     "leds": 60,
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 900
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 900
+     }
+    },
+    {
+     "name": "side_panel_strip_4",
+     "leds": 60,
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 1200
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 1200
+     }
+    }
+   ]
+  },
+  {
+   "name": "Side Panel Left4",
+   "x": -4500,
+   "y": 0,
+   "z": 6000,
+   "group": "left panels",
+   "strips": [
+    {
+     "name": "side_panel_strip_0",
+     "leds": 60,
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 0
+     }
+    },
+    {
+     "name": "side_panel_strip_1",
+     "leds": 60,
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 300
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 300
+     }
+    },
+    {
+     "name": "side_panel_strip_2",
+     "leds": 60,
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 600
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 600
+     }
+    },
+    {
+     "name": "side_panel_strip_3",
+     "leds": 60,
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 900
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 900
+     }
+    },
+    {
+     "name": "side_panel_strip_4",
+     "leds": 60,
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 1200
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
       "z": 1200
      }
     }
