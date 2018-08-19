@@ -70,8 +70,8 @@ for (var i = 0; i < 6; i++) {
 
 var pillar = [];
 for (i=0; i<12; i++) {
-  var x = 0, z = 0;
 
+  var x = 0, z = 0;
   if ( i < 3 ) {
     x = 50 + i * 100;
     z = 0;
@@ -88,7 +88,6 @@ for (i=0; i<12; i++) {
     x = 0;
     z = 300 - (50 + (i%3) * 100);
   }
-  console.log("x: "+x+", z: "+z);
 
   var rev = !(i%2);
   var strip = {
@@ -102,17 +101,35 @@ for (i=0; i<12; i++) {
 }
 
 var pillars = [];
-for (var i = 0; i < 1; i++) {
-  var pillar = {
+for (var i = 0; i < 12; i++) {
+  var x = 0, z = 0;
+  if ( i < 3 ) {
+    x = 3000 + i * 1500;
+    z = 1000;
+  }
+  if( i >= 3 && i < 6 ) {
+    x = 3000 + (i%3) * 1500;
+    z = 2000;
+  }
+  if( i >= 6 && i < 9 ) {
+    x = 3000 + (i%3) * 1500;
+    z = 3000;
+  }
+  if( i >= 9 && i < 12 ) {
+    x = 3000 + (i%3) * 1500;
+    z = 4000;
+  }
+
+  var p = {
     "name": "Pillar " + i,
-    "x": 0,
+    "x": x,
     "y": 0,
-    "z": 0,
+    "z": z,
     "group": "pillars",
     "strips": pillar
   };
 
-  pillars.push(pillar);
+  pillars.push(p);
 }
 // var ring_top = [];
 // for(i=0; i<12;i++){ // i=0, i<12
