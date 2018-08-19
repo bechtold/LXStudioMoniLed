@@ -1,6 +1,6 @@
 {
   "version": "0.1",
-  "timestamp": 1534678300997,
+  "timestamp": 1534682152181,
   "engine": {
     "id": 1,
     "class": "heronarts.lx.LXEngine",
@@ -63,7 +63,7 @@
         },
         "effects": [],
         "clips": [],
-        "patternIndex": 1,
+        "patternIndex": 0,
         "patterns": [
           {
             "id": 31862,
@@ -71,7 +71,7 @@
             "modulationColor": -16775937,
             "parameters": {
               "label": "Iterator",
-              "speed": 86.22999829612672
+              "speed": 75.33999835513532
             },
             "modulation": {
               "modulators": [],
@@ -87,7 +87,7 @@
             "parameters": {
               "label": "OzRandom",
               "select_by_element": false,
-              "element": 9.0,
+              "element": 0.0,
               "speed": 0.9604000008761883,
               "clear": true,
               "flash": false,
@@ -184,12 +184,12 @@
           "Band-8": 0.0,
           "Band-9": 0.0,
           "Band-10": 0.0,
-          "Band-11": 0.16308372788967096,
-          "Band-12": 0.09288671290249917,
-          "Band-13": 0.33930991864369464,
-          "Band-14": 0.5289132199992281,
-          "Band-15": 0.5825552131669798,
-          "Band-16": 0.48565795345003704
+          "Band-11": 0.0,
+          "Band-12": 0.0,
+          "Band-13": 0.0,
+          "Band-14": 0.0,
+          "Band-15": 0.0,
+          "Band-16": 0.0
         }
       },
       "input": {
@@ -271,11 +271,11 @@
         "centerPoint": false,
         "camera": {
           "active": true,
-          "radius": 20221.693318029553,
-          "theta": -0.003,
-          "phi": 0.3990000000000002,
-          "x": 0.0,
-          "y": 0.0,
+          "radius": 3721.8889869539753,
+          "theta": 0.18000000000000013,
+          "phi": 1.3049999999999953,
+          "x": 24.0,
+          "y": 3023.0,
           "z": 0.0
         },
         "cue": [
@@ -289,12 +289,12 @@
             "z": 0.0
           },
           {
-            "active": false,
-            "radius": 120.0,
-            "theta": 0.0,
-            "phi": 0.0,
-            "x": 0.0,
-            "y": 0.0,
+            "active": true,
+            "radius": 3721.8889869539753,
+            "theta": 0.18000000000000013,
+            "phi": 1.3049999999999953,
+            "x": 24.0,
+            "y": 3023.0,
             "z": 0.0
           },
           {
@@ -334,7 +334,7 @@
             "z": 0.0
           }
         ],
-        "focus": 0,
+        "focus": 1,
         "pointCloud": {
           "pointSize": 3.0
         }
