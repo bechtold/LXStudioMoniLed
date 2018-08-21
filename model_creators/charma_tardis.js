@@ -48,8 +48,8 @@ for (i=0; i<5; i++) {
     "name"    : "back_panel_strip_"+i,
     "leds"    : 90,
     // "artnet"	: { "ip":ip, "universe": i, "address": 0, reverse: rev},
-    "start"	  : { "x": i*300, "y": 4000, "z": 0},
-    "end"     : { "x": i*300, "y": 1000, "z": 0}
+    "start"	  : { "x": 150+i*300, "y": 4000, "z": 0},
+    "end"     : { "x": 150+i*300, "y": 1000, "z": 0}
   }
   back_panel.push(strip);
 }
@@ -104,19 +104,19 @@ var pillars = [];
 for (var i = 0; i < 12; i++) {
   var x = 0, z = 0;
   if ( i < 3 ) {
-    x = 3000 + i * 1500;
+    x = -1500 + i * 1500;
     z = 1000;
   }
   if( i >= 3 && i < 6 ) {
-    x = 3000 + (i%3) * 1500;
+    x = -1500 + (i%3) * 1500;
     z = 2000;
   }
   if( i >= 6 && i < 9 ) {
-    x = 3000 + (i%3) * 1500;
+    x = -1500 + (i%3) * 1500;
     z = 3000;
   }
   if( i >= 9 && i < 12 ) {
-    x = 3000 + (i%3) * 1500;
+    x = -1500 + (i%3) * 1500;
     z = 4000;
   }
 
@@ -265,9 +265,9 @@ var tardis = {
 
   ]
 }
-// tardis.elements = tardis.elements.concat(side_panels_right);
-// tardis.elements = tardis.elements.concat(side_panels_left);
-// tardis.elements = tardis.elements.concat(back_panels);
+tardis.elements = tardis.elements.concat(side_panels_right);
+tardis.elements = tardis.elements.concat(side_panels_left);
+tardis.elements = tardis.elements.concat(back_panels);
 tardis.elements = tardis.elements.concat(pillars);
 
 var json = JSON.stringify(tardis, null, ' ');
