@@ -1,6 +1,6 @@
 {
   "version": "0.1",
-  "timestamp": 1534891617334,
+  "timestamp": 1534891962557,
   "engine": {
     "id": 1,
     "class": "heronarts.lx.LXEngine",
@@ -68,9 +68,9 @@
             "modulationColor": -16711825,
             "parameters": {
               "label": "FilterElement",
-              "enabled": false,
+              "enabled": true,
               "invert": false,
-              "element": 10.799999758601189
+              "element": 7.290000440552831
             },
             "modulation": {
               "modulators": [],
@@ -85,7 +85,7 @@
             "parameters": {
               "label": "FilterGroups",
               "enabled": true,
-              "invert": true,
+              "invert": false,
               "group": 3.0
             },
             "modulation": {
@@ -137,12 +137,12 @@
             "modulationColor": -37888,
             "parameters": {
               "label": "OzAxis",
-              "enableX": false,
-              "xPos": 0.0,
-              "enableY": true,
-              "yPos": 0.7999999821186066,
-              "enableZ": false,
-              "zPos": 0.0
+              "enableX": true,
+              "xPos": 0.3299999926239252,
+              "enableY": false,
+              "yPos": 0.8099999818950891,
+              "enableZ": true,
+              "zPos": 0.1599999964237213
             },
             "modulation": {
               "modulators": [],
@@ -229,17 +229,17 @@
           "Band-3": 0.0,
           "Band-4": 0.0,
           "Band-5": 0.0,
-          "Band-6": 0.00416471586661471,
-          "Band-7": 0.14887766081582487,
+          "Band-6": 0.0,
+          "Band-7": 0.0,
           "Band-8": 0.0,
           "Band-9": 0.0,
-          "Band-10": 0.04133623494698446,
-          "Band-11": 0.16698500691383666,
-          "Band-12": 0.11754343210073337,
-          "Band-13": 0.3546852291013086,
-          "Band-14": 0.5825166750824693,
-          "Band-15": 0.7075611197628804,
-          "Band-16": 0.5839683759876133
+          "Band-10": 0.0457994192102561,
+          "Band-11": 0.0,
+          "Band-12": 0.0,
+          "Band-13": 0.0,
+          "Band-14": 0.0,
+          "Band-15": 0.0,
+          "Band-16": 0.0
         }
       },
       "input": {
