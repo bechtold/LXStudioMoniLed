@@ -1,6 +1,6 @@
 {
   "version": "0.1",
-  "timestamp": 1534882414799,
+  "timestamp": 1534882814298,
   "engine": {
     "id": 1,
     "class": "heronarts.lx.LXEngine",
@@ -61,7 +61,24 @@
           "transitionTimeSecs": 5.0,
           "transitionBlendMode": 0
         },
-        "effects": [],
+        "effects": [
+          {
+            "id": 31917,
+            "class": "MoniLed$FilterElement",
+            "modulationColor": -16711728,
+            "parameters": {
+              "label": "FilterElement",
+              "enabled": true,
+              "invert": false,
+              "element": 0.0
+            },
+            "modulation": {
+              "modulators": [],
+              "modulations": [],
+              "triggers": []
+            }
+          }
+        ],
         "clips": [],
         "patternIndex": 2,
         "patterns": [
@@ -217,17 +234,17 @@
           "Band-3": 0.0,
           "Band-4": 0.0,
           "Band-5": 0.0,
-          "Band-6": 0.016253059441695417,
-          "Band-7": 0.03787078319676562,
+          "Band-6": 0.0,
+          "Band-7": 0.0,
           "Band-8": 0.0,
           "Band-9": 0.0,
           "Band-10": 0.0,
           "Band-11": 0.0,
           "Band-12": 0.0,
           "Band-13": 0.0,
-          "Band-14": 0.062367949037618,
-          "Band-15": 0.1310073313518817,
-          "Band-16": 0.06149730688781474
+          "Band-14": 0.0,
+          "Band-15": 0.0,
+          "Band-16": 0.0
         }
       },
       "input": {
