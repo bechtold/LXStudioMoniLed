@@ -1,5 +1,16 @@
 import java.awt.Color;
 
+public abstract class JSONEffect extends LXEffect {
+  
+  JSONModel model = (JSONModel) lx.model;
+  
+  public JSONEffect(LX lx) {
+    super(lx);
+  }
+
+}
+
+
 @LXCategory("Texture")
 public class Sizzle extends LXEffect {
   
@@ -193,8 +204,8 @@ public class SolidColor extends LXEffect {
 }
 
 @LXCategory("Olfpa")
-public class FilterElement extends LXEffect {
-  JSONModel.Fixture model_fixture = (JSONModel.Fixture)model.fixtures.get(0);
+public class FilterElement extends JSONEffect {
+  JSONModel.Fixture model_fixture = model.getFixture();
 
   public final CompoundParameter element_selector =
     new CompoundParameter("Element", 0, 0, model_fixture.elements.size() - 1)
