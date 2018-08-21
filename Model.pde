@@ -107,6 +107,10 @@ public static class JSONModel extends LXModel {
     super(new Fixture(modelData));
     this.name = modelData.getString("name", "");
   }
+  
+  public JSONModel.Fixture getFixture(){
+    return (JSONModel.Fixture)this.fixtures.get(0);
+  }
 
   public static class Fixture extends LXAbstractFixture {
     private final List<JSONElement> elements = new ArrayList<JSONElement>();
