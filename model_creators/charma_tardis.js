@@ -223,6 +223,7 @@ for (var i = 0; i < 12; i++) {
 // }
 
 var tardis = {
+  "name": "tardis",
 	"elements": [
 		// {
 		// 	"name": "Ring Bottom",
