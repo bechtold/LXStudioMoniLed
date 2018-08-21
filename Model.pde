@@ -1,4 +1,5 @@
 import java.util.List; //<>//
+import java.util.LinkedHashMap;
 
 LXModel buildModel(JSONObject stripData) {
   // A three-dimensional grid model
@@ -114,6 +115,8 @@ public static class JSONModel extends LXModel {
 
   public static class Fixture extends LXAbstractFixture {
     private final List<JSONElement> elements = new ArrayList<JSONElement>();
+    // basically a multimap -> multiple elements (in a list) identified by a key
+    private final LinkedHashMap<String, List<JSONElement>> groups = new LinkedHashMap<String, List<JSONElement>>();
 
     Fixture(JSONObject modelData) {
       addElements(modelData, 0, 0, 0);
@@ -137,9 +140,22 @@ public static class JSONModel extends LXModel {
     private void addElements(JSONArray elementsData, int offSetX, int offSetY, int offSetZ) {
       for (int i = 0; i < elementsData.size(); i++) {
         JSONObject elementData = elementsData.getJSONObject(i);
+
         JSONElement element = new JSONElement(elementData, offSetX, offSetY, offSetZ);
         addPoints(element);
         elements.add(element);
+
+        // if it should be added to a group
+        if(!elementData.getString("group", "").isEmpty()) {
+          
+          // if group does not exist, create a new list
+          if(groups.get(elementData.getString("group")) == null) {
+            groups.put(elementData.getString("group"), new ArrayList<JSONElement>());
+          }
+          // add element to list by group name
+          groups.get(elementData.getString("group")).add(element);
+        }
+        
       }
     }
   }

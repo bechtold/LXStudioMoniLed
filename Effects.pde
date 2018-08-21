@@ -203,7 +203,7 @@ public class SolidColor extends LXEffect {
   }
 }
 
-@LXCategory("Olfpa")
+@LXCategory("Filter")
 public class FilterElement extends JSONEffect {
   JSONModel.Fixture model_fixture = model.getFixture();
 
@@ -307,17 +307,76 @@ public class FilterElement extends JSONEffect {
   }
 }
 
-//public class ArcsOff extends LXEffect {
-//  public ArcsOff(LX lx) {
-//    super(lx);
-//  }
+@LXCategory("Filter")
+public class FilterGroups extends JSONEffect {
+  JSONModel.Fixture model_fixture = model.getFixture();
+
+  public final CompoundParameter group_selector =
+    new CompoundParameter("Group", 0, 0, model_fixture.groups.size() - 1)
+    .setDescription("Select the affected group");
+    
+  public final BooleanParameter invert = 
+    new BooleanParameter("invert", false)
+    .setDescription("Invert group selection");
+    
+    public FilterGroups(LX lx) {
+      super(lx);
+      addParameter("invert", this.invert);
+      addParameter("group", this.group_selector);
+    }
+
   
-//  @Override
-//  public void run(double deltaMs, double amount) {
-//    if (amount > 0) {
-//      for (Arc arc : venue.arcs) {
-//        setColor(arc, #000000);
-//      }
-//    }
-//  }
-//}
+  // move to model
+  public LinkedHashMap<String, List<JSONElement>> getGroups() {
+    //println(model_fixture.groups.size());
+    return model_fixture.groups;
+  }
+
+  public List<JSONElement> getElementsInSelectedGroup() {
+    List<JSONElement> elements = new ArrayList<JSONElement>();
+
+    int selected_index = (int)this.group_selector.getValue();
+    
+    int i = 0;
+    // since maps are not gettable by index we have to iterate over them to find the elements
+    for (Object key : getGroups().keySet()) {
+      if(selected_index == i) {
+        return getGroups().get(key);
+      }
+      i++;
+    }
+
+    return elements;
+  }
+
+  public List<JSONElement> getElementsNotSelected() {
+    List<JSONElement> elements = new ArrayList<JSONElement>();
+    
+    int selected_index = (int)this.group_selector.getValue();
+    
+    int i = 0;
+    // since maps are not gettable by index we have to iterate over them to find the elements
+    for (Object key : getGroups().keySet()) {
+      if(selected_index != i) {
+        elements.addAll(getGroups().get(key));
+      }
+      i++;
+    }
+
+    return elements;
+  }
+
+  @Override
+  public void run(double deltaMs, double amount) {
+    if(this.invert.isOn()) {
+      for (JSONElement element : getElementsNotSelected()) {
+        setColor(element, #000000);
+      }
+    } else {
+      for(JSONElement element : getElementsInSelectedGroup()) {
+        setColor(element, #000000);
+      }
+    }
+
+  }
+}
