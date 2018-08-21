@@ -20,7 +20,7 @@ for (var i = 0; i < 5; i++) {
     "x": 4500,
     "y": 0,
     "z": i * 1500,
-    "group": "right panels",
+    "group": "right_panels",
     "strips": side_panel
   };
 
@@ -30,11 +30,11 @@ for (var i = 0; i < 5; i++) {
 var side_panels_left = [];
 for (var i = 0; i < 5; i++) {
   var panel = {
-    "name": "Side Panel Left" + i,
+    "name": "Side Panel Left " + i,
     "x": -4500,
     "y": 0,
     "z": i * 1500,
-    "group": "left panels",
+    "group": "left_panels",
     "strips": side_panel
   };
 
@@ -61,7 +61,7 @@ for (var i = 0; i < 6; i++) {
     "x": -4500 + i * 1500,
     "y": 0,
     "z": 7500,
-    "group": "back panels",
+    "group": "back_panels",
     "strips": back_panel
   };
 
