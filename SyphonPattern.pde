@@ -1,4 +1,4 @@
-public static class Planes {
+public static class SPlanes {
   public enum plane {
     X_Y,
     Y_Z,
@@ -12,7 +12,7 @@ public static class Planes {
 @LXCategory("Oz")
 public class SyphonPattern extends LXPattern {
   
-  public final EnumParameter<Planes.plane> plane = new EnumParameter<Planes.plane>("Plane", Planes.plane.X_Z);
+  public final EnumParameter<SPlanes.plane> plane = new EnumParameter<SPlanes.plane>("Plane", SPlanes.plane.X_Z);
   
   public final BooleanParameter switch_x = 
     new BooleanParameter("Switch X", false)
