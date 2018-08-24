@@ -1,6 +1,6 @@
 {
   "version": "0.1",
-  "timestamp": 1535139842641,
+  "timestamp": 1535141118177,
   "engine": {
     "id": 1,
     "class": "heronarts.lx.LXEngine",
@@ -424,9 +424,44 @@
           "transitionTimeSecs": 5.0,
           "transitionBlendMode": 0
         },
-        "effects": [],
+        "effects": [
+          {
+            "id": 32397,
+            "class": "MoniLed$SolidColor",
+            "modulationColor": -16768513,
+            "parameters": {
+              "label": "SolidColor",
+              "enabled": true,
+              "h": 0.0,
+              "s": 100.0,
+              "b": 100.0
+            },
+            "modulation": {
+              "modulators": [],
+              "modulations": [],
+              "triggers": []
+            }
+          },
+          {
+            "id": 32400,
+            "class": "MoniLed$LSD",
+            "modulationColor": -16711760,
+            "parameters": {
+              "label": "LSD",
+              "enabled": false,
+              "Scale": 5.0,
+              "Speed": 4.0,
+              "Range": 1.0
+            },
+            "modulation": {
+              "modulators": [],
+              "modulations": [],
+              "triggers": []
+            }
+          }
+        ],
         "clips": [],
-        "patternIndex": 2,
+        "patternIndex": 3,
         "patterns": [
           {
             "id": 32183,
@@ -469,6 +504,25 @@
               "period": 830.0000130757692,
               "size": 15.069999730214477,
               "contrast": 222.49999726191163
+            },
+            "modulation": {
+              "modulators": [],
+              "modulations": [],
+              "triggers": []
+            },
+            "autoCycleEnabled": true
+          },
+          {
+            "id": 32323,
+            "class": "MoniLed$GraphicEqualizerPattern",
+            "modulationColor": -18432,
+            "parameters": {
+              "label": "GraphicEqualizer",
+              "gain": 0.850000003352761,
+              "center": 0.9900000002235174,
+              "fade": 0.0,
+              "sharp": 0.6561000068798661,
+              "plane": 1
             },
             "modulation": {
               "modulators": [],
@@ -553,19 +607,19 @@
           "Band-1": 0.0,
           "Band-2": 0.0,
           "Band-3": 0.0,
-          "Band-4": 0.0,
-          "Band-5": 0.0,
-          "Band-6": 0.0,
-          "Band-7": 0.0,
-          "Band-8": 0.0,
-          "Band-9": 0.009624220078645052,
-          "Band-10": 0.0864116264592093,
-          "Band-11": 0.19586595577280264,
-          "Band-12": 0.24580937854462448,
-          "Band-13": 0.20669027117606975,
-          "Band-14": 0.13439392281214368,
-          "Band-15": 0.0,
-          "Band-16": 0.0
+          "Band-4": 0.08346910086420634,
+          "Band-5": 0.22265627320524395,
+          "Band-6": 0.27400301092884904,
+          "Band-7": 0.1594374465352365,
+          "Band-8": 0.38659217181912797,
+          "Band-9": 0.5567474765002796,
+          "Band-10": 0.6407260280985274,
+          "Band-11": 0.670552254178552,
+          "Band-12": 0.6742529736774752,
+          "Band-13": 0.5220577337717607,
+          "Band-14": 0.3761564742955822,
+          "Band-15": 0.4266855468941152,
+          "Band-16": 0.14618184974710868
         }
       },
       "input": {
@@ -647,12 +701,12 @@
         "centerPoint": false,
         "camera": {
           "active": true,
-          "radius": 6061.793264870711,
-          "theta": 0.0,
-          "phi": 0.018716673851014054,
-          "x": 0.0,
-          "y": 1531.5,
-          "z": 0.0
+          "radius": 5468.393596832284,
+          "theta": -0.015000000000000523,
+          "phi": 0.837716673851021,
+          "x": -106.98796570301056,
+          "y": 5186.0,
+          "z": 1.6049397680908442
         },
         "cue": [
           {
@@ -710,7 +764,7 @@
             "z": 0.2819995856843889
           }
         ],
-        "focus": 3,
+        "focus": 0,
         "pointCloud": {
           "pointSize": 3.0
         }
