@@ -1,6 +1,6 @@
 {
   "version": "0.1",
-  "timestamp": 1535137901573,
+  "timestamp": 1535139842641,
   "engine": {
     "id": 1,
     "class": "heronarts.lx.LXEngine",
@@ -15,7 +15,7 @@
       "crossfader": 0.5344827566295862,
       "crossfaderBlendMode": 0,
       "speed": 1.0,
-      "focusedChannel": 0,
+      "focusedChannel": 5,
       "cueA": false,
       "cueB": false,
       "multithreaded": true,
@@ -40,13 +40,30 @@
     },
     "channels": [
       {
+        "id": 32252,
+        "class": "heronarts.lx.LXGroup",
+        "modulationColor": -16728065,
+        "parameters": {
+          "label": "Separate",
+          "arm": false,
+          "selected": false,
+          "enabled": false,
+          "cue": false,
+          "fader": 1.0,
+          "crossfadeGroup": 0,
+          "blendMode": 0
+        },
+        "effects": [],
+        "clips": []
+      },
+      {
         "id": 31865,
         "class": "heronarts.lx.LXChannel",
         "modulationColor": -15924993,
         "parameters": {
           "label": "Back",
           "arm": false,
-          "selected": true,
+          "selected": false,
           "enabled": true,
           "cue": false,
           "fader": 1.0,
@@ -105,7 +122,7 @@
               "label": "Syphon",
               "plane": 0,
               "syphon_selector": 0.0,
-              "switch_z": false
+              "switch_x": false
             },
             "modulation": {
               "modulators": [],
@@ -114,7 +131,8 @@
             },
             "autoCycleEnabled": true
           }
-        ]
+        ],
+        "group": 32252
       },
       {
         "id": 32052,
@@ -199,7 +217,7 @@
               "label": "Syphon",
               "plane": 0,
               "syphon_selector": 1.0,
-              "switch_z": false
+              "switch_x": false
             },
             "modulation": {
               "modulators": [],
@@ -208,7 +226,8 @@
             },
             "autoCycleEnabled": true
           }
-        ]
+        ],
+        "group": 32252
       },
       {
         "id": 32061,
@@ -293,7 +312,7 @@
               "label": "Syphon",
               "plane": 1,
               "syphon_selector": 2.0,
-              "switch_z": false
+              "switch_x": false
             },
             "modulation": {
               "modulators": [],
@@ -302,7 +321,8 @@
             },
             "autoCycleEnabled": true
           }
-        ]
+        ],
+        "group": 32252
       },
       {
         "id": 32124,
@@ -370,7 +390,7 @@
               "label": "Syphon",
               "plane": 1,
               "syphon_selector": 3.0,
-              "switch_z": true
+              "switch_x": false
             },
             "modulation": {
               "modulators": [],
@@ -379,7 +399,8 @@
             },
             "autoCycleEnabled": true
           }
-        ]
+        ],
+        "group": 32252
       },
       {
         "id": 32186,
@@ -388,8 +409,8 @@
         "parameters": {
           "label": "All",
           "arm": false,
-          "selected": false,
-          "enabled": false,
+          "selected": true,
+          "enabled": true,
           "cue": false,
           "fader": 1.0,
           "crossfadeGroup": 0,
@@ -405,7 +426,7 @@
         },
         "effects": [],
         "clips": [],
-        "patternIndex": 1,
+        "patternIndex": 2,
         "patterns": [
           {
             "id": 32183,
@@ -430,7 +451,24 @@
               "label": "Syphon",
               "plane": 0,
               "syphon_selector": 4.0,
-              "switch_z": false
+              "switch_x": false
+            },
+            "modulation": {
+              "modulators": [],
+              "modulations": [],
+              "triggers": []
+            },
+            "autoCycleEnabled": true
+          },
+          {
+            "id": 32253,
+            "class": "MoniLed$Jitters",
+            "modulationColor": -16711740,
+            "parameters": {
+              "label": "Jitters",
+              "period": 830.0000130757692,
+              "size": 15.069999730214477,
+              "contrast": 222.49999726191163
             },
             "modulation": {
               "modulators": [],
@@ -516,17 +554,17 @@
           "Band-2": 0.0,
           "Band-3": 0.0,
           "Band-4": 0.0,
-          "Band-5": 0.03832543365171137,
-          "Band-6": 0.1606411157180928,
-          "Band-7": 0.19420326702056545,
-          "Band-8": 0.28836456520220954,
-          "Band-9": 0.2667182198434087,
-          "Band-10": 0.27057386618360424,
-          "Band-11": 0.23262592228962353,
-          "Band-12": 0.23542087785169752,
-          "Band-13": 0.18351077254475534,
-          "Band-14": 0.40263123989822813,
-          "Band-15": 0.13891070321696242,
+          "Band-5": 0.0,
+          "Band-6": 0.0,
+          "Band-7": 0.0,
+          "Band-8": 0.0,
+          "Band-9": 0.009624220078645052,
+          "Band-10": 0.0864116264592093,
+          "Band-11": 0.19586595577280264,
+          "Band-12": 0.24580937854462448,
+          "Band-13": 0.20669027117606975,
+          "Band-14": 0.13439392281214368,
+          "Band-15": 0.0,
           "Band-16": 0.0
         }
       },

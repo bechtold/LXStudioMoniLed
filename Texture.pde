@@ -213,16 +213,20 @@ public class Jitters extends OLFPAPattern {
 
     // todo implement element_selector
     JSONModel.Fixture model_fixture = (JSONModel.Fixture)model.fixtures.get(0);
-    JSONElement.Fixture element_fixture = (JSONElement.Fixture)model_fixture.elements.get(0).fixtures.get(0);
+    List<MoniLed.JSONElement> elements = model_fixture.elements;
 
-    for (JSONStrip strip : element_fixture.strips) {
-      inv = !inv;
-      float pv = inv ? pos : (1-pos);
-      int i = 0;
-      for (LXPoint p : strip.points) {
-        float pd = (i % size) * sizeInv;
-        colors[p.index] = LXColor.gray(max(0, 100 - contrast * LXUtils.wrapdistf(pd, pv, 1)));
-        ++i;
+    for (int i = 0; i < elements.size(); i++) {
+      println(i);
+      JSONElement.Fixture element_fixture = (JSONElement.Fixture)elements.get(i).fixtures.get(0);
+      for (JSONStrip strip : element_fixture.strips) {
+        inv = !inv;
+        float pv = inv ? pos : (1-pos);
+        int j = 0;
+        for (LXPoint p : strip.points) {
+          float pd = (j % size) * sizeInv;
+          colors[p.index] = LXColor.gray(max(0, 100 - contrast * LXUtils.wrapdistf(pd, pv, 1)));
+          ++j;
+        }
       }
     }
   }
