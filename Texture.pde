@@ -216,7 +216,6 @@ public class Jitters extends OLFPAPattern {
     List<MoniLed.JSONElement> elements = model_fixture.elements;
 
     for (int i = 0; i < elements.size(); i++) {
-      println(i);
       JSONElement.Fixture element_fixture = (JSONElement.Fixture)elements.get(i).fixtures.get(0);
       for (JSONStrip strip : element_fixture.strips) {
         inv = !inv;
