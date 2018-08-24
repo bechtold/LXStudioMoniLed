@@ -13,14 +13,25 @@ public static class Planes {
 public class SyphonPattern extends LXPattern {
   
   public final EnumParameter<Planes.plane> plane = new EnumParameter<Planes.plane>("Plane", Planes.plane.X_Z);
+  
+  public final BooleanParameter switch_x = 
+    new BooleanParameter("Switch X", false)
+    .setDescription("Switch direction of X axis.");
+
+  
+  // if the image is updated when there is no new syphon stuff gets messy. Couldn't find a better way to handle this (for now).
+  public final CompoundParameter syphon_selector = new CompoundParameter("Element", 0, 0, 4).setDescription("Select the syphon channel.");
 
   public SyphonPattern(LX lx) {
     super(lx);
     addParameter("plane", this.plane);
+    addParameter("syphon_selector", this.syphon_selector);
+    addParameter("switch_x", this.switch_x);
   }
   
   public void run(double deltaMs) {
-    if( syphonImage != null && syphonImage.pixels != null && syphonNew) {
+    //if( syphonImage != null && syphonImage.pixels != null && syphonNew ) {
+    if( syphonImage != null && syphonImage.pixels != null && syphonNew[(int)this.syphon_selector.getValuef()] ) {
       int sW = syphonImage.pixelWidth;
       int sH = syphonImage.pixelHeight;
       
@@ -46,7 +57,13 @@ public class SyphonPattern extends LXPattern {
               tmp_yMax = model.yMax;
               x = (int)map(tmp_x, tmp_xMin, tmp_xMax, 0, sW-1);
               y = (int)map(tmp_y, tmp_yMin, tmp_yMax, 0, sH-1); // PGrapics starts top left, points might start at bottom left
-              index = (int)((sH-y-1)*sW + x);
+
+              if(this.switch_x.isOn()) {
+                index = (int)((sH-y-1)*sW + (sW-x-1));
+              } else {
+                index = (int)((sH-y-1)*sW + x);
+              }
+
               break;
             case Y_Z: 
               tmp_x = p.z;
@@ -57,7 +74,13 @@ public class SyphonPattern extends LXPattern {
               tmp_yMax = model.yMax;
               x = (int)map(tmp_x, tmp_xMin, tmp_xMax, 0, sW-1);
               y = (int)map(tmp_y, tmp_yMin, tmp_yMax, 0, sH-1); // PGrapics starts top left, points might start at bottom left
-              index = (int)((sH-y-1)*sW + x);
+
+              if(this.switch_x.isOn()) {
+                index = (int)((sH-y-1)*sW + (sW-x-1));
+              } else {
+                index = (int)((sH-y-1)*sW + x);
+              }
+              
               break;
             case X_Z:
               tmp_x = p.x;
@@ -68,7 +91,11 @@ public class SyphonPattern extends LXPattern {
               tmp_yMax = model.zMax;
               x = (int)map(tmp_x, tmp_xMin, tmp_xMax, 0, sW-1);
               y = (int)map(tmp_y, tmp_yMin, tmp_yMax, 0, sH-1); // PGrapics starts top left, points might start at bottom left
-              index = (int)(y*sW + x);
+              if(this.switch_x.isOn()) {
+                index = (int)(y*sW + x);
+              } else {
+                index = (int)(y*sW + (sW-x-1));
+              }
               break;
           }
           
@@ -77,7 +104,8 @@ public class SyphonPattern extends LXPattern {
           colors[p.index] = col;
         
         }
-        syphonNew = false;
+        
+        syphonNew[(int)this.syphon_selector.getValuef()] = false;
       }
   }
 }

@@ -7,7 +7,7 @@ import processing.opengl.PGraphics2D;
 
 PImage syphonImage;
 SyphonClient syphonClient;
-Boolean syphonNew;
+Boolean[] syphonNew;
 
 /** 
  * By using LX Studio, you agree to the terms of the LX Studio Software
@@ -36,6 +36,7 @@ Boolean syphonNew;
 heronarts.lx.studio.LXStudio lx;
 
 void setup() {
+  syphonNew = new Boolean[5];
   
   // Processing setup, constructs the window and the LX instance
   size(800, 720, P3D);
@@ -118,11 +119,20 @@ void draw() {
   
   // This loads the pixels from the syphonClient
   if (syphonClient.newFrame()) {
-    syphonImage = syphonClient.getImage(syphonImage, true);
+    syphonImage = syphonClient.getImage(syphonImage);
+    //println(syphonImage);
     if(syphonImage != null) {
       syphonImage.loadPixels();
-      syphonNew = true;
+      syphonNew[0] = true;
+      syphonNew[1] = true;
+      syphonNew[2] = true;
+      syphonNew[3] = true;
+      syphonNew[4] = true;
+    //} else {
+    //  syphonNew = false;
     }
+  //} else {
+  //  syphonNew = false;
   }
 
 }
