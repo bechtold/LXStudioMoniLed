@@ -173,7 +173,7 @@ public class SolidColor extends LXEffect {
   }
 
   public final CompoundParameter h = new CompoundParameter("Hue", 0, 360);
-  public final CompoundParameter s = new CompoundParameter("Sat", 0, 100);
+  public final CompoundParameter s = new CompoundParameter("Sat", 100, 100);
   public final CompoundParameter b = new CompoundParameter("Brt", 100, 100);
 
   public SolidColor(LX lx) {
