@@ -400,6 +400,8 @@ public class OzAxis extends LXPattern implements CustomDeviceUI {
   public final CompoundParameter yPos = new CompoundParameter("Y", 0);
   public final CompoundParameter zPos = new CompoundParameter("Z", 0);
 
+  public final CompoundParameter distance = new CompoundParameter("Distance", 1000, 200, 3000);
+
   public OzAxis(LX lx) {
     super(lx);
     addParameter("enableX", this.enableX);
@@ -408,19 +410,21 @@ public class OzAxis extends LXPattern implements CustomDeviceUI {
     addParameter("yPos", yPos);
     addParameter("enableZ", this.enableZ);
     addParameter("zPos", zPos);
+
+    addParameter("Distance", distance);
   }
 
   @Override
   public void buildDeviceUI(UI ui, UI2dContainer device) {
-    device.setContentWidth(70);
+    device.setContentWidth(130);
     
     final UIButton enableXButton = (UIButton)
-      new UIButton(0, 0, 30, 30)
+      new UIButton(5, 0, 30, 30)
       .setParameter(this.enableX)
       .setLabel("X")
       //.setEnabled(this.midi.isOn())
       .addToContainer(device);     
-    final UIKnob xPosKnob = (UIKnob) new UIKnob(30, 0)
+    final UIKnob xPosKnob = (UIKnob) new UIKnob(0, 40)
       .setParameter(this.xPos)
       .setEnabled(this.enableX.isOn())
       .addToContainer(device);
@@ -431,12 +435,12 @@ public class OzAxis extends LXPattern implements CustomDeviceUI {
     });
     
     final UIButton enableYButton = (UIButton)
-      new UIButton(0, 50, 30, 30)
+      new UIButton(50, 0, 30, 30)
       .setParameter(this.enableY)
       .setLabel("Y")
       //.setEnabled(this.midi.isOn())
       .addToContainer(device);     
-    final UIKnob yPosKnob = (UIKnob) new UIKnob(30, 50)
+    final UIKnob yPosKnob = (UIKnob) new UIKnob(45, 40)
       .setParameter(this.yPos)
       .setEnabled(this.enableY.isOn())
       .addToContainer(device);
@@ -447,12 +451,12 @@ public class OzAxis extends LXPattern implements CustomDeviceUI {
     });
 
     final UIButton enableZButton = (UIButton)
-      new UIButton(0, 100, 30, 30)
+      new UIButton(95, 0, 30, 30)
       .setParameter(this.enableZ)
       .setLabel("Z")
       //.setEnabled(this.midi.isOn())
-      .addToContainer(device);     
-    final UIKnob zPosKnob = (UIKnob) new UIKnob(30, 100)
+      .addToContainer(device);
+    final UIKnob zPosKnob = (UIKnob) new UIKnob(90, 40)
       .setParameter(this.zPos)
       .setEnabled(this.enableZ.isOn())
       .addToContainer(device);
@@ -461,6 +465,11 @@ public class OzAxis extends LXPattern implements CustomDeviceUI {
         zPosKnob.setEnabled(enableZ.isOn());
       }
     });
+    
+    final UIKnob distanceKnob = (UIKnob) new UIKnob(0, 90)
+      .setParameter(this.distance)
+      .addToContainer(device);
+
 
   }
   
@@ -485,7 +494,8 @@ public class OzAxis extends LXPattern implements CustomDeviceUI {
       //print(" -> d:"+d);
       //d = abs(p.zn - z);
       //colors[p.index] = palette.getColor(p, max(0, 100 - 1000*d));
-      colors[p.index] = palette.getColor(max(0, 100-1000*d));
+      //colors[p.index] = palette.getColor(max(0, 100-1000*d));
+      colors[p.index] = palette.getColor(max(0, 100-this.distance.getValuef()*d));
       //println("");
     }
   }
