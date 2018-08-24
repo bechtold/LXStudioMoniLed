@@ -1,12 +1,13 @@
 import codeanticode.syphon.*;
 
-import ch.bildspur.artnet.*; //<>//
+import ch.bildspur.artnet.*; //<>// //<>//
 import ch.bildspur.artnet.packets.*;
 import ch.bildspur.artnet.events.*;
 import processing.opengl.PGraphics2D;
 
 PImage syphonImage;
 SyphonClient syphonClient;
+Boolean syphonNew;
 
 /** 
  * By using LX Studio, you agree to the terms of the LX Studio Software
@@ -39,11 +40,11 @@ void setup() {
   // Processing setup, constructs the window and the LX instance
   size(800, 720, P3D);
   
-  
+   //<>//
   //JSONObject stripData = this.loadJSONObject("mjut_atopie.json"); //<>//
   //JSONObject stripData = this.loadJSONObject("two_strips_reverse_test.json");
   
-  //JSONObject stripData = this.loadJSONObject("strips_overflow_0.json");
+  //JSONObject stripData = this.loadJSONObject("strips_overflow_0.json"); //<>//
   //JSONObject stripData = this.loadJSONObject("strips_overflow_0_r.json"); //<>//
   //JSONObject stripData = this.loadJSONObject("strips_overflow_1.json");
   //JSONObject stripData = this.loadJSONObject("strips_overflow_1_r.json");
@@ -64,7 +65,7 @@ void setup() {
   //JSONObject stripData = this.loadJSONObject("sixteen_matrix.json");
   //JSONObject stripData = this.loadJSONObject("hammock_reactor.json");
   //JSONObject stripData = this.loadJSONObject("model_creators/hammock_reactor.json");
-  //JSONObject stripData = this.loadJSONObject("model_creators/charma_tardis.json");
+  //JSONObject stripData = this.loadJSONObject("model_creators/charma_tardis.json"); //<>//
   JSONObject stripData = this.loadJSONObject("3D_axes_grid.json"); //<>//
   //JSONObject stripData = this.loadJSONObject("sixteen_matrix.json");
 
@@ -120,6 +121,7 @@ void draw() {
     syphonImage = syphonClient.getImage(syphonImage, true);
     if(syphonImage != null) {
       syphonImage.loadPixels();
+      syphonNew = true;
     }
   }
 
