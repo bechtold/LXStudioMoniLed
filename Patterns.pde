@@ -28,7 +28,7 @@ public static abstract class ElementPattern extends OLFPAPattern {
     }
 
     public JSONElement getElement() {
-      println((int)this.element_selector.getValue());
+//      println((int)this.element_selector.getValue());
       JSONElement element = (JSONElement)model_fixture.elements.get((int)this.element_selector.getValue());
       return element;
     }
@@ -43,7 +43,7 @@ public static abstract class ElementPattern extends OLFPAPattern {
     }
     
     public List<LXPoint> getElementPoints() {
-      println("test");
+      //println("test");
       List<LXPoint> points = new ArrayList<LXPoint>();
       for (JSONStrip strip: getElementStrips()) {
         for (LXPoint p : strip.points) {
