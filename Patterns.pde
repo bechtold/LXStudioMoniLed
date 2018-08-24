@@ -396,9 +396,9 @@ public class OzAxis extends LXPattern implements CustomDeviceUI {
   new BooleanParameter("Enable Z axis")
     .setDescription("Whether enable the Z axis.");
 
-  public final CompoundParameter xPos = new CompoundParameter("X", 0);
-  public final CompoundParameter yPos = new CompoundParameter("Y", 0);
-  public final CompoundParameter zPos = new CompoundParameter("Z", 0);
+  public final CompoundParameter xPos = new CompoundParameter("X", 0.5);
+  public final CompoundParameter yPos = new CompoundParameter("Y", 0.5);
+  public final CompoundParameter zPos = new CompoundParameter("Z", 0.5);
 
   public final CompoundParameter distance = new CompoundParameter("Distance", 1000, 200, 3000);
 

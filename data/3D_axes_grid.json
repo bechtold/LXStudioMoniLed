@@ -1,0 +1,231 @@
+{
+  "name": "Demonstrating 3 Axes",
+  "x":0,
+  "y":0,
+	"elements": [
+		{
+			"name": "g1",
+			"x":0,
+			"y":0,
+			"strips": [
+        {
+          "name": "x 0",
+					"leds"    : 160,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 0,	   "y": 0,     "z": 0 },
+					"end"     : { "x": 4000,    "y": 0,  "z": 0 }
+				},
+        {
+          "name": "x 0",
+					"leds"    : 160,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 0,	   "y": 1000,     "z": 0 },
+					"end"     : { "x": 4000,    "y": 1000,  "z": 0 }
+				},
+        {
+          "name": "x 0",
+					"leds"    : 160,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 0,	   "y": 2000,     "z": 0 },
+					"end"     : { "x": 4000,    "y": 2000,  "z": 0 }
+				},
+        {
+          "name": "x 0",
+					"leds"    : 160,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 0,	   "y": 3000,     "z": 0 },
+					"end"     : { "x": 4000,    "y": 3000,  "z": 0 }
+				},
+        {
+          "name": "x 0",
+					"leds"    : 160,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 0,	   "y": 4000,     "z": 0 },
+					"end"     : { "x": 4000,    "y": 4000,  "z": 0 }
+				},
+        {
+          "name": "x 1",
+					"leds"    : 160,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 0,	   "y": 0,     "z": 0 },
+					"end"     : { "x": 0,    "y": 4000,  "z": 0 }
+				},
+        {
+          "name": "x 1",
+					"leds"    : 160,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 1000,	   "y": 0,     "z": 0 },
+					"end"     : { "x": 1000,    "y": 4000,  "z": 0 }
+				},
+        {
+          "name": "x 1",
+					"leds"    : 160,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 2000,	   "y": 0,     "z": 0 },
+					"end"     : { "x": 2000,    "y": 4000,  "z": 0 }
+				},
+        {
+          "name": "x 1",
+					"leds"    : 160,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 3000,	   "y": 0,     "z": 0 },
+					"end"     : { "x": 3000,    "y": 4000,  "z": 0 }
+				},
+        {
+          "name": "x 1",
+					"leds"    : 160,
+					"artnet"	: {"universe": 0, "address": 0},
+					"start"	  : { "x": 4000,	   "y": 0,     "z": 0 },
+					"end"     : { "x": 4000,    "y": 4000,  "z": 0 }
+				},
+
+
+
+        {
+          "name": "y 0",
+					"leds"    : 160,
+					"artnet"	: {"universe": 0, "address": 0},
+          "start"	  : { "x": 0,	   "y": 0,     "z": 0 },
+					"end"     : { "x": 0,    "y": 4000,  "z": 0 }
+				},
+        {
+          "name": "y 0",
+					"leds"    : 160,
+					"artnet"	: {"universe": 0, "address": 0},
+          "start"	  : { "x": 0,	   "y": 0,     "z": 1000 },
+					"end"     : { "x": 0,    "y": 4000,  "z": 1000 }
+				},
+        {
+          "name": "y 0",
+					"leds"    : 160,
+					"artnet"	: {"universe": 0, "address": 0},
+          "start"	  : { "x": 0,	   "y": 0,     "z": 2000 },
+					"end"     : { "x": 0,    "y": 4000,  "z": 2000 }
+				},
+        {
+          "name": "y 0",
+					"leds"    : 160,
+					"artnet"	: {"universe": 0, "address": 0},
+          "start"	  : { "x": 0,	   "y": 0,     "z": 3000 },
+					"end"     : { "x": 0,    "y": 4000,  "z": 3000 }
+				},
+        {
+          "name": "y 0",
+					"leds"    : 160,
+					"artnet"	: {"universe": 0, "address": 0},
+          "start"	  : { "x": 0,	   "y": 0,     "z": 4000 },
+					"end"     : { "x": 0,    "y": 4000,  "z": 4000 }
+				},
+        {
+          "name": "y 1",
+					"leds"    : 160,
+					"artnet"	: {"universe": 0, "address": 0},
+          "start"	  : { "x": 0,	   "y": 0,     "z": 0 },
+					"end"     : { "x": 0,    "y": 0,  "z": 4000 }
+				},
+        {
+          "name": "y 1",
+					"leds"    : 160,
+					"artnet"	: {"universe": 0, "address": 0},
+          "start"	  : { "x": 0,	   "y": 1000,     "z": 0 },
+					"end"     : { "x": 0,    "y": 1000,  "z": 4000 }
+				},
+        {
+          "name": "y 1",
+					"leds"    : 160,
+					"artnet"	: {"universe": 0, "address": 0},
+          "start"	  : { "x": 0,	   "y": 2000,     "z": 0 },
+					"end"     : { "x": 0,    "y": 2000,  "z": 4000 }
+				},
+        {
+          "name": "y 1",
+					"leds"    : 160,
+					"artnet"	: {"universe": 0, "address": 0},
+          "start"	  : { "x": 0,	   "y": 3000,     "z": 0 },
+					"end"     : { "x": 0,    "y": 3000,  "z": 4000 }
+				},
+        {
+          "name": "y 1",
+					"leds"    : 160,
+					"artnet"	: {"universe": 0, "address": 0},
+          "start"	  : { "x": 0,	   "y": 4000,     "z": 0 },
+					"end"     : { "x": 0,    "y": 4000,  "z": 4000 }
+				},
+
+
+        {
+          "name": "z 0",
+					"leds"    : 160,
+					"artnet"	: {"universe": 0, "address": 0},
+          "start"	  : { "x": 0,	   "y": 0,     "z": 0 },
+					"end"     : { "x": 4000,    "y": 0,     "z": 0 }
+				},
+        {
+          "name": "z 0",
+					"leds"    : 160,
+					"artnet"	: {"universe": 0, "address": 0},
+          "start"	  : { "x": 0,	   "y": 0,     "z": 1000 },
+					"end"     : { "x": 4000,    "y": 0,     "z": 1000 }
+				},
+        {
+          "name": "z 0",
+					"leds"    : 160,
+					"artnet"	: {"universe": 0, "address": 0},
+          "start"	  : { "x": 0,	   "y": 0,     "z": 2000 },
+					"end"     : { "x": 4000,    "y": 0,     "z": 2000 }
+				},
+        {
+          "name": "z 0",
+					"leds"    : 160,
+					"artnet"	: {"universe": 0, "address": 0},
+          "start"	  : { "x": 0,	   "y": 0,     "z": 3000 },
+					"end"     : { "x": 4000,    "y": 0,     "z": 3000 }
+				},
+        {
+          "name": "z 0",
+					"leds"    : 160,
+					"artnet"	: {"universe": 0, "address": 0},
+          "start"	  : { "x": 0,	   "y": 0,     "z": 4000 },
+					"end"     : { "x": 4000,    "y": 0,     "z": 4000 }
+				},
+
+        {
+          "name": "z 1",
+					"leds"    : 160,
+					"artnet"	: {"universe": 0, "address": 0},
+          "start"	  : { "x": 0,	   "y": 0,     "z": 0 },
+					"end"     : { "x": 0,    "y": 0,     "z": 4000 }
+				},
+        {
+          "name": "z 1",
+					"leds"    : 160,
+					"artnet"	: {"universe": 0, "address": 0},
+          "start"	  : { "x": 1000,	   "y": 0,     "z": 0 },
+					"end"     : { "x": 1000,    "y": 0,     "z": 4000 }
+				},
+        {
+          "name": "z 1",
+					"leds"    : 160,
+					"artnet"	: {"universe": 0, "address": 0},
+          "start"	  : { "x": 2000,	   "y": 0,     "z": 0 },
+					"end"     : { "x": 2000,    "y": 0,     "z": 4000 }
+				},
+        {
+          "name": "z 1",
+					"leds"    : 160,
+					"artnet"	: {"universe": 0, "address": 0},
+          "start"	  : { "x": 3000,	   "y": 0,     "z": 0 },
+					"end"     : { "x": 3000,    "y": 0,     "z": 4000 }
+				},
+        {
+          "name": "z 1",
+					"leds"    : 160,
+					"artnet"	: {"universe": 0, "address": 0},
+          "start"	  : { "x": 4000,	   "y": 0,     "z": 0 },
+					"end"     : { "x": 4000,    "y": 0,     "z": 4000 }
+				}
+
+			]
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "version": "0.1",
-  "timestamp": 1534891962557,
+  "timestamp": 1535116834887,
   "engine": {
     "id": 1,
     "class": "heronarts.lx.LXEngine",
@@ -68,9 +68,9 @@
             "modulationColor": -16711825,
             "parameters": {
               "label": "FilterElement",
-              "enabled": true,
+              "enabled": false,
               "invert": false,
-              "element": 7.290000440552831
+              "element": 0.0
             },
             "modulation": {
               "modulators": [],
@@ -86,7 +86,7 @@
               "label": "FilterGroups",
               "enabled": true,
               "invert": false,
-              "group": 3.0
+              "group": 0.0
             },
             "modulation": {
               "modulators": [],
@@ -138,11 +138,27 @@
             "parameters": {
               "label": "OzAxis",
               "enableX": true,
-              "xPos": 0.3299999926239252,
-              "enableY": false,
-              "yPos": 0.8099999818950891,
+              "xPos": 0.5,
+              "enableY": true,
+              "yPos": 0.5,
               "enableZ": true,
-              "zPos": 0.1599999964237213
+              "zPos": 0.5,
+              "Distance": 3000.0
+            },
+            "modulation": {
+              "modulators": [],
+              "modulations": [],
+              "triggers": []
+            },
+            "autoCycleEnabled": true
+          },
+          {
+            "id": 32025,
+            "class": "MoniLed$SyphonPattern",
+            "modulationColor": -16756737,
+            "parameters": {
+              "label": "Syphon",
+              "plane": 0
             },
             "modulation": {
               "modulators": [],
@@ -233,13 +249,13 @@
           "Band-7": 0.0,
           "Band-8": 0.0,
           "Band-9": 0.0,
-          "Band-10": 0.0457994192102561,
-          "Band-11": 0.0,
+          "Band-10": 0.0,
+          "Band-11": 0.02946236187466733,
           "Band-12": 0.0,
           "Band-13": 0.0,
           "Band-14": 0.0,
-          "Band-15": 0.0,
-          "Band-16": 0.0
+          "Band-15": 0.12130462466666858,
+          "Band-16": 0.06764820586912024
         }
       },
       "input": {
@@ -321,12 +337,12 @@
         "centerPoint": false,
         "camera": {
           "active": true,
-          "radius": 5468.393596832284,
-          "theta": -0.015000000000000523,
-          "phi": 0.837716673851021,
-          "x": -106.98796570301056,
-          "y": 5186.0,
-          "z": 1.6049397680908442
+          "radius": 5515.531458763899,
+          "theta": 0.21899999999999953,
+          "phi": 0.35471667385102057,
+          "x": 2245.6274995803833,
+          "y": 1620.0,
+          "z": 1341.3932386729866
         },
         "cue": [
           {
@@ -339,13 +355,13 @@
             "z": 1.6049397680908442
           },
           {
-            "active": false,
-            "radius": 3721.8889869539753,
-            "theta": 0.18000000000000013,
-            "phi": 1.3049999999999953,
-            "x": 24.0,
-            "y": 3023.0,
-            "z": 0.0
+            "active": true,
+            "radius": 5515.531458763899,
+            "theta": 0.21899999999999953,
+            "phi": 0.35471667385102057,
+            "x": 2245.6274995803833,
+            "y": 1620.0,
+            "z": 1341.3932386729866
           },
           {
             "active": false,
@@ -384,7 +400,7 @@
             "z": 0.2819995856843889
           }
         ],
-        "focus": 0,
+        "focus": 1,
         "pointCloud": {
           "pointSize": 3.0
         }
