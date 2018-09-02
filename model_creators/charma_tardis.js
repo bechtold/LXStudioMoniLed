@@ -1,16 +1,19 @@
 var ip = "192.168.1.2";
 
-var side_panel = [];
-for (i=0; i<5; i++) {
-  var rev = !(i%2);
-  var strip = {
-    "name"    : "side_panel_strip_"+i,
-    "leds"    : 60,
-    // "artnet"	: { "ip":ip, "universe": i, "address": 0, reverse: rev},
-    "start"	  : { "x": 0, "y": 4000, "z": i*300},
-    "end"     : { "x": 0, "y": 2000, "z": i*300}
+function create_side_panel(universe) {
+  var side_panel = [];
+  for (var i=0; i<5; i++) {
+    var rev = !(i%2);
+    var strip = {
+      "name"    : "side_panel_strip_"+i,
+      "leds"    : 60,
+      "artnet"	: { "ip":ip, "universe": universe, "address": i*60, reverse: rev},
+      "start"	  : { "x": 0, "y": 4000, "z": i*300},
+      "end"     : { "x": 0, "y": 2000, "z": i*300}
+    }
+    side_panel.push(strip);
   }
-  side_panel.push(strip);
+  return side_panel;
 }
 
 var side_panels_right = [];
@@ -21,7 +24,7 @@ for (var i = 0; i < 5; i++) {
     "y": 0,
     "z": i * 1500,
     "group": "right_panels",
-    "strips": side_panel
+    "strips": create_side_panel(i*3)
   };
 
   side_panels_right.push(panel);
@@ -35,7 +38,7 @@ for (var i = 0; i < 5; i++) {
     "y": 0,
     "z": i * 1500,
     "group": "left_panels",
-    "strips": side_panel
+    "strips": create_side_panel(15+(i*3))
   };
 
   side_panels_right.push(panel);
