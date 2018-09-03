@@ -7,7 +7,7 @@ function create_side_panel(universe) {
     var strip = {
       "name"    : "side_panel_strip_"+i,
       "leds"    : 60,
-      "artnet"	: { "ip":ip, "universe": universe, "address": i*60, reverse: rev},
+      "artnet"	: { "ip":ip, "universe": universe, "offset": i*60, reverse: rev},
       "start"	  : { "x": 0, "y": 4000, "z": i*300},
       "end"     : { "x": 0, "y": 2000, "z": i*300}
     }
@@ -45,12 +45,12 @@ for (var i = 0; i < 5; i++) {
 }
 
 var back_panel = [];
-for (i=0; i<5; i++) {
+for (var i=0; i<5; i++) {
   var rev = !(i%2);
   var strip = {
     "name"    : "back_panel_strip_"+i,
     "leds"    : 90,
-    // "artnet"	: { "ip":ip, "universe": i, "address": 0, reverse: rev},
+    // "artnet"	: { "ip":ip, "universe": i, "offset": 0, reverse: rev},
     "start"	  : { "x": 150+i*300, "y": 4000, "z": 0},
     "end"     : { "x": 150+i*300, "y": 1000, "z": 0}
   }
@@ -71,68 +71,84 @@ for (var i = 0; i < 6; i++) {
   back_panels.push(panel);
 }
 
-var pillar = [];
-for (i=0; i<12; i++) {
+function create_pillar(universe, universes_per_output, universe_offset){
+  var pillar = [];
+  for (var i=0; i<12; i++) {
 
-  var x = 0, z = 0;
-  if ( i < 3 ) {
-    x = 50 + i * 100;
-    z = 0;
-  }
-  if( i >= 3 && i < 6 ) {
-    x = 300;
-    z = 50 + (i%3) * 100;
-  }
-  if( i >= 6 && i < 9 ) {
-    x = 300 - (50 + (i%3) * 100);
-    z = 300;
-  }
-  if( i >= 9 && i < 12 ) {
-    x = 0;
-    z = 300 - (50 + (i%3) * 100);
-  }
+    var x = 0, z = 0;
+    if ( i < 3 ) {
+      x = 300 - (50 + i * 100);
+      z = 0;
+    }
+    if( i >= 3 && i < 6 ) {
+      x = 0;
+      z = 50 + (i%3) * 100;
+    }
+    if( i >= 6 && i < 9 ) {
+      x = 50 + (i%3) * 100;
+      z = 300;
+    }
+    if( i >= 9 && i < 12 ) {
+      x = 300;
+      z = 300 - (50 + (i%3) * 100);
+    }
 
-  var rev = !(i%2);
-  var strip = {
-    "name"    : "pillar_strip_"+i,
-    "leds"    : 30,
-    // "artnet"	: { "ip":ip, "universe": i, "address": 0, reverse: rev},
-    "start"	  : { "x": x, "y": 4000, "z": z},
-    "end"     : { "x": x, "y": 3000, "z": z}
+    var rev = !!(i%2);
+
+    var universe_shift = Math.floor( (i*30) / 170 );
+    var offset_shifted = (i*30) % 170;
+    // console.log("jo");
+    // console.log(i*30);
+    // console.log(universes_per_output*170);
+    // console.log(universe_shift);
+    // console.log(offset_shift);
+
+    var strip = {
+      "name"    : "pillar_strip_"+i,
+      "leds"    : 30,
+      "artnet"	: { "ip":ip, "universe": universe + universe_shift, "offset": offset_shifted, reverse: rev},
+      // "artnet"	: { "ip":ip, "universe": universe, "offset": i*30, reverse: rev},
+      "start"	  : { "x": x, "y": 4000, "z": z},
+      "end"     : { "x": x, "y": 3000, "z": z}
+    }
+    pillar.push(strip);
   }
-  pillar.push(strip);
+  return pillar;
 }
 
-var pillars = [];
-for (var i = 0; i < 12; i++) {
-  var x = 0, z = 0;
-  if ( i < 3 ) {
-    x = -1500 + i * 1500;
-    z = 1000;
-  }
-  if( i >= 3 && i < 6 ) {
-    x = -1500 + (i%3) * 1500;
-    z = 2000;
-  }
-  if( i >= 6 && i < 9 ) {
-    x = -1500 + (i%3) * 1500;
-    z = 3000;
-  }
-  if( i >= 9 && i < 12 ) {
-    x = -1500 + (i%3) * 1500;
-    z = 4000;
-  }
+function pillars(universes_per_output, universe_offset) {
+  var pillars = [];
+  for (var i = 0; i < 1; i++) {
+    var x = 0, z = 0;
+    if ( i < 3 ) {
+      x = -1500 + i * 1500;
+      z = 1000;
+    }
+    if( i >= 3 && i < 6 ) {
+      x = -1500 + (i%3) * 1500;
+      z = 2000;
+    }
+    if( i >= 6 && i < 9 ) {
+      x = -1500 + (i%3) * 1500;
+      z = 3000;
+    }
+    if( i >= 9 && i < 12 ) {
+      x = -1500 + (i%3) * 1500;
+      z = 4000;
+    }
 
-  var p = {
-    "name": "Pillar " + i,
-    "x": x,
-    "y": 0,
-    "z": z,
-    "group": "pillars",
-    "strips": pillar
-  };
+    var p = {
+      "name": "Pillar " + i,
+      "x": x,
+      "y": 0,
+      "z": z,
+      "group": "pillars",
+      "strips": create_pillar(universe_offset + i*universes_per_output, universes_per_output, universe_offset) // 3 universes per output
+    };
 
-  pillars.push(p);
+    pillars.push(p);
+  }
+  return pillars;
 }
 // var ring_top = [];
 // for(i=0; i<12;i++){ // i=0, i<12
@@ -140,7 +156,7 @@ for (var i = 0; i < 12; i++) {
 //   var strip =         {
 //             "name"    : "ring_top_"+i,
 //   					"leds"    : 90,
-//   					"artnet"	: { "ip":ip, "universe": i*2, "address": 0, reverse: rev},
+//   					"artnet"	: { "ip":ip, "universe": i*2, "offset": 0, reverse: rev},
 //   					"start"	  : { "x": vertices_top[i][0],	  "y": 3000, "z":vertices_top[i][1]},
 //   					"end"     : { "x": vertices_top[(i+1)%vertices_top.length][0], "y":3000,    "z": vertices_top[(i+1)%vertices_top.length][1] }
 //   				}
@@ -269,10 +285,10 @@ var tardis = {
 
   ]
 }
-tardis.elements = tardis.elements.concat(side_panels_right);
-tardis.elements = tardis.elements.concat(side_panels_left);
-tardis.elements = tardis.elements.concat(back_panels);
-tardis.elements = tardis.elements.concat(pillars);
+// tardis.elements = tardis.elements.concat(side_panels_right);
+// tardis.elements = tardis.elements.concat(side_panels_left);
+// tardis.elements = tardis.elements.concat(back_panels);
+tardis.elements = tardis.elements.concat(pillars(3, 0));
 
 var json = JSON.stringify(tardis, null, ' ');
 

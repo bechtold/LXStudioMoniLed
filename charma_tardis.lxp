@@ -1,6 +1,6 @@
 {
   "version": "0.1",
-  "timestamp": 1535739580859,
+  "timestamp": 1536005224063,
   "engine": {
     "id": 1,
     "class": "heronarts.lx.LXEngine",
@@ -87,7 +87,7 @@
               "label": "FilterGroups",
               "enabled": true,
               "invert": true,
-              "group": 2.6699999403208494
+              "group": 0.0
             },
             "modulation": {
               "modulators": [],
@@ -165,7 +165,7 @@
               "label": "FilterGroups",
               "enabled": true,
               "invert": true,
-              "group": 3.0
+              "group": 0.0
             },
             "modulation": {
               "modulators": [],
@@ -260,7 +260,7 @@
               "label": "FilterGroups",
               "enabled": true,
               "invert": true,
-              "group": 1.0800000429153442
+              "group": 0.0
             },
             "modulation": {
               "modulators": [],
@@ -461,7 +461,7 @@
           }
         ],
         "clips": [],
-        "patternIndex": 3,
+        "patternIndex": 5,
         "patterns": [
           {
             "id": 32183,
@@ -523,6 +523,44 @@
               "fade": 0.0,
               "sharp": 0.6561000068798661,
               "plane": 1
+            },
+            "modulation": {
+              "modulators": [],
+              "modulations": [],
+              "triggers": []
+            },
+            "autoCycleEnabled": true
+          },
+          {
+            "id": 32478,
+            "class": "MoniLed$OzStrips",
+            "modulationColor": -655105,
+            "parameters": {
+              "label": "OzStrips",
+              "speed": 500.0,
+              "clear": true,
+              "element": 0.0
+            },
+            "modulation": {
+              "modulators": [],
+              "modulations": [],
+              "triggers": []
+            },
+            "autoCycleEnabled": true
+          },
+          {
+            "id": 32558,
+            "class": "MoniLed$OzAxis",
+            "modulationColor": -65286,
+            "parameters": {
+              "label": "OzAxis",
+              "enableX": false,
+              "xPos": 0.5,
+              "enableY": true,
+              "yPos": 0.6500000078231096,
+              "enableZ": false,
+              "zPos": 0.5,
+              "Distance": 888.0000025033951
             },
             "modulation": {
               "modulators": [],
@@ -605,20 +643,20 @@
           "release": 36.099998386204255,
           "slope": 3.9000001810491085,
           "Band-1": 0.0,
-          "Band-2": 0.08790503521031023,
-          "Band-3": 0.10077102999102161,
-          "Band-4": 0.10643564355639468,
-          "Band-5": 0.09975104591643891,
-          "Band-6": 0.20099819360483318,
-          "Band-7": 0.2681390745090154,
-          "Band-8": 0.19692539093614692,
-          "Band-9": 0.2328728140999129,
-          "Band-10": 0.2170116529250029,
-          "Band-11": 0.15419547226456987,
-          "Band-12": 0.02492648918918461,
-          "Band-13": 0.2052909366060215,
-          "Band-14": 0.3172249316664919,
-          "Band-15": 0.0,
+          "Band-2": 0.0,
+          "Band-3": 0.0,
+          "Band-4": 0.0,
+          "Band-5": 0.0,
+          "Band-6": 0.0,
+          "Band-7": 0.0,
+          "Band-8": 0.0,
+          "Band-9": 0.0,
+          "Band-10": 0.0,
+          "Band-11": 0.0,
+          "Band-12": 0.0,
+          "Band-13": 0.0,
+          "Band-14": 0.046312983287140064,
+          "Band-15": 0.0541336815119573,
           "Band-16": 0.0
         }
       },
