@@ -1,4 +1,4 @@
-import java.util.List; //<>//
+import java.util.List; //<>// //<>//
 import java.util.LinkedHashMap;
 
 LXModel buildModel(JSONObject stripData) {
@@ -31,26 +31,51 @@ public static class UniverseConfig {
     }
   }
 
-  public void addModel(LXModel model, int universeOffset, boolean reverse, int universeCounter) {
-    for (int i = 0; i < model.points.length; i++) {
-      LXPoint point;
+  public void addModel(LXModel model, int universeOffset, boolean reverse, int universeCounter, int universeIndex) {
+    //println("-> addModel, universeOffset: " + universeOffset + ", reverse: " + reverse + ", universeCounter " + universeCounter + ", length: " + model.points.length + ", universeIndex: " + universeIndex );
+    int pointsLength = model.points.length;
+    if (reverse) {
+      for (int i = 0; i < pointsLength; i++) {
+        LXPoint point;
 
-      if (reverse) {
-        int modelIndex = model.points.length - 1 - (i + (universeCounter * LEDS_PER_UNIVERSE) % model.points.length);
-        if (modelIndex < 0) break;
-        point = model.points[modelIndex];
-      } else {
-        int modelIndex = i + (universeCounter * LEDS_PER_UNIVERSE) % model.points.length;
-        if (modelIndex >= model.points.length) break;
+        //int modelIndex = model.points.length - 1 - ((i + (universeCounter * LEDS_PER_UNIVERSE)) % model.points.length); // TODO old calculation
+        
+        int diff = ( universeCounter * LEDS_PER_UNIVERSE ) % model.points.length;
+        int diff2 = ( (universeCounter+1) * LEDS_PER_UNIVERSE ) % model.points.length;
+        //print(", diff: " + diff + ", diff2: " + diff2);
+        int modelIndex = pointsLength-1 - (i + diff);
+        if(universeIndex == 2) modelIndex += 10; // TODO: this is fucked up and needs fixing :-(
 
+        //println(", mI: " + modelIndex);
+
+        if (modelIndex < 0 || modelIndex >= model.points.length) continue;
         point = model.points[modelIndex];
+        
+        int universIndex = i + universeOffset;
+        if (universIndex >= LEDS_PER_UNIVERSE) break;
+      
+        indices[universIndex] = point.index;
+
       }
 
-      int universIndex = i + universeOffset;
-      if (universIndex >= LEDS_PER_UNIVERSE) break;
+    }else {
+      for (int i = 0; i < pointsLength; i++) {
+        LXPoint point;
+  
+        int modelIndex = i + (universeCounter * LEDS_PER_UNIVERSE) % (pointsLength);
+        //print(", mi: " + modelIndex);
+        if (modelIndex >= pointsLength) break;
+  
+        point = model.points[modelIndex];
 
-      indices[universIndex] = point.index;
+        int universIndex = i + universeOffset;
+        if (universIndex >= LEDS_PER_UNIVERSE) break;
+  
+        indices[universIndex] = point.index;
+      }
+
     }
+    println();
   }
 }
 
@@ -71,29 +96,43 @@ public static class ArtnetConfig {
   public void addModel(LXModel model, String ip, int universe, boolean reverse, int offset) {
     HashMap<Integer, UniverseConfig> ipConfig = storage.get(ip);
     if (ipConfig == null) ipConfig = new HashMap<Integer, UniverseConfig>();
+    //print("universe: "+ universe);
+    //print(", reverse: "+ reverse);
+    //print(", offset: "+ offset);
+    
 
     int points = model.points.length;
     // calculate how many universes are needed TODO: check if universe exists and use for calculation
     int length = points + offset;
+    //print(", length: " + length);
     // before dividing you need to convert at least one int to float to get a float :-D
     int universesNeeded = ceil((float)length / UniverseConfig.LEDS_PER_UNIVERSE);
+    //println(", universesNeeded: " + universesNeeded + " -> ");
 
     // Add universes
     for (int universeCounter = 0; universeCounter < universesNeeded; universeCounter++) {
 
       int universeIndex = universe + universeCounter;
-      int universeOffset = universeCounter == 0 ? offset : 0;
+      //print("universeIndex: " + universeIndex);
       UniverseConfig universeConfig = ipConfig.get(universeIndex);
+      int universeOffset;
       if (universeConfig == null) {
+        //print(", new UniverseConfig()");
         universeConfig = new UniverseConfig();
+        universeOffset = universeCounter == 0 ? offset : 0;
+        //universeOffset = reverse ? UniverseConfig.LEDS_PER_UNIVERSE - universeOffset : universeOffset;
       } else {
-        universeOffset = reverse && universeCounter != 0 ? 0 : offset;
+        //print(", old UniverseConfig()");
+        universeOffset = offset;
       }
+      //print(", universeOffset: " + universeOffset);
 
-      universeConfig.addModel(model, universeOffset, reverse, universeCounter);
+      universeConfig.addModel(model, universeOffset, reverse, universeCounter, universeIndex);
       ipConfig.put(universeIndex, universeConfig);
       storage.put(ip, ipConfig);
+      //println();
     }
+    //println();
   }
 }
 
