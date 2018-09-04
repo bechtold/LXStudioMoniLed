@@ -53,31 +53,40 @@ function side_panels_left(universes_per_output, universe_offset) {
   return side_panels_left;
 }
 
-var back_panel = [];
-for (var i=0; i<5; i++) {
-  var rev = !(i%2);
-  var strip = {
-    "name"    : "back_panel_strip_"+i,
-    "leds"    : 90,
-    // "artnet"	: { "ip":ip, "universe": i, "offset": 0, reverse: rev},
-    "start"	  : { "x": 150+i*300, "y": 4000, "z": 0},
-    "end"     : { "x": 150+i*300, "y": 1000, "z": 0}
+function create_back_panel(universe) {
+  var back_panel = [];
+  for (var i=0; i<5; i++) {
+    var rev = !!(i%2);
+    var universe_shift = Math.floor( (i*90) / 170 );
+    var offset_shifted = (i*90) % 170;
+
+    var strip = {
+      "name"    : "back_panel_strip_"+i,
+      "leds"    : 90,
+      "artnet"	: { "ip":ip, "universe": universe+universe_shift, "offset": offset_shifted, reverse: rev},
+      "start"	  : { "x": 150+i*300, "y": 4000, "z": 0},
+      "end"     : { "x": 150+i*300, "y": 1000, "z": 0}
+    }
+    back_panel.push(strip);
   }
-  back_panel.push(strip);
+  return back_panel;
 }
 
-var back_panels = [];
-for (var i = 0; i < 6; i++) {
-  var panel = {
-    "name": "Back Panel " + i,
-    "x": -4500 + i * 1500,
-    "y": 0,
-    "z": 7500,
-    "group": "back_panels",
-    "strips": back_panel
-  };
+function back_panels(universes_per_output, universe_offset) {
+  var back_panels = [];
+  for (var i = 0; i < 6; i++) {
+    var panel = {
+      "name": "Back Panel " + i,
+      "x": -4500 + i * 1500,
+      "y": 0,
+      "z": 7500,
+      "group": "back_panels",
+      "strips": create_back_panel(universe_offset+i*universes_per_output)
+    };
 
-  back_panels.push(panel);
+    back_panels.push(panel);
+  }
+  return back_panels;
 }
 
 function create_pillar(universe, universes_per_output, universe_offset){
@@ -295,8 +304,8 @@ var tardis = {
   ]
 }
 // tardis.elements = tardis.elements.concat(side_panels_right(3, 0));
-tardis.elements = tardis.elements.concat(side_panels_left(3, 0));
-// tardis.elements = tardis.elements.concat(back_panels);
+// tardis.elements = tardis.elements.concat(side_panels_left(3, 0));
+tardis.elements = tardis.elements.concat(back_panels(3, 0));
 // tardis.elements = tardis.elements.concat(pillars(3, 0));
 
 var json = JSON.stringify(tardis, null, ' ');
