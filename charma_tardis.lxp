@@ -1,6 +1,6 @@
 {
   "version": "0.1",
-  "timestamp": 1536005224063,
+  "timestamp": 1536020449670,
   "engine": {
     "id": 1,
     "class": "heronarts.lx.LXEngine",
@@ -433,7 +433,7 @@
               "label": "SolidColor",
               "enabled": true,
               "h": 0.0,
-              "s": 100.0,
+              "s": 99.00000002235174,
               "b": 100.0
             },
             "modulation": {
@@ -555,12 +555,12 @@
             "parameters": {
               "label": "OzAxis",
               "enableX": false,
-              "xPos": 0.5,
+              "xPos": 0.4400000125169754,
               "enableY": true,
-              "yPos": 0.6500000078231096,
+              "yPos": 0.8300000037997961,
               "enableZ": false,
-              "zPos": 0.5,
-              "Distance": 888.0000025033951
+              "zPos": 0.5699999909847975,
+              "Distance": 3000.0
             },
             "modulation": {
               "modulators": [],
@@ -655,8 +655,8 @@
           "Band-11": 0.0,
           "Band-12": 0.0,
           "Band-13": 0.0,
-          "Band-14": 0.046312983287140064,
-          "Band-15": 0.0541336815119573,
+          "Band-14": 0.0,
+          "Band-15": 0.0,
           "Band-16": 0.0
         }
       },
