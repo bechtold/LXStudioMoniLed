@@ -167,9 +167,9 @@ var tardis = {
 	"elements": []
 }
 tardis.elements = tardis.elements.concat(side_panels_right(3, 0));
-tardis.elements = tardis.elements.concat(side_panels_left(3, 0));
-tardis.elements = tardis.elements.concat(back_panels(3, 0));
-tardis.elements = tardis.elements.concat(pillars(3, 0));
+tardis.elements = tardis.elements.concat(side_panels_left(3, 18));
+tardis.elements = tardis.elements.concat(back_panels(3, 36));
+tardis.elements = tardis.elements.concat(pillars(3, 48));
 
 var json = JSON.stringify(tardis, null, ' ');
 
