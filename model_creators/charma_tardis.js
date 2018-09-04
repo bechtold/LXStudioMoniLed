@@ -28,7 +28,7 @@ function side_panels_right(universes_per_output, universe_offset) {
       "y": 0,
       "z": i * 1500,
       "group": "right_panels",
-      "strips": create_side_panel(i*3)
+      "strips": create_side_panel(universe_offset+i*3)
     };
 
     side_panels_right.push(panel);
@@ -36,18 +36,21 @@ function side_panels_right(universes_per_output, universe_offset) {
   return side_panels_right;
 }
 
-var side_panels_left = [];
-for (var i = 0; i < 5; i++) {
-  var panel = {
-    "name": "Side Panel Left " + i,
-    "x": -4500,
-    "y": 0,
-    "z": i * 1500,
-    "group": "left_panels",
-    "strips": create_side_panel(15+(i*3))
-  };
+function side_panels_left(universes_per_output, universe_offset) {
+  var side_panels_left = [];
+  for (var i = 0; i < 5; i++) {
+    var panel = {
+      "name": "Side Panel Left " + i,
+      "x": -4500,
+      "y": 0,
+      "z": i * 1500,
+      "group": "left_panels",
+      "strips": create_side_panel(universe_offset+(i*3))
+    };
 
-  side_panels_left.push(panel);
+    side_panels_left.push(panel);
+  }
+  return side_panels_left;
 }
 
 var back_panel = [];
@@ -291,8 +294,8 @@ var tardis = {
 
   ]
 }
-tardis.elements = tardis.elements.concat(side_panels_right(3, 0));
-// tardis.elements = tardis.elements.concat(side_panels_left);
+// tardis.elements = tardis.elements.concat(side_panels_right(3, 0));
+tardis.elements = tardis.elements.concat(side_panels_left(3, 0));
 // tardis.elements = tardis.elements.concat(back_panels);
 // tardis.elements = tardis.elements.concat(pillars(3, 0));
 

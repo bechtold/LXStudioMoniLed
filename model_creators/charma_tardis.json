@@ -2,11 +2,11 @@
  "name": "tardis",
  "elements": [
   {
-   "name": "Side Panel Right 0",
-   "x": 4500,
+   "name": "Side Panel Left 0",
+   "x": -4500,
    "y": 0,
    "z": 0,
-   "group": "right_panels",
+   "group": "left_panels",
    "strips": [
     {
      "name": "side_panel_strip_0",
@@ -111,11 +111,11 @@
    ]
   },
   {
-   "name": "Side Panel Right 1",
-   "x": 4500,
+   "name": "Side Panel Left 1",
+   "x": -4500,
    "y": 0,
    "z": 1500,
-   "group": "right_panels",
+   "group": "left_panels",
    "strips": [
     {
      "name": "side_panel_strip_0",
@@ -220,11 +220,11 @@
    ]
   },
   {
-   "name": "Side Panel Right 2",
-   "x": 4500,
+   "name": "Side Panel Left 2",
+   "x": -4500,
    "y": 0,
    "z": 3000,
-   "group": "right_panels",
+   "group": "left_panels",
    "strips": [
     {
      "name": "side_panel_strip_0",
@@ -329,11 +329,11 @@
    ]
   },
   {
-   "name": "Side Panel Right 3",
-   "x": 4500,
+   "name": "Side Panel Left 3",
+   "x": -4500,
    "y": 0,
    "z": 4500,
-   "group": "right_panels",
+   "group": "left_panels",
    "strips": [
     {
      "name": "side_panel_strip_0",
@@ -438,11 +438,11 @@
    ]
   },
   {
-   "name": "Side Panel Right 4",
-   "x": 4500,
+   "name": "Side Panel Left 4",
+   "x": -4500,
    "y": 0,
    "z": 6000,
-   "group": "right_panels",
+   "group": "left_panels",
    "strips": [
     {
      "name": "side_panel_strip_0",
