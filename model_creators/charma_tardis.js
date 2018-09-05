@@ -89,7 +89,7 @@ function back_panels(universes_per_output, universe_offset) {
   return back_panels;
 }
 
-function create_pillar(universe, universes_per_output, universe_offset){
+function create_pillar(universe, universes_per_output){
   var pillar = [];
   for (var i=0; i<12; i++) {
 
@@ -154,7 +154,7 @@ function pillars(universes_per_output, universe_offset) {
       "y": 0,
       "z": z,
       "group": "pillars",
-      "strips": create_pillar(universe_offset + i*universes_per_output, universes_per_output, universe_offset) // 3 universes per output
+      "strips": create_pillar(universe_offset + i*universes_per_output, universes_per_output) // 3 universes per output
     };
 
     pillars.push(p);
@@ -169,7 +169,7 @@ var tardis = {
 tardis.elements = tardis.elements.concat(side_panels_right(3, 0));
 tardis.elements = tardis.elements.concat(side_panels_left(3, 18));
 tardis.elements = tardis.elements.concat(back_panels(3, 36));
-tardis.elements = tardis.elements.concat(pillars(3, 48));
+tardis.elements = tardis.elements.concat(pillars(3, 60));
 
 var json = JSON.stringify(tardis, null, ' ');
 
