@@ -124,6 +124,41 @@ function back_panels_left(universes_per_output, universe_offset) {
   }
   return back_panels;
 }
+function create_back_panel_right(universe) {
+  var back_panel = [];
+  for (var i=0; i<5; i++) {
+    var rev = !!(i%2);
+    var universe_shift = Math.floor( (i*90) / 170 );
+    var offset_shifted = (i*90) % 170;
+
+    var strip = {
+      "name"    : "back_panel_left_strip_"+i,
+      "leds"    : 90,
+      "artnet"	: { "ip":ip, "universe": universe+universe_shift, "offset": offset_shifted, reverse: rev},
+      "start"	  : { "x": i*212, "y": 4000, "z": -i*212},
+      "end"     : { "x": i*212, "y": 1000, "z": -i*212}
+    }
+    back_panel.push(strip);
+  }
+  return back_panel;
+}
+
+function back_panels_right(universes_per_output, universe_offset) {
+  var back_panels = [];
+  for (var i = 0; i < 2; i++) {
+    var panel = {
+      "name": "Back Panel Left " + i,
+      "x": 1600 + i * 1100,
+      "y": 0,
+      "z": 10000 - i * 1100,
+      "group": "back_panels",
+      "strips": create_back_panel_right(universe_offset+(i*2)*universes_per_output)
+    };
+
+    back_panels.push(panel);
+  }
+  return back_panels;
+}
 
 function create_pillar(universe, universes_per_output){
   var pillar = [];
@@ -202,12 +237,11 @@ var tardis = {
   "name": "tardis",
 	"elements": []
 }
-// tardis.elements = tardis.elements.concat(side_panels_right(3, 0));
+tardis.elements = tardis.elements.concat(side_panels_right(3, 0));
 tardis.elements = tardis.elements.concat(side_panels_left(3, 18));
 tardis.elements = tardis.elements.concat(back_panels_left(3, 36));
 tardis.elements = tardis.elements.concat(back_panels_center(3, 42));
-// tardis.elements = tardis.elements.concat(back_panel_center(3, 36));
-// tardis.elements = tardis.elements.concat(back_panels_right(3, 36));
+tardis.elements = tardis.elements.concat(back_panels_right(3, 51));
 // tardis.elements = tardis.elements.concat(pillars(3, 60));
 
 var json = JSON.stringify(tardis, null, ' ');

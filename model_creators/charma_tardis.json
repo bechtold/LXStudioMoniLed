@@ -2,6 +2,551 @@
  "name": "tardis",
  "elements": [
   {
+   "name": "Side Panel Right 0",
+   "x": 4500,
+   "y": 0,
+   "z": 0,
+   "group": "right_panels",
+   "strips": [
+    {
+     "name": "side_panel_strip_0",
+     "leds": 60,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 0,
+      "offset": 0,
+      "reverse": false
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 0
+     }
+    },
+    {
+     "name": "side_panel_strip_1",
+     "leds": 60,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 0,
+      "offset": 60,
+      "reverse": true
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 300
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 300
+     }
+    },
+    {
+     "name": "side_panel_strip_2",
+     "leds": 60,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 0,
+      "offset": 120,
+      "reverse": false
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 600
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 600
+     }
+    },
+    {
+     "name": "side_panel_strip_3",
+     "leds": 60,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 1,
+      "offset": 10,
+      "reverse": true
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 900
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 900
+     }
+    },
+    {
+     "name": "side_panel_strip_4",
+     "leds": 60,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 1,
+      "offset": 70,
+      "reverse": false
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 1200
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 1200
+     }
+    }
+   ]
+  },
+  {
+   "name": "Side Panel Right 1",
+   "x": 4500,
+   "y": 0,
+   "z": 1500,
+   "group": "right_panels",
+   "strips": [
+    {
+     "name": "side_panel_strip_0",
+     "leds": 60,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 3,
+      "offset": 0,
+      "reverse": false
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 0
+     }
+    },
+    {
+     "name": "side_panel_strip_1",
+     "leds": 60,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 3,
+      "offset": 60,
+      "reverse": true
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 300
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 300
+     }
+    },
+    {
+     "name": "side_panel_strip_2",
+     "leds": 60,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 3,
+      "offset": 120,
+      "reverse": false
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 600
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 600
+     }
+    },
+    {
+     "name": "side_panel_strip_3",
+     "leds": 60,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 4,
+      "offset": 10,
+      "reverse": true
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 900
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 900
+     }
+    },
+    {
+     "name": "side_panel_strip_4",
+     "leds": 60,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 4,
+      "offset": 70,
+      "reverse": false
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 1200
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 1200
+     }
+    }
+   ]
+  },
+  {
+   "name": "Side Panel Right 2",
+   "x": 4500,
+   "y": 0,
+   "z": 3000,
+   "group": "right_panels",
+   "strips": [
+    {
+     "name": "side_panel_strip_0",
+     "leds": 60,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 6,
+      "offset": 0,
+      "reverse": false
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 0
+     }
+    },
+    {
+     "name": "side_panel_strip_1",
+     "leds": 60,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 6,
+      "offset": 60,
+      "reverse": true
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 300
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 300
+     }
+    },
+    {
+     "name": "side_panel_strip_2",
+     "leds": 60,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 6,
+      "offset": 120,
+      "reverse": false
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 600
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 600
+     }
+    },
+    {
+     "name": "side_panel_strip_3",
+     "leds": 60,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 7,
+      "offset": 10,
+      "reverse": true
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 900
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 900
+     }
+    },
+    {
+     "name": "side_panel_strip_4",
+     "leds": 60,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 7,
+      "offset": 70,
+      "reverse": false
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 1200
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 1200
+     }
+    }
+   ]
+  },
+  {
+   "name": "Side Panel Right 3",
+   "x": 4500,
+   "y": 0,
+   "z": 4500,
+   "group": "right_panels",
+   "strips": [
+    {
+     "name": "side_panel_strip_0",
+     "leds": 60,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 9,
+      "offset": 0,
+      "reverse": false
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 0
+     }
+    },
+    {
+     "name": "side_panel_strip_1",
+     "leds": 60,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 9,
+      "offset": 60,
+      "reverse": true
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 300
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 300
+     }
+    },
+    {
+     "name": "side_panel_strip_2",
+     "leds": 60,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 9,
+      "offset": 120,
+      "reverse": false
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 600
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 600
+     }
+    },
+    {
+     "name": "side_panel_strip_3",
+     "leds": 60,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 10,
+      "offset": 10,
+      "reverse": true
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 900
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 900
+     }
+    },
+    {
+     "name": "side_panel_strip_4",
+     "leds": 60,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 10,
+      "offset": 70,
+      "reverse": false
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 1200
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 1200
+     }
+    }
+   ]
+  },
+  {
+   "name": "Side Panel Right 4",
+   "x": 4500,
+   "y": 0,
+   "z": 6000,
+   "group": "right_panels",
+   "strips": [
+    {
+     "name": "side_panel_strip_0",
+     "leds": 60,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 12,
+      "offset": 0,
+      "reverse": false
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 0
+     }
+    },
+    {
+     "name": "side_panel_strip_1",
+     "leds": 60,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 12,
+      "offset": 60,
+      "reverse": true
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 300
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 300
+     }
+    },
+    {
+     "name": "side_panel_strip_2",
+     "leds": 60,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 12,
+      "offset": 120,
+      "reverse": false
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 600
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 600
+     }
+    },
+    {
+     "name": "side_panel_strip_3",
+     "leds": 60,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 13,
+      "offset": 10,
+      "reverse": true
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 900
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 900
+     }
+    },
+    {
+     "name": "side_panel_strip_4",
+     "leds": 60,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 13,
+      "offset": 70,
+      "reverse": false
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 1200
+     },
+     "end": {
+      "x": 0,
+      "y": 2000,
+      "z": 1200
+     }
+    }
+   ]
+  },
+  {
    "name": "Side Panel Left 0",
    "x": -4500,
    "y": 0,
@@ -978,6 +1523,224 @@
       "x": 1350,
       "y": 1000,
       "z": 0
+     }
+    }
+   ]
+  },
+  {
+   "name": "Back Panel Left 0",
+   "x": 1600,
+   "y": 0,
+   "z": 10000,
+   "group": "back_panels",
+   "strips": [
+    {
+     "name": "back_panel_left_strip_0",
+     "leds": 90,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 51,
+      "offset": 0,
+      "reverse": false
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 0,
+      "y": 1000,
+      "z": 0
+     }
+    },
+    {
+     "name": "back_panel_left_strip_1",
+     "leds": 90,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 51,
+      "offset": 90,
+      "reverse": true
+     },
+     "start": {
+      "x": 212,
+      "y": 4000,
+      "z": -212
+     },
+     "end": {
+      "x": 212,
+      "y": 1000,
+      "z": -212
+     }
+    },
+    {
+     "name": "back_panel_left_strip_2",
+     "leds": 90,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 52,
+      "offset": 10,
+      "reverse": false
+     },
+     "start": {
+      "x": 424,
+      "y": 4000,
+      "z": -424
+     },
+     "end": {
+      "x": 424,
+      "y": 1000,
+      "z": -424
+     }
+    },
+    {
+     "name": "back_panel_left_strip_3",
+     "leds": 90,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 52,
+      "offset": 100,
+      "reverse": true
+     },
+     "start": {
+      "x": 636,
+      "y": 4000,
+      "z": -636
+     },
+     "end": {
+      "x": 636,
+      "y": 1000,
+      "z": -636
+     }
+    },
+    {
+     "name": "back_panel_left_strip_4",
+     "leds": 90,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 53,
+      "offset": 20,
+      "reverse": false
+     },
+     "start": {
+      "x": 848,
+      "y": 4000,
+      "z": -848
+     },
+     "end": {
+      "x": 848,
+      "y": 1000,
+      "z": -848
+     }
+    }
+   ]
+  },
+  {
+   "name": "Back Panel Left 1",
+   "x": 2700,
+   "y": 0,
+   "z": 8900,
+   "group": "back_panels",
+   "strips": [
+    {
+     "name": "back_panel_left_strip_0",
+     "leds": 90,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 57,
+      "offset": 0,
+      "reverse": false
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 0,
+      "y": 1000,
+      "z": 0
+     }
+    },
+    {
+     "name": "back_panel_left_strip_1",
+     "leds": 90,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 57,
+      "offset": 90,
+      "reverse": true
+     },
+     "start": {
+      "x": 212,
+      "y": 4000,
+      "z": -212
+     },
+     "end": {
+      "x": 212,
+      "y": 1000,
+      "z": -212
+     }
+    },
+    {
+     "name": "back_panel_left_strip_2",
+     "leds": 90,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 58,
+      "offset": 10,
+      "reverse": false
+     },
+     "start": {
+      "x": 424,
+      "y": 4000,
+      "z": -424
+     },
+     "end": {
+      "x": 424,
+      "y": 1000,
+      "z": -424
+     }
+    },
+    {
+     "name": "back_panel_left_strip_3",
+     "leds": 90,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 58,
+      "offset": 100,
+      "reverse": true
+     },
+     "start": {
+      "x": 636,
+      "y": 4000,
+      "z": -636
+     },
+     "end": {
+      "x": 636,
+      "y": 1000,
+      "z": -636
+     }
+    },
+    {
+     "name": "back_panel_left_strip_4",
+     "leds": 90,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 59,
+      "offset": 20,
+      "reverse": false
+     },
+     "start": {
+      "x": 848,
+      "y": 4000,
+      "z": -848
+     },
+     "end": {
+      "x": 848,
+      "y": 1000,
+      "z": -848
      }
     }
    ]
