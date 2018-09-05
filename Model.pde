@@ -44,7 +44,8 @@ public static class UniverseConfig {
         int diff2 = ( (universeCounter+1) * LEDS_PER_UNIVERSE ) % model.points.length;
         //print(", diff: " + diff + ", diff2: " + diff2);
         int modelIndex = pointsLength-1 - (i + diff);
-        if(universeIndex == 2) modelIndex += 10; // TODO: this is fucked up and needs fixing :-(
+        //println("universeIndex: " + universeIndex + ", trial" + universeIndex%3);
+        if(universeIndex%3 == 2) modelIndex += 10; // TODO: this is fucked up and needs fixing :-(
 
         //println(", mI: " + modelIndex);
 
