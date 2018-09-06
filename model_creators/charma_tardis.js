@@ -11,8 +11,8 @@ function create_side_panel(universe) {
       "name"    : "side_panel_strip_"+i,
       "leds"    : 60,
       "artnet"	: { "ip":ip, "universe": universe+universe_shift, "offset": offset_shifted, reverse: rev},
-      "start"	  : { "x": 0, "y": 4000, "z": i*300},
-      "end"     : { "x": 0, "y": 2000, "z": i*300}
+      "start"	  : { "x": 0, "y": 2000, "z": i*300},
+      "end"     : { "x": 0, "y": 0000, "z": i*300}
     }
     side_panel.push(strip);
   }
@@ -25,7 +25,7 @@ function side_panels_right(universes_per_output, universe_offset) {
     var panel = {
       "name": "Side Panel Right " + i,
       "x": 4500,
-      "y": 0,
+      "y": 1500,
       "z": i * 1500,
       "group": "right_panels",
       "strips": create_side_panel(universe_offset+i*3)
@@ -42,7 +42,7 @@ function side_panels_left(universes_per_output, universe_offset) {
     var panel = {
       "name": "Side Panel Left " + i,
       "x": -4500,
-      "y": 0,
+      "y": 1500,
       "z": i * 1500,
       "group": "left_panels",
       "strips": create_side_panel(universe_offset+(i*3))
@@ -64,8 +64,8 @@ function create_back_panel_center(universe) {
       "name"    : "back_panel_center_strip_"+i,
       "leds"    : 90,
       "artnet"	: { "ip":ip, "universe": universe+universe_shift, "offset": offset_shifted, reverse: rev},
-      "start"	  : { "x": 150+i*300, "y": 4000, "z": 0},
-      "end"     : { "x": 150+i*300, "y": 1000, "z": 0}
+      "start"	  : { "x": 150+i*300, "y": 3000, "z": 0},
+      "end"     : { "x": 150+i*300, "y": 0000, "z": 0}
     }
     back_panel.push(strip);
   }
@@ -78,7 +78,7 @@ function back_panels_center(universes_per_output, universe_offset) {
     var panel = {
       "name": "Back Panel Center " + i,
       "x": -1500 + i * 1500,
-      "y": 0,
+      "y": 1200,
       "z": 10000,
       "group": "back_panels",
       "strips": create_back_panel_center(universe_offset+(i*2)*universes_per_output)
@@ -100,8 +100,8 @@ function create_back_panel_left(universe) {
       "name"    : "back_panel_left_strip_"+i,
       "leds"    : 90,
       "artnet"	: { "ip":ip, "universe": universe+universe_shift, "offset": offset_shifted, reverse: rev},
-      "start"	  : { "x": i*212, "y": 4000, "z": i*212},
-      "end"     : { "x": i*212, "y": 1000, "z": i*212}
+      "start"	  : { "x": i*212, "y": 3000, "z": i*212},
+      "end"     : { "x": i*212, "y": 0000, "z": i*212}
     }
     back_panel.push(strip);
   }
@@ -114,7 +114,7 @@ function back_panels_left(universes_per_output, universe_offset) {
     var panel = {
       "name": "Back Panel Left " + i,
       "x": -3600 + i * 1100,
-      "y": 0,
+      "y": 1200,
       "z": 8000 + i * 1100,
       "group": "back_panels",
       "strips": create_back_panel_left(universe_offset+(i*2)*universes_per_output)
@@ -135,8 +135,8 @@ function create_back_panel_right(universe) {
       "name"    : "back_panel_left_strip_"+i,
       "leds"    : 90,
       "artnet"	: { "ip":ip, "universe": universe+universe_shift, "offset": offset_shifted, reverse: rev},
-      "start"	  : { "x": i*212, "y": 4000, "z": -i*212},
-      "end"     : { "x": i*212, "y": 1000, "z": -i*212}
+      "start"	  : { "x": i*212, "y": 3000, "z": -i*212},
+      "end"     : { "x": i*212, "y": 0000, "z": -i*212}
     }
     back_panel.push(strip);
   }
@@ -149,7 +149,7 @@ function back_panels_right(universes_per_output, universe_offset) {
     var panel = {
       "name": "Back Panel Left " + i,
       "x": 1600 + i * 1100,
-      "y": 0,
+      "y": 1200,
       "z": 10000 - i * 1100,
       "group": "back_panels",
       "strips": create_back_panel_right(universe_offset+(i*2)*universes_per_output)
