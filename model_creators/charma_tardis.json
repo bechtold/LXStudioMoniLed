@@ -1744,6 +1744,3412 @@
      }
     }
    ]
+  },
+  {
+   "name": "Pillar 0",
+   "x": -1650,
+   "y": 0,
+   "z": 1000,
+   "group": "pillars",
+   "strips": [
+    {
+     "name": "pillar_strip_0",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 60,
+      "offset": 0,
+      "reverse": false
+     },
+     "start": {
+      "x": 250,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 250,
+      "y": 3000,
+      "z": 0
+     }
+    },
+    {
+     "name": "pillar_strip_1",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 60,
+      "offset": 30,
+      "reverse": true
+     },
+     "start": {
+      "x": 150,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 150,
+      "y": 3000,
+      "z": 0
+     }
+    },
+    {
+     "name": "pillar_strip_2",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 60,
+      "offset": 60,
+      "reverse": false
+     },
+     "start": {
+      "x": 50,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 50,
+      "y": 3000,
+      "z": 0
+     }
+    },
+    {
+     "name": "pillar_strip_3",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 60,
+      "offset": 90,
+      "reverse": true
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 50
+     },
+     "end": {
+      "x": 0,
+      "y": 3000,
+      "z": 50
+     }
+    },
+    {
+     "name": "pillar_strip_4",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 60,
+      "offset": 120,
+      "reverse": false
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 150
+     },
+     "end": {
+      "x": 0,
+      "y": 3000,
+      "z": 150
+     }
+    },
+    {
+     "name": "pillar_strip_5",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 60,
+      "offset": 150,
+      "reverse": true
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 250
+     },
+     "end": {
+      "x": 0,
+      "y": 3000,
+      "z": 250
+     }
+    },
+    {
+     "name": "pillar_strip_6",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 61,
+      "offset": 10,
+      "reverse": false
+     },
+     "start": {
+      "x": 50,
+      "y": 4000,
+      "z": 300
+     },
+     "end": {
+      "x": 50,
+      "y": 3000,
+      "z": 300
+     }
+    },
+    {
+     "name": "pillar_strip_7",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 61,
+      "offset": 40,
+      "reverse": true
+     },
+     "start": {
+      "x": 150,
+      "y": 4000,
+      "z": 300
+     },
+     "end": {
+      "x": 150,
+      "y": 3000,
+      "z": 300
+     }
+    },
+    {
+     "name": "pillar_strip_8",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 61,
+      "offset": 70,
+      "reverse": false
+     },
+     "start": {
+      "x": 250,
+      "y": 4000,
+      "z": 300
+     },
+     "end": {
+      "x": 250,
+      "y": 3000,
+      "z": 300
+     }
+    },
+    {
+     "name": "pillar_strip_9",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 61,
+      "offset": 100,
+      "reverse": true
+     },
+     "start": {
+      "x": 300,
+      "y": 4000,
+      "z": 250
+     },
+     "end": {
+      "x": 300,
+      "y": 3000,
+      "z": 250
+     }
+    },
+    {
+     "name": "pillar_strip_10",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 61,
+      "offset": 130,
+      "reverse": false
+     },
+     "start": {
+      "x": 300,
+      "y": 4000,
+      "z": 150
+     },
+     "end": {
+      "x": 300,
+      "y": 3000,
+      "z": 150
+     }
+    },
+    {
+     "name": "pillar_strip_11",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 61,
+      "offset": 160,
+      "reverse": true
+     },
+     "start": {
+      "x": 300,
+      "y": 4000,
+      "z": 50
+     },
+     "end": {
+      "x": 300,
+      "y": 3000,
+      "z": 50
+     }
+    }
+   ]
+  },
+  {
+   "name": "Pillar 1",
+   "x": -150,
+   "y": 0,
+   "z": 1000,
+   "group": "pillars",
+   "strips": [
+    {
+     "name": "pillar_strip_0",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 63,
+      "offset": 0,
+      "reverse": false
+     },
+     "start": {
+      "x": 250,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 250,
+      "y": 3000,
+      "z": 0
+     }
+    },
+    {
+     "name": "pillar_strip_1",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 63,
+      "offset": 30,
+      "reverse": true
+     },
+     "start": {
+      "x": 150,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 150,
+      "y": 3000,
+      "z": 0
+     }
+    },
+    {
+     "name": "pillar_strip_2",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 63,
+      "offset": 60,
+      "reverse": false
+     },
+     "start": {
+      "x": 50,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 50,
+      "y": 3000,
+      "z": 0
+     }
+    },
+    {
+     "name": "pillar_strip_3",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 63,
+      "offset": 90,
+      "reverse": true
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 50
+     },
+     "end": {
+      "x": 0,
+      "y": 3000,
+      "z": 50
+     }
+    },
+    {
+     "name": "pillar_strip_4",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 63,
+      "offset": 120,
+      "reverse": false
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 150
+     },
+     "end": {
+      "x": 0,
+      "y": 3000,
+      "z": 150
+     }
+    },
+    {
+     "name": "pillar_strip_5",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 63,
+      "offset": 150,
+      "reverse": true
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 250
+     },
+     "end": {
+      "x": 0,
+      "y": 3000,
+      "z": 250
+     }
+    },
+    {
+     "name": "pillar_strip_6",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 64,
+      "offset": 10,
+      "reverse": false
+     },
+     "start": {
+      "x": 50,
+      "y": 4000,
+      "z": 300
+     },
+     "end": {
+      "x": 50,
+      "y": 3000,
+      "z": 300
+     }
+    },
+    {
+     "name": "pillar_strip_7",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 64,
+      "offset": 40,
+      "reverse": true
+     },
+     "start": {
+      "x": 150,
+      "y": 4000,
+      "z": 300
+     },
+     "end": {
+      "x": 150,
+      "y": 3000,
+      "z": 300
+     }
+    },
+    {
+     "name": "pillar_strip_8",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 64,
+      "offset": 70,
+      "reverse": false
+     },
+     "start": {
+      "x": 250,
+      "y": 4000,
+      "z": 300
+     },
+     "end": {
+      "x": 250,
+      "y": 3000,
+      "z": 300
+     }
+    },
+    {
+     "name": "pillar_strip_9",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 64,
+      "offset": 100,
+      "reverse": true
+     },
+     "start": {
+      "x": 300,
+      "y": 4000,
+      "z": 250
+     },
+     "end": {
+      "x": 300,
+      "y": 3000,
+      "z": 250
+     }
+    },
+    {
+     "name": "pillar_strip_10",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 64,
+      "offset": 130,
+      "reverse": false
+     },
+     "start": {
+      "x": 300,
+      "y": 4000,
+      "z": 150
+     },
+     "end": {
+      "x": 300,
+      "y": 3000,
+      "z": 150
+     }
+    },
+    {
+     "name": "pillar_strip_11",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 64,
+      "offset": 160,
+      "reverse": true
+     },
+     "start": {
+      "x": 300,
+      "y": 4000,
+      "z": 50
+     },
+     "end": {
+      "x": 300,
+      "y": 3000,
+      "z": 50
+     }
+    }
+   ]
+  },
+  {
+   "name": "Pillar 2",
+   "x": 1350,
+   "y": 0,
+   "z": 1000,
+   "group": "pillars",
+   "strips": [
+    {
+     "name": "pillar_strip_0",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 66,
+      "offset": 0,
+      "reverse": false
+     },
+     "start": {
+      "x": 250,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 250,
+      "y": 3000,
+      "z": 0
+     }
+    },
+    {
+     "name": "pillar_strip_1",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 66,
+      "offset": 30,
+      "reverse": true
+     },
+     "start": {
+      "x": 150,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 150,
+      "y": 3000,
+      "z": 0
+     }
+    },
+    {
+     "name": "pillar_strip_2",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 66,
+      "offset": 60,
+      "reverse": false
+     },
+     "start": {
+      "x": 50,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 50,
+      "y": 3000,
+      "z": 0
+     }
+    },
+    {
+     "name": "pillar_strip_3",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 66,
+      "offset": 90,
+      "reverse": true
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 50
+     },
+     "end": {
+      "x": 0,
+      "y": 3000,
+      "z": 50
+     }
+    },
+    {
+     "name": "pillar_strip_4",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 66,
+      "offset": 120,
+      "reverse": false
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 150
+     },
+     "end": {
+      "x": 0,
+      "y": 3000,
+      "z": 150
+     }
+    },
+    {
+     "name": "pillar_strip_5",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 66,
+      "offset": 150,
+      "reverse": true
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 250
+     },
+     "end": {
+      "x": 0,
+      "y": 3000,
+      "z": 250
+     }
+    },
+    {
+     "name": "pillar_strip_6",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 67,
+      "offset": 10,
+      "reverse": false
+     },
+     "start": {
+      "x": 50,
+      "y": 4000,
+      "z": 300
+     },
+     "end": {
+      "x": 50,
+      "y": 3000,
+      "z": 300
+     }
+    },
+    {
+     "name": "pillar_strip_7",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 67,
+      "offset": 40,
+      "reverse": true
+     },
+     "start": {
+      "x": 150,
+      "y": 4000,
+      "z": 300
+     },
+     "end": {
+      "x": 150,
+      "y": 3000,
+      "z": 300
+     }
+    },
+    {
+     "name": "pillar_strip_8",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 67,
+      "offset": 70,
+      "reverse": false
+     },
+     "start": {
+      "x": 250,
+      "y": 4000,
+      "z": 300
+     },
+     "end": {
+      "x": 250,
+      "y": 3000,
+      "z": 300
+     }
+    },
+    {
+     "name": "pillar_strip_9",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 67,
+      "offset": 100,
+      "reverse": true
+     },
+     "start": {
+      "x": 300,
+      "y": 4000,
+      "z": 250
+     },
+     "end": {
+      "x": 300,
+      "y": 3000,
+      "z": 250
+     }
+    },
+    {
+     "name": "pillar_strip_10",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 67,
+      "offset": 130,
+      "reverse": false
+     },
+     "start": {
+      "x": 300,
+      "y": 4000,
+      "z": 150
+     },
+     "end": {
+      "x": 300,
+      "y": 3000,
+      "z": 150
+     }
+    },
+    {
+     "name": "pillar_strip_11",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 67,
+      "offset": 160,
+      "reverse": true
+     },
+     "start": {
+      "x": 300,
+      "y": 4000,
+      "z": 50
+     },
+     "end": {
+      "x": 300,
+      "y": 3000,
+      "z": 50
+     }
+    }
+   ]
+  },
+  {
+   "name": "Pillar 3",
+   "x": -1650,
+   "y": 0,
+   "z": 2000,
+   "group": "pillars",
+   "strips": [
+    {
+     "name": "pillar_strip_0",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 69,
+      "offset": 0,
+      "reverse": false
+     },
+     "start": {
+      "x": 250,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 250,
+      "y": 3000,
+      "z": 0
+     }
+    },
+    {
+     "name": "pillar_strip_1",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 69,
+      "offset": 30,
+      "reverse": true
+     },
+     "start": {
+      "x": 150,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 150,
+      "y": 3000,
+      "z": 0
+     }
+    },
+    {
+     "name": "pillar_strip_2",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 69,
+      "offset": 60,
+      "reverse": false
+     },
+     "start": {
+      "x": 50,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 50,
+      "y": 3000,
+      "z": 0
+     }
+    },
+    {
+     "name": "pillar_strip_3",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 69,
+      "offset": 90,
+      "reverse": true
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 50
+     },
+     "end": {
+      "x": 0,
+      "y": 3000,
+      "z": 50
+     }
+    },
+    {
+     "name": "pillar_strip_4",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 69,
+      "offset": 120,
+      "reverse": false
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 150
+     },
+     "end": {
+      "x": 0,
+      "y": 3000,
+      "z": 150
+     }
+    },
+    {
+     "name": "pillar_strip_5",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 69,
+      "offset": 150,
+      "reverse": true
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 250
+     },
+     "end": {
+      "x": 0,
+      "y": 3000,
+      "z": 250
+     }
+    },
+    {
+     "name": "pillar_strip_6",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 70,
+      "offset": 10,
+      "reverse": false
+     },
+     "start": {
+      "x": 50,
+      "y": 4000,
+      "z": 300
+     },
+     "end": {
+      "x": 50,
+      "y": 3000,
+      "z": 300
+     }
+    },
+    {
+     "name": "pillar_strip_7",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 70,
+      "offset": 40,
+      "reverse": true
+     },
+     "start": {
+      "x": 150,
+      "y": 4000,
+      "z": 300
+     },
+     "end": {
+      "x": 150,
+      "y": 3000,
+      "z": 300
+     }
+    },
+    {
+     "name": "pillar_strip_8",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 70,
+      "offset": 70,
+      "reverse": false
+     },
+     "start": {
+      "x": 250,
+      "y": 4000,
+      "z": 300
+     },
+     "end": {
+      "x": 250,
+      "y": 3000,
+      "z": 300
+     }
+    },
+    {
+     "name": "pillar_strip_9",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 70,
+      "offset": 100,
+      "reverse": true
+     },
+     "start": {
+      "x": 300,
+      "y": 4000,
+      "z": 250
+     },
+     "end": {
+      "x": 300,
+      "y": 3000,
+      "z": 250
+     }
+    },
+    {
+     "name": "pillar_strip_10",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 70,
+      "offset": 130,
+      "reverse": false
+     },
+     "start": {
+      "x": 300,
+      "y": 4000,
+      "z": 150
+     },
+     "end": {
+      "x": 300,
+      "y": 3000,
+      "z": 150
+     }
+    },
+    {
+     "name": "pillar_strip_11",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 70,
+      "offset": 160,
+      "reverse": true
+     },
+     "start": {
+      "x": 300,
+      "y": 4000,
+      "z": 50
+     },
+     "end": {
+      "x": 300,
+      "y": 3000,
+      "z": 50
+     }
+    }
+   ]
+  },
+  {
+   "name": "Pillar 4",
+   "x": -150,
+   "y": 0,
+   "z": 2000,
+   "group": "pillars",
+   "strips": [
+    {
+     "name": "pillar_strip_0",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 72,
+      "offset": 0,
+      "reverse": false
+     },
+     "start": {
+      "x": 250,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 250,
+      "y": 3000,
+      "z": 0
+     }
+    },
+    {
+     "name": "pillar_strip_1",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 72,
+      "offset": 30,
+      "reverse": true
+     },
+     "start": {
+      "x": 150,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 150,
+      "y": 3000,
+      "z": 0
+     }
+    },
+    {
+     "name": "pillar_strip_2",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 72,
+      "offset": 60,
+      "reverse": false
+     },
+     "start": {
+      "x": 50,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 50,
+      "y": 3000,
+      "z": 0
+     }
+    },
+    {
+     "name": "pillar_strip_3",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 72,
+      "offset": 90,
+      "reverse": true
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 50
+     },
+     "end": {
+      "x": 0,
+      "y": 3000,
+      "z": 50
+     }
+    },
+    {
+     "name": "pillar_strip_4",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 72,
+      "offset": 120,
+      "reverse": false
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 150
+     },
+     "end": {
+      "x": 0,
+      "y": 3000,
+      "z": 150
+     }
+    },
+    {
+     "name": "pillar_strip_5",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 72,
+      "offset": 150,
+      "reverse": true
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 250
+     },
+     "end": {
+      "x": 0,
+      "y": 3000,
+      "z": 250
+     }
+    },
+    {
+     "name": "pillar_strip_6",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 73,
+      "offset": 10,
+      "reverse": false
+     },
+     "start": {
+      "x": 50,
+      "y": 4000,
+      "z": 300
+     },
+     "end": {
+      "x": 50,
+      "y": 3000,
+      "z": 300
+     }
+    },
+    {
+     "name": "pillar_strip_7",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 73,
+      "offset": 40,
+      "reverse": true
+     },
+     "start": {
+      "x": 150,
+      "y": 4000,
+      "z": 300
+     },
+     "end": {
+      "x": 150,
+      "y": 3000,
+      "z": 300
+     }
+    },
+    {
+     "name": "pillar_strip_8",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 73,
+      "offset": 70,
+      "reverse": false
+     },
+     "start": {
+      "x": 250,
+      "y": 4000,
+      "z": 300
+     },
+     "end": {
+      "x": 250,
+      "y": 3000,
+      "z": 300
+     }
+    },
+    {
+     "name": "pillar_strip_9",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 73,
+      "offset": 100,
+      "reverse": true
+     },
+     "start": {
+      "x": 300,
+      "y": 4000,
+      "z": 250
+     },
+     "end": {
+      "x": 300,
+      "y": 3000,
+      "z": 250
+     }
+    },
+    {
+     "name": "pillar_strip_10",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 73,
+      "offset": 130,
+      "reverse": false
+     },
+     "start": {
+      "x": 300,
+      "y": 4000,
+      "z": 150
+     },
+     "end": {
+      "x": 300,
+      "y": 3000,
+      "z": 150
+     }
+    },
+    {
+     "name": "pillar_strip_11",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 73,
+      "offset": 160,
+      "reverse": true
+     },
+     "start": {
+      "x": 300,
+      "y": 4000,
+      "z": 50
+     },
+     "end": {
+      "x": 300,
+      "y": 3000,
+      "z": 50
+     }
+    }
+   ]
+  },
+  {
+   "name": "Pillar 5",
+   "x": 1350,
+   "y": 0,
+   "z": 2000,
+   "group": "pillars",
+   "strips": [
+    {
+     "name": "pillar_strip_0",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 75,
+      "offset": 0,
+      "reverse": false
+     },
+     "start": {
+      "x": 250,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 250,
+      "y": 3000,
+      "z": 0
+     }
+    },
+    {
+     "name": "pillar_strip_1",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 75,
+      "offset": 30,
+      "reverse": true
+     },
+     "start": {
+      "x": 150,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 150,
+      "y": 3000,
+      "z": 0
+     }
+    },
+    {
+     "name": "pillar_strip_2",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 75,
+      "offset": 60,
+      "reverse": false
+     },
+     "start": {
+      "x": 50,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 50,
+      "y": 3000,
+      "z": 0
+     }
+    },
+    {
+     "name": "pillar_strip_3",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 75,
+      "offset": 90,
+      "reverse": true
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 50
+     },
+     "end": {
+      "x": 0,
+      "y": 3000,
+      "z": 50
+     }
+    },
+    {
+     "name": "pillar_strip_4",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 75,
+      "offset": 120,
+      "reverse": false
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 150
+     },
+     "end": {
+      "x": 0,
+      "y": 3000,
+      "z": 150
+     }
+    },
+    {
+     "name": "pillar_strip_5",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 75,
+      "offset": 150,
+      "reverse": true
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 250
+     },
+     "end": {
+      "x": 0,
+      "y": 3000,
+      "z": 250
+     }
+    },
+    {
+     "name": "pillar_strip_6",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 76,
+      "offset": 10,
+      "reverse": false
+     },
+     "start": {
+      "x": 50,
+      "y": 4000,
+      "z": 300
+     },
+     "end": {
+      "x": 50,
+      "y": 3000,
+      "z": 300
+     }
+    },
+    {
+     "name": "pillar_strip_7",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 76,
+      "offset": 40,
+      "reverse": true
+     },
+     "start": {
+      "x": 150,
+      "y": 4000,
+      "z": 300
+     },
+     "end": {
+      "x": 150,
+      "y": 3000,
+      "z": 300
+     }
+    },
+    {
+     "name": "pillar_strip_8",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 76,
+      "offset": 70,
+      "reverse": false
+     },
+     "start": {
+      "x": 250,
+      "y": 4000,
+      "z": 300
+     },
+     "end": {
+      "x": 250,
+      "y": 3000,
+      "z": 300
+     }
+    },
+    {
+     "name": "pillar_strip_9",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 76,
+      "offset": 100,
+      "reverse": true
+     },
+     "start": {
+      "x": 300,
+      "y": 4000,
+      "z": 250
+     },
+     "end": {
+      "x": 300,
+      "y": 3000,
+      "z": 250
+     }
+    },
+    {
+     "name": "pillar_strip_10",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 76,
+      "offset": 130,
+      "reverse": false
+     },
+     "start": {
+      "x": 300,
+      "y": 4000,
+      "z": 150
+     },
+     "end": {
+      "x": 300,
+      "y": 3000,
+      "z": 150
+     }
+    },
+    {
+     "name": "pillar_strip_11",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 76,
+      "offset": 160,
+      "reverse": true
+     },
+     "start": {
+      "x": 300,
+      "y": 4000,
+      "z": 50
+     },
+     "end": {
+      "x": 300,
+      "y": 3000,
+      "z": 50
+     }
+    }
+   ]
+  },
+  {
+   "name": "Pillar 6",
+   "x": -1650,
+   "y": 0,
+   "z": 3000,
+   "group": "pillars",
+   "strips": [
+    {
+     "name": "pillar_strip_0",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 78,
+      "offset": 0,
+      "reverse": false
+     },
+     "start": {
+      "x": 250,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 250,
+      "y": 3000,
+      "z": 0
+     }
+    },
+    {
+     "name": "pillar_strip_1",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 78,
+      "offset": 30,
+      "reverse": true
+     },
+     "start": {
+      "x": 150,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 150,
+      "y": 3000,
+      "z": 0
+     }
+    },
+    {
+     "name": "pillar_strip_2",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 78,
+      "offset": 60,
+      "reverse": false
+     },
+     "start": {
+      "x": 50,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 50,
+      "y": 3000,
+      "z": 0
+     }
+    },
+    {
+     "name": "pillar_strip_3",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 78,
+      "offset": 90,
+      "reverse": true
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 50
+     },
+     "end": {
+      "x": 0,
+      "y": 3000,
+      "z": 50
+     }
+    },
+    {
+     "name": "pillar_strip_4",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 78,
+      "offset": 120,
+      "reverse": false
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 150
+     },
+     "end": {
+      "x": 0,
+      "y": 3000,
+      "z": 150
+     }
+    },
+    {
+     "name": "pillar_strip_5",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 78,
+      "offset": 150,
+      "reverse": true
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 250
+     },
+     "end": {
+      "x": 0,
+      "y": 3000,
+      "z": 250
+     }
+    },
+    {
+     "name": "pillar_strip_6",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 79,
+      "offset": 10,
+      "reverse": false
+     },
+     "start": {
+      "x": 50,
+      "y": 4000,
+      "z": 300
+     },
+     "end": {
+      "x": 50,
+      "y": 3000,
+      "z": 300
+     }
+    },
+    {
+     "name": "pillar_strip_7",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 79,
+      "offset": 40,
+      "reverse": true
+     },
+     "start": {
+      "x": 150,
+      "y": 4000,
+      "z": 300
+     },
+     "end": {
+      "x": 150,
+      "y": 3000,
+      "z": 300
+     }
+    },
+    {
+     "name": "pillar_strip_8",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 79,
+      "offset": 70,
+      "reverse": false
+     },
+     "start": {
+      "x": 250,
+      "y": 4000,
+      "z": 300
+     },
+     "end": {
+      "x": 250,
+      "y": 3000,
+      "z": 300
+     }
+    },
+    {
+     "name": "pillar_strip_9",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 79,
+      "offset": 100,
+      "reverse": true
+     },
+     "start": {
+      "x": 300,
+      "y": 4000,
+      "z": 250
+     },
+     "end": {
+      "x": 300,
+      "y": 3000,
+      "z": 250
+     }
+    },
+    {
+     "name": "pillar_strip_10",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 79,
+      "offset": 130,
+      "reverse": false
+     },
+     "start": {
+      "x": 300,
+      "y": 4000,
+      "z": 150
+     },
+     "end": {
+      "x": 300,
+      "y": 3000,
+      "z": 150
+     }
+    },
+    {
+     "name": "pillar_strip_11",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 79,
+      "offset": 160,
+      "reverse": true
+     },
+     "start": {
+      "x": 300,
+      "y": 4000,
+      "z": 50
+     },
+     "end": {
+      "x": 300,
+      "y": 3000,
+      "z": 50
+     }
+    }
+   ]
+  },
+  {
+   "name": "Pillar 7",
+   "x": -150,
+   "y": 0,
+   "z": 3000,
+   "group": "pillars",
+   "strips": [
+    {
+     "name": "pillar_strip_0",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 81,
+      "offset": 0,
+      "reverse": false
+     },
+     "start": {
+      "x": 250,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 250,
+      "y": 3000,
+      "z": 0
+     }
+    },
+    {
+     "name": "pillar_strip_1",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 81,
+      "offset": 30,
+      "reverse": true
+     },
+     "start": {
+      "x": 150,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 150,
+      "y": 3000,
+      "z": 0
+     }
+    },
+    {
+     "name": "pillar_strip_2",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 81,
+      "offset": 60,
+      "reverse": false
+     },
+     "start": {
+      "x": 50,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 50,
+      "y": 3000,
+      "z": 0
+     }
+    },
+    {
+     "name": "pillar_strip_3",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 81,
+      "offset": 90,
+      "reverse": true
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 50
+     },
+     "end": {
+      "x": 0,
+      "y": 3000,
+      "z": 50
+     }
+    },
+    {
+     "name": "pillar_strip_4",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 81,
+      "offset": 120,
+      "reverse": false
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 150
+     },
+     "end": {
+      "x": 0,
+      "y": 3000,
+      "z": 150
+     }
+    },
+    {
+     "name": "pillar_strip_5",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 81,
+      "offset": 150,
+      "reverse": true
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 250
+     },
+     "end": {
+      "x": 0,
+      "y": 3000,
+      "z": 250
+     }
+    },
+    {
+     "name": "pillar_strip_6",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 82,
+      "offset": 10,
+      "reverse": false
+     },
+     "start": {
+      "x": 50,
+      "y": 4000,
+      "z": 300
+     },
+     "end": {
+      "x": 50,
+      "y": 3000,
+      "z": 300
+     }
+    },
+    {
+     "name": "pillar_strip_7",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 82,
+      "offset": 40,
+      "reverse": true
+     },
+     "start": {
+      "x": 150,
+      "y": 4000,
+      "z": 300
+     },
+     "end": {
+      "x": 150,
+      "y": 3000,
+      "z": 300
+     }
+    },
+    {
+     "name": "pillar_strip_8",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 82,
+      "offset": 70,
+      "reverse": false
+     },
+     "start": {
+      "x": 250,
+      "y": 4000,
+      "z": 300
+     },
+     "end": {
+      "x": 250,
+      "y": 3000,
+      "z": 300
+     }
+    },
+    {
+     "name": "pillar_strip_9",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 82,
+      "offset": 100,
+      "reverse": true
+     },
+     "start": {
+      "x": 300,
+      "y": 4000,
+      "z": 250
+     },
+     "end": {
+      "x": 300,
+      "y": 3000,
+      "z": 250
+     }
+    },
+    {
+     "name": "pillar_strip_10",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 82,
+      "offset": 130,
+      "reverse": false
+     },
+     "start": {
+      "x": 300,
+      "y": 4000,
+      "z": 150
+     },
+     "end": {
+      "x": 300,
+      "y": 3000,
+      "z": 150
+     }
+    },
+    {
+     "name": "pillar_strip_11",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 82,
+      "offset": 160,
+      "reverse": true
+     },
+     "start": {
+      "x": 300,
+      "y": 4000,
+      "z": 50
+     },
+     "end": {
+      "x": 300,
+      "y": 3000,
+      "z": 50
+     }
+    }
+   ]
+  },
+  {
+   "name": "Pillar 8",
+   "x": 1350,
+   "y": 0,
+   "z": 3000,
+   "group": "pillars",
+   "strips": [
+    {
+     "name": "pillar_strip_0",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 84,
+      "offset": 0,
+      "reverse": false
+     },
+     "start": {
+      "x": 250,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 250,
+      "y": 3000,
+      "z": 0
+     }
+    },
+    {
+     "name": "pillar_strip_1",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 84,
+      "offset": 30,
+      "reverse": true
+     },
+     "start": {
+      "x": 150,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 150,
+      "y": 3000,
+      "z": 0
+     }
+    },
+    {
+     "name": "pillar_strip_2",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 84,
+      "offset": 60,
+      "reverse": false
+     },
+     "start": {
+      "x": 50,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 50,
+      "y": 3000,
+      "z": 0
+     }
+    },
+    {
+     "name": "pillar_strip_3",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 84,
+      "offset": 90,
+      "reverse": true
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 50
+     },
+     "end": {
+      "x": 0,
+      "y": 3000,
+      "z": 50
+     }
+    },
+    {
+     "name": "pillar_strip_4",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 84,
+      "offset": 120,
+      "reverse": false
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 150
+     },
+     "end": {
+      "x": 0,
+      "y": 3000,
+      "z": 150
+     }
+    },
+    {
+     "name": "pillar_strip_5",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 84,
+      "offset": 150,
+      "reverse": true
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 250
+     },
+     "end": {
+      "x": 0,
+      "y": 3000,
+      "z": 250
+     }
+    },
+    {
+     "name": "pillar_strip_6",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 85,
+      "offset": 10,
+      "reverse": false
+     },
+     "start": {
+      "x": 50,
+      "y": 4000,
+      "z": 300
+     },
+     "end": {
+      "x": 50,
+      "y": 3000,
+      "z": 300
+     }
+    },
+    {
+     "name": "pillar_strip_7",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 85,
+      "offset": 40,
+      "reverse": true
+     },
+     "start": {
+      "x": 150,
+      "y": 4000,
+      "z": 300
+     },
+     "end": {
+      "x": 150,
+      "y": 3000,
+      "z": 300
+     }
+    },
+    {
+     "name": "pillar_strip_8",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 85,
+      "offset": 70,
+      "reverse": false
+     },
+     "start": {
+      "x": 250,
+      "y": 4000,
+      "z": 300
+     },
+     "end": {
+      "x": 250,
+      "y": 3000,
+      "z": 300
+     }
+    },
+    {
+     "name": "pillar_strip_9",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 85,
+      "offset": 100,
+      "reverse": true
+     },
+     "start": {
+      "x": 300,
+      "y": 4000,
+      "z": 250
+     },
+     "end": {
+      "x": 300,
+      "y": 3000,
+      "z": 250
+     }
+    },
+    {
+     "name": "pillar_strip_10",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 85,
+      "offset": 130,
+      "reverse": false
+     },
+     "start": {
+      "x": 300,
+      "y": 4000,
+      "z": 150
+     },
+     "end": {
+      "x": 300,
+      "y": 3000,
+      "z": 150
+     }
+    },
+    {
+     "name": "pillar_strip_11",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 85,
+      "offset": 160,
+      "reverse": true
+     },
+     "start": {
+      "x": 300,
+      "y": 4000,
+      "z": 50
+     },
+     "end": {
+      "x": 300,
+      "y": 3000,
+      "z": 50
+     }
+    }
+   ]
+  },
+  {
+   "name": "Pillar 9",
+   "x": -1650,
+   "y": 0,
+   "z": 4000,
+   "group": "pillars",
+   "strips": [
+    {
+     "name": "pillar_strip_0",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 87,
+      "offset": 0,
+      "reverse": false
+     },
+     "start": {
+      "x": 250,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 250,
+      "y": 3000,
+      "z": 0
+     }
+    },
+    {
+     "name": "pillar_strip_1",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 87,
+      "offset": 30,
+      "reverse": true
+     },
+     "start": {
+      "x": 150,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 150,
+      "y": 3000,
+      "z": 0
+     }
+    },
+    {
+     "name": "pillar_strip_2",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 87,
+      "offset": 60,
+      "reverse": false
+     },
+     "start": {
+      "x": 50,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 50,
+      "y": 3000,
+      "z": 0
+     }
+    },
+    {
+     "name": "pillar_strip_3",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 87,
+      "offset": 90,
+      "reverse": true
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 50
+     },
+     "end": {
+      "x": 0,
+      "y": 3000,
+      "z": 50
+     }
+    },
+    {
+     "name": "pillar_strip_4",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 87,
+      "offset": 120,
+      "reverse": false
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 150
+     },
+     "end": {
+      "x": 0,
+      "y": 3000,
+      "z": 150
+     }
+    },
+    {
+     "name": "pillar_strip_5",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 87,
+      "offset": 150,
+      "reverse": true
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 250
+     },
+     "end": {
+      "x": 0,
+      "y": 3000,
+      "z": 250
+     }
+    },
+    {
+     "name": "pillar_strip_6",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 88,
+      "offset": 10,
+      "reverse": false
+     },
+     "start": {
+      "x": 50,
+      "y": 4000,
+      "z": 300
+     },
+     "end": {
+      "x": 50,
+      "y": 3000,
+      "z": 300
+     }
+    },
+    {
+     "name": "pillar_strip_7",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 88,
+      "offset": 40,
+      "reverse": true
+     },
+     "start": {
+      "x": 150,
+      "y": 4000,
+      "z": 300
+     },
+     "end": {
+      "x": 150,
+      "y": 3000,
+      "z": 300
+     }
+    },
+    {
+     "name": "pillar_strip_8",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 88,
+      "offset": 70,
+      "reverse": false
+     },
+     "start": {
+      "x": 250,
+      "y": 4000,
+      "z": 300
+     },
+     "end": {
+      "x": 250,
+      "y": 3000,
+      "z": 300
+     }
+    },
+    {
+     "name": "pillar_strip_9",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 88,
+      "offset": 100,
+      "reverse": true
+     },
+     "start": {
+      "x": 300,
+      "y": 4000,
+      "z": 250
+     },
+     "end": {
+      "x": 300,
+      "y": 3000,
+      "z": 250
+     }
+    },
+    {
+     "name": "pillar_strip_10",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 88,
+      "offset": 130,
+      "reverse": false
+     },
+     "start": {
+      "x": 300,
+      "y": 4000,
+      "z": 150
+     },
+     "end": {
+      "x": 300,
+      "y": 3000,
+      "z": 150
+     }
+    },
+    {
+     "name": "pillar_strip_11",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 88,
+      "offset": 160,
+      "reverse": true
+     },
+     "start": {
+      "x": 300,
+      "y": 4000,
+      "z": 50
+     },
+     "end": {
+      "x": 300,
+      "y": 3000,
+      "z": 50
+     }
+    }
+   ]
+  },
+  {
+   "name": "Pillar 10",
+   "x": -150,
+   "y": 0,
+   "z": 4000,
+   "group": "pillars",
+   "strips": [
+    {
+     "name": "pillar_strip_0",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 90,
+      "offset": 0,
+      "reverse": false
+     },
+     "start": {
+      "x": 250,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 250,
+      "y": 3000,
+      "z": 0
+     }
+    },
+    {
+     "name": "pillar_strip_1",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 90,
+      "offset": 30,
+      "reverse": true
+     },
+     "start": {
+      "x": 150,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 150,
+      "y": 3000,
+      "z": 0
+     }
+    },
+    {
+     "name": "pillar_strip_2",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 90,
+      "offset": 60,
+      "reverse": false
+     },
+     "start": {
+      "x": 50,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 50,
+      "y": 3000,
+      "z": 0
+     }
+    },
+    {
+     "name": "pillar_strip_3",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 90,
+      "offset": 90,
+      "reverse": true
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 50
+     },
+     "end": {
+      "x": 0,
+      "y": 3000,
+      "z": 50
+     }
+    },
+    {
+     "name": "pillar_strip_4",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 90,
+      "offset": 120,
+      "reverse": false
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 150
+     },
+     "end": {
+      "x": 0,
+      "y": 3000,
+      "z": 150
+     }
+    },
+    {
+     "name": "pillar_strip_5",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 90,
+      "offset": 150,
+      "reverse": true
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 250
+     },
+     "end": {
+      "x": 0,
+      "y": 3000,
+      "z": 250
+     }
+    },
+    {
+     "name": "pillar_strip_6",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 91,
+      "offset": 10,
+      "reverse": false
+     },
+     "start": {
+      "x": 50,
+      "y": 4000,
+      "z": 300
+     },
+     "end": {
+      "x": 50,
+      "y": 3000,
+      "z": 300
+     }
+    },
+    {
+     "name": "pillar_strip_7",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 91,
+      "offset": 40,
+      "reverse": true
+     },
+     "start": {
+      "x": 150,
+      "y": 4000,
+      "z": 300
+     },
+     "end": {
+      "x": 150,
+      "y": 3000,
+      "z": 300
+     }
+    },
+    {
+     "name": "pillar_strip_8",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 91,
+      "offset": 70,
+      "reverse": false
+     },
+     "start": {
+      "x": 250,
+      "y": 4000,
+      "z": 300
+     },
+     "end": {
+      "x": 250,
+      "y": 3000,
+      "z": 300
+     }
+    },
+    {
+     "name": "pillar_strip_9",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 91,
+      "offset": 100,
+      "reverse": true
+     },
+     "start": {
+      "x": 300,
+      "y": 4000,
+      "z": 250
+     },
+     "end": {
+      "x": 300,
+      "y": 3000,
+      "z": 250
+     }
+    },
+    {
+     "name": "pillar_strip_10",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 91,
+      "offset": 130,
+      "reverse": false
+     },
+     "start": {
+      "x": 300,
+      "y": 4000,
+      "z": 150
+     },
+     "end": {
+      "x": 300,
+      "y": 3000,
+      "z": 150
+     }
+    },
+    {
+     "name": "pillar_strip_11",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 91,
+      "offset": 160,
+      "reverse": true
+     },
+     "start": {
+      "x": 300,
+      "y": 4000,
+      "z": 50
+     },
+     "end": {
+      "x": 300,
+      "y": 3000,
+      "z": 50
+     }
+    }
+   ]
+  },
+  {
+   "name": "Pillar 11",
+   "x": 1350,
+   "y": 0,
+   "z": 4000,
+   "group": "pillars",
+   "strips": [
+    {
+     "name": "pillar_strip_0",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 93,
+      "offset": 0,
+      "reverse": false
+     },
+     "start": {
+      "x": 250,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 250,
+      "y": 3000,
+      "z": 0
+     }
+    },
+    {
+     "name": "pillar_strip_1",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 93,
+      "offset": 30,
+      "reverse": true
+     },
+     "start": {
+      "x": 150,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 150,
+      "y": 3000,
+      "z": 0
+     }
+    },
+    {
+     "name": "pillar_strip_2",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 93,
+      "offset": 60,
+      "reverse": false
+     },
+     "start": {
+      "x": 50,
+      "y": 4000,
+      "z": 0
+     },
+     "end": {
+      "x": 50,
+      "y": 3000,
+      "z": 0
+     }
+    },
+    {
+     "name": "pillar_strip_3",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 93,
+      "offset": 90,
+      "reverse": true
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 50
+     },
+     "end": {
+      "x": 0,
+      "y": 3000,
+      "z": 50
+     }
+    },
+    {
+     "name": "pillar_strip_4",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 93,
+      "offset": 120,
+      "reverse": false
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 150
+     },
+     "end": {
+      "x": 0,
+      "y": 3000,
+      "z": 150
+     }
+    },
+    {
+     "name": "pillar_strip_5",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 93,
+      "offset": 150,
+      "reverse": true
+     },
+     "start": {
+      "x": 0,
+      "y": 4000,
+      "z": 250
+     },
+     "end": {
+      "x": 0,
+      "y": 3000,
+      "z": 250
+     }
+    },
+    {
+     "name": "pillar_strip_6",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 94,
+      "offset": 10,
+      "reverse": false
+     },
+     "start": {
+      "x": 50,
+      "y": 4000,
+      "z": 300
+     },
+     "end": {
+      "x": 50,
+      "y": 3000,
+      "z": 300
+     }
+    },
+    {
+     "name": "pillar_strip_7",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 94,
+      "offset": 40,
+      "reverse": true
+     },
+     "start": {
+      "x": 150,
+      "y": 4000,
+      "z": 300
+     },
+     "end": {
+      "x": 150,
+      "y": 3000,
+      "z": 300
+     }
+    },
+    {
+     "name": "pillar_strip_8",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 94,
+      "offset": 70,
+      "reverse": false
+     },
+     "start": {
+      "x": 250,
+      "y": 4000,
+      "z": 300
+     },
+     "end": {
+      "x": 250,
+      "y": 3000,
+      "z": 300
+     }
+    },
+    {
+     "name": "pillar_strip_9",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 94,
+      "offset": 100,
+      "reverse": true
+     },
+     "start": {
+      "x": 300,
+      "y": 4000,
+      "z": 250
+     },
+     "end": {
+      "x": 300,
+      "y": 3000,
+      "z": 250
+     }
+    },
+    {
+     "name": "pillar_strip_10",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 94,
+      "offset": 130,
+      "reverse": false
+     },
+     "start": {
+      "x": 300,
+      "y": 4000,
+      "z": 150
+     },
+     "end": {
+      "x": 300,
+      "y": 3000,
+      "z": 150
+     }
+    },
+    {
+     "name": "pillar_strip_11",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 94,
+      "offset": 160,
+      "reverse": true
+     },
+     "start": {
+      "x": 300,
+      "y": 4000,
+      "z": 50
+     },
+     "end": {
+      "x": 300,
+      "y": 3000,
+      "z": 50
+     }
+    }
+   ]
+  },
+  {
+   "name": "Tardis 0",
+   "x": -2000,
+   "y": 1000,
+   "z": 7000,
+   "group": "tardisse",
+   "strips": [
+    {
+     "name": "tardis_strip_0",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 45,
+      "offset": 0,
+      "reverse": false
+     },
+     "start": {
+      "x": -500,
+      "y": 2000,
+      "z": 0
+     },
+     "end": {
+      "x": 500,
+      "y": 2000,
+      "z": 0
+     }
+    },
+    {
+     "name": "tardis_strip_1",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 45,
+      "offset": 30,
+      "reverse": true
+     },
+     "start": {
+      "x": -500,
+      "y": 1900,
+      "z": 0
+     },
+     "end": {
+      "x": 500,
+      "y": 1900,
+      "z": 0
+     }
+    },
+    {
+     "name": "tardis_strip_2",
+     "leds": 15,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 45,
+      "offset": 30,
+      "reverse": false
+     },
+     "start": {
+      "x": -500,
+      "y": 1700,
+      "z": 0
+     },
+     "end": {
+      "x": -500,
+      "y": 1300,
+      "z": 0
+     }
+    },
+    {
+     "name": "tardis_strip_3",
+     "leds": 15,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 45,
+      "offset": 45,
+      "reverse": true
+     },
+     "start": {
+      "x": -500,
+      "y": 1300,
+      "z": 0
+     },
+     "end": {
+      "x": -100,
+      "y": 1300,
+      "z": 0
+     }
+    },
+    {
+     "name": "tardis_strip_4",
+     "leds": 15,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 45,
+      "offset": 60,
+      "reverse": false
+     },
+     "start": {
+      "x": -100,
+      "y": 1300,
+      "z": 0
+     },
+     "end": {
+      "x": -100,
+      "y": 1700,
+      "z": 0
+     }
+    },
+    {
+     "name": "tardis_strip_5",
+     "leds": 15,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 45,
+      "offset": 75,
+      "reverse": true
+     },
+     "start": {
+      "x": -100,
+      "y": 1700,
+      "z": 0
+     },
+     "end": {
+      "x": -500,
+      "y": 1700,
+      "z": 0
+     }
+    },
+    {
+     "name": "tardis_strip_6",
+     "leds": 15,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 45,
+      "offset": 90,
+      "reverse": false
+     },
+     "start": {
+      "x": 100,
+      "y": 1700,
+      "z": 0
+     },
+     "end": {
+      "x": 100,
+      "y": 1300,
+      "z": 0
+     }
+    },
+    {
+     "name": "tardis_strip_7",
+     "leds": 15,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 45,
+      "offset": 105,
+      "reverse": true
+     },
+     "start": {
+      "x": 100,
+      "y": 1300,
+      "z": 0
+     },
+     "end": {
+      "x": 500,
+      "y": 1300,
+      "z": 0
+     }
+    },
+    {
+     "name": "tardis_strip_8",
+     "leds": 15,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 45,
+      "offset": 120,
+      "reverse": false
+     },
+     "start": {
+      "x": 500,
+      "y": 1300,
+      "z": 0
+     },
+     "end": {
+      "x": 500,
+      "y": 1700,
+      "z": 0
+     }
+    },
+    {
+     "name": "tardis_strip_9",
+     "leds": 15,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 45,
+      "offset": 135,
+      "reverse": true
+     },
+     "start": {
+      "x": 500,
+      "y": 1700,
+      "z": 0
+     },
+     "end": {
+      "x": 100,
+      "y": 1700,
+      "z": 0
+     }
+    }
+   ]
+  },
+  {
+   "name": "Tardis 1",
+   "x": 2000,
+   "y": 1000,
+   "z": 7000,
+   "group": "tardisse",
+   "strips": [
+    {
+     "name": "tardis_strip_0",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 57,
+      "offset": 0,
+      "reverse": false
+     },
+     "start": {
+      "x": -500,
+      "y": 2000,
+      "z": 0
+     },
+     "end": {
+      "x": 500,
+      "y": 2000,
+      "z": 0
+     }
+    },
+    {
+     "name": "tardis_strip_1",
+     "leds": 30,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 57,
+      "offset": 30,
+      "reverse": true
+     },
+     "start": {
+      "x": -500,
+      "y": 1900,
+      "z": 0
+     },
+     "end": {
+      "x": 500,
+      "y": 1900,
+      "z": 0
+     }
+    },
+    {
+     "name": "tardis_strip_2",
+     "leds": 15,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 57,
+      "offset": 30,
+      "reverse": false
+     },
+     "start": {
+      "x": -500,
+      "y": 1700,
+      "z": 0
+     },
+     "end": {
+      "x": -500,
+      "y": 1300,
+      "z": 0
+     }
+    },
+    {
+     "name": "tardis_strip_3",
+     "leds": 15,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 57,
+      "offset": 45,
+      "reverse": true
+     },
+     "start": {
+      "x": -500,
+      "y": 1300,
+      "z": 0
+     },
+     "end": {
+      "x": -100,
+      "y": 1300,
+      "z": 0
+     }
+    },
+    {
+     "name": "tardis_strip_4",
+     "leds": 15,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 57,
+      "offset": 60,
+      "reverse": false
+     },
+     "start": {
+      "x": -100,
+      "y": 1300,
+      "z": 0
+     },
+     "end": {
+      "x": -100,
+      "y": 1700,
+      "z": 0
+     }
+    },
+    {
+     "name": "tardis_strip_5",
+     "leds": 15,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 57,
+      "offset": 75,
+      "reverse": true
+     },
+     "start": {
+      "x": -100,
+      "y": 1700,
+      "z": 0
+     },
+     "end": {
+      "x": -500,
+      "y": 1700,
+      "z": 0
+     }
+    },
+    {
+     "name": "tardis_strip_6",
+     "leds": 15,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 57,
+      "offset": 90,
+      "reverse": false
+     },
+     "start": {
+      "x": 100,
+      "y": 1700,
+      "z": 0
+     },
+     "end": {
+      "x": 100,
+      "y": 1300,
+      "z": 0
+     }
+    },
+    {
+     "name": "tardis_strip_7",
+     "leds": 15,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 57,
+      "offset": 105,
+      "reverse": true
+     },
+     "start": {
+      "x": 100,
+      "y": 1300,
+      "z": 0
+     },
+     "end": {
+      "x": 500,
+      "y": 1300,
+      "z": 0
+     }
+    },
+    {
+     "name": "tardis_strip_8",
+     "leds": 15,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 57,
+      "offset": 120,
+      "reverse": false
+     },
+     "start": {
+      "x": 500,
+      "y": 1300,
+      "z": 0
+     },
+     "end": {
+      "x": 500,
+      "y": 1700,
+      "z": 0
+     }
+    },
+    {
+     "name": "tardis_strip_9",
+     "leds": 15,
+     "artnet": {
+      "ip": "192.168.1.2",
+      "universe": 57,
+      "offset": 135,
+      "reverse": true
+     },
+     "start": {
+      "x": 500,
+      "y": 1700,
+      "z": 0
+     },
+     "end": {
+      "x": 100,
+      "y": 1700,
+      "z": 0
+     }
+    }
+   ]
   }
  ]
 }

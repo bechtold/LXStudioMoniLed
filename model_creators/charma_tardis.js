@@ -233,6 +233,113 @@ function pillars(universes_per_output, universe_offset) {
   return pillars;
 }
 
+function create_tardis(universe, universes_per_output) {
+  var tardis = [];
+  for (var i=0; i<10; i++) {
+
+    var x1 = y1 = x2 = y2 = 0;
+    var leds = 15;
+    if ( i == 0 ) {
+      x1 = -500;
+      y1 = 2000;
+      x2 = 500;
+      y2 = 2000;
+      leds = 30;
+    }
+    if ( i == 1 ) {
+      x1 = -500;
+      y1 = 1900;
+      x2 = 500;
+      y2 = 1900;
+      leds = 30;
+    }
+    if ( i == 2 ) {
+      x1 = -500;
+      y1 = 1700;
+      x2 = -500;
+      y2 = 1300;
+    }
+    if ( i == 3 ) {
+      x1 = -500;
+      y1 = 1300;
+      x2 = -100;
+      y2 = 1300;
+    }
+    if ( i == 4 ) {
+      x1 = -100;
+      y1 = 1300;
+      x2 = -100;
+      y2 = 1700;
+    }
+    if ( i == 5 ) {
+      x1 = -100;
+      y1 = 1700;
+      x2 = -500;
+      y2 = 1700;
+    }
+    if ( i == 6 ) {
+      x1 = 100;
+      y1 = 1700;
+      x2 = 100;
+      y2 = 1300;
+    }
+    if ( i == 7 ) {
+      x1 = 100;
+      y1 = 1300;
+      x2 = 500;
+      y2 = 1300;
+    }
+    if ( i == 8 ) {
+      x1 = 500;
+      y1 = 1300;
+      x2 = 500;
+      y2 = 1700;
+    }
+    if ( i == 9 ) {
+      x1 = 500;
+      y1 = 1700;
+      x2 = 100;
+      y2 = 1700;
+    }
+
+    var rev = !!(i%2);
+    var universe_shift = Math.floor( (i*leds) / 170 );
+    var offset_shifted = (i*leds) % 170;
+
+    var strip = {
+      "name"    : "tardis_strip_"+i,
+      "leds"    : leds,
+      "artnet"	: { "ip":ip, "universe": universe + universe_shift, "offset": offset_shifted, reverse: rev},
+      "start"	  : { "x": x1, "y": y1, "z": 0},
+      "end"     : { "x": x2, "y": y2, "z": 0}
+    }
+    tardis.push(strip);
+  }
+  return tardis;
+
+}
+
+function tardisse(universes_per_output, universe_offset) {
+  var tardisse = [];
+  for (var i = 0; i < 2; i++) {
+    var x = 0, y = 1000, z = 7000;
+    if ( i < 3 ) {
+      x = -2000 + i * 4000;
+    }
+
+    var t = {
+      "name": "Tardis " + i,
+      "x": x,
+      "y": y,
+      "z": z,
+      "group": "tardisse",
+      "strips": create_tardis(universe_offset + i*4*universes_per_output, universes_per_output) // 3 universes per output
+    };
+    tardisse.push(t);
+  }
+  return tardisse;
+}
+
 var tardis = {
   "name": "tardis",
 	"elements": []
@@ -242,7 +349,8 @@ tardis.elements = tardis.elements.concat(side_panels_left(3, 18));
 tardis.elements = tardis.elements.concat(back_panels_left(3, 36));
 tardis.elements = tardis.elements.concat(back_panels_center(3, 42));
 tardis.elements = tardis.elements.concat(back_panels_right(3, 51));
-// tardis.elements = tardis.elements.concat(pillars(3, 60));
+tardis.elements = tardis.elements.concat(pillars(3, 60));
+tardis.elements = tardis.elements.concat(tardisse(3, 45));
 
 var json = JSON.stringify(tardis, null, ' ');
 
