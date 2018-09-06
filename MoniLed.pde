@@ -36,7 +36,7 @@ Boolean[] syphonNew;
 heronarts.lx.studio.LXStudio lx;
 
 void setup() {
-  syphonNew = new Boolean[5];
+  syphonNew = new Boolean[6];
   
   // Processing setup, constructs the window and the LX instance
   size(800, 720, P3D);
@@ -123,11 +123,9 @@ void draw() {
     //println(syphonImage);
     if(syphonImage != null) {
       syphonImage.loadPixels();
-      syphonNew[0] = true;
-      syphonNew[1] = true;
-      syphonNew[2] = true;
-      syphonNew[3] = true;
-      syphonNew[4] = true;
+      for(int i = 0; i < syphonNew.length; i++) {
+        syphonNew[i] = true;
+      }
     //} else {
     //  syphonNew = false;
     }

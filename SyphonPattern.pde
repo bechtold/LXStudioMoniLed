@@ -20,7 +20,7 @@ public class SyphonPattern extends LXPattern {
 
   
   // if the image is updated when there is no new syphon stuff gets messy. Couldn't find a better way to handle this (for now).
-  public final CompoundParameter syphon_selector = new CompoundParameter("Element", 0, 0, 4).setDescription("Select the syphon channel.");
+  public final CompoundParameter syphon_selector = new CompoundParameter("Channel", 0, 0, syphonNew.length-1).setDescription("Select the syphon channel.");
 
   public SyphonPattern(LX lx) {
     super(lx);
