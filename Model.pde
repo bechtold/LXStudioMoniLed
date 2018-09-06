@@ -294,9 +294,9 @@ public static class JSONStrip extends LXModel {
       float spacingY = (endPoint.getInt("y", 0) - startPoint.getInt("y", 0))/numLeds;
       float spacingZ = (endPoint.getInt("z", 0) - startPoint.getInt("z", 0))/numLeds;
 
-      int posX = offSetX + stripData.getInt("x", 0) + startPoint.getInt("x", 0);
-      int posY = offSetY + stripData.getInt("y", 0) + startPoint.getInt("y", 0);
-      int posZ = offSetZ + stripData.getInt("z", 0) + startPoint.getInt("z", 0);
+      int posX = offSetX + (int)(spacingX/2) + stripData.getInt("x", 0) + startPoint.getInt("x", 0);
+      int posY = offSetY + (int)(spacingY/2) + stripData.getInt("y", 0) + startPoint.getInt("y", 0);
+      int posZ = offSetZ + (int)(spacingZ/2) + stripData.getInt("z", 0) + startPoint.getInt("z", 0);
 
       StripModel.Metrics stripMetrics = new StripModel.Metrics(numLeds);
 
