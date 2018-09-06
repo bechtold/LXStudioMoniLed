@@ -237,8 +237,10 @@ function create_tardis(universe, universes_per_output) {
   var tardis = [];
   for (var i=0; i<10; i++) {
 
+    var rev = false;
     var x1 = y1 = x2 = y2 = 0;
     var leds = 15;
+
     if ( i == 0 ) {
       x1 = -500;
       y1 = 2000;
@@ -252,6 +254,7 @@ function create_tardis(universe, universes_per_output) {
       x2 = 500;
       y2 = 1900;
       leds = 30;
+      rev = true;
     }
     if ( i == 2 ) {
       x1 = -500;
@@ -302,9 +305,13 @@ function create_tardis(universe, universes_per_output) {
       y2 = 1700;
     }
 
-    var rev = !!(i%2);
-    var universe_shift = Math.floor( (i*leds) / 170 );
-    var offset_shifted = (i*leds) % 170;
+    var led_shift = (i*leds);
+    if ( i > 1 ) {
+      led_shift += 30; // because the first two led strips are 15 leds longer than the others an extra offset is needed
+    }
+
+    var universe_shift = Math.floor( led_shift / 170 );
+    var offset_shifted = led_shift % 170;
 
     var strip = {
       "name"    : "tardis_strip_"+i,
